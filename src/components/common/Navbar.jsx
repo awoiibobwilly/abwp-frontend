@@ -14,11 +14,14 @@ function Navbar() {
       <div className="container navbar-container">
 
         {/* Logo */}
-        <NavLink to="/" className="logo">
+        <NavLink
+          to="/"
+          className="logo"
+        >
           ABWP
         </NavLink>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <nav className="nav-links">
 
           <NavLink to="/">Home</NavLink>
@@ -37,7 +40,7 @@ function Navbar() {
 
         </nav>
 
-        {/* CV Button */}
+        {/* Download CV */}
         <a
           href="#"
           className="cv-button"
@@ -50,16 +53,13 @@ function Navbar() {
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {
-  menuOpen
-    ? <HiX />
-    : <HiMenu />
-}
+          {menuOpen ? <HiX /> : <HiMenu />}
         </button>
 
       </div>
 
       {/* Mobile Menu */}
+
       <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
 
         <NavLink to="/" onClick={() => setMenuOpen(false)}>
@@ -89,6 +89,10 @@ function Navbar() {
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
           Contact
         </NavLink>
+
+        <a href="#" className="mobile-cv">
+          Download CV
+        </a>
 
       </div>
 
