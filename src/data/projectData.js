@@ -1,33 +1,65 @@
 export const projectData = [
-    {
-      title: "CAL Dental Clinic Website",
-      category: "Healthcare Systems",
-      description:
-        "Modern dental clinic website with appointment booking and patient engagement.",
-      technologies: "React • Django • PostgreSQL • Cloudinary",
-    },
-  
-    {
-      title: "Budget Miles Fuel App",
-      category: "Software Engineering",
-      description:
-        "Personalized fuel management and journey planning application.",
-      technologies: "React Native • Django REST Framework • JWT",
-    },
-  
-    {
-      title: "Health Data Dashboards",
-      category: "Data Science",
-      description:
-        "Interactive dashboards for reporting and decision support.",
-      technologies: "Python • Power BI • SQL • Excel",
-    },
-  
-    {
-      title: "Monitoring & Evaluation Tools",
-      category: "Monitoring & Evaluation",
-      description:
-        "Systems for measuring performance and improving accountability.",
-      technologies: "KoboToolbox • DHIS2 • SPSS • Excel",
-    },
-  ];
+  {
+    title: "CAL Dental Clinic Website",
+    category: "Healthcare Systems",
+    description:
+      "Modern dental clinic website with appointment booking and patient engagement.",
+    technologies: "React • Django • PostgreSQL • Cloudinary",
+  },
+
+  {
+    title: "Budget Miles Fuel App",
+    category: "Software Engineering",
+    description:
+      "Personalized fuel management and journey planning application.",
+    technologies: "React Native • Django REST Framework • JWT",
+  },
+
+  {
+    title: "Health Data Dashboards",
+    category: "Data Science",
+    description:
+      "Interactive dashboards for reporting and decision support.",
+    technologies: "Python • Power BI • SQL • Excel",
+  },
+
+  {
+    title: "Monitoring & Evaluation Tools",
+    category: "Monitoring & Evaluation",
+    description:
+      "Systems for measuring performance and improving accountability.",
+    technologies: "KoboToolbox • DHIS2 • SPSS • Excel",
+  },
+
+  {
+    title: "Research Analytics",
+    category: "Data Science",
+    description:
+      "Data analytics, dashboards, and visualization projects.",
+    technologies: "Python • R • Tableau • SQL",
+  },
+
+  {
+    title: "Mobile Applications",
+    category: "Cross-Platform Solutions",
+    description:
+      "React Native applications for healthcare and productivity.",
+    technologies: "React Native • Expo • Redux",
+  },
+
+  {
+    title: "Portfolio Platforms",
+    category: "Web Development",
+    description:
+      "Professional and business websites built with React and Django.",
+    technologies: "React • Django • Tailwind CSS",
+  },
+
+  {
+    title: "Community Projects",
+    category: "Leadership & Impact",
+    description:
+      "Technology and outreach initiatives that create meaningful impact.",
+    technologies: "Open Source • Git • Community Outreach",
+  },
+];

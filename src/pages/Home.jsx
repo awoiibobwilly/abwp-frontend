@@ -1,6 +1,7 @@
 import Hero from "../components/home/Hero";
 import Expertise from "../components/home/Expertise";
 import Highlights from "../components/home/Highlights";
+import FeaturedProjects from "../components/home/FeaturedProjects";
 
 function Home() {
   return (
@@ -10,6 +11,9 @@ function Home() {
       <Expertise />
 
       <Highlights />
+
+      <FeaturedProjects />
+
     </>
   );
 }
