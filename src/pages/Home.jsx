@@ -1,11 +1,11 @@
-function About() {
-    return (
-      <section className="section">
-        <div className="container">
-          <h1>About Page</h1>
-        </div>
-      </section>
-    );
-  }
-  
-  export default About;
+import Hero from "../components/home/Hero";
+
+function Home() {
+  return (
+    <>
+      <Hero />
+    </>
+  );
+}
+
+export default Home;

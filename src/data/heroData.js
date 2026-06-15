@@ -13,14 +13,17 @@ export const heroData = {
       number: "5+",
       label: "Domains",
     },
+
     {
       number: "20+",
       label: "Projects",
     },
+
     {
       number: "10+",
       label: "Technologies",
     },
+
     {
       number: "100%",
       label: "Commitment",

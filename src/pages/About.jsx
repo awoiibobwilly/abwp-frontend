@@ -1,11 +1,11 @@
-function Home() {
+  function About() {
     return (
       <section className="section">
         <div className="container">
-          <h1>Home Page</h1>
+          <h1>About Page</h1>
         </div>
       </section>
     );
   }
   
-  export default Home;
+  export default About;
