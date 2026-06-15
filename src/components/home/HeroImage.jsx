@@ -4,14 +4,20 @@ function HeroImage() {
   return (
     <div className="hero-image">
 
+      {/* Gradient Glow */}
+      <div className="hero-glow"></div>
+
+      {/* Profile Image */}
       <div className="hero-image-circle">
 
         <img
-          src="/images/profile.jpg"
+          src="/images/profile.png"
           alt="Awoii Bob Willy"
         />
 
       </div>
+
+      {/* Floating Badges */}
 
       <div className="floating-badge badge-1">
         Healthcare Management

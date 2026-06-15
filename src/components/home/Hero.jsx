@@ -10,22 +10,22 @@ function Hero() {
 
       <div className="container">
 
-        <div className="hero-wrapper">
+        {/* HERO TOP */}
+        <div className="hero-top">
 
           <div className="hero-left">
-
             <HeroContent />
-
-            <HeroStats />
-
           </div>
 
           <div className="hero-right">
-
             <HeroImage />
-
           </div>
 
+        </div>
+
+        {/* HERO BOTTOM */}
+        <div className="hero-bottom">
+          <HeroStats />
         </div>
 
       </div>

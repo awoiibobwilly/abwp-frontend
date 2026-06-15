@@ -18,7 +18,7 @@ function Navbar() {
           to="/"
           className="logo"
         >
-          ABWP
+          Awoii Bob Willy
         </NavLink>
 
         {/* Desktop Navigation */}
