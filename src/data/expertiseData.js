@@ -1,37 +1,37 @@
 export const expertiseData = [
-    {
-      title: "Healthcare Management",
-      description:
-        "Strengthening healthcare systems and improving service delivery.",
-    },
-  
-    {
-      title: "Public Health",
-      description:
-        "Designing and supporting evidence-based interventions.",
-    },
-  
-    {
-      title: "Monitoring & Evaluation",
-      description:
-        "Measuring outcomes and improving program performance.",
-    },
-  
-    {
-      title: "Data Science",
-      description:
-        "Transforming data into actionable insights.",
-    },
-  
-    {
-      title: "Software Engineering",
-      description:
-        "Building modern digital solutions and applications.",
-    },
-  
-    {
-      title: "Research & Leadership",
-      description:
-        "Driving innovation through research and strategic leadership.",
-    },
-  ];
+  {
+    title: "Software Engineering",
+    description:
+      "Designing scalable web and mobile applications using modern technologies.",
+  },
+
+  {
+    title: "Healthcare Management",
+    description:
+      "Improving healthcare systems, service delivery, and digital health solutions.",
+  },
+
+  {
+    title: "Data Science",
+    description:
+      "Leveraging data analytics, machine learning, and visualization for impact.",
+  },
+
+  {
+    title: "Research & Academia",
+    description:
+      "Conducting evidence-based research and contributing to knowledge creation.",
+  },
+
+  {
+    title: "Leadership & Community Impact",
+    description:
+      "Empowering communities through mentorship, outreach, and service.",
+  },
+
+  {
+    title: "Project Management",
+    description:
+      "Planning and delivering multidisciplinary projects efficiently.",
+  },
+];

@@ -6,7 +6,7 @@ export const heroData = {
   tagline: "Bridging Health, Data, and Technology for Impact",
 
   summary:
-    "Multidisciplinary professional passionate about healthcare management, public health, monitoring and evaluation, data science, software engineering, digital health, research, and leadership.",
+  "I build digital solutions, conduct research, and leverage data and technology to solve real-world challenges across health, education, and community development.",
 
   stats: [
     {
