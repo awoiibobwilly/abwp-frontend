@@ -1,11 +1,11 @@
-function Research() {
+function About() {
     return (
       <section className="section">
         <div className="container">
-          <h1>Research Page</h1>
+          <h1>About Page</h1>
         </div>
       </section>
     );
   }
   
-  export default Research;
+  export default About;
