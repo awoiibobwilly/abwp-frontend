@@ -1,45 +1,36 @@
-import { heroData } from "../../data/heroData";
+import "../../styles/home/hero-image.css";
 
-import "../../styles/home/hero-content.css";
-
-function HeroContent() {
+function HeroImage() {
   return (
-    <div className="hero-content">
+    <div className="hero-image">
 
-      <span className="hero-greeting">
-        {heroData.greeting}
-      </span>
+      <div className="hero-image-circle">
 
-      <h1 className="hero-name">
-        {heroData.name}
-      </h1>
+        <img
+          src="/images/profile.jpg"
+          alt="Awoii Bob Willy"
+        />
 
-      <h2 className="hero-tagline">
-        {heroData.tagline}
-      </h2>
+      </div>
 
-      <p className="hero-summary">
-        {heroData.summary}
-      </p>
+      <div className="floating-badge badge-1">
+        Healthcare Management
+      </div>
 
-      <div className="hero-buttons">
+      <div className="floating-badge badge-2">
+        Data Science
+      </div>
 
-        <button className="btn btn-primary">
-          Explore Portfolio
-        </button>
+      <div className="floating-badge badge-3">
+        Software Engineering
+      </div>
 
-        <button className="btn btn-secondary">
-          Download CV
-        </button>
-
-        <button className="btn btn-outline">
-          Contact Me
-        </button>
-
+      <div className="floating-badge badge-4">
+        Research & Leadership
       </div>
 
     </div>
   );
 }
 
-export default HeroContent;
+export default HeroImage;

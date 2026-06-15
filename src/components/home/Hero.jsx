@@ -7,24 +7,29 @@ import "../../styles/home/hero.css";
 function Hero() {
   return (
     <section className="hero section">
+
       <div className="container">
 
         <div className="hero-wrapper">
 
-          {/* Right Side */}
-          <div className="hero-right">
+          <div className="hero-left">
+
             <HeroContent />
+
             <HeroStats />
+
           </div>
 
-          {/* Left Side */}
-          <div className="hero-left">
+          <div className="hero-right">
+
             <HeroImage />
+
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }

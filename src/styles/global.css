@@ -1,51 +1,124 @@
 @import "./variables.css";
 
-*{
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* ==========================================
+   HTML
+========================================== */
+
 html{
     scroll-behavior:smooth;
 }
 
+/* ==========================================
+   BODY
+========================================== */
+
 body{
     overflow-x:hidden;
-    font-family:'Segoe UI',sans-serif;
+
+    font-family:'Inter','Segoe UI',sans-serif;
+
     background:var(--white);
+
     color:var(--dark);
+
+    line-height:1.7;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
 }
+
+/* ==========================================
+   ROOT
+========================================== */
+
+#root{
+    min-height:100vh;
+}
+
+/* ==========================================
+   LINKS
+========================================== */
 
 a{
     text-decoration:none;
+    color:inherit;
 }
+
+/* ==========================================
+   LISTS
+========================================== */
 
 ul{
     list-style:none;
 }
+
+/* ==========================================
+   IMAGES
+========================================== */
 
 img{
     display:block;
     max-width:100%;
 }
 
+/* ==========================================
+   SECTIONS
+========================================== */
+
 .section{
     padding:100px 0;
 }
+
+/* ==========================================
+   CONTAINER
+========================================== */
 
 .container{
     width:min(1200px,90%);
     margin:auto;
 }
 
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    line-height:1.2;
+}
+
 .section-title{
-    font-size:2.8rem;
+    font-size:clamp(2rem,5vw,3rem);
+
     font-weight:700;
+
     color:var(--primary);
+
+    margin-bottom:1rem;
 }
 
 .section-subtitle{
+
     color:var(--text-light);
+
     max-width:700px;
+
+    line-height:1.8;
 }
