@@ -1,0 +1,75 @@
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.hero-content {
+    max-width: 700px;
+  }
+  
+  .hero-greeting {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .hero-name {
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-tagline {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .hero-summary {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #6b7280;
+    max-width: 650px;
+  }
+  
+  
+  /* ==========================================
+     BUTTONS
+  ========================================== */
+  
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    border: none;
+    cursor: pointer;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .3s;
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-3px);
+  }
+  
+  .btn-secondary {
+    background: var(--secondary);
+    color: white;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    border: 1px solid #d1d5db;
+  }

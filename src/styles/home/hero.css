@@ -1,0 +1,57 @@
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 140px;
+    padding-bottom: 100px;
+  }
+  
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+  }
+  
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-left {
+    order: 1;
+  }
+  
+  .hero-right {
+    order: 2;
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+@media (max-width: 992px) {
+
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left {
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+  }
+
+}

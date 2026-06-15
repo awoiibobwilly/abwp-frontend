@@ -1,0 +1,58 @@
+/* ==========================================
+   HERO STATS
+========================================== */
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  }
+  
+  .hero-stat-card {
+    background: white;
+    padding: 1.5rem;
+  
+    border-radius: 20px;
+  
+    text-align: center;
+  
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+  
+    transition: .3s;
+  }
+  
+  .hero-stat-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .hero-stat-card h3 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: .5rem;
+  }
+  
+  .hero-stat-card span {
+    color: #6b7280;
+  }
+  
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width:768px){
+  
+    .hero-stats{
+      grid-template-columns: repeat(2,1fr);
+    }
+  
+  }
+  
+  @media (max-width:576px){
+  
+    .hero-stats{
+      grid-template-columns: 1fr;
+    }
+  
+  }
