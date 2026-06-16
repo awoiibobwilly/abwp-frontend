@@ -1,0 +1,83 @@
+/* ==========================================
+   RESEARCH
+========================================== */
+
+.research-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+    margin-top:4rem;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.research-card{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+    transition:.4s;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.research-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.research-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.research-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .research-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .research-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
