@@ -1,22 +1,22 @@
 export const testimonialData = [
-    {
-      name: "Dr. John Doe",
-      position: "Public Health Specialist",
-      quote:
-        "Awoii Bob Willy demonstrates exceptional professionalism and commitment to excellence.",
-    },
-  
-    {
-      name: "Jane Smith",
-      position: "Data and Research Consultant",
-      quote:
-        "His ability to combine healthcare knowledge with technology creates meaningful impact.",
-    },
-  
-    {
-      name: "Michael Brown",
-      position: "Software Engineer",
-      quote:
-        "Bob consistently delivers high-quality work with integrity and creativity.",
-    },
-  ];
+  {
+    quote:
+      "Professional, reliable, and innovative in delivering technology-driven solutions.",
+    name: "Client",
+    role: "Healthcare Sector",
+  },
+
+  {
+    quote:
+      "Strong analytical and technical skills combined with a passion for impact.",
+    name: "Collaborator",
+    role: "Research & Data Science",
+  },
+
+  {
+    quote:
+      "Excellent leadership, dedication, and commitment to community transformation.",
+    name: "Mentor",
+    role: "Leadership & Development",
+  },
+];

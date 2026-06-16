@@ -4,6 +4,7 @@ import Highlights from "../components/home/Highlights";
 import FeaturedProjects from "../components/home/FeaturedProjects";
 import JourneyPreview from "../components/home/JourneyPreview";
 import Research from "../components/home/Research";
+import Testimonials from "../components/home/Testimonials";
 
 function Home() {
   return (
@@ -19,6 +20,8 @@ function Home() {
       <JourneyPreview />
 
       <Research />
+
+      <Testimonials />
 
     </>
   );
