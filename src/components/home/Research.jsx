@@ -1,5 +1,5 @@
 import ResearchCard from "./ResearchCard";
-import { researchData } from "../../data/researchData";
+import { researchData } from "../../data/home/researchData";
 
 import "../../styles/home/research.css";
 

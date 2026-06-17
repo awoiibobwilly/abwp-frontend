@@ -1,4 +1,4 @@
-import { heroData } from "../../data/heroData";
+import { heroData } from "../../data/home/heroData";
 
 import "../../styles/home/hero-stats.css";
 

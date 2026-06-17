@@ -1,5 +1,5 @@
 import TestimonialCard from "./TestimonialCard";
-import { testimonialData } from "../../data/testimonialData";
+import { testimonialData } from "../../data/home/testimonialData";
 
 import "../../styles/home/testimonials.css";
 

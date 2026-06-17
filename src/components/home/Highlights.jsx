@@ -1,5 +1,5 @@
 import HighlightCard from "./HighlightCard";
-import { highlightData } from "../../data/highlightData";
+import { highlightData } from "../../data/home/highlightData";
 
 import "../../styles/home/highlights.css";
 

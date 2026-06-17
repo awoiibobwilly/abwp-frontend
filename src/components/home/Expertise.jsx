@@ -1,5 +1,5 @@
 import ExpertiseCard from "./ExpertiseCard";
-import { expertiseData } from "../../data/expertiseData";
+import { expertiseData } from "../../data/home/expertiseData";
 
 import "../../styles/home/expertise.css";
 

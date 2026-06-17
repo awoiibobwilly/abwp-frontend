@@ -1,5 +1,5 @@
 import JourneyCard from "./JourneyCard";
-import { journeyData } from "../../data/journeyData";
+import { journeyData } from "../../data/home/journeyData";
 
 import "../../styles/home/journey-preview.css";
 
