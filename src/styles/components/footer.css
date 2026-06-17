@@ -1,62 +1,280 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
 .footer{
-    background:var(--secondary);
+    background:#0f172a;
     color:white;
-    padding:80px 0 30px;
+    padding-top:100px;
 }
+
+
+/* ==========================================
+   GRID
+========================================== */
 
 .footer-grid{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:3rem;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    column-gap:4rem;
+
+    row-gap:3rem;
+
 }
 
-.footer-column h3,
-.footer-column h4{
-    margin-bottom:1.2rem;
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
+
+
+.footer-brand h3{
+
+    margin-bottom:1rem;
+
+}
+
 
 .footer-tagline{
-    color:var(--accent);
-    margin-bottom:1rem;
-}
 
-.footer-column a,
-.footer-column span{
-    display:block;
-    color:#d1d5db;
-    margin-bottom:.8rem;
-    transition:.3s;
-}
+    font-weight:600;
 
-.footer-column a:hover{
     color:white;
+
+    margin-bottom:1rem;
+
 }
 
-.footer-column svg{
-    margin-right:10px;
+
+.footer-description{
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
 }
+
+
+/* ==========================================
+   SOCIALS
+========================================== */
+
+.footer-socials{
+
+    display:flex;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+
+.footer-socials a{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.footer-socials a:hover{
+
+    background:var(--accent);
+
+}
+
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.footer-links,
+.footer-expertise,
+.footer-connect{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+
+.footer-links h4,
+.footer-expertise h4,
+.footer-connect h4{
+
+    margin-bottom:.5rem;
+
+}
+
+
+.footer-links a{
+
+    color:#cbd5e1;
+
+    transition:.3s;
+
+}
+
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+
+.footer-expertise span{
+
+    color:#cbd5e1;
+
+}
+
+
+/* ==========================================
+   CONNECT
+========================================== */
+
+.footer-connect a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    color:#cbd5e1;
+
+    transition:.3s;
+
+}
+
+
+.footer-connect a:hover{
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
 
 .footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
     border-top:1px solid rgba(255,255,255,.1);
-    margin-top:50px;
-    padding-top:25px;
-    text-align:center;
-    color:#d1d5db;
-}
 
-@media (max-width:991px){
+    margin-top:5rem;
 
-.footer-grid{
-    grid-template-columns:repeat(2,1fr);
-}
+    padding:2rem 0;
 
 }
+
+
+.footer-bottom p{
+
+    color:#cbd5e1;
+
+}
+
+
+/* ==========================================
+   SCROLL BUTTON
+========================================== */
+
+.scroll-top-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--accent);
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.scroll-top-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+    .footer-grid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
 
 @media (max-width:576px){
 
-.footer-grid{
-    grid-template-columns:1fr;
-}
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        gap:1.5rem;
+
+    }
 
 }
-

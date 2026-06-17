@@ -18,29 +18,53 @@ function AppRoutes() {
 
       <ScrollToTop />
 
-      <MainLayout>
+      <Routes>
 
-        <Routes>
+        <Route element={<MainLayout />}>
 
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/about"
+            element={<About />}
+          />
 
-          <Route path="/journey" element={<Journey />} />
+          <Route
+            path="/journey"
+            element={<Journey />}
+          />
 
-          <Route path="/projects" element={<Projects />} />
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
 
-          <Route path="/research" element={<Research />} />
+          <Route
+            path="/research"
+            element={<Research />}
+          />
 
-          <Route path="/insights" element={<Insights />} />
+          <Route
+            path="/insights"
+            element={<Insights />}
+          />
 
-          <Route path="/cv" element={<CV />} />
+          <Route
+            path="/cv"
+            element={<CV />}
+          />
 
-          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
 
-        </Routes>
+        </Route>
 
-      </MainLayout>
+      </Routes>
 
     </BrowserRouter>
   );
