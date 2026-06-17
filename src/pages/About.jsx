@@ -8,6 +8,7 @@ import HealthcareExperience from "../components/about/HealthcareExperience";
 import TechnologyExperience from "../components/about/TechnologyExperience";
 import ResearchInterests from "../components/about/ResearchInterests";
 import Skills from "../components/about/Skills";
+import Achievements from "../components/about/Achievements";
 
 function About() {
   return (
@@ -31,6 +32,8 @@ function About() {
       <ResearchInterests />
 
       <Skills />
+
+      <Achievements />
 
 
     </>
