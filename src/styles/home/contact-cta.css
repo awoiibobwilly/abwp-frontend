@@ -62,10 +62,13 @@
 .contact-title{
 
     font-size:clamp(2.5rem,5vw,4rem);
+    
+    color:white;
 
     margin-bottom:1.5rem;
 
 }
+
 
 
 /* ==========================================
