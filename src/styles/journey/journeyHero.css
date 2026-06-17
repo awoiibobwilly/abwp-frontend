@@ -1,0 +1,65 @@
+/* ==========================================
+   JOURNEY HERO
+========================================== */
+
+.journey-hero{
+
+    background:
+    linear-gradient(
+    135deg,
+    #eff6ff,
+    #ffffff);
+
+}
+
+
+.journey-hero-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.journey-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.journey-hero h1{
+
+    font-size:clamp(3rem,6vw,5rem);
+
+    margin-bottom:2rem;
+
+}
+
+
+.journey-hero p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    max-width:800px;
+
+    margin:auto;
+
+}

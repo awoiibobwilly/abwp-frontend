@@ -1,10 +1,10 @@
+import JourneyHero from "../components/journey/JourneyHero";
+
 function Journey() {
     return (
-      <section className="section">
-        <div className="container">
-          <h1>Journey Page</h1>
-        </div>
-      </section>
+      <>
+      <JourneyHero />
+      </>
     );
   }
   
