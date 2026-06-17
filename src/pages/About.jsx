@@ -5,6 +5,7 @@ import Education from "../components/about/Education";
 import Certifications from "../components/about/Certifications";
 import Leadership from "../components/about/Leadership";
 import HealthcareExperience from "../components/about/HealthcareExperience";
+import TechnologyExperience from "../components/about/TechnologyExperience";
 
 function About() {
   return (
@@ -23,7 +24,9 @@ function About() {
 
       <HealthcareExperience />
 
-      
+      <TechnologyExperience />
+
+
     </>
   );
 }
