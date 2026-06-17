@@ -1,11 +1,18 @@
 import JourneyHero from "../components/journey/JourneyHero";
+import JourneyTimeline from "../components/journey/JourneyTimeline";
 
 function Journey() {
-    return (
-      <>
+
+  return (
+    <>
+
       <JourneyHero />
-      </>
-    );
-  }
-  
-  export default Journey;
+
+      <JourneyTimeline />
+
+    </>
+  );
+
+}
+
+export default Journey;
