@@ -1,10 +1,14 @@
+import ProjectsHero from "../components/projects/ProjectsHero";
+
 function Projects() {
     return (
-      <section className="section">
-        <div className="container">
-          <h1>Projects Page</h1>
-        </div>
-      </section>
+      <>
+        <ProjectsHero />
+
+       
+
+
+      </>
     );
   }
   
