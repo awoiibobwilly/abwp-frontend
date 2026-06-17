@@ -10,6 +10,7 @@ import ResearchInterests from "../components/about/ResearchInterests";
 import Skills from "../components/about/Skills";
 import Achievements from "../components/about/Achievements";
 import CoreValues from "../components/about/CoreValues";
+import AboutCTA from "../components/about/AboutCTA";
 
 function About() {
   return (
@@ -37,6 +38,8 @@ function About() {
       <Achievements />
 
       <CoreValues />
+
+      <AboutCTA />
 
 
     </>
