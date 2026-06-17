@@ -1,4 +1,4 @@
-import { aboutHeroData } from "../../data/aboutHeroData";
+import { aboutHeroData } from "../../data/about/aboutHeroData";
 
 function AboutHeroContent() {
   return (
