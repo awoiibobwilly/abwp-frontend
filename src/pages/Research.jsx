@@ -1,5 +1,6 @@
 import ResearchHero from "../components/research/ResearchHero";
 import ResearchAreas from "../components/research/ResearchAreas";
+import PublicationsSection from "../components/research/PublicationsSection";
 
 function Research() {
 
@@ -8,6 +9,8 @@ function Research() {
       <ResearchHero />
 
       <ResearchAreas />
+
+      <PublicationsSection />
 
     </>
   );
