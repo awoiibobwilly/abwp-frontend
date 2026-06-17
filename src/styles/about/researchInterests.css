@@ -1,0 +1,97 @@
+/* ==========================================
+   RESEARCH INTERESTS
+========================================== */
+
+.research-interests{
+    background:white;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.research-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+
+.research-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.3rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.research-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+}
+
+
+/* ==========================================
+   TAG
+========================================== */
+
+.research-tag{
+
+    padding:1.3rem 2rem;
+
+    border-radius:1.5rem;
+
+    background:#f8fafc;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    font-weight:600;
+
+    color:var(--dark);
+
+    transition:.3s;
+
+    cursor:default;
+
+}
+
+
+.research-tag:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.1);
+
+}
