@@ -1,11 +1,17 @@
+import ResearchHero from "../components/research/ResearchHero";
+import ResearchAreas from "../components/research/ResearchAreas";
+
 function Research() {
-    return (
-      <section className="section">
-        <div className="container">
-          <h1>Research Page</h1>
-        </div>
-      </section>
-    );
-  }
-  
-  export default Research;
+
+  return (
+    <>
+      <ResearchHero />
+
+      <ResearchAreas />
+
+    </>
+  );
+
+}
+
+export default Research;

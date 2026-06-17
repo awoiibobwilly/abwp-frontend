@@ -1,0 +1,142 @@
+/* ==========================================
+   RESEARCH AREAS
+========================================== */
+
+.research-areas{
+
+    background:#f8fafc;
+
+}
+
+
+/* HEADER */
+
+.research-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+
+.research-section-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.4rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* GRID */
+
+.research-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+
+/* CARD */
+
+.research-card{
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:1.5rem;
+
+    padding:2.5rem;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.05);
+
+    transition:.4s;
+
+}
+
+
+.research-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.research-card-icon{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+.research-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+
+.research-card p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+@media(max-width:992px){
+
+    .research-grid{
+    
+    grid-template-columns:repeat(2,1fr);
+    
+    }
+    
+    }
+    
+    @media(max-width:576px){
+    
+    .research-grid{
+    
+    grid-template-columns:1fr;
+    
+    }
+    
+    }
