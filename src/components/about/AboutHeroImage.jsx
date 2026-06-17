@@ -3,7 +3,7 @@ function AboutHeroImage() {
       <div className="about-image-card">
   
         <img
-          src="/images/profile.webp"
+          src="/images/profile.png"
           alt="Awoii Bob Willy"
         />
   
