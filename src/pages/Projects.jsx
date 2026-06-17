@@ -3,6 +3,7 @@ import FeaturedProjects from "../components/projects/FeaturedProjects";
 import ProjectCategories from "../components/projects/ProjectCategories";
 import TechnologiesCloud from "../components/projects/TechnologiesCloud";
 import OpenSourceSection from "../components/projects/OpenSourceSection";
+import ProjectsCTA from "../components/projects/ProjectsCTA";
 
 function Projects() {
 
@@ -17,6 +18,8 @@ function Projects() {
       <TechnologiesCloud />
 
       <OpenSourceSection />
+
+      <ProjectsCTA />
 
     </>
   );
