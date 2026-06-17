@@ -1,0 +1,136 @@
+/* ==========================================
+   JOURNEY CTA
+========================================== */
+
+.journey-cta{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.journey-cta-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:5rem;
+
+    border-radius:2rem;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(25px);
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.journey-cta-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.journey-cta-card h2{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    color:white;
+
+    margin-bottom:1.5rem;
+
+    line-height:1.2;
+
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.journey-cta-card p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.journey-cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .journey-cta-card{
+
+        padding:3rem 2rem;
+
+    }
+
+    .journey-cta-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
