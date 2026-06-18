@@ -4,6 +4,7 @@ import CategoriesSection from "../components/insights/CategoriesSection";
 import LatestThoughts from "../components/insights/LatestThoughts";
 import QuotesReflections from "../components/insights/QuotesReflections";
 import NewsletterSection from "../components/insights/NewsletterSection";
+import InsightsCTA from "../components/insights/InsightsCTA";
 
 function Insights() {
 
@@ -20,6 +21,8 @@ function Insights() {
       <QuotesReflections />
 
       <NewsletterSection />
+
+      <InsightsCTA />
 
     </>
   );
