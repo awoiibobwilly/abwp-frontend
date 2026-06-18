@@ -3,6 +3,7 @@ import ProfessionalSummary from "../components/cv/ProfessionalSummary";
 import ExperienceSection from "../components/cv/ExperienceSection";
 import EducationSection from "../components/cv/EducationSection";
 import CertificationsSection from "../components/cv/CertificationsSection";
+import SkillsSection from "../components/cv/SkillsSection";
 
 function CV() {
 
@@ -17,6 +18,8 @@ function CV() {
       <EducationSection />
 
       <CertificationsSection />
+
+      <SkillsSection />
     </>
   );
 
