@@ -1,0 +1,164 @@
+/* ==========================================
+   METHODOLOGIES
+========================================== */
+
+.methodologies{
+
+    background:#f8fafc;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.methodologies-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+
+.methodologies-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.methodologies-wrapper{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.methodologies-card{
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:2rem;
+
+    padding:3rem;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.05);
+
+}
+
+
+.methodologies-icon{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+.methodologies-card h3{
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.methodologies-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+
+.methodologies-tags span{
+
+    padding:.8rem 1.3rem;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:var(--primary);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+.methodologies-tags span:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.methodologies-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+}
