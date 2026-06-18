@@ -1,0 +1,157 @@
+/* ==========================================
+   AVAILABILITY
+========================================== */
+
+.availability{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #ffffff
+    );
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.availability-card{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:5rem;
+
+    border-radius:2rem;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
+
+    text-align:center;
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.availability-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.availability-card h2{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    line-height:1.2;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.availability-card p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.availability-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:1rem;
+
+}
+
+
+.availability-tag{
+
+    padding:1rem 1.6rem;
+
+    border-radius:999px;
+
+    background:white;
+
+    border:1px solid #e2e8f0;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.availability-tag:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .availability-card{
+
+        padding:3rem 2rem;
+
+    }
+
+}
