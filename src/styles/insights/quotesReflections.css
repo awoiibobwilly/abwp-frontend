@@ -1,0 +1,150 @@
+/* ==========================================
+   QUOTES & REFLECTIONS
+========================================== */
+
+.quotes-reflections{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f8fafc,
+        #ffffff
+    );
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.quotes-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+
+.quotes-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.quotes-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.quote-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:2rem;
+
+    padding:3rem;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.05);
+
+    transition:.4s;
+
+}
+
+
+.quote-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.quote-icon{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   QUOTE
+========================================== */
+
+.quote-card blockquote{
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    color:var(--dark);
+
+    margin-bottom:2rem;
+
+    font-style:italic;
+
+}
+
+
+.quote-card span{
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .quotes-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
