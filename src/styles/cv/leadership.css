@@ -1,0 +1,215 @@
+/* ==========================================
+   LEADERSHIP
+========================================== */
+
+.leadership{
+
+    background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #ffffff
+    );
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.leadership-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+.leadership-heading{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.leadership-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.leadership-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.leadership-card{
+
+    padding:2.5rem;
+
+    border-radius:2rem;
+
+    background:white;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+}
+
+
+.leadership-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.leadership-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-size:1.5rem;
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.leadership-duration{
+
+    display:inline-block;
+
+    margin-bottom:1rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+
+.leadership-content h3{
+
+    margin-bottom:.8rem;
+
+}
+
+
+.leadership-content h4{
+
+    margin-bottom:1.5rem;
+
+    color:var(--text-light);
+
+}
+
+
+.leadership-content p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.leadership-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+
+.leadership-tags span{
+
+    padding:.7rem 1rem;
+
+    border-radius:999px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .leadership-card{
+
+        flex-direction:column;
+
+    }
+
+}
