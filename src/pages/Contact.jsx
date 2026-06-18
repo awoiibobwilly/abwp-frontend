@@ -3,6 +3,7 @@ import ContactInfo from "../components/contact/ContactInfo";
 import ContactForm from "../components/contact/ContactForm";
 import SocialPlatforms from "../components/contact/SocialPlatforms";
 import AvailabilityCollaboration from "../components/contact/AvailabilityCollaboration";
+import FAQSection from "../components/contact/FAQSection";
 
 function Contact() {
 
@@ -17,6 +18,8 @@ function Contact() {
       <SocialPlatforms />
 
       <AvailabilityCollaboration />
+
+      <FAQSection />
 
     </>
   );
