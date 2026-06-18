@@ -1,11 +1,13 @@
+import ContactHero from "../components/contact/ContactHero";
+
 function Contact() {
-    return (
-      <section className="section">
-        <div className="container">
-          <h1>Contact Page</h1>
-        </div>
-      </section>
-    );
-  }
-  
-  export default Contact;
+
+  return (
+    <>
+      <ContactHero />
+    </>
+  );
+
+}
+
+export default Contact;
