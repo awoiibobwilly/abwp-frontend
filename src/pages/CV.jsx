@@ -1,6 +1,7 @@
 import CVHero from "../components/cv/CVHero";
 import ProfessionalSummary from "../components/cv/ProfessionalSummary";
 import ExperienceSection from "../components/cv/ExperienceSection";
+import EducationSection from "../components/cv/EducationSection";
 
 function CV() {
 
@@ -11,6 +12,8 @@ function CV() {
       <ProfessionalSummary />
 
       <ExperienceSection />
+
+      <EducationSection />
     </>
   );
 
