@@ -1,0 +1,171 @@
+/* ==========================================
+   CV HERO
+========================================== */
+
+.cv-hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #ffffff
+    );
+
+}
+
+
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.cv-hero-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1.3fr 1fr;
+
+    gap:5rem;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.cv-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   TITLES
+========================================== */
+
+.cv-hero-left h1{
+
+    font-size:clamp(3rem,7vw,5.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.cv-hero-left h1 span{
+
+    color:var(--primary);
+
+}
+
+
+.cv-hero-left h2{
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.cv-hero-left p{
+
+    color:var(--text-light);
+
+    line-height:2;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.cv-hero-buttons{
+
+    display:flex;
+
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.cv-image-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+
+.cv-image-circle{
+
+    width:380px;
+
+    height:380px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      #60a5fa
+    );
+
+    opacity:.12;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .cv-hero-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

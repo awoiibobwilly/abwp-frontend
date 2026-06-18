@@ -38,6 +38,8 @@ function Navbar() {
 
           <NavLink to="/contact">Contact</NavLink>
 
+          <NavLink to="/cv">CV</NavLink>
+
         </nav>
 
         {/* Download CV */}
@@ -88,6 +90,10 @@ function Navbar() {
 
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
           Contact
+        </NavLink>
+
+        <NavLink to="/cv" onClick={() => setMenuOpen(false)}>
+          CV
         </NavLink>
 
         <a href="#" className="mobile-cv">
