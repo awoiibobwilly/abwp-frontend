@@ -1,0 +1,206 @@
+/* ==========================================
+   CONTACT CTA
+========================================== */
+
+.contact-cta{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.contact-cta-card{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:5rem;
+
+    text-align:center;
+
+    border-radius:2rem;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.contact-cta-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.contact-cta-card h2{
+
+    font-size:
+    clamp(2.5rem,5vw,4.5rem);
+
+    line-height:1.2;
+
+    color:white;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.contact-cta-card p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#cbd5e1;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.contact-cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.contact-btn-primary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.contact-btn-primary:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+
+.contact-btn-secondary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    border:
+    1px solid rgba(255,255,255,.2);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.contact-btn-secondary:hover{
+
+    transform:translateY(-5px);
+
+    background:
+    rgba(255,255,255,.08);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .contact-cta-card{
+
+        padding:3rem 2rem;
+
+    }
+
+}
