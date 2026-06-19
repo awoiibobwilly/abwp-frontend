@@ -12,6 +12,8 @@ import ToolsTemplates from
 "../components/knowledgeHub/ToolsTemplates";
 import PublicationsArchive from
 "../components/knowledgeHub/PublicationsArchive";
+import HubSearch from
+"../components/knowledgeHub/HubSearch";
 
 function Hub() {
 
@@ -32,6 +34,8 @@ function Hub() {
       <ToolsTemplates />
 
       <PublicationsArchive />
+
+      <HubSearch />
 
 
     </>
