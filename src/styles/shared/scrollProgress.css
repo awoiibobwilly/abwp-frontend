@@ -1,0 +1,17 @@
+/* ==========================================
+   SCROLL PROGRESS
+========================================== */
+
+.scroll-progress {
+
+    position: fixed;
+  
+    top: 90px; /* navbar height */
+  
+    left: 0;
+  
+    height: 3px;
+  
+    z-index: 1000;
+  
+  }
