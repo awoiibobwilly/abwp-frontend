@@ -6,6 +6,8 @@ import BookLibrary from
 "../components/knowledgeHub/BookLibrary";
 import VideoLibrary from
 "../components/knowledgeHub/VideoLibrary";
+import ResourceDirectory from
+"../components/knowledgeHub/ResourceDirectory";
 
 function Hub() {
 
@@ -20,6 +22,8 @@ function Hub() {
       <BookLibrary />
 
       <VideoLibrary />
+
+      <ResourceDirectory />
 
 
     </>
