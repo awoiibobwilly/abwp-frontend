@@ -1,0 +1,101 @@
+/* ==========================================
+   RESOURCE FILTERS
+========================================== */
+
+.resource-filters{
+
+    background:#fff;
+
+    padding-bottom:30px;
+
+}
+
+
+/* ==========================================
+   WRAPPER
+========================================== */
+
+.resource-filters-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.resource-filter-btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:1rem 1.8rem;
+
+    border-radius:999px;
+
+    background:#f8fafc;
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:
+    all .35s ease;
+
+}
+
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.resource-filter-btn.active{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+.resource-filter-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:
+    translateY(-3px);
+
+}
+
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.resource-filter-btn:focus{
+
+    box-shadow:
+    0 0 0 4px rgba(59,130,246,.15);
+
+}
