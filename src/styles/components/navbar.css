@@ -36,6 +36,7 @@
 
 }
 
+
 .nav-links{
 
   display:flex;
@@ -45,6 +46,7 @@
   align-items:center;
 
 }
+
 
 .nav-links a{
 
@@ -62,6 +64,7 @@
   color:var(--accent);
 
 }
+
 
 .cv-button{
 

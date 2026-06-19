@@ -36,6 +36,8 @@ function Navbar() {
 
           <NavLink to="/insights">Insights</NavLink>
 
+          <NavLink to="/knowledge-hub">Hub</NavLink>
+
           <NavLink to="/contact">Contact</NavLink>
 
           <NavLink to="/cv">CV</NavLink>
@@ -86,6 +88,10 @@ function Navbar() {
 
         <NavLink to="/insights" onClick={() => setMenuOpen(false)}>
           Insights
+        </NavLink>
+
+        <NavLink to="/knowledge-hub" onClick={() => setMenuOpen(false)}>
+          Hub
         </NavLink>
 
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>

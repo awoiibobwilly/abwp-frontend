@@ -11,6 +11,7 @@ import Research from "../pages/Research";
 import Insights from "../pages/Insights";
 import CV from "../pages/CV";
 import Contact from "../pages/Contact";
+import Hub from "../pages/Hub";
 
 function AppRoutes() {
   return (
@@ -56,6 +57,10 @@ function AppRoutes() {
             path="/cv"
             element={<CV />}
           />
+
+          <Route 
+            path="/knowledge-hub" 
+            element={<Hub />} />  
 
           <Route
             path="/contact"
