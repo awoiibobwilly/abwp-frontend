@@ -10,6 +10,8 @@ import ResourceDirectory from
 "../components/knowledgeHub/ResourceDirectory";
 import ToolsTemplates from
 "../components/knowledgeHub/ToolsTemplates";
+import PublicationsArchive from
+"../components/knowledgeHub/PublicationsArchive";
 
 function Hub() {
 
@@ -28,6 +30,8 @@ function Hub() {
       <ResourceDirectory />
 
       <ToolsTemplates />
+
+      <PublicationsArchive />
 
 
     </>
