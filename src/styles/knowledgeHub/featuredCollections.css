@@ -1,0 +1,203 @@
+/* ==========================================
+   COLLECTIONS
+========================================== */
+
+.featured-collections{
+
+    background:#fff;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.collections-header{
+
+    max-width:850px;
+
+    margin:0 auto 5rem;
+
+    text-align:center;
+
+}
+
+
+.collections-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.collections-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.collection-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:2.5rem;
+
+    border-radius:2rem;
+
+    background:white;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+
+.collection-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 30px 80px rgba(15,23,42,.12);
+
+}
+
+
+.collection-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--accent)
+    );
+
+    transition:.4s ease;
+
+}
+
+
+.collection-card:hover::before{
+
+    width:100%;
+
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.collection-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:1rem;
+
+    background:
+    rgba(59,130,246,.1);
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+    margin-bottom:1.5rem;
+
+    transition:.3s;
+
+}
+
+
+.collection-card:hover .collection-icon{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:
+    rotate(-8deg)
+    scale(1.08);
+
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.collection-count{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+
+.collection-card h3{
+
+    margin:
+    1rem 0;
+
+}
+
+
+.collection-card p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+}
