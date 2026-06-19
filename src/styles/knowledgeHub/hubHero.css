@@ -1,0 +1,136 @@
+/* ==========================================
+   HUB HERO
+========================================== */
+
+.hub-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:180px 0 120px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.hub-hero-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.hub-badge{
+
+    display:inline-block;
+
+    padding:.8rem 1.5rem;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================
+   TITLES
+========================================== */
+
+.hub-hero h1{
+
+    color:white;
+
+    font-size:
+    clamp(3rem,7vw,5rem);
+
+    margin-bottom:1.5rem;
+
+}
+
+
+.hub-hero h2{
+
+    color:white;
+
+    font-size:
+    clamp(1.8rem,4vw,3rem);
+
+    line-height:1.3;
+
+    margin-bottom:2rem;
+
+}
+
+
+.hub-hero p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    margin-bottom:3rem;
+
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.hub-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.5rem;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .hub-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}

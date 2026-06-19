@@ -1,14 +1,12 @@
-function KnowledgeHub() {
+import HubHero from "../components/knowledgeHub/HubHero";
 
-    return (
-        <section>
-            <div>
-                <h1> KnowledgeHub</h1>
-            </div>
-        </section>
- 
-    );
-  
-  }
-  
-  export default KnowledgeHub;
+function Hub() {
+
+  return (
+    <>
+      <HubHero />
+    </>
+  );
+}
+
+export default Hub;
