@@ -1,0 +1,226 @@
+/* ==========================================
+   HEADER
+========================================== */
+
+.tools-templates-header {
+
+    max-width: 850px;
+  
+    margin: 0 auto 5rem;
+  
+    text-align: center;
+  
+  }
+  
+  .tools-templates-badge {
+  
+    display: inline-block;
+  
+    padding: .8rem 1.5rem;
+  
+    margin-bottom: 1.5rem;
+  
+    border-radius: 999px;
+  
+    background: rgba(59,130,246,.1);
+  
+    color: var(--primary);
+  
+    font-weight: 600;
+  
+  }
+  
+  
+  /* ==========================================
+     GRID
+  ========================================== */
+  
+  .tools-templates-grid {
+  
+    display: grid;
+  
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+  
+    gap: 2rem;
+  
+  }
+  
+  
+  /* ==========================================
+     CARD
+  ========================================== */
+  
+  .tool-template-card {
+  
+    position: relative;
+  
+    overflow: hidden;
+  
+    padding: 2.5rem;
+  
+    border-radius: 2rem;
+  
+    background: white;
+  
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
+  
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+  
+  }
+  
+  .tool-template-card:hover {
+  
+    transform: translateY(-8px);
+  
+    box-shadow:
+    0 30px 80px rgba(15,23,42,.12);
+  
+  }
+  
+  .tool-template-card::before {
+  
+    content: "";
+  
+    position: absolute;
+  
+    top: 0;
+  
+    left: 0;
+  
+    width: 0;
+  
+    height: 4px;
+  
+    background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--accent)
+    );
+  
+    transition: .35s ease;
+  
+  }
+  
+  .tool-template-card:hover::before {
+  
+    width: 100%;
+  
+  }
+  
+  
+  /* ==========================================
+     ICON
+  ========================================== */
+  
+  .tool-template-icon {
+  
+    width: 65px;
+  
+    height: 65px;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    margin-bottom: 1.5rem;
+  
+    border-radius: 1rem;
+  
+    background: rgba(59,130,246,.1);
+  
+    color: var(--primary);
+  
+    font-size: 1.4rem;
+  
+  }
+  
+  
+  /* ==========================================
+     TEXT
+  ========================================== */
+  
+  .tool-template-category {
+  
+    display: inline-block;
+  
+    margin-bottom: 1rem;
+  
+    color: var(--primary);
+  
+    font-size: .9rem;
+  
+    font-weight: 600;
+  
+  }
+  
+  .tool-template-card p {
+  
+    color: var(--text-light);
+  
+    line-height: 1.8;
+  
+    margin-top: 1rem;
+  
+  }
+  
+  
+  /* ==========================================
+     FOOTER
+  ========================================== */
+  
+  .tool-template-footer {
+  
+    display: flex;
+  
+    justify-content: space-between;
+  
+    align-items: center;
+  
+    margin-top: 2rem;
+  
+  }
+  
+  .tool-template-type {
+  
+    padding: .45rem .9rem;
+  
+    border-radius: 999px;
+  
+    background: #f8fafc;
+  
+    color: var(--primary);
+  
+    font-weight: 600;
+  
+    font-size: .85rem;
+  
+  }
+  
+  .tool-template-download {
+  
+    display: flex;
+  
+    align-items: center;
+  
+    gap: .7rem;
+  
+    color: var(--primary);
+  
+    font-weight: 600;
+  
+    transition: .3s ease;
+  
+  }
+  
+  .tool-template-download:hover {
+  
+    color: var(--accent);
+  
+  }

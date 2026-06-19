@@ -8,6 +8,8 @@ import VideoLibrary from
 "../components/knowledgeHub/VideoLibrary";
 import ResourceDirectory from
 "../components/knowledgeHub/ResourceDirectory";
+import ToolsTemplates from
+"../components/knowledgeHub/ToolsTemplates";
 
 function Hub() {
 
@@ -24,6 +26,8 @@ function Hub() {
       <VideoLibrary />
 
       <ResourceDirectory />
+
+      <ToolsTemplates />
 
 
     </>
