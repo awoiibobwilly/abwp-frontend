@@ -103,6 +103,6 @@ import {
       icon: FaChartLine,
       title: "Y – Yield",
       description:
-        "I measure success by the positive outcomes I create—stronger systems, healthier communities, innovative solutions, and sustainable impact.",
+        "I measure success by the positive outcomes I create stronger systems, healthier communities, innovative solutions, and sustainable impact.",
     },
   ];
