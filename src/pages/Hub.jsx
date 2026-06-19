@@ -4,6 +4,8 @@ import ResourceFilters from
 "../components/knowledgeHub/ResourceFilters";
 import BookLibrary from
 "../components/knowledgeHub/BookLibrary";
+import VideoLibrary from
+"../components/knowledgeHub/VideoLibrary";
 
 function Hub() {
 
@@ -16,6 +18,8 @@ function Hub() {
       <ResourceFilters />
 
       <BookLibrary />
+
+      <VideoLibrary />
 
 
     </>
