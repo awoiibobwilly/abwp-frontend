@@ -6,6 +6,7 @@ import ScrollProgress from "../components/shared/ScrollProgress";
 import PageTransition from "../components/shared/PageTransition";
 import BackToTop
 from "../components/shared/BackToTop";
+import BredKrums from "../components/shared/BredKrums";
 
 function MainLayout() {
   return (
@@ -13,6 +14,8 @@ function MainLayout() {
       <ScrollProgress />
 
       <Navbar />
+
+      <BredKrums />
 
       <main className="main-content">
 
