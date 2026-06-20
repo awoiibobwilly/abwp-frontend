@@ -12,6 +12,7 @@ import Insights from "../pages/Insights";
 import CV from "../pages/CV";
 import Contact from "../pages/Contact";
 import Hub from "../pages/Hub";
+import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
   return (
@@ -66,6 +67,10 @@ function AppRoutes() {
             path="/contact"
             element={<Contact />}
           />
+
+          <Route 
+            path="*" 
+            element={<NotFound />} />
 
         </Route>
 

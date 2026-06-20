@@ -1,0 +1,119 @@
+/* ==========================================
+   ERROR PAGE
+========================================== */
+
+.error-page {
+
+    min-height: 100vh;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    padding: 2rem;
+  
+    background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b
+    );
+  
+  }
+  
+  
+  /* ==========================================
+     CARD
+  ========================================== */
+  
+  .error-card {
+  
+    position: relative;
+  
+    overflow: hidden;
+  
+    max-width: 750px;
+  
+    width: 100%;
+  
+    padding: 5rem 3rem;
+  
+    text-align: center;
+  
+    border-radius: 2rem;
+  
+    background:
+    rgba(255,255,255,.08);
+  
+    backdrop-filter:
+    blur(20px);
+  
+    border:
+    1px solid rgba(255,255,255,.1);
+  
+  }
+  
+  
+  /* ==========================================
+     CODE
+  ========================================== */
+  
+  .error-code {
+  
+    display: block;
+  
+    font-size:
+    clamp(5rem,10vw,8rem);
+  
+    font-weight: 800;
+  
+    color: white;
+  
+    line-height: 1;
+  
+    margin-bottom: 2rem;
+  
+  }
+  
+  
+  /* ==========================================
+     TEXT
+  ========================================== */
+  
+  .error-card h1 {
+  
+    color: white;
+  
+    margin-bottom: 1.5rem;
+  
+  }
+  
+  
+  .error-card p {
+  
+    color: #cbd5e1;
+  
+    line-height: 1.8;
+  
+    margin-bottom: 3rem;
+  
+  }
+  
+  
+  /* ==========================================
+     BUTTONS
+  ========================================== */
+  
+  .error-buttons {
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    gap: 1.5rem;
+  
+    flex-wrap: wrap;
+  
+  }
