@@ -1,3 +1,5 @@
+import { FaCircleExclamation } from "react-icons/fa6";
+
 function FormError({ message }) {
 
     if (!message) return null;
@@ -6,7 +8,13 @@ function FormError({ message }) {
 
         <div className="form-error">
 
-            {message}
+            <FaCircleExclamation />
+
+            <span>
+
+                {message}
+
+            </span>
 
         </div>
 

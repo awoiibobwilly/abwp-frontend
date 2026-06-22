@@ -1,3 +1,5 @@
+import { FaCircleCheck } from "react-icons/fa6";
+
 function FormSuccess({ message }) {
 
     if (!message) return null;
@@ -6,7 +8,13 @@ function FormSuccess({ message }) {
 
         <div className="form-success">
 
-            {message}
+            <FaCircleCheck />
+
+            <span>
+
+                {message}
+
+            </span>
 
         </div>
 

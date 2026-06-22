@@ -76,6 +76,12 @@ function ContactForm() {
     try {
       await sendContactMessage(formData);
       setSuccess("Thank you! Your message has been received.");
+
+      setTimeout(() => {
+
+        setSuccess("");
+    
+        }, 5000);
       
       setFormData({
         full_name: "",
@@ -86,7 +92,7 @@ function ContactForm() {
 
       setTimeout(() => {
         setSuccess("");
-      }, 5000);
+      }, 7000);
     } catch (err) {
       setError(getErrorMessage(err));
     } finally {

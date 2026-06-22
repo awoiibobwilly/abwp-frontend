@@ -1,0 +1,92 @@
+/*==========================================
+  FORM MESSAGES
+==========================================*/
+
+
+/*==========================================
+  BASE MESSAGE
+==========================================*/
+
+.form-error,
+.form-success{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem 1.25rem;
+
+    margin-bottom:2rem;
+
+    border-radius:1rem;
+
+    animation:fadeIn .3s ease;
+
+}
+
+
+.form-error svg,
+.form-success svg{
+
+    flex-shrink:0;
+
+    font-size:1.1rem;
+
+}
+
+
+/*==========================================
+  ERROR
+==========================================*/
+
+.form-error{
+
+    background:#fef2f2;
+
+    color:#dc2626;
+
+    border-left:4px solid #dc2626;
+
+}
+
+
+/*==========================================
+  SUCCESS
+==========================================*/
+
+.form-success{
+
+    background:#ecfdf5;
+
+    color:#16a34a;
+
+    border-left:4px solid #16a34a;
+
+}
+
+
+/*==========================================
+  ANIMATIONS
+==========================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
