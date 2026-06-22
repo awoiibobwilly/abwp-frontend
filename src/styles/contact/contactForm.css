@@ -201,6 +201,17 @@
 
 }
 
+.form-error{
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
 
 /* ==========================================
    RESPONSIVE
