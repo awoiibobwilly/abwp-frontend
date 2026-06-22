@@ -103,7 +103,7 @@ function Footer() {
 
             <NavLink to="/insights">Insights</NavLink>
 
-            <NavLink to="/knowledge-hub">Hub</NavLink>
+            <NavLink to="/knowledge-hub"> The Hub</NavLink>
 
             <NavLink to="/contact">Contact</NavLink>
 

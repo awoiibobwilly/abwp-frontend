@@ -17,7 +17,7 @@ function HubHero() {
 
           <h1>
 
-            Hub
+            The Knowledge Hub
 
           </h1>
 
