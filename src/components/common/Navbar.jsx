@@ -2,6 +2,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 
+import logo from "../../assets/images/abwp-logo-one.png";
+
+
 import "../../styles/components/navbar.css";
 
 function Navbar() {
@@ -14,12 +17,25 @@ function Navbar() {
       <div className="container navbar-container">
 
         {/* Logo */}
-        <NavLink
-          to="/"
-          className="logo"
-        >
-          Awoii Bob Willy
-        </NavLink>
+
+          <NavLink
+            to="/"
+            className="logo"
+          >
+
+            <img
+              src={logo}
+              alt="Awoii Bob Willy Logo"
+              className="logo-image"
+            />
+
+            <span className="logo-text">
+
+              Awoii Bob Willy
+
+            </span>
+
+          </NavLink>
 
         {/* Desktop Navigation */}
         <nav className="nav-links">

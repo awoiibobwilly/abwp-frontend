@@ -154,3 +154,27 @@
   }
 
 }
+
+.logo {
+
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+
+}
+
+.logo-image {
+
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+}
+
+.logo-text {
+
+    font-size: 1.15rem;
+    font-weight: 700;
+
+}

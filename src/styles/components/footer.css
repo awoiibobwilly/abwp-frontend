@@ -1,4 +1,27 @@
 /* ==========================================
+   FOOTER LOGO
+========================================== */
+
+.footer-logo {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+.footer-logo-image {
+
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+
+}
+
+
+/* ==========================================
    FOOTER
 ========================================== */
 
@@ -213,6 +236,29 @@
 
 }
 
+.footer-credit{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.25rem;
+
+    color:var(--text-light);
+
+}
+
+.footer-credit-name{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+
 
 /* ==========================================
    SCROLL BUTTON
@@ -246,6 +292,8 @@
 }
 
 
+
+
 /* ==========================================
    RESPONSIVE
 ========================================== */
@@ -269,11 +317,18 @@
 
     }
 
+}
+
+
+@media (max-width:768px){
+
     .footer-bottom{
 
         flex-direction:column;
 
-        gap:1.5rem;
+        align-items:center;
+
+        text-align:center;
 
     }
 

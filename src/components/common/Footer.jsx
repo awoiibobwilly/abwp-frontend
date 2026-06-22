@@ -6,6 +6,9 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 
+import logo from "../../assets/images/abwp-logo-two.png";
+
+
 import "../../styles/components/footer.css";
 
 function Footer() {
@@ -28,7 +31,23 @@ function Footer() {
           {/* BRAND */}
           <div className="footer-brand">
 
-            <h3>Awoii Bob Willy</h3>
+
+              <div className="footer-logo">
+
+                <img
+                  src={logo}
+                  alt="Awoii Bob Willy Logo"
+                  className="footer-logo-image"
+                />
+
+                <h3>
+
+                  Awoii Bob Willy
+
+                </h3>
+
+              </div>
+
 
             <p className="footer-tagline">
               Bridging Health, Data, and Technology for Impact.
@@ -150,21 +169,43 @@ function Footer() {
 
 
         {/* BOTTOM */}
-        <div className="footer-bottom">
 
-          <p>
-            © {new Date().getFullYear()} Awoii Bob Willy.
-            All Rights Reserved.
-          </p>
+      
+<div className="footer-bottom">
 
-          <button
-            className="scroll-top-btn"
-            onClick={scrollToTop}
-          >
-            <FaArrowUp />
-          </button>
+  <div className="footer-bottom-text">
 
-        </div>
+    <p>
+      © {new Date().getFullYear()} Awoii Bob Willy.
+      All Rights Reserved.
+    </p>
+
+    <br />
+
+    <p className="footer-credit">
+
+      Designed, Developed, and Maintained By:
+
+    </p>
+
+    <br />
+
+    <p className="footer-credit-name"> 
+      Awoii Tech Systems
+    </p>
+
+  </div>
+
+  <button
+    className="scroll-top-btn"
+    onClick={scrollToTop}
+  >
+    <FaArrowUp />
+  </button>
+
+</div>
+
+
 
       </div>
 
