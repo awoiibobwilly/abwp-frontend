@@ -1,17 +1,24 @@
 import { useState } from "react";
+import { sendContactMessage } from "../../services/contactService";
 
 import "../../styles/contact/contactForm.css";
 
 function ContactForm() {
 
   const [formData, setFormData] = useState({
-    fullName: "",
+    full_name: "",
     email: "",
     subject: "",
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [success, setSuccess] = useState("");
+
+  const [error, setError] = useState("");
+
+
 
   const handleChange = (e) => {
 
@@ -22,27 +29,58 @@ function ContactForm() {
 
   };
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
 
     e.preventDefault();
 
-    // Future API Integration
-    console.log(formData);
+    setLoading(true);
 
-    setSubmitted(true);
+    setSuccess("");
 
-    setFormData({
-      fullName: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setError("");
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    try {
+
+      await sendContactMessage(formData);
+
+      setSuccess(
+        "Thank you! Your message has been received."
+      );
+
+      setFormData({
+        full_name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+
+        setSuccess("");
+
+      }, 5000);
+
+    }
+
+    catch (err) {
+
+      setError(
+        "Something went wrong. Please try again."
+      );
+
+    }
+
+    finally {
+
+      setLoading(false);
+
+    }
 
   };
+
+
 
   return (
 
@@ -66,25 +104,41 @@ function ContactForm() {
 
           <p className="section-subtitle">
 
-            Have a project, collaboration opportunity, research idea,
-            or simply wish to connect? Feel free to send a message.
+            Have a project, collaboration opportunity,
+            research idea, or simply wish to connect?
+            Feel free to send a message.
 
           </p>
 
         </div>
 
 
+
         <div className="contact-form-card">
 
-          {submitted && (
+          {success && (
 
             <div className="form-success">
 
-              Thank you! Your message has been received.
+              {success}
 
             </div>
 
           )}
+
+
+
+          {error && (
+
+            <div className="form-error">
+
+              {error}
+
+            </div>
+
+          )}
+
+
 
           <form onSubmit={handleSubmit}>
 
@@ -92,9 +146,9 @@ function ContactForm() {
 
               <input
                 type="text"
-                name="fullName"
+                name="full_name"
                 placeholder=" "
-                value={formData.fullName}
+                value={formData.full_name}
                 onChange={handleChange}
                 required
               />
@@ -106,6 +160,7 @@ function ContactForm() {
               </label>
 
             </div>
+
 
 
             <div className="form-group">
@@ -128,6 +183,7 @@ function ContactForm() {
             </div>
 
 
+
             <div className="form-group">
 
               <input
@@ -146,6 +202,7 @@ function ContactForm() {
               </label>
 
             </div>
+
 
 
             <div className="form-group">
@@ -168,12 +225,22 @@ function ContactForm() {
             </div>
 
 
+
             <button
               type="submit"
               className="contact-submit-btn"
+              disabled={loading}
             >
 
-              Send Message
+              {
+
+                loading
+
+                ? "Sending..."
+
+                : "Send Message"
+
+              }
 
             </button>
 
