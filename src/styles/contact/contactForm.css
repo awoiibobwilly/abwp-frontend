@@ -109,6 +109,14 @@
 
 }
 
+.honeypot-field{
+
+    position:absolute;
+
+    left:-9999px;
+
+}
+
 
 /* ==========================================
    FLOATING LABELS

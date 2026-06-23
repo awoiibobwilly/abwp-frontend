@@ -4,12 +4,20 @@ import { getErrorMessage } from "../../utils/getErrorMessage";
 import "../../styles/contact/contactForm.css";
 
 function ContactForm() {
+
   const [formData, setFormData] = useState({
-    full_name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+
+      full_name: "",
+
+      email: "",
+
+      subject: "",
+
+      message: "",
+
+      honeypot: "",
+
+      });
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
@@ -166,6 +174,26 @@ function ContactForm() {
               />
               <label>Message</label>
             </div>
+            <input
+
+                type="text"
+
+                name="honeypot"
+
+                value={formData.honeypot}
+
+                onChange={handleChange}
+
+                autoComplete="off"
+
+                tabIndex="-1"
+
+                style={{
+                    display: "none"
+                }}
+
+            />
+
 
             <button
               type="submit"
