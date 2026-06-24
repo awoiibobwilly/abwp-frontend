@@ -1,37 +1,105 @@
-import ExpertiseCard from "./ExpertiseCard";
-import { expertiseData } from "../../data/home/expertiseData";
+import { useEffect, useState } from "react";
+
+import { getExpertise } from "../../services/homeService";
 
 import "../../styles/home/expertise.css";
+import { iconMap } from "../../utils/iconMapper";
+
 
 function Expertise() {
+
+  const [expertise, setExpertise] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+
+    const fetchExpertise = async () => {
+
+      try {
+
+        const data = await getExpertise();
+
+        setExpertise(data);
+
+      }
+
+      catch (error) {
+
+        console.error(
+
+          "Expertise Error:",
+
+          error
+
+        );
+
+      }
+
+      finally {
+
+        setLoading(false);
+
+      }
+
+    };
+
+    fetchExpertise();
+
+  }, []);
+
+
+  if (loading) {
+
+    return null;
+
+  }
+
+
   return (
-    <section className="expertise section">
+
+    <section className="expertise">
 
       <div className="container">
 
-        <div className="section-header">
-
-          <h2 className="section-title">
-            My Expertise
-          </h2>
-
-          <p className="section-subtitle">
-            Building solutions across technology, health,
-            data, research, and leadership.
-          </p>
-
-        </div>
-
         <div className="expertise-grid">
 
-          {
-            expertiseData.map((item, index) => (
-              <ExpertiseCard
-                key={index}
-                title={item.title}
-                description={item.description}
-              />
-            ))
+        {
+            expertise.map((item) => {
+
+              const Icon = iconMap[item.icon];
+
+              return (
+
+                <div
+                  className="expertise-card"
+                  key={item.id}
+                >
+
+                  <div className="expertise-icon">
+
+                    {Icon && <Icon />}
+
+                  </div>
+
+                  <h3>
+
+                    {item.title}
+
+                  </h3>
+
+                  <p>
+
+                    {item.description}
+
+                  </p>
+
+                </div>
+
+              );
+
+            })
           }
 
         </div>
@@ -39,7 +107,9 @@ function Expertise() {
       </div>
 
     </section>
+
   );
+
 }
 
 export default Expertise;

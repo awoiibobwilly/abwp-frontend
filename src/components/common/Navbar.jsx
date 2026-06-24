@@ -2,12 +2,17 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 
+import { useNavigate } from "react-router-dom";
+
+
 import logo from "../../assets/images/abwp-logo-one.png";
 
 
 import "../../styles/components/navbar.css";
 
 function Navbar() {
+
+  const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -61,9 +66,10 @@ function Navbar() {
         </nav>
 
         {/* Download CV */}
-        <a
-          href="#"
-          className="cv-button"
+         <a
+          href="/documents/awoii-bob-willy-cv.pdf"
+          download
+          className="btn btn-primary"
         >
           Download CV
         </a>
@@ -118,7 +124,11 @@ function Navbar() {
           CV
         </NavLink>
 
-        <a href="#" className="mobile-cv">
+        <a
+          href="/documents/awoii-bob-willy-cv.pdf"
+          download
+          className="btn btn-secondary"
+        >
           Download CV
         </a>
 

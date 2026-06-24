@@ -1,14 +1,23 @@
+import { useNavigate } from "react-router-dom";
+
+import { NavLink } from "react-router-dom";
+
+
 import {
   FaGithub,
   FaLinkedin,
-  FaEnvelope
+  FaEnvelope,
 } from "react-icons/fa";
 
 import { heroData } from "../../data/home/heroData";
 
 import "../../styles/home/hero-content.css";
 
+
 function HeroContent() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="hero-content">
 
@@ -35,17 +44,27 @@ function HeroContent() {
       {/* Buttons */}
       <div className="hero-buttons">
 
-        <button className="btn btn-primary">
+        <NavLink
+          to="/projects"
+          className="btn btn-secondary"
+        >
           Explore Portfolio
-        </button>
+        </NavLink>
 
-        <button className="btn btn-secondary">
+        <a
+          href="/documents/awoii-bob-willy-cv.pdf"
+          download
+          className="btn btn-primary"
+        >
           Download CV
-        </button>
+        </a>
 
-        <button className="btn btn-outline">
+        <NavLink
+          to="/contact"
+          className="btn btn-outline"
+        >
           Contact Me
-        </button>
+        </NavLink>
 
       </div>
 

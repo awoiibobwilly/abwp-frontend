@@ -13,3 +13,15 @@ export const getStatistics = async () => {
   return response.data;
 
 };
+
+export const getExpertise = async () => {
+
+  const response = await axios.get(
+
+    `${import.meta.env.VITE_API_BASE_URL}/home/expertise/`
+
+  );
+
+  return response.data;
+
+};
