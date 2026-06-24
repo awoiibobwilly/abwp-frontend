@@ -1,14 +1,61 @@
 import { useEffect, useState } from "react";
 
-import CountUpModule from "react-countup";
-
-const CountUp = CountUpModule.default;
-
-console.log(CountUp);
-
 import { getStatistics } from "../../services/homeService";
 
 import "../../styles/home/hero-stats.css";
+
+
+function AnimatedNumber({
+
+  value,
+
+}) {
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+
+    const end = Number(value);
+
+    const duration = 2000;
+
+    const stepTime = 20;
+
+    const increment = end / (duration / stepTime);
+
+    let current = 0;
+
+    const timer = setInterval(() => {
+
+      current += increment;
+
+      if (current >= end) {
+
+        setCount(end);
+
+        clearInterval(timer);
+
+      }
+
+      else {
+
+        setCount(
+
+          Math.floor(current)
+
+        );
+
+      }
+
+    }, stepTime);
+
+    return () => clearInterval(timer);
+
+  }, [value]);
+
+  return count.toLocaleString();
+
+}
 
 
 function HeroStats() {
@@ -26,51 +73,30 @@ function HeroStats() {
 
         const data = await getStatistics();
 
-        setStats(
-
-          data
-
-        );
+        setStats(data);
 
       }
 
-      catch (
+      catch (error) {
 
-        error
-
-      ) {
-
-        console.error(
-
-          error
-
-        );
+        console.error(error);
 
       }
 
       finally {
 
-        setLoading(
-
-          false
-
-        );
+        setLoading(false);
 
       }
 
     };
-
 
     fetchStatistics();
 
   }, []);
 
 
-  if (
-
-    loading
-
-  ) {
+  if (loading) {
 
     return null;
 
@@ -83,43 +109,32 @@ function HeroStats() {
 
       {
 
-        stats.map(
+        stats.map((stat) => (
 
-          (
-
-            stat
-
-          ) => (
-
-            <div
-
-              className="hero-stat-card"
-
-              key={stat.id}
-
-            >
+          <div
+            className="hero-stat-card"
+            key={stat.id}
+          >
 
             <h3>
-                <CountUp
-                    start={0}
-                    end={Number(stat.value)}
-                    duration={2}
-                />
 
-                {stat.suffix}
+              <AnimatedNumber
+                value={stat.value}
+              />
+
+              {stat.suffix}
+
             </h3>
 
-              <span>
+            <span>
 
-                {stat.title}
+              {stat.title}
 
-              </span>
+            </span>
 
-            </div>
+          </div>
 
-          )
-
-        )
+        ))
 
       }
 
@@ -128,6 +143,5 @@ function HeroStats() {
   );
 
 }
-
 
 export default HeroStats;
