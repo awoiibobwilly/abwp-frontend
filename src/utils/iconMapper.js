@@ -5,6 +5,12 @@ import {
     FaChartLine,
     FaMicroscope,
     FaUsersCog,
+    FaFolderOpen,
+    FaAward,
+    FaGraduationCap,
+    FaUsers,
+    FaLayerGroup,
+    FaMedal,
   } from "react-icons/fa";
   
   export const iconMap = {
@@ -14,4 +20,10 @@ import {
     FaChartLine,
     FaMicroscope,
     FaUsersCog,
+    FaFolderOpen,
+    FaAward,
+    FaGraduationCap,
+    FaUsers,
+    FaLayerGroup,
+    FaMedal,
   };

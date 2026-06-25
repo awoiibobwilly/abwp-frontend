@@ -63,6 +63,19 @@ function Expertise() {
 
       <div className="container">
 
+      <div className="section-header">
+
+      <h2 className="section-title">
+        Expertise
+      </h2>
+
+      <p className="section-subtitle">
+      A diverse toolkit spanning technical innovation, 
+      data-driven research, and strategic execution.
+      </p>
+
+      </div>
+
         <div className="expertise-grid">
 
         {

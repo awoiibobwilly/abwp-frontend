@@ -25,3 +25,15 @@ export const getExpertise = async () => {
   return response.data;
 
 };
+
+export const getHighlights = async () => {
+
+  const response = await axios.get(
+
+    `${import.meta.env.VITE_API_BASE_URL}/home/highlights/`
+
+  );
+
+  return response.data;
+
+};
