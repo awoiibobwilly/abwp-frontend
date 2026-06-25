@@ -6,6 +6,8 @@ import { iconMap } from "../../utils/iconMapper";
 
 import "../../styles/home/highlights.css";
 
+import HighlightCounter from "./HighlightCounter";
+
 
 function Highlights() {
 
@@ -92,13 +94,17 @@ function Highlights() {
 
                 </div>
 
-    <h3>
+                <h3>
 
-        {item.value}
+                <HighlightCounter
 
-        {item.suffix}
+              value={item.value}
 
-    </h3>
+              suffix={item.suffix}
+
+              />
+
+            </h3>
 
     <span>
 
