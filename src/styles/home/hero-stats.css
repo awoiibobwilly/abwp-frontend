@@ -58,6 +58,38 @@
 
 }
 
+.hero-stat-icon{
+
+  width:56px;
+
+  height:56px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  margin:0 auto 1rem;
+
+  border-radius:50%;
+
+  background:rgba(37,99,235,.08);
+
+  color:var(--accent);
+
+  font-size:1.6rem;
+
+  transition:.3s ease;
+
+}
+
+.hero-stat-card:hover .hero-stat-icon{
+
+  transform:scale(1.08);
+
+}
+
 
 /* ==========================================
  RESPONSIVE

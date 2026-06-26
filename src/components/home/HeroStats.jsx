@@ -4,6 +4,8 @@ import { getStatistics } from "../../services/statisticsService";
 
 import "../../styles/home/hero-stats.css";
 
+import { getIcon } from "../../utils/iconMapper";
+
 
 function AnimatedNumber({
 
@@ -107,36 +109,44 @@ function HeroStats() {
 
     <div className="hero-stats">
 
-      {
+    {
+      stats.map((stat) => {
+        // 1. Get the icon before returning the JSX
+        const Icon = getIcon(stat.icon);
 
-        stats.map((stat) => (
-
+        // 2. Explicitly return the JSX code
+        return (
           <div
-            className="hero-stat-card"
-            key={stat.id}
+              className="hero-stat-card"
+              key={stat.id}
           >
 
-            <h3>
+              <div className="hero-stat-icon">
 
-              <AnimatedNumber
-                value={stat.value}
-              />
+                  <Icon />
 
-              {stat.suffix}
+              </div>
 
-            </h3>
+              <h3>
 
-            <span>
+                  <AnimatedNumber
+                      value={stat.value}
+                  />
 
-              {stat.title}
+                  {stat.suffix}
 
-            </span>
+              </h3>
+
+              <span>
+
+                  {stat.title}
+
+              </span>
 
           </div>
-
-        ))
-
-      }
+        );
+      })
+    }
 
     </div>
 
