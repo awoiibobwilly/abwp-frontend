@@ -3,10 +3,10 @@ export const heroData = {
 
   name: "Awoii Bob Willy",
 
-  tagline: "Bridging Health, Data, and Technology for Impact",
+  tagline: "Building Modern Healthcare, Research and Enterprise Software with React and Django.",
 
   summary:
-  "I build digital solutions, conduct research, and leverage data and technology to solve real-world challenges across health, education, and community development.",
+  "I design and develop secure, scalable, user-centered digital products that solve real-world problems across healthcare, education, research, and enterprise systems.",
 
   stats: [
     {

@@ -44,26 +44,27 @@ function HeroContent() {
       {/* Buttons */}
       <div className="hero-buttons">
 
-        <NavLink
+          <NavLink
           to="/projects"
-          className="btn btn-secondary"
+          className="btn btn-primary"
         >
-          Explore Portfolio
+          View My Projects
         </NavLink>
 
         <a
           href="/documents/awoii-bob-willy-cv.pdf"
           download
-          className="btn btn-primary"
+          className="btn btn-secondary"
         >
           Download CV
         </a>
 
-        <NavLink
+          <NavLink
           to="/contact"
-          className="btn btn-outline"
+          className="hero-text-link"
         >
-          Contact Me
+          Let's Talk
+          <span>→</span>
         </NavLink>
 
       </div>

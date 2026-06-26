@@ -1,6 +1,7 @@
 import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 import HeroStats from "./HeroStats";
+import TrustStrip from "./TrustStrip";
 
 import "../../styles/home/hero.css";
 
@@ -21,6 +22,11 @@ function Hero() {
             <HeroImage />
           </div>
 
+        </div>
+
+         {/* HERO STRIP */}
+         <div className="hero-strip">
+         <TrustStrip />
         </div>
 
         {/* HERO BOTTOM */}

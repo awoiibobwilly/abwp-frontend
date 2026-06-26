@@ -1,0 +1,127 @@
+/* ==========================================
+   TRUST STRIP
+========================================== */
+
+.trust-strip{
+
+    position:relative;
+
+    margin-top:3rem;
+
+    padding:1.25rem 0;
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.trust-strip-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1.5rem;
+
+}
+
+/* ==========================================
+   ITEM
+========================================== */
+
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+    transition:.35s ease;
+
+}
+
+.trust-item:hover{
+
+    transform:translateY(-2px);
+
+    color:var(--accent);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.trust-icon{
+
+    color:var(--accent);
+
+    font-size:.95rem;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+    .trust-strip{
+
+        margin-top:2rem;
+
+        padding:1rem 0;
+
+    }
+
+    .trust-strip-content{
+
+        gap:1rem;
+
+        justify-content:flex-start;
+
+    }
+
+    .trust-item{
+
+        width:calc(50% - .5rem);
+
+        font-size:.9rem;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .trust-item{
+
+        width:100%;
+
+    }
+
+}
