@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getExpertise } from "../../services/homeService";
+import { getExpertise } from "../../services/expertiseService";
 
 import "../../styles/home/expertise.css";
 import { iconMap } from "../../utils/iconMapper";

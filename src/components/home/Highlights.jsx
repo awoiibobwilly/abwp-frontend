@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getHighlights } from "../../services/homeService";
+import { getHighlights } from "../../services/highlightService";
 
 import { iconMap } from "../../utils/iconMapper";
 

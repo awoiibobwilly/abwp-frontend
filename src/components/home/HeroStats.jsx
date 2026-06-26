@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getStatistics } from "../../services/homeService";
+import { getStatistics } from "../../services/statisticsService";
 
 import "../../styles/home/hero-stats.css";
 
