@@ -6,6 +6,8 @@ import "../../styles/home/hero-stats.css";
 
 import { getIcon } from "../../utils/iconMapper";
 
+import HeroStatsSkeleton from "./HeroStatsSkeleton";
+
 
 function AnimatedNumber({
 
@@ -66,6 +68,8 @@ function HeroStats() {
 
   const [loading, setLoading] = useState(true);
 
+  const [error, setError] = useState("");
+
 
   useEffect(() => {
 
@@ -79,11 +83,19 @@ function HeroStats() {
 
       }
 
-      catch (error) {
+      catch (err) {
 
-        console.error(error);
-
-      }
+        console.error(err);
+    
+        setError(
+    
+            err?.detail ||
+    
+            "Unable to load statistics."
+    
+        );
+    
+    }
 
       finally {
 
@@ -100,9 +112,37 @@ function HeroStats() {
 
   if (loading) {
 
-    return null;
+    return <HeroStatsSkeleton />;
 
-  }
+}
+
+if (error) {
+
+  return (
+
+      <div className="hero-stats-error">
+
+          {error}
+
+      </div>
+
+  );
+
+}
+
+if (!stats.length) {
+
+  return (
+
+      <div className="hero-stats-empty">
+
+          Statistics coming soon.
+
+      </div>
+
+  );
+
+}
 
 
   return (

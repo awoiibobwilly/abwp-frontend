@@ -90,6 +90,24 @@
 
 }
 
+/* ==========================================
+   HERO STATS STATES
+========================================== */
+
+.hero-stats-error,
+
+.hero-stats-empty{
+
+    padding:2rem;
+
+    text-align:center;
+
+    color:var(--text-secondary);
+
+    font-weight:500;
+
+}
+
 
 /* ==========================================
  RESPONSIVE
