@@ -1,48 +1,38 @@
-import axios from "axios";
+import api from "./api";
 
-const API_URL =
-`${import.meta.env.VITE_API_BASE_URL}/contact/`;
+import {
+
+  normalizeObject,
+
+  handleApiError,
+
+} from "./apiHelpers";
 
 
 export const sendContactMessage = async (data) => {
 
-    try {
+  try {
 
-        const response = await axios.post(
-            API_URL,
-            data
-        );
+    const response = await api.post(
 
-        return response.data;
+      "/contact/",
 
-    }
+      data,
 
-    catch (error) {
+    );
 
-        if (error.response) {
+    return normalizeObject(
 
-            throw error.response.data;
+      response.data
 
-        }
+    );
 
-        if (error.request) {
+  }
 
-            throw {
+  catch (error) {
 
-                detail:
-                "Unable to connect to the server. Please try again later."
+    handleApiError(error);
 
-            };
-
-        }
-
-        throw {
-
-            detail:
-            "An unexpected error occurred."
-
-        };
-
-    }
+  }
 
 };

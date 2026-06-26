@@ -1,92 +1,84 @@
-import axios from "axios";
+import api from "./api";
 
-const API_URL =
-`${import.meta.env.VITE_API_BASE_URL}/home/journey/`;
+import {
+  normalizeCollection,
+  normalizeObject,
+  handleApiError,
+} from "./apiHelpers";
 
 /* ==========================================
-   Journey Preview
+   API ENDPOINTS
+========================================== */
+
+const JOURNEY_URL = "/home/journey/";
+
+/* ==========================================
+   JOURNEY PREVIEW
 ========================================== */
 
 export const getJourneyPreview = async () => {
 
   try {
 
-    const response = await axios.get(API_URL);
+    const response = await api.get(
+      JOURNEY_URL
+    );
 
-    return response.data;
+    return normalizeCollection(
+      response.data
+    );
 
-  }
+  } catch (error) {
 
-  catch (error) {
-
-    if (error.response) {
-
-      throw error.response.data;
-
-    }
-
-    if (error.request) {
-
-      throw {
-
-        detail:
-          "Unable to connect to the server.",
-
-      };
-
-    }
-
-    throw {
-
-      detail:
-        "Unexpected error.",
-
-    };
+    handleApiError(error);
 
   }
 
 };
 
 /* ==========================================
-   Full Journey
+   FULL JOURNEY
 ========================================== */
 
-export const getJourney = getJourneyPreview;
-
-/* ==========================================
-   Journey Detail
-========================================== */
-
-export const getJourneyDetail = async (
-  slug
-) => {
+export const getJourney = async () => {
 
   try {
 
-    const response = await axios.get(
-
-      `${API_URL}${slug}/`
-
+    const response = await api.get(
+      JOURNEY_URL
     );
 
-    return response.data;
+    return normalizeCollection(
+      response.data
+    );
+
+  } catch (error) {
+
+    handleApiError(error);
 
   }
 
-  catch (error) {
+};
 
-    if (error.response) {
+/* ==========================================
+   JOURNEY DETAIL
+========================================== */
 
-      throw error.response.data;
+export const getJourneyDetail = async (slug) => {
 
-    }
+  try {
 
-    throw {
+    const response = await api.get(
+      `${JOURNEY_URL}${slug}/`
+    );
 
-      detail:
-        "Unexpected error.",
+    return normalizeObject(
+      response.data
+    );
 
-    };
+  } catch (error) {
+
+    handleApiError(error);
 
   }
 

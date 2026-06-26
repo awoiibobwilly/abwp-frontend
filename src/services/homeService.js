@@ -1,39 +1,101 @@
-import axios from "axios";
+import api from "./api";
 
-const API_URL = `${import.meta.env.VITE_API_BASE_URL}/home/statistics/`;
+import {
+
+  normalizeCollection,
+
+  handleApiError,
+
+} from "./apiHelpers";
+
+/* ==========================================
+   STATISTICS
+========================================== */
 
 export const getStatistics = async () => {
 
-  const response = await axios.get(
+  try {
 
-    API_URL
+    const response = await api.get(
 
-  );
+      "/home/statistics/"
 
-  return response.data;
+    );
+
+    return normalizeCollection(
+
+      response.data
+
+    );
+
+  }
+
+  catch (error) {
+
+    handleApiError(error);
+
+  }
 
 };
+
+
+/* ==========================================
+   EXPERTISE
+========================================== */
 
 export const getExpertise = async () => {
 
-  const response = await axios.get(
+  try {
 
-    `${import.meta.env.VITE_API_BASE_URL}/home/expertise/`
+    const response = await api.get(
 
-  );
+      "/home/expertise/"
 
-  return response.data;
+    );
+
+    return normalizeCollection(
+
+      response.data
+
+    );
+
+  }
+
+  catch (error) {
+
+    handleApiError(error);
+
+  }
 
 };
 
+
+/* ==========================================
+   HIGHLIGHTS
+========================================== */
+
 export const getHighlights = async () => {
 
-  const response = await axios.get(
+  try {
 
-    `${import.meta.env.VITE_API_BASE_URL}/home/highlights/`
+    const response = await api.get(
 
-  );
+      "/home/highlights/"
 
-  return response.data;
+    );
+
+    return normalizeCollection(
+
+      response.data
+
+    );
+
+  }
+
+  catch (error) {
+
+    handleApiError(error);
+
+  }
 
 };

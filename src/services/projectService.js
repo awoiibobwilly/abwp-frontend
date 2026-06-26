@@ -1,47 +1,37 @@
-import axios from "axios";
+import api from "./api";
 
-const API_URL =
-`${import.meta.env.VITE_API_BASE_URL}/home/featured-projects/`;
+import {
+  normalizeCollection,
+  handleApiError,
+} from "./apiHelpers";
 
+/* ==========================================
+   API ENDPOINTS
+========================================== */
+
+const FEATURED_PROJECTS_URL =
+  "/home/featured-projects/";
+
+/* ==========================================
+   FEATURED PROJECTS
+========================================== */
 
 export const getFeaturedProjects = async () => {
 
-    try {
+  try {
 
-        const response = await axios.get(
-            API_URL
-        );
+    const response = await api.get(
+      FEATURED_PROJECTS_URL
+    );
 
-        return response.data;
+    return normalizeCollection(
+      response.data
+    );
 
-    }
+  } catch (error) {
 
-    catch (error) {
+    handleApiError(error);
 
-        if (error.response) {
-
-            throw error.response.data;
-
-        }
-
-        if (error.request) {
-
-            throw {
-
-                detail:
-                "Unable to connect to the server. Please try again later."
-
-            };
-
-        }
-
-        throw {
-
-            detail:
-            "An unexpected error occurred."
-
-        };
-
-    }
+  }
 
 };
