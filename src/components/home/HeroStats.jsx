@@ -45,7 +45,7 @@ function AnimatedNumber({
 
         setCount(
 
-          Math.floor(current)
+          Math.round(current)
 
         );
 
@@ -149,44 +149,41 @@ if (!stats.length) {
 
     <div className="hero-stats">
 
-    {
-      stats.map((stat) => {
-        // 1. Get the icon before returning the JSX
-        const Icon = getIcon(stat.icon);
+        {
+          // 1. Added 'index' here to keep track of each item's position
+          stats.map((stat, index) => {
+            
+            // 2. Get the icon before returning the JSX
+            const Icon = getIcon(stat.icon);
 
-        // 2. Explicitly return the JSX code
-        return (
-          <div
-              className="hero-stat-card"
-              key={stat.id}
-          >
-
-              <div className="hero-stat-icon">
-
+            // 3. Explicitly return the JSX code
+            return (
+              <div
+                className="hero-stat-card"
+                key={stat.id}
+                // 4. Added your staggered animation delay here
+                style={{
+                  animationDelay: `${index * 120}ms`
+                }}
+              >
+                <div className="hero-stat-icon">
                   <Icon />
+                </div>
 
-              </div>
-
-              <h3>
-
+                <h3>
                   <AnimatedNumber
-                      value={stat.value}
+                    value={stat.value}
                   />
-
                   {stat.suffix}
+                </h3>
 
-              </h3>
-
-              <span>
-
+                <span>
                   {stat.title}
-
-              </span>
-
-          </div>
-        );
-      })
-    }
+                </span>
+              </div>
+            );
+          })
+        }
 
     </div>
 
