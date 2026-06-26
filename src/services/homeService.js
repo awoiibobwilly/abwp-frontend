@@ -1,12 +1,11 @@
 import api from "./api";
 
 import {
-
   normalizeCollection,
-
   handleApiError,
-
 } from "./apiHelpers";
+
+import { ENDPOINTS } from "./endpoints";
 
 /* ==========================================
    STATISTICS
@@ -17,27 +16,20 @@ export const getStatistics = async () => {
   try {
 
     const response = await api.get(
-
-      "/home/statistics/"
-
+      ENDPOINTS.STATISTICS
     );
 
     return normalizeCollection(
-
       response.data
-
     );
 
-  }
-
-  catch (error) {
+  } catch (error) {
 
     handleApiError(error);
 
   }
 
 };
-
 
 /* ==========================================
    EXPERTISE
@@ -48,27 +40,20 @@ export const getExpertise = async () => {
   try {
 
     const response = await api.get(
-
-      "/home/expertise/"
-
+      ENDPOINTS.EXPERTISE
     );
 
     return normalizeCollection(
-
       response.data
-
     );
 
-  }
-
-  catch (error) {
+  } catch (error) {
 
     handleApiError(error);
 
   }
 
 };
-
 
 /* ==========================================
    HIGHLIGHTS
@@ -79,20 +64,14 @@ export const getHighlights = async () => {
   try {
 
     const response = await api.get(
-
-      "/home/highlights/"
-
+      ENDPOINTS.HIGHLIGHTS
     );
 
     return normalizeCollection(
-
       response.data
-
     );
 
-  }
-
-  catch (error) {
+  } catch (error) {
 
     handleApiError(error);
 

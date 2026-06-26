@@ -6,11 +6,7 @@ import {
   handleApiError,
 } from "./apiHelpers";
 
-/* ==========================================
-   API ENDPOINTS
-========================================== */
-
-const JOURNEY_URL = "/home/journey/";
+import { ENDPOINTS } from "./endpoints";
 
 /* ==========================================
    JOURNEY PREVIEW
@@ -21,7 +17,7 @@ export const getJourneyPreview = async () => {
   try {
 
     const response = await api.get(
-      JOURNEY_URL
+      ENDPOINTS.JOURNEY
     );
 
     return normalizeCollection(
@@ -45,7 +41,7 @@ export const getJourney = async () => {
   try {
 
     const response = await api.get(
-      JOURNEY_URL
+      ENDPOINTS.JOURNEY
     );
 
     return normalizeCollection(
@@ -69,7 +65,7 @@ export const getJourneyDetail = async (slug) => {
   try {
 
     const response = await api.get(
-      `${JOURNEY_URL}${slug}/`
+      `${ENDPOINTS.JOURNEY}${slug}/`
     );
 
     return normalizeObject(

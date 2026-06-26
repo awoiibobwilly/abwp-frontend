@@ -5,12 +5,7 @@ import {
   handleApiError,
 } from "./apiHelpers";
 
-/* ==========================================
-   API ENDPOINTS
-========================================== */
-
-const FEATURED_PROJECTS_URL =
-  "/home/featured-projects/";
+import { ENDPOINTS } from "./endpoints";
 
 /* ==========================================
    FEATURED PROJECTS
@@ -21,7 +16,7 @@ export const getFeaturedProjects = async () => {
   try {
 
     const response = await api.get(
-      FEATURED_PROJECTS_URL
+      ENDPOINTS.FEATURED_PROJECTS
     );
 
     return normalizeCollection(
