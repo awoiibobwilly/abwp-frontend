@@ -37,7 +37,15 @@ function FeaturedProjects() {
 
         const data = await getFeaturedProjects();
 
-        setProjects(data);
+        setProjects(
+
+          Array.isArray(data)
+      
+              ? data
+      
+              : data.results || []
+      
+      );
 
       }
 
