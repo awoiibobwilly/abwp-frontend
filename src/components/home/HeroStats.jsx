@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect,useRef,useState,} from "react";
 
 import { getStatistics } from "../../services/statisticsService";
 
@@ -70,6 +70,10 @@ function HeroStats() {
 
   const [error, setError] = useState("");
 
+  const [visible, setVisible] = useState(false);
+
+  const statsRef = useRef(null);
+
 
   useEffect(() => {
 
@@ -107,6 +111,40 @@ function HeroStats() {
 
     fetchStatistics();
 
+  }, []);
+
+  useEffect(() => {
+
+    const observer = new IntersectionObserver(
+  
+      ([entry]) => {
+  
+        if (entry.isIntersecting) {
+  
+          setVisible(true);
+  
+          observer.disconnect();
+  
+        }
+  
+      },
+  
+      {
+  
+        threshold: 0.25,
+  
+      }
+  
+    );
+  
+    if (statsRef.current) {
+  
+      observer.observe(statsRef.current);
+  
+    }
+  
+    return () => observer.disconnect();
+  
   }, []);
 
 
@@ -147,7 +185,7 @@ if (!stats.length) {
 
   return (
 
-    <div className="hero-stats">
+    <div className="hero-stats" ref={statsRef}>
 
         {
           // 1. Added 'index' here to keep track of each item's position
