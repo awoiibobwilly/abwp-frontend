@@ -1,13 +1,51 @@
-function ExpertiseCard({ title, description }) {
-    return (
-      <div className="expertise-card">
-  
-        <h3>{title}</h3>
-  
-        <p>{description}</p>
-  
-      </div>
-    );
-  }
-  
-  export default ExpertiseCard;
+import { getIcon } from "../../utils/iconMapper";
+
+function ExpertiseCard({
+
+  expertise,
+
+}) {
+
+  const Icon = getIcon(
+
+    expertise.icon
+
+  );
+
+  return (
+
+    <article className="expertise-card">
+
+      {
+
+        Icon && (
+
+          <div className="expertise-icon">
+
+            <Icon />
+
+          </div>
+
+        )
+
+      }
+
+      <h3>
+
+        {expertise.title}
+
+      </h3>
+
+      <p>
+
+        {expertise.description}
+
+      </p>
+
+    </article>
+
+  );
+
+}
+
+export default ExpertiseCard;

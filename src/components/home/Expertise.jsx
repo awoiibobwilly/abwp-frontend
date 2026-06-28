@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 
+import SectionHeader from "../common/SectionHeader";
+
+import ExpertiseCard from "./ExpertiseCard";
+import ExpertiseSkeleton from "./ExpertiseSkeleton";
+
 import { getExpertise } from "../../services/expertiseService";
 
 import "../../styles/home/expertise.css";
-import { iconMap } from "../../utils/iconMapper";
-
 
 function Expertise() {
+
+  // ==========================================
+  // State
+  // ==========================================
 
   const [expertise, setExpertise] = useState([]);
 
   const [loading, setLoading] = useState(true);
 
+  const [error, setError] = useState("");
+
+  // ==========================================
+  // Fetch Expertise
+  // ==========================================
 
   useEffect(() => {
 
@@ -19,19 +31,31 @@ function Expertise() {
 
       try {
 
+        setLoading(true);
+
+        setError("");
+
         const data = await getExpertise();
 
         setExpertise(data);
 
       }
 
-      catch (error) {
+      catch (err) {
 
         console.error(
 
           "Expertise Error:",
 
-          error
+          err
+
+        );
+
+        setError(
+
+          err?.detail ||
+
+          "Unable to load expertise."
 
         );
 
@@ -49,73 +73,127 @@ function Expertise() {
 
   }, []);
 
-
-  if (loading) {
-
-    return null;
-
-  }
-
+  // ==========================================
+  // Component
+  // ==========================================
 
   return (
 
-    <section className="expertise">
+    <section
+
+      className="expertise section"
+
+      id="expertise"
+
+    >
 
       <div className="container">
 
-      <div className="section-header">
+        {/* ===================================
+            Section Header
+        ==================================== */}
 
-      <h2 className="section-title">
-        Expertise
-      </h2>
+        <SectionHeader
 
-      <p className="section-subtitle">
-      A diverse toolkit spanning technical innovation, 
-      data-driven research, and strategic execution.
-      </p>
+          eyebrow="Expertise"
 
-      </div>
+          title="Areas of Expertise"
 
-        <div className="expertise-grid">
+          description="A diverse toolkit spanning technical innovation, data analytics, healthcare, research and strategic execution."
+
+        />
+
+        {/* ===================================
+            Loading
+        ==================================== */}
 
         {
-            expertise.map((item) => {
 
-              const Icon = iconMap[item.icon];
+          loading && (
 
-              return (
+            <ExpertiseSkeleton />
 
-                <div
-                  className="expertise-card"
-                  key={item.id}
-                >
+          )
 
-                  <div className="expertise-icon">
+        }
 
-                    {Icon && <Icon />}
+        {/* ===================================
+            Error
+        ==================================== */}
 
-                  </div>
+        {
 
-                  <h3>
+          !loading &&
 
-                    {item.title}
+          error && (
 
-                  </h3>
+            <div className="expertise-message error">
 
-                  <p>
+              {error}
 
-                    {item.description}
+            </div>
 
-                  </p>
+          )
 
-                </div>
+        }
 
-              );
+        {/* ===================================
+            Empty
+        ==================================== */}
 
-            })
-          }
+        {
 
-        </div>
+          !loading &&
+
+          !error &&
+
+          expertise.length === 0 && (
+
+            <div className="expertise-message">
+
+              Expertise will appear here soon.
+
+            </div>
+
+          )
+
+        }
+
+        {/* ===================================
+            Expertise Grid
+        ==================================== */}
+
+        {
+
+          !loading &&
+
+          !error &&
+
+          expertise.length > 0 && (
+
+            <div className="expertise-grid">
+
+              {
+
+                expertise.map((item) => (
+
+                  <ExpertiseCard
+
+                    key={item.id}
+
+                    expertise={item}
+
+                  />
+
+                ))
+
+              }
+
+            </div>
+
+          )
+
+        }
 
       </div>
 
