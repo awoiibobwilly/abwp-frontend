@@ -1,0 +1,59 @@
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.section-header{
+
+    margin:0 auto 3rem;
+
+    max-width:760px;
+
+}
+
+.section-header.centered{
+
+    text-align:center;
+
+}
+
+.section-eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:.75rem;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--accent);
+
+}
+
+.section-title{
+
+    margin-bottom:1rem;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    color:var(--primary);
+
+}
+
+.section-description{
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    color:var(--text-secondary);
+
+}

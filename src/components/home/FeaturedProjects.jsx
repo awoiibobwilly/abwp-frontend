@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
+import SectionHeader from "../common/SectionHeader";
 import ProjectCard from "./ProjectCard";
 import FeaturedProjectsSkeleton from "./FeaturedProjectsSkeleton";
 
@@ -37,15 +38,7 @@ function FeaturedProjects() {
 
         const data = await getFeaturedProjects();
 
-        setProjects(
-
-          Array.isArray(data)
-      
-              ? data
-      
-              : data.results || []
-      
-      );
+        setProjects(data);
 
       }
 
@@ -54,6 +47,8 @@ function FeaturedProjects() {
         console.error(err);
 
         setError(
+
+          err?.detail ||
 
           "Unable to load featured projects."
 
@@ -72,116 +67,6 @@ function FeaturedProjects() {
     fetchProjects();
 
   }, []);
-
-  // ==========================================
-  // Loading
-  // ==========================================
-
-  if (loading) {
-
-    return (
-
-      <section className="featured-projects section">
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              Featured Projects
-
-            </h2>
-
-            <p className="section-subtitle">
-
-              Building solutions that create impact.
-
-            </p>
-
-          </div>
-
-          <FeaturedProjectsSkeleton />
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  // ==========================================
-  // Error
-  // ==========================================
-
-  if (error) {
-
-    return (
-
-      <section className="featured-projects section">
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              Featured Projects
-
-            </h2>
-
-          </div>
-
-          <div className="projects-message error">
-
-            {error}
-
-          </div>
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  // ==========================================
-  // Empty
-  // ==========================================
-
-  if (projects.length === 0) {
-
-    return (
-
-      <section className="featured-projects section">
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              Featured Projects
-
-            </h2>
-
-          </div>
-
-          <div className="projects-message">
-
-            Featured projects will appear here soon.
-
-          </div>
-
-        </div>
-
-      </section>
-
-    );
-
-  }
 
   // ==========================================
   // Component
@@ -203,126 +88,151 @@ function FeaturedProjects() {
             Section Header
         ==================================== */}
 
-        <motion.div
+        <SectionHeader
 
-          className="section-header"
+          eyebrow="Portfolio"
 
-          initial={{
+          title="Featured Work"
 
-            opacity: 0,
+          description="A selection of healthcare, software engineering, research, leadership and digital transformation projects demonstrating innovation, impact and continuous growth."
 
-            y: 30,
+        />
 
-          }}
+        {/* ===================================
+            Loading
+        ==================================== */}
 
-          whileInView={{
+        {
 
-            opacity: 1,
+          loading && (
 
-            y: 0,
+            <FeaturedProjectsSkeleton />
 
-          }}
+          )
 
-          viewport={{
+        }
 
-            once: true,
+        {/* ===================================
+            Error
+        ==================================== */}
 
-          }}
+        {
 
-          transition={{
+          !loading && error && (
 
-            duration: 0.6,
+            <div className="projects-message error">
 
-          }}
+              {error}
 
-        >
+            </div>
 
-          <h2 className="section-title">
+          )
 
-            Featured Projects
+        }
 
-          </h2>
+        {/* ===================================
+            Empty
+        ==================================== */}
 
-          <p className="section-subtitle">
+        {
 
-            A selection of healthcare, software engineering,
-            research, leadership and digital transformation
-            projects demonstrating innovation, impact and
-            continuous growth.
+          !loading &&
 
-          </p>
+          !error &&
 
-        </motion.div>
+          projects.length === 0 && (
+
+            <div className="projects-message">
+
+              Featured projects will appear here soon.
+
+            </div>
+
+          )
+
+        }
 
         {/* ===================================
             Projects Grid
         ==================================== */}
 
-        <div className="projects-grid">
+        {
 
-          {
+          !loading &&
 
-            projects.map(
+          !error &&
 
-              (
+          projects.length > 0 && (
 
-                project,
+            <div className="projects-grid">
 
-                index,
+              {
 
-              ) => (
+                projects.map(
 
-                <motion.div
+                  (
 
-                  key={project.id}
+                    project,
 
-                  initial={{
+                    index,
 
-                    opacity: 0,
+                  ) => (
 
-                    y: 40,
+                    <motion.div
 
-                  }}
+                      key={project.id}
 
-                  whileInView={{
+                      initial={{
 
-                    opacity: 1,
+                        opacity: 0,
 
-                    y: 0,
+                        y: 40,
 
-                  }}
+                      }}
 
-                  viewport={{
+                      whileInView={{
 
-                    once: true,
+                        opacity: 1,
 
-                  }}
+                        y: 0,
 
-                  transition={{
+                      }}
 
-                    duration: 0.5,
+                      viewport={{
 
-                    delay: index * 0.12,
+                        once: true,
 
-                  }}
+                      }}
 
-                >
+                      transition={{
 
-                  <ProjectCard
+                        duration: 0.5,
 
-                    project={project}
+                        delay: index * 0.12,
 
-                  />
+                      }}
 
-                </motion.div>
+                    >
 
-              )
+                      <ProjectCard
 
-            )
+                        project={project}
 
-          }
+                      />
 
-        </div>
+                    </motion.div>
+
+                  )
+
+                )
+
+              }
+
+            </div>
+
+          )
+
+        }
 
       </div>
 
