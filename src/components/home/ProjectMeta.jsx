@@ -58,11 +58,17 @@ function ProjectMeta({
 
                 backgroundColor:
 
-                  `${project.category.color}22`,
+                project.category?.color
+
+                    ? `${project.category.color}22`
+
+                    : "#eef2ff",
 
                 color:
 
-                  project.category.color,
+                project.category?.color ||
+
+                "#2563eb",
 
               }}
 
@@ -88,19 +94,15 @@ function ProjectMeta({
 
         <StatusBadge
 
-          label={
+            label={
 
-            project.status?.replace(
+                project.status
 
-              "_",
+                    ? project.status.replace("_", " ")
 
-              " "
+                    : "Unknown"
 
-            )
-
-          }
-
-          variant={statusVariant}
+            }
 
         />
 
@@ -130,53 +132,57 @@ function ProjectMeta({
           Client & Role
       ======================================= */}
 
-      <div className="project-client-role">
+            <div className="project-client-role">
 
-        {
+            {
 
-          project.client && (
+                project.client && (
 
-            <p>
+                    <div className="project-meta-item">
 
-              <strong>
+                        <strong>
 
-                Client:
+                            Client
 
-              </strong>
+                        </strong>
 
-              {" "}
+                        <span>
 
-              {project.client}
+                            {project.client}
 
-            </p>
+                        </span>
 
-          )
+                    </div>
 
-        }
+                )
 
-        {
+            }
 
-          project.role && (
+            {
 
-            <p>
+                project.role && (
 
-              <strong>
+                    <div className="project-meta-item">
 
-                Role:
+                        <strong>
 
-              </strong>
+                            Role
 
-              {" "}
+                        </strong>
 
-              {project.role}
+                        <span>
 
-            </p>
+                            {project.role}
 
-          )
+                        </span>
 
-        }
+                    </div>
 
-      </div>
+                )
+
+            }
+
+            </div>
 
       {/* ======================================
           Technologies
@@ -184,7 +190,7 @@ function ProjectMeta({
 
       {
 
-        !!project.technologies?.length && (
+        project.technologies?.length > 0 && (
 
           <div className="project-technologies">
 
