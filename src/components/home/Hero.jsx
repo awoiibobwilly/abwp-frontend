@@ -2,6 +2,7 @@ import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 import HeroStats from "./HeroStats";
 import TrustStrip from "./TrustStrip";
+import TechnologyRibbon from "./TechnologyRibbon";
 
 import "../../styles/home/hero.css";
 
@@ -33,6 +34,16 @@ function Hero() {
         <div className="hero-bottom">
           <HeroStats />
         </div>
+
+               {/* ==========================================
+            TECHNOLOGY RIBBON
+        ========================================== */}
+
+              <div className="hero-technology">
+
+              <TechnologyRibbon />
+
+</div>
 
       </div>
 
