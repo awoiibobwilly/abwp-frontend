@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 
-import {
-  FaBuilding,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
-  FaStar,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
-function JourneyCard({ journey }) {
+import JourneyMedia from "./JourneyMedia";
+import JourneyMeta from "./JourneyMeta";
+
+function JourneyCard({
+
+  journey,
+
+}) {
 
   return (
 
     <article
+
       className="journey-card"
+
       style={{
+
         "--accent": journey.accent_color,
+
       }}
+
     >
 
       {/* ======================================
@@ -26,10 +32,17 @@ function JourneyCard({ journey }) {
       <div className="journey-marker">
 
         <span
+
           className="journey-dot"
+
           style={{
-            backgroundColor: journey.accent_color,
+
+            backgroundColor:
+
+              journey.accent_color,
+
           }}
+
         />
 
         <span className="journey-line" />
@@ -43,164 +56,24 @@ function JourneyCard({ journey }) {
       <div className="journey-content">
 
         {/* ======================================
-            Image
+            Journey Media
         ======================================= */}
 
-        {
+        <JourneyMedia
 
-          journey.image ? (
+          journey={journey}
 
-            <div className="journey-image">
-
-              <img
-
-                src={journey.image}
-
-                alt={journey.title}
-
-                loading="lazy"
-
-              />
-
-            </div>
-
-          ) : (
-
-            <div className="journey-placeholder">
-
-              <span>
-
-                {journey.organization
-                  ?.charAt(0)
-                  ?.toUpperCase() || "A"}
-
-              </span>
-
-            </div>
-
-          )
-
-        }
+        />
 
         {/* ======================================
-            Header
+            Journey Meta
         ======================================= */}
 
-        <div className="journey-header">
+        <JourneyMeta
 
-          <div className="journey-badges">
+          journey={journey}
 
-            <span
-
-              className="journey-type"
-
-              style={{
-
-                backgroundColor:
-
-                  `${journey.accent_color}20`,
-
-                color:
-
-                  journey.accent_color,
-
-              }}
-
-            >
-
-              {journey.journey_type_display}
-
-            </span>
-
-            {
-
-              journey.featured && (
-
-                <span className="journey-featured">
-
-                  <FaStar />
-
-                  Featured
-
-                </span>
-
-              )
-
-            }
-
-            {
-
-              journey.is_current && (
-
-                <span className="journey-current">
-
-                  Current
-
-                </span>
-
-              )
-
-            }
-
-          </div>
-
-          <h3>
-
-            {journey.title}
-
-          </h3>
-
-        </div>
-
-        {/* ======================================
-            Organization
-        ======================================= */}
-
-        <div className="journey-meta">
-
-          <span>
-
-            <FaBuilding />
-
-            {journey.organization}
-
-          </span>
-
-          {
-
-            journey.location && (
-
-              <span>
-
-                <FaMapMarkerAlt />
-
-                {journey.location}
-
-              </span>
-
-            )
-
-          }
-
-          <span>
-
-            <FaCalendarAlt />
-
-            {journey.duration}
-
-          </span>
-
-        </div>
-
-        {/* ======================================
-            Summary
-        ======================================= */}
-
-        <p className="journey-summary">
-
-          {journey.summary}
-
-        </p>
+        />
 
         {/* ======================================
             Footer

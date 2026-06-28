@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 
-import JourneyCard from "./JourneyCard";
+import SectionHeader from "../common/SectionHeader";
+
+import JourneyTimeline from "./JourneyTimeline";
+
 import JourneySkeleton from "./JourneySkeleton";
 
 import { getJourneyPreview } from "../../services/journeyService";
@@ -35,13 +38,7 @@ function JourneyPreview() {
 
         setError("");
 
-        const response = await getJourneyPreview();
-
-        // Supports both paginated and plain list APIs
-
-        const data = Array.isArray(response)
-          ? response
-          : response.results || [];
+        const data = await getJourneyPreview();
 
         setJourney(data);
 
@@ -49,7 +46,13 @@ function JourneyPreview() {
 
       catch (err) {
 
-        console.error(err);
+        console.error(
+
+          "Journey Error:",
+
+          err
+
+        );
 
         setError(
 
@@ -74,123 +77,6 @@ function JourneyPreview() {
   }, []);
 
   // ==================================================
-  // Loading
-  // ==================================================
-
-  if (loading) {
-
-    return (
-
-      <section
-        className="journey-preview section"
-      >
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              My Journey
-
-            </h2>
-
-            <p className="section-subtitle">
-
-              Every milestone has shaped the professional
-              I am today.
-
-            </p>
-
-          </div>
-
-          <JourneySkeleton />
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  // ==================================================
-  // Error
-  // ==================================================
-
-  if (error) {
-
-    return (
-
-      <section
-        className="journey-preview section"
-      >
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              My Journey
-
-            </h2>
-
-          </div>
-
-          <div className="journey-message error">
-
-            {error}
-
-          </div>
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  // ==================================================
-  // Empty
-  // ==================================================
-
-  if (journey.length === 0) {
-
-    return (
-
-      <section
-        className="journey-preview section"
-      >
-
-        <div className="container">
-
-          <div className="section-header">
-
-            <h2 className="section-title">
-
-              My Journey
-
-            </h2>
-
-          </div>
-
-          <div className="journey-message">
-
-            Journey information coming soon.
-
-          </div>
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  // ==================================================
   // Component
   // ==================================================
 
@@ -207,134 +93,96 @@ function JourneyPreview() {
       <div className="container">
 
         {/* ===========================================
-            Header
+            Section Header
         =========================================== */}
 
-        <motion.div
+        <SectionHeader
 
-          className="section-header"
+          eyebrow="Journey"
 
-          initial={{
+          title="Professional Journey"
 
-            opacity: 0,
+          description="A journey built on continuous learning, leadership, innovation, healthcare, technology and service."
 
-            y: 40,
+        />
 
-          }}
+        {/* ===========================================
+            Loading
+        =========================================== */}
 
-          whileInView={{
+        {
 
-            opacity: 1,
+          loading && (
 
-            y: 0,
+            <JourneySkeleton />
 
-          }}
+          )
 
-          viewport={{
+        }
 
-            once: true,
+        {/* ===========================================
+            Error
+        =========================================== */}
 
-          }}
+        {
 
-          transition={{
+          !loading &&
 
-            duration: 0.6,
+          error && (
 
-          }}
+            <div className="journey-message error">
 
-        >
+              {error}
 
-          <h2 className="section-title">
+            </div>
 
-            My Journey
+          )
 
-          </h2>
+        }
 
-          <p className="section-subtitle">
+        {/* ===========================================
+            Empty
+        =========================================== */}
 
-            A journey built on continuous learning,
-            leadership, innovation, healthcare,
-            technology and service.
+        {
 
-          </p>
+          !loading &&
 
-        </motion.div>
+          !error &&
+
+          journey.length === 0 && (
+
+            <div className="journey-message">
+
+              Journey information will appear here soon.
+
+            </div>
+
+          )
+
+        }
 
         {/* ===========================================
             Timeline
         =========================================== */}
 
-        <div className="journey-timeline">
+        {
 
-          {
+          !loading &&
 
-            journey.map(
+          !error &&
 
-              (
+          journey.length > 0 && (
 
-                item,
+            <JourneyTimeline
 
-                index,
+              journey={journey}
 
-              ) => (
+            />
 
-                <motion.div
+          )
 
-                  key={item.id}
-
-                  initial={{
-
-                    opacity: 0,
-
-                    x:
-
-                      index % 2 === 0
-
-                        ? -40
-
-                        : 40,
-
-                  }}
-
-                  whileInView={{
-
-                    opacity: 1,
-
-                    x: 0,
-
-                  }}
-
-                  viewport={{
-
-                    once: true,
-
-                  }}
-
-                  transition={{
-
-                    duration: 0.5,
-
-                    delay: index * 0.12,
-
-                  }}
-
-                >
-
-                  <JourneyCard
-
-                    journey={item}
-
-                  />
-
-                </motion.div>
-
-              )
-
-            )
-
-          }
-
-        </div>
+        }
 
       </div>
 
