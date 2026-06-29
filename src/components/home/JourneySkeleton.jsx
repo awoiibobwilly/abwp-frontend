@@ -1,5 +1,6 @@
 import "../../styles/home/journey-preview.css";
 
+
 function SkeletonCard() {
 
   return (

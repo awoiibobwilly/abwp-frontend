@@ -12,6 +12,8 @@ import { getJourneyPreview } from "../../services/journeyService";
 
 import "../../styles/home/journey-preview.css";
 
+import SectionMessage from "../common/SectionMessage";
+
 function JourneyPreview() {
 
   // ==================================================
@@ -130,11 +132,13 @@ function JourneyPreview() {
 
           error && (
 
-            <div className="journey-message error">
+            <SectionMessage
 
-              {error}
+              type="error"
 
-            </div>
+              message={error}
+
+            />
 
           )
 
@@ -152,11 +156,13 @@ function JourneyPreview() {
 
           journey.length === 0 && (
 
-            <div className="journey-message">
+            <SectionMessage
 
-              Journey information will appear here soon.
+              type="empty"
 
-            </div>
+              message="Journey information will appear here soon."
+
+            />
 
           )
 

@@ -1,0 +1,171 @@
+/* ==========================================================================
+   SECTION MESSAGE
+========================================================================== */
+
+.section-message{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    padding:2rem;
+
+    border:2px dashed var(--border);
+
+    border-radius:20px;
+
+    background:#fafbfe;
+
+}
+
+/* ==========================================================================
+   ICON
+========================================================================== */
+
+.section-message-icon{
+
+    width:64px;
+
+    height:64px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:18px;
+
+    font-size:1.5rem;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================================
+   CONTENT
+========================================================================== */
+
+.section-message-content{
+
+    flex:1;
+
+}
+
+.section-message-content h3{
+
+    margin:0 0 .5rem;
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+}
+
+.section-message-content p{
+
+    margin:0;
+
+    color:var(--text-light);
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================================
+   VARIANTS
+========================================================================== */
+
+.section-message.info{
+
+    background:#fafbfe;
+
+}
+
+.section-message.info .section-message-icon{
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+}
+
+.section-message.empty{
+
+    background:#fafbfe;
+
+}
+
+.section-message.empty .section-message-icon{
+
+    background:#f3f4f6;
+
+    color:#64748b;
+
+}
+
+.section-message.error{
+
+    background:#fef2f2;
+
+    border-color:#fecaca;
+
+}
+
+.section-message.error .section-message-icon{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.section-message.success{
+
+    background:#f0fdf4;
+
+    border-color:#bbf7d0;
+
+}
+
+.section-message.success .section-message-icon{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+========================================================================== */
+
+.section-message:focus-within{
+
+    outline:2px solid var(--accent);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================================
+   RESPONSIVE
+========================================================================== */
+
+@media (max-width:576px){
+
+    .section-message{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:2rem 1.5rem;
+
+    }
+
+}

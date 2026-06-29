@@ -9,6 +9,8 @@ import { getExpertise } from "../../services/expertiseService";
 
 import "../../styles/home/expertise.css";
 
+import SectionMessage from "../common/SectionMessage";
+
 function Expertise() {
 
   // ==========================================
@@ -127,11 +129,13 @@ function Expertise() {
 
           error && (
 
-            <div className="expertise-message error">
+            <SectionMessage
 
-              {error}
+              type="error"
 
-            </div>
+              message={error}
+
+            />
 
           )
 
@@ -149,11 +153,13 @@ function Expertise() {
 
           expertise.length === 0 && (
 
-            <div className="expertise-message">
+            <SectionMessage
 
-              Expertise will appear here soon.
+              type="empty"
 
-            </div>
+              message="Expertise will appear here soon."
+
+            />
 
           )
 

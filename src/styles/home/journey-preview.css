@@ -192,18 +192,6 @@
   outline-offset: 4px;
 }
 
-.journey-message {
-  padding: 3rem;
-  text-align: center;
-  border: 2px dashed var(--border);
-  border-radius: 20px;
-  background: #fafbfe;
-  color: var(--text-light);
-}
-
-.journey-message.error {
-  color: #dc2626;
-}
 
 /* Media Queries */
 

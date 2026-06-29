@@ -10,6 +10,8 @@ import { getFeaturedProjects } from "../../services/projectService";
 
 import "../../styles/home/featured-projects.css";
 
+import SectionMessage from "../common/SectionMessage";
+
 function FeaturedProjects() {
 
   // ==========================================
@@ -120,11 +122,13 @@ function FeaturedProjects() {
 
           !loading && error && (
 
-            <div className="projects-message error">
+            <SectionMessage
 
-              {error}
+                type="error"
 
-            </div>
+                message={error}
+
+              />
 
           )
 
@@ -142,11 +146,13 @@ function FeaturedProjects() {
 
           projects.length === 0 && (
 
-            <div className="projects-message">
+            <SectionMessage
 
-              Featured projects will appear here soon.
+              type="empty"
 
-            </div>
+              message="Featured projects will appear here soon."
+
+            />
 
           )
 
