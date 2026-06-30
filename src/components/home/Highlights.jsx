@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+import SectionHeader from "../common/SectionHeader";
+import SectionMessage from "../common/SectionMessage";
+
+import HighlightCounter from "./HighlightCounter";
+import HighlightSkeleton from "./HighlightSkeleton";
+
+import useApiResource from "../../hooks/useApiResource";
 
 import { getHighlights } from "../../services/highlightService";
 
@@ -6,127 +12,187 @@ import { iconMap } from "../../utils/iconMapper";
 
 import "../../styles/home/highlights.css";
 
-import HighlightCounter from "./HighlightCounter";
-
-
 function Highlights() {
 
-  const [highlights, setHighlights] = useState([]);
+    // ======================================================
+    // Fetch Highlights
+    // ======================================================
 
-  const [loading, setLoading] = useState(true);
+    const {
 
+        data: highlights,
 
-  useEffect(() => {
+        loading,
 
-    const fetchHighlights = async () => {
+        error,
 
-      try {
+    } = useApiResource(
 
-        const data = await getHighlights();
+        getHighlights
 
-        setHighlights(data);
+    );
 
-      }
+    return (
 
-      catch (error) {
+        <section
 
-        console.error(error);
+            className="highlights section"
 
-      }
+        >
 
-      finally {
+            <div className="container">
 
-        setLoading(false);
+                {/* ======================================
+                    Section Header
+                ======================================= */}
 
-      }
+                <SectionHeader
 
-    };
+                    eyebrow="Highlights"
 
-    fetchHighlights();
+                    title="Professional Highlights"
 
-  }, []);
+                    description="A multidisciplinary professional committed to technology, healthcare, research, leadership and measurable impact."
 
+                />
 
-  if (loading) {
+                {/* ======================================
+                    Loading
+                ======================================= */}
 
-    return null;
+                {
 
-  }
+                    loading && (
 
+                        <HighlightSkeleton />
 
-  return (
+                    )
 
-    <section className="highlights section">
+                }
 
-      <div className="container">
+                {/* ======================================
+                    Error
+                ======================================= */}
 
-      <div className="section-header">
+                {
 
-        <h2 className="section-title">
-          Highlights
-        </h2>
+                    !loading &&
 
-        <p className="section-subtitle">
-          A multidisciplinary professional committed to
-          technology, healthcare, research, and impact.
-        </p>
+                    error && (
 
-        </div>
+                        <SectionMessage
 
-        <div className="highlights-grid">
+                            type="error"
 
-          {
+                            message={error}
 
-            highlights.map((item) => {
+                        />
 
-              const Icon = iconMap[item.icon];
+                    )
 
-              return (
+                }
 
-                <div
-                className="highlight-card"
-                key={item.id}
-            >
+                {/* ======================================
+                    Empty
+                ======================================= */}
 
-                <div className="highlight-icon">
+                {
 
-                    {Icon && <Icon />}
+                    !loading &&
 
-                </div>
+                    !error &&
 
-                <h3>
+                    highlights.length === 0 && (
 
-                <HighlightCounter
+                        <SectionMessage
 
-              value={item.value}
+                            type="empty"
 
-              suffix={item.suffix}
+                            message="Highlights will appear here soon."
 
-              />
+                        />
 
-            </h3>
+                    )
 
-    <span>
+                }
 
-        {item.title}
+                {/* ======================================
+                    Highlights Grid
+                ======================================= */}
 
-    </span>
+                {
 
-</div>
+                    !loading &&
 
-              );
+                    !error &&
 
-            })
+                    highlights.length > 0 && (
 
-          }
+                        <div className="highlights-grid">
 
-        </div>
+                            {
 
-      </div>
+                                highlights.map((item) => {
 
-    </section>
+                                    const Icon = iconMap[item.icon];
 
-  );
+                                    return (
+
+                                        <article
+
+                                            key={item.id}
+
+                                            className="highlight-card"
+
+                                        >
+
+                                            <div className="highlight-icon">
+
+                                                {
+
+                                                    Icon && <Icon />
+
+                                                }
+
+                                            </div>
+
+                                            <h3>
+
+                                                <HighlightCounter
+
+                                                    value={item.value}
+
+                                                    suffix={item.suffix}
+
+                                                />
+
+                                            </h3>
+
+                                            <span>
+
+                                                {item.title}
+
+                                            </span>
+
+                                        </article>
+
+                                    );
+
+                                })
+
+                            }
+
+                        </div>
+
+                    )
+
+                }
+
+            </div>
+
+        </section>
+
+    );
 
 }
 
