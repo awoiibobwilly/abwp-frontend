@@ -1,141 +1,162 @@
-import { useEffect, useState } from "react";
+import SectionHeader from "../common/SectionHeader";
+import SectionMessage from "../common/SectionMessage";
+
+import TechnologyBadge from "./TechnologyBadge";
+import TechnologyRibbonSkeleton from "./TechnologyRibbonSkeleton";
+
+import useApiResource from "../../hooks/useApiResource";
 
 import {
   getTechnologies,
 } from "../../services/technologyService";
 
-import TechnologyBadge from "./TechnologyBadge";
-import TechnologyRibbonSkeleton from "./TechnologyRibbonSkeleton";
-
 import "../../styles/home/technology-ribbon.css";
 
 function TechnologyRibbon() {
 
-  const [technologies, setTechnologies] = useState([]);
+  // ======================================================
+  // Fetch Technologies
+  // ======================================================
 
-  const [loading, setLoading] = useState(true);
+  const {
 
-  const [error, setError] = useState("");
+    data: technologies,
 
-  useEffect(() => {
+    loading,
 
-    const fetchTechnologies = async () => {
+    error,
 
-      try {
+  } = useApiResource(
 
-        const data = await getTechnologies();
+    getTechnologies
 
-        setTechnologies(data);
+  );
 
-      }
-
-      catch (err) {
-
-        console.error(err);
-
-        setError(
-
-          err?.detail ||
-
-          "Unable to load technologies."
-
-        );
-
-      }
-
-      finally {
-
-        setLoading(false);
-
-      }
-
-    };
-
-    fetchTechnologies();
-
-  }, []);
-
-  if (loading) {
-
-    return <TechnologyRibbonSkeleton />;
-
-  }
-
-  if (error) {
-
-    return (
-
-      <section className="technology-ribbon">
-
-        <div className="technology-ribbon-error">
-
-          {error}
-
-        </div>
-
-      </section>
-
-    );
-
-  }
-
-  if (!technologies.length) {
-
-    return (
-
-      <section className="technology-ribbon">
-
-        <div className="technology-ribbon-empty">
-
-          Technologies coming soon.
-
-        </div>
-
-      </section>
-
-    );
-
-  }
+  // ======================================================
+  // Component
+  // ======================================================
 
   return (
 
-    <section className="technology-ribbon">
+    <section
 
-      <div className="technology-ribbon-header">
+      className="technology-ribbon section"
 
-        <h3>
+      id="technologies"
 
-          Technologies I Use
+    >
 
-        </h3>
+      <div className="container">
 
-        <p>
+        {/* ======================================
+            Section Header
+        ======================================= */}
 
-          Modern tools and frameworks used to build
-          scalable, secure, and user-focused digital
-          solutions.
+        <SectionHeader
 
-        </p>
+          eyebrow="Tech Stack"
 
-      </div>
+          title="Technologies I Use"
 
-      <div className="technology-ribbon-grid">
+          description="A carefully selected ecosystem of programming languages, frameworks, databases, cloud platforms and development tools used to build secure, scalable and modern digital solutions."
+
+        />
+
+        {/* ======================================
+            Loading
+        ======================================= */}
 
         {
 
-          technologies.map(
+          loading && (
 
-            (technology) => (
+            <TechnologyRibbonSkeleton />
 
-              <TechnologyBadge
+          )
 
-                key={technology.id}
+        }
 
-                technology={technology}
+        {/* ======================================
+            Error
+        ======================================= */}
 
-              />
+        {
 
-            )
+          !loading &&
+
+          error && (
+
+            <SectionMessage
+
+              type="error"
+
+              message={error}
+
+            />
+
+          )
+
+        }
+
+        {/* ======================================
+            Empty
+        ======================================= */}
+
+        {
+
+          !loading &&
+
+          !error &&
+
+          technologies.length === 0 && (
+
+            <SectionMessage
+
+              type="empty"
+
+              message="Technologies will appear here soon."
+
+            />
+
+          )
+
+        }
+
+        {/* ======================================
+            Technology Grid
+        ======================================= */}
+
+        {
+
+          !loading &&
+
+          !error &&
+
+          technologies.length > 0 && (
+
+            <div className="technology-ribbon-grid">
+
+              {
+
+                technologies.map(
+
+                  (technology) => (
+
+                    <TechnologyBadge
+
+                      key={technology.id}
+
+                      technology={technology}
+
+                    />
+
+                  )
+
+                )
+
+              }
+
+            </div>
 
           )
 
