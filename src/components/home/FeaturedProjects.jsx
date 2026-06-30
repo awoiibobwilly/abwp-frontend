@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { motion } from "framer-motion";
 
 import SectionHeader from "../common/SectionHeader";
@@ -35,51 +33,6 @@ function FeaturedProjects() {
   
   );
 
-  // ==========================================
-  // Fetch Featured Projects
-  // ==========================================
-
-  useEffect(() => {
-
-    const fetchProjects = async () => {
-
-      try {
-
-        setLoading(true);
-
-        setError("");
-
-        const data = await getFeaturedProjects();
-
-        setProjects(data);
-
-      }
-
-      catch (err) {
-
-        console.error(err);
-
-        setError(
-
-          err?.detail ||
-
-          "Unable to load featured projects."
-
-        );
-
-      }
-
-      finally {
-
-        setLoading(false);
-
-      }
-
-    };
-
-    fetchProjects();
-
-  }, []);
 
   // ==========================================
   // Component

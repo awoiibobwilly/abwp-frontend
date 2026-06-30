@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-
-import { motion } from "framer-motion";
 
 import SectionHeader from "../common/SectionHeader";
 
@@ -35,58 +32,6 @@ function JourneyPreview() {
     getJourney
 
 );
-
-  // ==================================================
-  // Fetch Journey
-  // ==================================================
-
-  useEffect(() => {
-
-    const fetchJourney = async () => {
-
-      try {
-
-        setLoading(true);
-
-        setError("");
-
-        const data = await getJourneyPreview();
-
-        setJourney(data);
-
-      }
-
-      catch (err) {
-
-        console.error(
-
-          "Journey Error:",
-
-          err
-
-        );
-
-        setError(
-
-          err?.detail ||
-
-          "Unable to load journey."
-
-        );
-
-      }
-
-      finally {
-
-        setLoading(false);
-
-      }
-
-    };
-
-    fetchJourney();
-
-  }, []);
 
   // ==================================================
   // Component

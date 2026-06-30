@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import SectionHeader from "../common/SectionHeader";
 
 import ExpertiseCard from "./ExpertiseCard";
@@ -33,57 +31,6 @@ function Expertise() {
 
 );
 
-  // ==========================================
-  // Fetch Expertise
-  // ==========================================
-
-  useEffect(() => {
-
-    const fetchExpertise = async () => {
-
-      try {
-
-        setLoading(true);
-
-        setError("");
-
-        const data = await getExpertise();
-
-        setExpertise(data);
-
-      }
-
-      catch (err) {
-
-        console.error(
-
-          "Expertise Error:",
-
-          err
-
-        );
-
-        setError(
-
-          err?.detail ||
-
-          "Unable to load expertise."
-
-        );
-
-      }
-
-      finally {
-
-        setLoading(false);
-
-      }
-
-    };
-
-    fetchExpertise();
-
-  }, []);
 
   // ==========================================
   // Component
