@@ -29,5 +29,7 @@ export const ENDPOINTS = {
     PROJECTS: "/home/projects/",
   
     JOURNEY: "/home/journey/",
+
+    RESEARCH: "/home/research/",
   
   };

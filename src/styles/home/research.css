@@ -1,83 +1,1047 @@
-/* ==========================================
-   RESEARCH
-========================================== */
+/* ==========================================================================
+   RESEARCH SECTION
+   Premium Homepage Stylesheet
+   Phase 16.4.11
+   ========================================================================== */
 
-.research-grid{
+/* ==========================================================================
+   SECTION
+   ========================================================================== */
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:2rem;
-
-    margin-top:4rem;
-
+   .research {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
 }
 
-/* ==========================================
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    align-items: stretch;
+}
+
+/* ==========================================================================
    CARD
-========================================== */
+   ========================================================================== */
 
-.research-card{
+.research-card {
 
-    background:white;
+    display: flex;
 
-    border:1px solid var(--border);
+    flex-direction: column;
 
-    border-radius:24px;
+    height: 100%;
 
-    padding:2rem;
+    overflow: hidden;
 
-    transition:.4s;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fbfcff 100%
+    );
 
-    box-shadow:var(--shadow-sm);
+    border: 1px solid rgba(226,232,240,.95);
 
-}
+    border-radius: 24px;
 
-.research-card:hover{
+    box-shadow:
+        0 4px 12px rgba(15,23,42,.04),
+        0 14px 34px rgba(15,23,42,.05);
 
-    transform:translateY(-10px);
-
-    box-shadow:var(--shadow-md);
-
-}
-
-.research-card h3{
-
-    color:var(--primary);
-
-    margin-bottom:1rem;
-
-}
-
-.research-card p{
-
-    color:var(--text-light);
-
-    line-height:1.8;
+    transition:
+        transform .35s cubic-bezier(.16,1,.3,1),
+        box-shadow .35s cubic-bezier(.16,1,.3,1),
+        border-color .35s ease;
 
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+.research-card:hover {
 
-@media(max-width:992px){
+    transform: translateY(-8px);
 
-    .research-grid{
+    border-color: rgba(37,99,235,.16);
 
-        grid-template-columns:repeat(2,1fr);
+    box-shadow:
+        0 18px 36px rgba(15,23,42,.08),
+        0 30px 70px rgba(37,99,235,.08);
+
+}
+
+.research-card:focus-within {
+
+    outline: 2px solid var(--accent);
+
+    outline-offset: 4px;
+
+}
+
+/* ==========================================================================
+   MEDIA
+   ========================================================================== */
+
+.research-image,
+.research-placeholder {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 260px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #eef4ff,
+        #f8fbff
+    );
+
+}
+
+.research-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .65s cubic-bezier(.16,1,.3,1);
+
+}
+
+.research-card:hover .research-image img {
+
+    transform: scale(1.06);
+
+}
+
+.research-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(15,23,42,.22),
+        rgba(15,23,42,0) 65%
+    );
+
+}
+
+.research-placeholder {
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--primary);
+
+    font-size: 2.4rem;
+
+    font-weight: 700;
+
+    letter-spacing: -.03em;
+
+}
+
+.research-publication-badge {
+
+    position: absolute;
+
+    top: 1rem;
+
+    right: 1rem;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .45rem;
+
+    padding: .55rem .95rem;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.90);
+
+    backdrop-filter: blur(10px);
+
+    color: var(--primary);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(15,23,42,.10);
+
+}
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
+
+.research-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    gap: 1.5rem;
+
+    padding: 2rem;
+
+}
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+
+.research-badges {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .75rem;
+
+}
+
+.research-category,
+.research-type,
+.research-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .48rem .9rem;
+
+    border-radius: 999px;
+
+    font-size: .78rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+.research-category {
+
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,.15),
+        rgba(37,99,235,.08)
+    );
+
+    color: var(--primary);
+
+    border: 1px solid rgba(37,99,235,.18);
+
+}
+
+.research-type {
+
+    background: #f8fafc;
+
+    color: var(--text-light);
+
+    border: 1px solid rgba(226,232,240,.9);
+
+}
+
+.research-status {
+
+    background: #ecfdf5;
+
+    color: #15803d;
+
+    border: 1px solid rgba(34,197,94,.15);
+
+}
+
+/* ==========================================================================
+   TITLE
+   ========================================================================== */
+
+.research-title {
+
+    margin: 0;
+
+    color: var(--primary);
+
+    font-size: 1.45rem;
+
+    font-weight: 700;
+
+    line-height: 1.45;
+
+    letter-spacing: -.02em;
+
+}
+
+/* ==========================================================================
+   SUMMARY
+   ========================================================================== */
+
+.research-summary {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: .95rem;
+
+    line-height: 1.85;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+}
+
+/* ==========================================================================
+   RESEARCH DETAILS
+   ========================================================================== */
+
+   .research-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    padding-top: .5rem;
+
+    border-top: 1px solid rgba(226,232,240,.8);
+
+}
+
+.research-detail {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: .55rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom: 1px dashed rgba(226,232,240,.9);
+
+}
+
+.research-detail:last-child {
+
+    padding-bottom: 0;
+
+    border-bottom: none;
+
+}
+
+.research-detail-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .75rem;
+
+    color: var(--primary);
+
+    font-size: .78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+.research-detail-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,.12),
+        rgba(37,99,235,.05)
+    );
+
+    color: var(--primary);
+
+    flex-shrink: 0;
+
+    transition: all .3s ease;
+
+}
+
+.research-card:hover .research-detail-icon {
+
+    transform: scale(1.08);
+
+    background: rgba(37,99,235,.14);
+
+}
+
+.research-detail-value {
+
+    padding-left: 2.95rem;
+
+    color: var(--text-light);
+
+    font-size: .95rem;
+
+    line-height: 1.75;
+
+    word-break: break-word;
+
+}
+
+/* ==========================================================================
+   KEYWORDS
+   ========================================================================== */
+
+.research-keywords {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .75rem;
+
+    margin-top: .5rem;
+
+}
+
+.keyword-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .5rem .95rem;
+
+    border-radius: 999px;
+
+    background: #f8fbff;
+
+    border: 1px solid #dbeafe;
+
+    color: var(--primary);
+
+    font-size: .78rem;
+
+    font-weight: 600;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.keyword-pill:hover {
+
+    background: var(--primary);
+
+    color: #fff;
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(37,99,235,.18);
+
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.research-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: auto;
+
+    padding: 1.5rem 2rem;
+
+    border-top: 1px solid rgba(226,232,240,.9);
+
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #fafcff
+    );
+
+}
+
+.research-year {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .35rem;
+
+    color: var(--text-light);
+
+    font-size: .88rem;
+
+    font-weight: 600;
+
+    letter-spacing: .02em;
+
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+
+.research-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .55rem;
+
+    color: var(--primary);
+
+    font-size: .92rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        gap .3s ease,
+        transform .3s ease;
+
+}
+
+.research-link svg {
+
+    transition: transform .3s ease;
+
+}
+
+.research-link:hover {
+
+    gap: .85rem;
+
+    color: var(--accent);
+
+}
+
+.research-link:hover svg {
+
+    transform: translateX(4px);
+
+}
+
+/* ==========================================================================
+   OPTIONAL BUTTONS
+   ========================================================================== */
+
+.research-links {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .75rem;
+
+}
+
+.research-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: .5rem;
+
+    padding: .75rem 1.2rem;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+
+}
+
+.research-btn.primary {
+
+    background: var(--primary);
+
+    color: #fff;
+
+}
+
+.research-btn.primary:hover {
+
+    background: var(--accent);
+
+    transform: translateY(-2px);
+
+}
+
+.research-btn.secondary {
+
+    background: #fff;
+
+    color: var(--primary);
+
+    border: 1px solid rgba(226,232,240,.9);
+
+}
+
+.research-btn.secondary:hover {
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+
+}
+
+/* ==========================================================================
+   MESSAGE STATES
+   ========================================================================== */
+
+.research-message {
+
+    padding: 3rem;
+
+    text-align: center;
+
+    background: #fafcff;
+
+    border: 1px dashed rgba(226,232,240,.9);
+
+    border-radius: 20px;
+
+    color: var(--text-light);
+
+}
+
+.research-message.error {
+
+    border-color: rgba(220,38,38,.18);
+
+    color: #dc2626;
+
+}
+
+.research-message.success {
+
+    border-color: rgba(34,197,94,.18);
+
+    color: #15803d;
+
+}
+
+/* ==========================================================================
+   RESEARCH SKELETON
+   ========================================================================== */
+
+   .skeleton-research-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skeleton-research-media {
+    width: 100%;
+    height: 260px;
+    border-radius: 18px;
+}
+
+.skeleton-research-badge {
+    width: 110px;
+    height: 30px;
+    border-radius: 999px;
+}
+
+.skeleton-research-badge.short {
+    width: 90px;
+}
+
+.skeleton-research-status {
+    width: 90px;
+    height: 30px;
+    border-radius: 999px;
+}
+
+.skeleton-research-title {
+    width: 75%;
+    height: 30px;
+    margin: .25rem 0;
+}
+
+.skeleton-research-meta-label {
+    width: 70px;
+    height: 14px;
+    margin-bottom: .45rem;
+}
+
+.skeleton-research-meta-value {
+    width: 150px;
+    height: 16px;
+}
+
+.skeleton-research-text {
+    width: 100%;
+    height: 15px;
+    margin-bottom: .75rem;
+}
+
+.skeleton-research-text.short {
+    width: 70%;
+}
+
+.skeleton-research-keyword {
+    width: 95px;
+    height: 34px;
+    border-radius: 999px;
+}
+
+.skeleton-research-year {
+    width: 70px;
+    height: 18px;
+}
+
+.skeleton-research-link {
+    width: 120px;
+    height: 18px;
+}
+
+/* ==========================================================================
+   SHIMMER ANIMATION
+   ========================================================================== */
+
+.skeleton,
+.skeleton-research-media,
+.skeleton-research-badge,
+.skeleton-research-status,
+.skeleton-research-title,
+.skeleton-research-meta-label,
+.skeleton-research-meta-value,
+.skeleton-research-text,
+.skeleton-research-keyword,
+.skeleton-research-year,
+.skeleton-research-link {
+
+    background: linear-gradient(
+        90deg,
+        #f1f5f9 25%,
+        #e2e8f0 50%,
+        #f1f5f9 75%
+    );
+
+    background-size: 300% 100%;
+
+    animation: researchShimmer 1.5s linear infinite;
+
+}
+
+@keyframes researchShimmer {
+
+    from {
+
+        background-position: 100% 0;
+
+    }
+
+    to {
+
+        background-position: -100% 0;
 
     }
 
 }
 
-@media(max-width:576px){
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
 
-    .research-grid{
+.research-card:focus-visible {
 
-        grid-template-columns:1fr;
+    outline: 3px solid var(--accent);
+
+    outline-offset: 4px;
+
+}
+
+.research-link:focus-visible,
+.keyword-pill:focus-visible,
+.research-btn:focus-visible {
+
+    outline: 2px solid var(--accent);
+
+    outline-offset: 3px;
+
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .research-card,
+    .research-image img,
+    .research-link,
+    .keyword-pill,
+    .research-btn,
+    .research-detail-icon {
+
+        transition: none !important;
+
+    }
+
+    .skeleton,
+    .skeleton-research-media,
+    .skeleton-research-badge,
+    .skeleton-research-status,
+    .skeleton-research-title,
+    .skeleton-research-meta-label,
+    .skeleton-research-meta-value,
+    .skeleton-research-text,
+    .skeleton-research-keyword,
+    .skeleton-research-year,
+    .skeleton-research-link {
+
+        animation: none;
 
     }
 
 }
+
+/* ==========================================================================
+   LARGE TABLETS
+   ========================================================================== */
+
+@media (max-width: 992px) {
+
+    .research-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+/* ==========================================================================
+   TABLETS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .research {
+
+        padding: 5rem 0;
+
+    }
+
+    .research-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 1.75rem;
+
+    }
+
+    .research-image,
+    .research-placeholder {
+
+        height: 220px;
+
+    }
+
+    .research-content {
+
+        padding: 1.75rem;
+
+        gap: 1.25rem;
+
+    }
+
+    .research-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 1.5rem 1.75rem;
+
+    }
+
+    .research-link {
+
+        margin-top: .25rem;
+
+    }
+
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 576px) {
+
+    .research {
+
+        padding: 4rem 0;
+
+    }
+
+    .research-grid {
+
+        gap: 1.5rem;
+
+    }
+
+    .research-card {
+
+        border-radius: 20px;
+
+    }
+
+    .research-image,
+    .research-placeholder {
+
+        height: 200px;
+
+    }
+
+    .research-content {
+
+        padding: 1.5rem;
+
+    }
+
+    .research-title {
+
+        font-size: 1.25rem;
+
+    }
+
+    .research-summary {
+
+        font-size: .92rem;
+
+    }
+
+    .research-badges {
+
+        gap: .5rem;
+
+    }
+
+    .research-category,
+    .research-type,
+    .research-status {
+
+        font-size: .72rem;
+
+        padding: .42rem .75rem;
+
+    }
+
+    .research-detail-value {
+
+        padding-left: 2.5rem;
+
+    }
+
+    .research-keywords {
+
+        gap: .5rem;
+
+    }
+
+    .keyword-pill {
+
+        font-size: .72rem;
+
+        padding: .42rem .75rem;
+
+    }
+
+}
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+
+@media print {
+
+    .research-card {
+
+        box-shadow: none;
+
+        border: 1px solid #d1d5db;
+
+        break-inside: avoid;
+
+    }
+
+    .research-link,
+    .research-btn {
+
+        display: none;
+
+    }
+
+}
+
+/* ==========================================================================
+   END OF RESEARCH CSS
+   Phase 16.4.11 COMPLETE
+   ========================================================================== */
