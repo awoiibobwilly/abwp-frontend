@@ -31,5 +31,17 @@ export const ENDPOINTS = {
     JOURNEY: "/home/journey/",
 
     RESEARCH: "/home/research/",
+
+   /* ==========================================
+      TESTIMONIALS
+   ========================================== */
+
+   FEATURED_TESTIMONIALS:
+
+   "/home/testimonials/",
+
+   TESTIMONIALS:
+
+   "/testimonials/",
   
   };

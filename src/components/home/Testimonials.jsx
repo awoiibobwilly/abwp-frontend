@@ -1,44 +1,173 @@
+import SectionHeader from "../common/SectionHeader";
+import SectionMessage from "../common/SectionMessage";
+
 import TestimonialCard from "./TestimonialCard";
-import { testimonialData } from "../../data/home/testimonialData";
+import TestimonialSkeleton from "./TestimonialSkeleton";
+
+import useApiResource from "../../hooks/useApiResource";
+
+import {
+  getFeaturedTestimonials,
+} from "../../services/testimonialService";
 
 import "../../styles/home/testimonials.css";
 
 function Testimonials() {
+
+  // ==========================================
+  // State
+  // ==========================================
+
+  const {
+
+    data: testimonials,
+
+    loading,
+
+    error,
+
+  } = useApiResource(
+
+    getFeaturedTestimonials
+
+  );
+
+  // ==========================================
+  // Component
+  // ==========================================
+
   return (
-    <section className="testimonials section">
+
+    <section
+
+      id="testimonials"
+
+      className="testimonials section"
+
+    >
 
       <div className="container">
 
-        <div className="section-header">
+        {/* ======================================
+            Section Header
+        ======================================= */}
 
-          <h2 className="section-title">
-            Testimonials & Social Proof
-          </h2>
+        <SectionHeader
 
-          <p className="section-subtitle">
-            Experiences shared by collaborators,
-            clients, and professional colleagues.
-          </p>
+          eyebrow="Testimonials"
 
-        </div>
+          title="Testimonials & Social Proof"
 
-        <div className="testimonials-grid">
+          description="Experiences shared by clients, collaborators, healthcare professionals, research partners and leadership colleagues."
 
-          {
-            testimonialData.map((item, index) => (
-              <TestimonialCard
-                key={index}
-                {...item}
-              />
-            ))
-          }
+        />
 
-        </div>
+        {/* ======================================
+            Loading
+        ======================================= */}
+
+        {
+
+          loading && (
+
+            <TestimonialSkeleton />
+
+          )
+
+        }
+
+        {/* ======================================
+            Error
+        ======================================= */}
+
+        {
+
+          !loading &&
+
+          error && (
+
+            <SectionMessage
+
+              type="error"
+
+              message={error}
+
+            />
+
+          )
+
+        }
+
+        {/* ======================================
+            Empty
+        ======================================= */}
+
+        {
+
+          !loading &&
+
+          !error &&
+
+          testimonials.length === 0 && (
+
+            <SectionMessage
+
+              type="empty"
+
+              message="Testimonials will appear here soon."
+
+            />
+
+          )
+
+        }
+
+        {/* ======================================
+            Testimonials Grid
+        ======================================= */}
+
+        {
+
+          !loading &&
+
+          !error &&
+
+          testimonials.length > 0 && (
+
+            <div className="testimonials-grid">
+
+              {
+
+                testimonials.map(
+
+                  (testimonial) => (
+
+                    <TestimonialCard
+
+                      key={testimonial.id}
+
+                      testimonial={testimonial}
+
+                    />
+
+                  )
+
+                )
+
+              }
+
+            </div>
+
+          )
+
+        }
 
       </div>
 
     </section>
+
   );
+
 }
 
 export default Testimonials;

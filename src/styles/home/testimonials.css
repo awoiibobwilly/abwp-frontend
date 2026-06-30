@@ -1,12 +1,63 @@
-/* ==========================================
-   TESTIMONIALS
-========================================== */
+/* ==========================================================================
+   TESTIMONIALS SECTION
+   Premium Homepage Stylesheet
+   Phase 17.8.7
+    ========================================================================== */
+
+/* ==========================================================================
+   SECTION LAYOUT
+   ========================================================================== */
+
+   .testimonials {
+
+    position: relative;
+
+    padding: 6rem 0;
+
+    overflow: hidden;
+
+}
+
+.testimonials::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            rgba(37,99,235,.04),
+            transparent 45%
+        );
+
+}
+
+.testimonials .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* ==========================================================================
+   GRID
+   ========================================================================== */
 
 .testimonials-grid {
 
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(340px,1fr)
+    );
 
     gap: 2rem;
 
@@ -14,102 +65,938 @@
 
 }
 
-/* ==========================================
+/* ==========================================================================
    CARD
-========================================== */
+   ========================================================================== */
 
 .testimonial-card {
 
-    background: white;
+    position: relative;
 
-    border: 1px solid var(--border);
+    display: flex;
 
-    border-radius: 24px;
+    flex-direction: column;
+
+    height: 100%;
 
     padding: 2rem;
 
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #fbfcff
+    );
+
+    border: 1px solid var(--border);
+
     box-shadow: var(--shadow-sm);
 
-    transition: .4s;
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s,
+
+        border-color .35s;
 
 }
 
 .testimonial-card:hover {
 
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 
-    box-shadow: var(--shadow-md);
+    border-color: rgba(37,99,235,.18);
 
-}
+    box-shadow:
 
-/* ==========================================
-   STARS
-========================================== */
+        0 18px 36px rgba(15,23,42,.08),
 
-.testimonial-stars {
-
-    font-size: 1.2rem;
-
-    color: #f59e0b;
-
-    margin-bottom: 1rem;
+        0 32px 70px rgba(37,99,235,.08);
 
 }
 
-/* ==========================================
-   QUOTE
-========================================== */
+.testimonial-card:focus-within {
 
-.testimonial-quote {
+    outline: 2px solid var(--accent);
 
-    line-height: 1.8;
-
-    color: var(--text-light);
-
-    margin-bottom: 2rem;
+    outline-offset: 4px;
 
 }
 
-/* ==========================================
-   AUTHOR
-========================================== */
+/* ==========================================================================
+   TOP DECORATION
+   ========================================================================== */
 
-.testimonial-author h4 {
+.testimonial-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 5px;
+
+    background: linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--accent)
+
+    );
+
+}
+
+/* ==========================================================================
+   QUOTE ICON
+   ========================================================================== */
+
+.testimonial-quote-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 18px;
+
+    background:
+
+        rgba(37,99,235,.08);
 
     color: var(--primary);
 
-    margin-bottom: .3rem;
+    font-size: 1.3rem;
+
+    transition:
+
+        transform .35s,
+
+        background .35s,
+
+        color .35s;
 
 }
 
-.testimonial-author span {
+.testimonial-card:hover
 
-    color: var(--text-light);
+.testimonial-quote-icon {
+
+    background:
+
+        var(--primary);
+
+    color: #fff;
+
+    transform:
+
+        rotate(-10deg)
+
+        scale(1.06);
+
+}
+
+/* ==========================================================================
+   STAR RATING
+   ========================================================================== */
+
+.testimonial-stars {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .3rem;
+
+    margin-bottom: 1.25rem;
+
+    color: #f6b800;
 
     font-size: .95rem;
 
 }
 
-/* ==========================================
+.testimonial-stars svg {
+
+    transition:
+
+        transform .3s;
+
+}
+
+.testimonial-card:hover
+
+.testimonial-stars svg {
+
+    transform: scale(1.08);
+
+}
+
+/* ==========================================================================
+   QUOTE
+   ========================================================================== */
+
+.testimonial-quote {
+
+    flex: 1;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    font-style: italic;
+
+}
+
+.testimonial-quote::selection {
+
+    background:
+
+        rgba(37,99,235,.18);
+
+}
+
+/* ==========================================================================
+   DIVIDER
+   ========================================================================== */
+
+   .testimonial-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 2rem 0 1.5rem;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(15,23,42,.08),
+
+            transparent
+
+        );
+
+    transition:
+
+        background .35s;
+
+}
+
+.testimonial-card:hover
+
+.testimonial-divider {
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(37,99,235,.18),
+
+            transparent
+
+        );
+
+}
+
+/* ==========================================================================
+   AUTHOR
+   ========================================================================== */
+
+.testimonial-author {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+
+/* ==========================================================================
+   AVATAR
+   ========================================================================== */
+
+   .testimonial-avatar,
+
+   .testimonial-avatar-placeholder {
+   
+       width: 72px;
+   
+       height: 72px;
+   
+       flex-shrink: 0;
+   
+       border-radius: 50%;
+   
+       transition:
+   
+           transform .35s,
+   
+           box-shadow .35s;
+   
+   }
+   
+   .testimonial-avatar {
+   
+       object-fit: cover;
+   
+       border: 4px solid rgba(37,99,235,.08);
+   
+       background: #fff;
+   
+   }
+   
+   .testimonial-avatar-placeholder {
+   
+       display: grid;
+   
+       place-items: center;
+   
+       background: linear-gradient(
+   
+           135deg,
+   
+           var(--primary),
+   
+           var(--accent)
+   
+       );
+   
+       color: #fff;
+   
+       font-size: 1.45rem;
+   
+       font-weight: 700;
+   
+       text-transform: uppercase;
+   
+   }
+   
+   .testimonial-card:hover
+   
+   .testimonial-avatar,
+   
+   .testimonial-card:hover
+   
+   .testimonial-avatar-placeholder {
+   
+       transform: scale(1.06);
+   
+       box-shadow:
+   
+           0 12px 28px rgba(37,99,235,.18);
+   
+   }
+   
+   /* ==========================================================================
+      AUTHOR INFORMATION
+      ========================================================================== */
+   
+   .testimonial-author-info {
+   
+       flex: 1;
+   
+       min-width: 0;
+   
+   }
+   
+   .testimonial-author-info h3 {
+   
+       margin: 0;
+   
+       color: var(--primary);
+   
+       font-size: 1.05rem;
+   
+       font-weight: 700;
+   
+       line-height: 1.35;
+   
+   }
+   
+   .testimonial-author-info p {
+   
+       margin: .35rem 0 .2rem;
+   
+       color: var(--text);
+   
+       font-size: .93rem;
+   
+       font-weight: 600;
+   
+   }
+   
+   .testimonial-author-info span {
+   
+       display: block;
+   
+       color: var(--text-light);
+   
+       font-size: .85rem;
+   
+       line-height: 1.6;
+   
+   }
+   
+   /* ==========================================================================
+      FOOTER
+      ========================================================================== */
+   
+   .testimonial-footer {
+   
+       display: flex;
+   
+       justify-content: flex-end;
+   
+       align-items: center;
+   
+       margin-top: 1.75rem;
+   
+   }
+   
+   /* ==========================================================================
+      LINKEDIN BUTTON
+      ========================================================================== */
+   
+   .testimonial-linkedin {
+   
+       display: inline-flex;
+   
+       align-items: center;
+   
+       gap: .55rem;
+   
+       padding: .75rem 1.15rem;
+   
+       border-radius: 999px;
+   
+       background: rgba(37,99,235,.08);
+   
+       color: var(--primary);
+   
+       font-size: .88rem;
+   
+       font-weight: 700;
+   
+       text-decoration: none;
+   
+       transition:
+   
+           background .35s,
+   
+           color .35s,
+   
+           transform .35s,
+   
+           box-shadow .35s;
+   
+   }
+   
+   .testimonial-linkedin:hover {
+   
+       background: var(--primary);
+   
+       color: #fff;
+   
+       transform: translateY(-2px);
+   
+       box-shadow:
+   
+           0 12px 28px rgba(37,99,235,.18);
+   
+   }
+   
+   .testimonial-linkedin svg {
+   
+       font-size: 1rem;
+   
+   }
+   
+   /* ==========================================================================
+      HOVER MICRO INTERACTIONS
+      ========================================================================== */
+   
+   .testimonial-card:hover
+   
+   .testimonial-author-info h3 {
+   
+       color: var(--accent);
+   
+   }
+   
+   .testimonial-card:hover
+   
+   .testimonial-author-info p {
+   
+       color: var(--primary);
+   
+   }
+   
+   /* ==========================================================================
+      GLASS HIGHLIGHT
+      ========================================================================== */
+   
+   .testimonial-card::before {
+   
+       background:
+   
+           linear-gradient(
+   
+               90deg,
+   
+               var(--primary),
+   
+               var(--accent)
+   
+           );
+   
+   }
+   
+   .testimonial-card:hover {
+   
+       background:
+   
+           linear-gradient(
+   
+               180deg,
+   
+               #ffffff,
+   
+               #f7fbff
+   
+           );
+   
+   }
+   
+   /* ==========================================================================
+      OPTIONAL VERIFIED BADGE
+      ========================================================================== */
+   
+   .testimonial-verified {
+   
+       display: inline-flex;
+   
+       align-items: center;
+   
+       gap: .4rem;
+   
+       margin-top: .55rem;
+   
+       color: #059669;
+   
+       font-size: .82rem;
+   
+       font-weight: 600;
+   
+   }
+   
+   .testimonial-verified svg {
+   
+       color: #10b981;
+   
+   }
+   
+   /* ==========================================================================
+      COMPANY LOGO
+      ========================================================================== */
+   
+   .testimonial-company-logo {
+   
+       width: 34px;
+   
+       height: 34px;
+   
+       object-fit: contain;
+   
+       margin-left: auto;
+   
+       opacity: .75;
+   
+   }
+   
+   /* ==========================================================================
+      PREMIUM HOVER GLOW
+      ========================================================================== */
+   
+   .testimonial-card:hover::after {
+   
+       background:
+   
+           linear-gradient(
+   
+               90deg,
+   
+               transparent,
+   
+               rgba(37,99,235,.18),
+   
+               transparent
+   
+           );
+   
+   }
+   
+   /* ==========================================================================
+      ACCESSIBILITY
+      ========================================================================== */
+   
+   .testimonial-linkedin:focus-visible {
+   
+       outline: 2px solid var(--accent);
+   
+       outline-offset: 3px;
+   
+   }
+
+
+/* ==========================================================================
+   SKELETON LOADER
+   ========================================================================== */
+
+   .skeleton-testimonial-stars {
+
+    width: 96px;
+
+    height: 18px;
+
+    margin-bottom: 1.25rem;
+
+    border-radius: 999px;
+
+}
+
+.skeleton-testimonial-text {
+
+    width: 100%;
+
+    height: 16px;
+
+    margin-bottom: .85rem;
+
+    border-radius: 6px;
+
+}
+
+.skeleton-testimonial-text.short {
+
+    width: 78%;
+
+}
+
+.skeleton-testimonial-name {
+
+    width: 140px;
+
+    height: 18px;
+
+    margin-bottom: .6rem;
+
+    border-radius: 6px;
+
+}
+
+.skeleton-testimonial-role {
+
+    width: 180px;
+
+    height: 14px;
+
+    border-radius: 6px;
+
+}
+
+/* ==========================================================================
+   EMPTY / ERROR STATES
+   ========================================================================== */
+
+.testimonials-empty,
+
+.testimonials-error {
+
+    padding: 4rem 2rem;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.testimonials-empty p,
+
+.testimonials-error p {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+}
+
+.testimonials-error p {
+
+    color: #dc2626;
+
+}
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes testimonialFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-4px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.testimonial-card:hover
+
+.testimonial-quote-icon {
+
+    animation:
+
+        testimonialFloat 1.2s ease-in-out infinite;
+
+}
+
+/* ==========================================================================
    RESPONSIVE
-========================================== */
+   ========================================================================== */
 
-@media(max-width:992px){
+@media (max-width:1200px){
 
     .testimonials-grid{
 
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns:
+
+            repeat(2,minmax(0,1fr));
 
     }
 
 }
 
-@media(max-width:576px){
+@media (max-width:992px){
+
+    .testimonials{
+
+        padding:5rem 0;
+
+    }
 
     .testimonials-grid{
 
-        grid-template-columns: 1fr;
+        gap:1.75rem;
 
     }
 
 }
+
+@media (max-width:768px){
+
+    .testimonials{
+
+        padding:4.5rem 0;
+
+    }
+
+    .testimonials-grid{
+
+        grid-template-columns:1fr;
+
+        gap:1.5rem;
+
+    }
+
+    .testimonial-card{
+
+        padding:1.75rem;
+
+    }
+
+    .testimonial-author{
+
+        align-items:flex-start;
+
+    }
+
+    .testimonial-avatar,
+
+    .testimonial-avatar-placeholder{
+
+        width:64px;
+
+        height:64px;
+
+    }
+
+    .testimonial-footer{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .testimonials{
+
+        padding:4rem 0;
+
+    }
+
+    .testimonial-card{
+
+        border-radius:20px;
+
+        padding:1.5rem;
+
+    }
+
+    .testimonial-author{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .testimonial-author-info{
+
+        width:100%;
+
+    }
+
+    .testimonial-author-info h3{
+
+        font-size:1rem;
+
+    }
+
+    .testimonial-author-info p{
+
+        font-size:.9rem;
+
+    }
+
+    .testimonial-author-info span{
+
+        font-size:.82rem;
+
+    }
+
+    .testimonial-linkedin{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .testimonial-card,
+
+    .testimonial-avatar,
+
+    .testimonial-avatar-placeholder,
+
+    .testimonial-linkedin,
+
+    .testimonial-stars svg,
+
+    .testimonial-quote-icon{
+
+        transition:none;
+
+        animation:none;
+
+    }
+
+}
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+
+@media print{
+
+    .testimonial-card{
+
+        box-shadow:none;
+
+        border:1px solid #ddd;
+
+        break-inside:avoid;
+
+    }
+
+    .testimonial-linkedin{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================================================
+   END
+   ========================================================================== */
