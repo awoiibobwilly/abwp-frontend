@@ -8,11 +8,13 @@ import JourneyTimeline from "./JourneyTimeline";
 
 import JourneySkeleton from "./JourneySkeleton";
 
-import { getJourneyPreview } from "../../services/journeyService";
+import {getJourney,} from "../../services/journeyService";
 
 import "../../styles/home/journey-preview.css";
 
 import SectionMessage from "../common/SectionMessage";
+
+import useApiResource from "../../hooks/useApiResource";
 
 function JourneyPreview() {
 
@@ -20,11 +22,19 @@ function JourneyPreview() {
   // State
   // ==================================================
 
-  const [journey, setJourney] = useState([]);
+  const {
 
-  const [loading, setLoading] = useState(true);
+    data: journey,
 
-  const [error, setError] = useState("");
+    loading,
+
+    error,
+
+} = useApiResource(
+
+    getJourney
+
+);
 
   // ==================================================
   // Fetch Journey

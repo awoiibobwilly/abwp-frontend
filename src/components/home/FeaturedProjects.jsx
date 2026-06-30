@@ -12,17 +12,28 @@ import "../../styles/home/featured-projects.css";
 
 import SectionMessage from "../common/SectionMessage";
 
+import useApiResource from "../../hooks/useApiResource";
+
 function FeaturedProjects() {
 
   // ==========================================
   // State
   // ==========================================
 
-  const [projects, setProjects] = useState([]);
 
-  const [loading, setLoading] = useState(true);
-
-  const [error, setError] = useState("");
+  const {
+  
+      data: projects,
+  
+      loading,
+  
+      error,
+  
+  } = useApiResource(
+  
+      getFeaturedProjects
+  
+  );
 
   // ==========================================
   // Fetch Featured Projects

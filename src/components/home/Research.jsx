@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
-
-import { motion } from "framer-motion";
-
 import SectionHeader from "../common/SectionHeader";
 import SectionMessage from "../common/SectionMessage";
 
 import ResearchCard from "./ResearchCard";
 import ResearchSkeleton from "./ResearchSkeleton";
+
+import useApiResource from "../../hooks/useApiResource";
 
 import { getResearchPreview } from "../../services/researchService";
 
@@ -14,223 +12,27 @@ import "../../styles/home/research.css";
 
 function Research() {
 
-    // ==================================================
-    // State
-    // ==================================================
-
-    const [research, setResearch] = useState([]);
-
-    const [loading, setLoading] = useState(true);
-
-    const [error, setError] = useState("");
-
-    // ==================================================
+    // ======================================================
     // Fetch Research
-    // ==================================================
+    // ======================================================
 
-    useEffect(() => {
+    const {
 
-        const controller = new AbortController();
+        data: research,
 
-        const fetchResearch = async () => {
+        loading,
 
-            try {
+        error,
 
-                setLoading(true);
+    } = useApiResource(
 
-                setError("");
+        getResearchPreview
 
-                const data = await getResearchPreview({
+    );
 
-                    signal: controller.signal,
-
-                });
-
-                setResearch(data);
-
-            }
-
-            catch (err) {
-
-                if (
-
-                    err.name === "AbortError" ||
-
-                    err.name === "CanceledError"
-
-                ) {
-
-                    return;
-
-                }
-
-                console.error(
-
-                    "Research Error:",
-
-                    err
-
-                );
-
-                setError(
-
-                    err?.response?.data?.detail ||
-
-                    err?.message ||
-
-                    "Unable to load research."
-
-                );
-
-            }
-
-            finally {
-
-                setLoading(false);
-
-            }
-
-        };
-
-        fetchResearch();
-
-        return () => {
-
-            controller.abort();
-
-        };
-
-    }, []);
-
-    // ==================================================
-    // Loading
-    // ==================================================
-
-    if (loading) {
-
-        return (
-
-            <section
-
-                id="research"
-
-                className="research section"
-
-            >
-
-                <div className="container">
-
-                    <SectionHeader
-
-                        eyebrow="Research"
-
-                        title="Research & Publications"
-
-                        description="Exploring healthcare, technology, innovation and evidence-based practice through research, publications and professional contributions."
-
-                    />
-
-                    <ResearchSkeleton />
-
-                </div>
-
-            </section>
-
-        );
-
-    }
-
-    // ==================================================
-    // Error
-    // ==================================================
-
-    if (error) {
-
-        return (
-
-            <section
-
-                id="research"
-
-                className="research section"
-
-            >
-
-                <div className="container">
-
-                    <SectionHeader
-
-                        eyebrow="Research"
-
-                        title="Research & Publications"
-
-                        description="Exploring healthcare, technology, innovation and evidence-based practice through research, publications and professional contributions."
-
-                    />
-
-                    <SectionMessage
-
-                        type="error"
-
-                        message={error}
-
-                    />
-
-                </div>
-
-            </section>
-
-        );
-
-    }
-
-    // ==================================================
-    // Empty
-    // ==================================================
-
-    if (research.length === 0) {
-
-        return (
-
-            <section
-
-                id="research"
-
-                className="research section"
-
-            >
-
-                <div className="container">
-
-                    <SectionHeader
-
-                        eyebrow="Research"
-
-                        title="Research & Publications"
-
-                        description="Exploring healthcare, technology, innovation and evidence-based practice through research, publications and professional contributions."
-
-                    />
-
-                    <SectionMessage
-
-                        type="empty"
-
-                        message="Research publications will appear here soon."
-
-                    />
-
-                </div>
-
-            </section>
-
-        );
-
-    }
-
-    // ==================================================
-    // Success
-    // ==================================================
+    // ======================================================
+    // Component
+    // ======================================================
 
     return (
 
@@ -244,139 +46,99 @@ function Research() {
 
             <div className="container">
 
-                {/* ==========================================
-                    Section Header
-                =========================================== */}
+                <SectionHeader
 
-                <motion.div
+                    eyebrow="Research"
 
-                    initial={{
+                    title="Research & Publications"
 
-                        opacity: 0,
+                    description="Exploring healthcare, technology, innovation and evidence-based practice through research, publications and professional contributions."
 
-                        y: 30,
+                />
 
-                    }}
+                {
 
-                    whileInView={{
+                    loading && (
 
-                        opacity: 1,
+                        <ResearchSkeleton />
 
-                        y: 0,
+                    )
 
-                    }}
+                }
 
-                    viewport={{
+                {
 
-                        once: true,
+                    !loading &&
 
-                    }}
+                    error && (
 
-                    transition={{
+                        <SectionMessage
 
-                        duration: 0.6,
+                            type="error"
 
-                    }}
+                            message={error}
 
-                >
+                        />
 
-                    <SectionHeader
+                    )
 
-                        eyebrow="Research"
+                }
 
-                        title="Research & Publications"
+                {
 
-                        description="Exploring healthcare, technology, innovation and evidence-based practice through research, publications and professional contributions."
+                    !loading &&
 
-                    />
+                    !error &&
 
-                </motion.div>
+                    research.length === 0 && (
 
-                {/* ==========================================
-                    Research Grid
-                =========================================== */}
+                        <SectionMessage
 
-                <motion.div
+                            type="empty"
 
-                    className="research-grid"
+                            message="Research publications will appear here soon."
 
-                    initial={{
+                        />
 
-                        opacity: 0,
+                    )
 
-                    }}
+                }
 
-                    whileInView={{
+                {
 
-                        opacity: 1,
+                    !loading &&
 
-                    }}
+                    !error &&
 
-                    viewport={{
+                    research.length > 0 && (
 
-                        once: true,
+                        <div className="research-grid">
 
-                    }}
+                            {
 
-                    transition={{
+                                research.map(
 
-                        staggerChildren: 0.12,
+                                    (item) => (
 
-                    }}
+                                        <ResearchCard
 
-                >
+                                            key={item.id}
 
-                    {
+                                            research={item}
 
-                        research.map((item) => (
+                                        />
 
-                            <motion.div
+                                    )
 
-                                key={item.id}
+                                )
 
-                                initial={{
+                            }
 
-                                    opacity: 0,
+                        </div>
 
-                                    y: 30,
+                    )
 
-                                }}
-
-                                whileInView={{
-
-                                    opacity: 1,
-
-                                    y: 0,
-
-                                }}
-
-                                viewport={{
-
-                                    once: true,
-
-                                }}
-
-                                transition={{
-
-                                    duration: 0.45,
-
-                                }}
-
-                            >
-
-                                <ResearchCard
-
-                                    research={item}
-
-                                />
-
-                            </motion.div>
-
-                        ))
-
-                    }
-
-                </motion.div>
+                }
 
             </div>
 

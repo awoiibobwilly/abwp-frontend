@@ -11,17 +11,27 @@ import "../../styles/home/expertise.css";
 
 import SectionMessage from "../common/SectionMessage";
 
+import useApiResource from "../../hooks/useApiResource";
+
 function Expertise() {
 
   // ==========================================
   // State
   // ==========================================
 
-  const [expertise, setExpertise] = useState([]);
+  const {
 
-  const [loading, setLoading] = useState(true);
+    data: expertise,
 
-  const [error, setError] = useState("");
+    loading,
+
+    error,
+
+} = useApiResource(
+
+    getExpertise
+
+);
 
   // ==========================================
   // Fetch Expertise
