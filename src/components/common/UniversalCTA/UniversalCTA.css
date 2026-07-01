@@ -226,6 +226,17 @@
 
     margin-bottom: 3rem;
 
+    transition:
+
+    transform .35s ease,
+
+    box-shadow .35s ease,
+
+    background .35s ease,
+
+    border-color .35s ease
+    
+
 }
 
 /* ==========================================================
@@ -399,13 +410,23 @@
 
 .universal-cta-actions .btn {
 
-    min-width: 220px;
+    min-width:240px;
+
+    height:64px;
 
     padding: 1rem 2rem;
 
     font-weight: 700;
 
     border-radius: 999px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.75rem;
 
     transition:
 
@@ -449,6 +470,14 @@
 
     transform: translateY(-4px);
 
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.22),
+
+        0 0 35px rgba(255,255,255,.24);
+
 }
 
 .universal-cta-actions .btn-primary:hover svg {
@@ -470,6 +499,12 @@
     color: #ffffff;
 
     backdrop-filter: blur(12px);
+
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.12);
+
+    border-color:rgba(255,255,255,.45);
 
 }
 
@@ -806,12 +841,54 @@
     }
 
     .universal-cta-trust-item {
+        .btn-primary{
 
+            background:#ffffff;
+        
+            color:var(--primary);
+        
+            border:none;
+        
+            box-shadow:
+        
+                0 10px 25px rgba(0,0,0,.18),
+        
+                0 0 25px rgba(255,255,255,.18);
+        
+        }
         font-size: .85rem;
 
     }
 
 }
+
+
+.btn-secondary{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.22);
+
+    color:#ffffff;
+
+    backdrop-filter:blur(14px);
+
+}
+
+
+.btn svg{
+
+    transition:
+
+        transform .3s ease;
+}
+
+.btn:hover svg{
+
+    transform:translateX(4px);
+}
+
+
 
 /* ==========================================================================
    REDUCED MOTION
