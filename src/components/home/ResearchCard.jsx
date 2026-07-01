@@ -8,10 +8,13 @@ function ResearchCard({ research }) {
 
   return (
 
-    <article className="research-card">
+    <article
+      className="research-card"
+      data-category={research.category?.slug}
+    >
 
       {/* ======================================
-          Research Media
+          Publication Cover
       ======================================= */}
 
       <ResearchMedia
@@ -21,46 +24,159 @@ function ResearchCard({ research }) {
       />
 
       {/* ======================================
-          Research Content
+          Publication Content
       ======================================= */}
 
       <div className="research-content">
 
         {/* ======================================
-            Badges
+            Publication Header
+        ======================================= */}
+{/* 
+        <header className="research-header">
+
+          <div className="research-badges">
+
+            {
+
+              research.category && (
+
+                <span
+
+                  className="research-category"
+
+                  style={{
+
+                    backgroundColor:
+                      `${research.category.color}20`,
+
+                    color:
+
+                      research.category.color,
+
+                  }}
+
+                >
+
+                  {research.category.name}
+
+                </span>
+
+              )
+
+            }
+
+            {
+
+              research.publication_type_display && (
+
+                <span className="research-type">
+
+                  {
+
+                    research.publication_type_display
+
+                  }
+
+                </span>
+
+              )
+
+            }
+
+          </div>
+
+        </header> */}
+
+        {/* ======================================
+            Publication Body
         ======================================= */}
 
-        <div className="research-badges">
+        <div className="research-body">
+
+          {/* ======================================
+              Title
+          ======================================= */}
+
+          <h3 className="research-title">
+
+            {research.title}
+
+          </h3>
+
+          {/* ======================================
+              Summary
+          ======================================= */}
+
+          <p className="research-summary">
+
+            {research.summary}
+
+          </p>
+
+          {/* ======================================
+              Publication Divider
+          ======================================= */}
+
+          <div className="research-divider" />
+
+          {/* ======================================
+              Metadata
+          ======================================= */}
+
+          <ResearchMeta
+
+            research={research}
+
+          />
+
+          {/* ======================================
+              Keywords
+          ======================================= */}
 
           {
 
-            research.category && (
+            research.keywords?.length > 0 && (
 
-              <span
-                className="research-category"
-                style={{
-                  backgroundColor: `${research.category.color}20`,
-                  color: research.category.color,
-                }}
-              >
+              <div className="research-keywords">
 
-                {research.category.name}
+                {
 
-              </span>
+                  research.keywords.map(
 
-            )
+                    (keyword) => (
 
-          }
+                      <span
 
-          {
+                        key={keyword.id}
 
-            research.publication_type_display && (
+                        className="keyword-pill"
 
-              <span className="research-type">
+                        style={{
 
-                {research.publication_type_display}
+                          borderColor:
 
-              </span>
+                            keyword.color,
+
+                          color:
+
+                            keyword.color,
+
+                        }}
+
+                      >
+
+                        {keyword.name}
+
+                      </span>
+
+                    )
+
+                  )
+
+                }
+
+              </div>
 
             )
 
@@ -68,91 +184,13 @@ function ResearchCard({ research }) {
 
         </div>
 
-        {/* ======================================
-            Title
-        ======================================= */}
-
-        <h3 className="research-title">
-
-          {research.title}
-
-        </h3>
-
-        {/* ======================================
-            Summary
-        ======================================= */}
-
-        <p className="research-summary">
-
-          {research.summary}
-
-        </p>
-
-        {/* ======================================
-            Research Details
-        ======================================= */}
-
-        <ResearchMeta
-
-          research={research}
-
-        />
-
-        {/* ======================================
-            Keywords
-        ======================================= */}
-
-        {
-
-          research.keywords?.length > 0 && (
-
-            <div className="research-keywords">
-
-              {
-
-                research.keywords.map((keyword) => (
-
-                  <span
-
-                    key={keyword.id}
-
-                    className="keyword-pill"
-
-                    style={{
-
-                      borderColor: keyword.color,
-
-                      color: keyword.color,
-
-                    }}
-
-                  >
-
-                    {
-
-                      keyword.name
-
-                    }
-
-                  </span>
-
-                ))
-
-              }
-
-            </div>
-
-          )
-
-        }
-
       </div>
 
       {/* ======================================
-          Footer
+          Publication Footer
       ======================================= */}
 
-      <div className="research-footer">
+      <footer className="research-footer">
 
         {
 
@@ -176,13 +214,13 @@ function ResearchCard({ research }) {
 
         >
 
-          Read More
+          Read Publication
 
           <FaArrowRight />
 
         </Link>
 
-      </div>
+      </footer>
 
     </article>
 

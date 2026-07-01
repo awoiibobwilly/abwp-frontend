@@ -13,10 +13,14 @@ function SkeletonCard() {
     <article className="research-card">
 
       {/* ======================================
-          Media
+          Publication Cover
       ======================================= */}
 
-      <div className="research-placeholder skeleton" />
+      <div className="research-cover">
+
+        <div className="skeleton skeleton-research-cover" />
+
+      </div>
 
       {/* ======================================
           Content
@@ -24,99 +28,107 @@ function SkeletonCard() {
 
       <div className="research-content">
 
-        {/* Badges */}
+        <div className="research-body">
 
-        <div className="research-badges">
+          {/* ======================================
+              Title
+          ======================================= */}
 
-          <div className="skeleton skeleton-research-badge" />
+          <div className="skeleton skeleton-research-title" />
 
-          <div className="skeleton skeleton-research-badge short" />
+          {/* ======================================
+              Summary
+          ======================================= */}
 
-          <div className="skeleton skeleton-research-status" />
+          <div className="skeleton skeleton-research-text" />
 
-        </div>
+          <div className="skeleton skeleton-research-text" />
 
-        {/* Title */}
+          <div className="skeleton skeleton-research-text short" />
 
-        <div className="skeleton skeleton-research-title" />
+          {/* ======================================
+              Divider
+          ======================================= */}
 
-        {/* Meta */}
+          <div className="research-divider" />
 
-        <div className="research-meta">
+          {/* ======================================
+              Metadata
+          ======================================= */}
 
-          {
+          <div className="research-meta">
 
-            Array.from({
+            {
 
-              length: 3,
+              Array.from({
 
-            }).map((_, index) => (
+                length: 4,
 
-              <div
+              }).map((_, index) => (
 
-                key={index}
+                <div
 
-                className="research-meta-item"
+                  key={index}
 
-              >
+                  className="research-meta-item"
 
-                <div className="skeleton skeleton-research-meta-label" />
+                >
 
-                <div className="skeleton skeleton-research-meta-value" />
+                  <div className="skeleton skeleton-research-meta-label" />
 
-              </div>
+                  <div className="skeleton skeleton-research-meta-value" />
 
-            ))
+                </div>
 
-          }
+              ))
 
-        </div>
+            }
 
-        {/* Summary */}
+          </div>
 
-        <div className="skeleton skeleton-research-text" />
+          {/* ======================================
+              Keywords
+          ======================================= */}
 
-        <div className="skeleton skeleton-research-text" />
+          <div className="research-keywords">
 
-        <div className="skeleton skeleton-research-text short" />
+            {
 
-        {/* Keywords */}
+              Array.from({
 
-        <div className="research-keywords">
+                length: 3,
 
-          {
+              }).map((_, index) => (
 
-            Array.from({
+                <div
 
-              length: 4,
+                  key={index}
 
-            }).map((_, index) => (
+                  className="skeleton skeleton-research-keyword"
 
-              <div
+                />
 
-                key={index}
+              ))
 
-                className="skeleton skeleton-research-keyword"
+            }
 
-              />
-
-            ))
-
-          }
-
-        </div>
-
-        {/* Footer */}
-
-        <div className="research-footer">
-
-          <div className="skeleton skeleton-research-year" />
-
-          <div className="skeleton skeleton-research-link" />
+          </div>
 
         </div>
 
       </div>
+
+      {/* ======================================
+          Footer
+      ======================================= */}
+
+      <footer className="research-footer">
+
+        <div className="skeleton skeleton-research-year" />
+
+        <div className="skeleton skeleton-research-link" />
+
+      </footer>
 
     </article>
 
