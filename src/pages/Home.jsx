@@ -5,7 +5,6 @@ import FeaturedProjects from "../components/home/FeaturedProjects";
 import JourneyPreview from "../components/home/JourneyPreview";
 import Research from "../components/home/Research";
 import Testimonials from "../components/home/Testimonials";
-import ContactCTA from "../components/home/ContactCTA";
 
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 function Home() {

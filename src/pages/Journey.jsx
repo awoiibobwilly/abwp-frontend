@@ -1,7 +1,8 @@
 import JourneyHero from "../components/journey/JourneyHero";
 import JourneyTimeline from "../components/journey/JourneyTimeline";
 import FutureVision from "../components/journey/FutureVision";
-import JourneyCTA from "../components/journey/JourneyCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Journey() {
   return (
@@ -12,7 +13,12 @@ function Journey() {
 
       <FutureVision />
 
-      <JourneyCTA />
+      <UniversalCTA
+
+          page="journey"
+
+      />
+
     </>
   );
 }

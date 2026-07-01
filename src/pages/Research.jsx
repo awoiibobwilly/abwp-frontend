@@ -4,7 +4,8 @@ import PublicationsSection from "../components/research/PublicationsSection";
 import MethodologiesTools from "../components/research/MethodologiesTools";
 import ResearchInterests from "../components/research/ResearchInterests";
 import ResearchPhilosophy from "../components/research/ResearchPhilosophy";
-import ResearchCTA from "../components/research/ResearchCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Research() {
 
@@ -22,7 +23,11 @@ function Research() {
 
       <ResearchPhilosophy />
 
-      <ResearchCTA />
+      <UniversalCTA
+
+          page="research"
+
+      />
 
     </>
   );

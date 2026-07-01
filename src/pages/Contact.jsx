@@ -4,7 +4,8 @@ import ContactForm from "../components/contact/ContactForm";
 import SocialPlatforms from "../components/contact/SocialPlatforms";
 import AvailabilityCollaboration from "../components/contact/AvailabilityCollaboration";
 import FAQSection from "../components/contact/FAQSection";
-import ContactCTA from "../components/contact/ContactCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Contact() {
 
@@ -22,7 +23,11 @@ function Contact() {
 
       <FAQSection />
 
-      <ContactCTA />
+      <UniversalCTA
+
+          page="contact"
+
+      />
 
     </>
   );

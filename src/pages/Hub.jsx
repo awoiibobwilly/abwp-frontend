@@ -14,7 +14,8 @@ import PublicationsArchive from
 "../components/knowledgeHub/PublicationsArchive";
 import HubSearch from
 "../components/knowledgeHub/HubSearch";
-import HubCTA from "../components/knowledgeHub/HubCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Hub() {
 
@@ -38,7 +39,11 @@ function Hub() {
 
       <HubSearch />
 
-      <HubCTA />
+      <UniversalCTA
+
+            page="hub"
+
+        />
 
 
     </>

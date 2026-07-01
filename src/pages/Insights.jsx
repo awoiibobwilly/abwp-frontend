@@ -4,7 +4,8 @@ import CategoriesSection from "../components/insights/CategoriesSection";
 import LatestThoughts from "../components/insights/LatestThoughts";
 import QuotesReflections from "../components/insights/QuotesReflections";
 import NewsletterSection from "../components/insights/NewsletterSection";
-import InsightsCTA from "../components/insights/InsightsCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Insights() {
 
@@ -22,7 +23,11 @@ function Insights() {
 
       <NewsletterSection />
 
-      <InsightsCTA />
+      <UniversalCTA
+
+          page="insights"
+
+      />
 
     </>
   );

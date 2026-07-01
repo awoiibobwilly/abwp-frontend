@@ -3,7 +3,7 @@ import FeaturedProjects from "../components/projects/FeaturedProjects";
 import ProjectCategories from "../components/projects/ProjectCategories";
 import TechnologiesCloud from "../components/projects/TechnologiesCloud";
 import OpenSourceSection from "../components/projects/OpenSourceSection";
-import ProjectsCTA from "../components/projects/ProjectsCTA";
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function Projects() {
 
@@ -19,7 +19,11 @@ function Projects() {
 
       <OpenSourceSection />
 
-      <ProjectsCTA />
+      <UniversalCTA
+
+          page="projects"
+
+      />
 
     </>
   );

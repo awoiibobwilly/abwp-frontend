@@ -10,7 +10,8 @@ import ResearchInterests from "../components/about/ResearchInterests";
 import Skills from "../components/about/Skills";
 import Achievements from "../components/about/Achievements";
 import CoreValues from "../components/about/CoreValues";
-import AboutCTA from "../components/about/AboutCTA";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 function About() {
   return (
@@ -39,7 +40,11 @@ function About() {
 
       <CoreValues />
 
-      <AboutCTA />
+      <UniversalCTA
+
+    page="about"
+
+/>
 
 
     </>
