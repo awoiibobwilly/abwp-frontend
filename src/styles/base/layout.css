@@ -1,0 +1,77 @@
+/* ==========================================================
+   GLOBAL LAYOUT
+   ========================================================== */
+
+   .container {
+
+    width: min(100% - 2rem, var(--container-width));
+
+    margin-inline: auto;
+
+}
+
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+
+.section {
+
+    position: relative;
+
+    padding-block: var(--section-padding);
+
+}
+
+.section-sm {
+
+    padding-block: calc(
+
+        var(--section-padding) * .75
+
+    );
+
+}
+
+.section-lg {
+
+    padding-block: calc(
+
+        var(--section-padding) * 1.25
+
+    );
+
+}
+
+/* ==========================================================
+   SECTION HEADER
+   ========================================================== */
+
+.section-header {
+
+    text-align: center;
+
+    max-width: 760px;
+
+    margin-inline: auto;
+
+    margin-bottom: var(--space-10);
+
+}
+
+.section-subtitle {
+
+    margin-bottom: var(--space-3);
+
+}
+
+.section-title {
+
+    margin-bottom: var(--space-5);
+
+}
+
+.section-description {
+
+    margin: 0;
+
+}

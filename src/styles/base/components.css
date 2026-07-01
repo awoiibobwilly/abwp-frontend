@@ -1,0 +1,286 @@
+/* ==========================================================================
+   GLOBAL CARD SYSTEM
+   ABW Portfolio Design System v1.0
+   ========================================================================== */
+
+/* ==========================================================
+   CARD FOUNDATION
+   ========================================================== */
+
+   .card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    background: var(--surface);
+
+    border: 1px solid transparent;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+
+        transform var(--transition),
+
+        box-shadow var(--transition),
+
+        border-color var(--transition),
+
+        background-color var(--transition);
+
+}
+
+/* ==========================================================
+   INTERACTIVE CARD
+   ========================================================== */
+
+.card-interactive {
+
+    cursor: pointer;
+
+}
+
+.card-interactive:hover,
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(37, 99, 235, .10);
+
+    box-shadow: var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   CARD MEDIA
+   ========================================================== */
+
+.card-media {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+}
+
+.card-media img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+
+        transform .6s ease,
+
+        filter .35s ease;
+
+}
+
+.card:hover .card-media img,
+
+.card-interactive:hover .card-media img {
+
+    transform: scale(1.05);
+
+}
+
+/* ==========================================================
+   CARD CONTENT
+   ========================================================== */
+
+.card-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: var(--card-padding);
+
+}
+
+/* ==========================================================
+   CARD HEADER
+   ========================================================== */
+
+.card-header {
+
+    margin-bottom: var(--space-5);
+
+}
+
+/* ==========================================================
+   CARD BODY
+   ========================================================== */
+
+.card-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    gap: var(--space-4);
+
+}
+
+/* ==========================================================
+   CARD FOOTER
+   ========================================================== */
+
+.card-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    margin-top: auto;
+
+    padding-top: var(--space-6);
+
+}
+
+/* ==========================================================
+   CARD DIVIDER
+   ========================================================== */
+
+.card-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--border);
+
+    margin: var(--space-6) 0;
+
+}
+
+/* ==========================================================
+   CARD BADGES
+   ========================================================== */
+
+.card-badges {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .5rem;
+
+}
+
+.card-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+
+        .45rem
+
+        .9rem;
+
+    border-radius: var(--radius-pill);
+
+    font-size: var(--fs-xs);
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+}
+
+/* ==========================================================
+   CARD LINKS
+   ========================================================== */
+
+.card-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .45rem;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+
+        color var(--transition),
+
+        gap var(--transition);
+
+}
+
+.card-link:hover {
+
+    gap: .7rem;
+
+}
+
+/* ==========================================================
+   CARD EMPTY STATE
+   ========================================================== */
+
+.card-empty {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 280px;
+
+    text-align: center;
+
+}
+
+/* ==========================================================
+   CARD SKELETON FOUNDATION
+   ========================================================== */
+
+.card-skeleton {
+
+    overflow: hidden;
+
+    border-radius: inherit;
+
+}
+
+.card-skeleton .skeleton {
+
+    border-radius: var(--radius-sm);
+
+}
