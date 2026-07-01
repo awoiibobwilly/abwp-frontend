@@ -1,20 +1,39 @@
 function HighlightCard({
-    number,
-    suffix,
-    title,
-  }) {
-    return (
-      <div className="highlight-card">
-  
-        <h3>
+
+  number,
+
+  suffix,
+
+  title,
+
+}) {
+
+  return (
+
+    <article className="card card-interactive highlight-card">
+
+      <div className="card-content highlight-content">
+
+        <h3 className="highlight-number">
+
           {number}
+
           {suffix}
+
         </h3>
-  
-        <p>{title}</p>
-  
+
+        <p className="highlight-title">
+
+          {title}
+
+        </p>
+
       </div>
-    );
-  }
-  
-  export default HighlightCard;
+
+    </article>
+
+  );
+
+}
+
+export default HighlightCard;

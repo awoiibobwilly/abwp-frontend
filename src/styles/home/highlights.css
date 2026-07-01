@@ -1,16 +1,16 @@
-/* ==========================================
+/* ==========================================================
    HIGHLIGHTS
-========================================== */
+========================================================== */
 
-.highlights-grid{
+.highlights-grid {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-    gap:2rem;
+    gap: 2rem;
 
-    margin-top:4rem;
+    margin-top: 4rem;
 
 }
 
@@ -34,6 +34,58 @@
     box-shadow:var(--shadow-sm);
 
     transition:.4s;
+
+    min-height: 100%;
+
+    text-align: center;
+
+}
+
+.highlight-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex: 1;
+
+}
+
+/* ==========================================================
+   NUMBER
+========================================================== */
+
+.highlight-number {
+
+    margin: 0 0 .5rem;
+
+    font-size: 3rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: var(--accent);
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.highlight-title {
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-weight: 500;
+
+    line-height: 1.6;
 
 }
 
@@ -67,26 +119,31 @@
 }
 
 
-/* ==========================================
+/* ==========================================================
    RESPONSIVE
-========================================== */
+========================================================== */
 
-@media(max-width:992px){
+@media (max-width: 992px) {
 
-    .highlights-grid{
+    .highlights-grid {
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
 }
 
+@media (max-width: 576px) {
 
-@media(max-width:576px){
+    .highlights-grid {
 
-    .highlights-grid{
+        grid-template-columns: 1fr;
 
-        grid-template-columns:1fr;
+    }
+
+    .highlight-number {
+
+        font-size: 2.5rem;
 
     }
 
