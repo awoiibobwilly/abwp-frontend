@@ -59,9 +59,11 @@ function Navbar() {
 
           <NavLink to="/knowledge-hub"> The Hub</NavLink>
 
+          <NavLink to="/cv">Resume</NavLink>
+
           <NavLink to="/contact">Contact</NavLink>
 
-          <NavLink to="/cv">CV</NavLink>
+          
 
         </nav>
 

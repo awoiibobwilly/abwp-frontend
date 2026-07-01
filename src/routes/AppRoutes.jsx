@@ -14,6 +14,8 @@ import Contact from "../pages/Contact";
 import Hub from "../pages/Hub";
 import NotFound from "../pages/NotFound";
 
+import Playground from "../pages/Playground";
+
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -73,6 +75,14 @@ function AppRoutes() {
             element={<NotFound />} />
 
         </Route>
+
+        <Route
+
+    path="/playground"
+
+    element={<Playground />}
+
+/>
 
       </Routes>
 
