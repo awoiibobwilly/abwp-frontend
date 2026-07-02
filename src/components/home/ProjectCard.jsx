@@ -37,73 +37,55 @@ function ProjectCard({
           PROJECT FOOTER
       ======================================= */}
 
-      <div className="project-footer">
+          <div className="project-footer">
 
-        <div className="project-links">
+          <div className="project-links">
 
-          {
+            {
 
-            project.live_url && (
+              project.live_url && (
 
-              <a
+                <a
+                  href={project.live_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-btn primary"
+                >
+                  🌐 Live Demo
+                </a>
 
-                href={project.live_url}
+              )
 
-                target="_blank"
+            }
 
-                rel="noopener noreferrer"
+            {
 
-                className="project-btn primary"
+              project.github_url && (
 
-              >
+                <a
+                  href={project.github_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-btn secondary"
+                >
+                  GitHub
+                </a>
 
-                🌐 Live Demo
+              )
 
-              </a>
+            }
 
-            )
+            <Link
+              to={`/projects/${project.slug}`}
+              className="project-more"
+            >
+              <span>Learn More</span>
+              <span className="project-more-arrow">→</span>
+            </Link>
 
-          }
+          </div>
 
-          {
-
-            project.github_url && (
-
-              <a
-
-                href={project.github_url}
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-                className="project-btn secondary"
-
-              >
-
-                GitHub
-
-              </a>
-
-            )
-
-          }
-
-        </div>
-
-        <Link
-
-          to={`/projects/${project.slug}`}
-
-          className="project-more"
-
-        >
-
-          Learn More →
-
-        </Link>
-
-      </div>
+          </div>
 
     </article>
 
