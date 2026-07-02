@@ -9,9 +9,11 @@ import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 import { PAGE_KEYS } from "../config/portfolioConstants";
 
+import "../styles/about/about-page.css";
+
 function About() {
   return (
-    <>
+    <main className="about-page">
       {/* ==================================================
           ABOUT HERO
       ================================================== */}
@@ -51,7 +53,7 @@ function About() {
           UNIVERSAL CTA
       ================================================== */}
       <UniversalCTA page={PAGE_KEYS.ABOUT} />
-    </>
+    </main>
   );
 }
 

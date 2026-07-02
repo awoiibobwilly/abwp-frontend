@@ -1,0 +1,313 @@
+/* ==========================================================================
+   ABOUT PAGE
+   FINAL PAGE RHYTHM + CTA POLISH
+   Sprint A-CSS 5
+   ========================================================================== */
+
+
+/* ==========================================================================
+   PAGE ROOT
+   ========================================================================== */
+
+   .about-page {
+    position: relative;
+    overflow: clip;
+  }
+  
+  
+  /* ==========================================================================
+     UNIVERSAL SECTION RHYTHM
+     --------------------------------------------------------------------------
+     This layer harmonizes spacing between the major About sections without
+     rewriting each section's internal layout.
+     ========================================================================== */
+  
+  .about-page .who-i-am,
+  .about-page .professional-dna,
+  .about-page .core-values,
+  .about-page .selected-achievements,
+  .about-page .credentials,
+  .about-page .skills-tools {
+    position: relative;
+  }
+  
+  
+  /* Slightly tighten the first transition after hero */
+  .about-page .who-i-am {
+    margin-top: -0.5rem;
+  }
+  
+  /* Give the middle narrative spine a little more breathing room */
+  .about-page .professional-dna,
+  .about-page .core-values {
+    scroll-margin-top: 110px;
+  }
+  
+  /* Keep lower proof sections visually connected but not crowded */
+  .about-page .selected-achievements,
+  .about-page .credentials,
+  .about-page .skills-tools {
+    scroll-margin-top: 110px;
+  }
+  
+  
+  /* ==========================================================================
+     SECTION DIVIDERS / TRANSITION SOFTENERS
+     --------------------------------------------------------------------------
+     These are intentionally subtle. They stop the page from feeling like hard
+     stacked blocks while keeping the premium look clean.
+     ========================================================================== */
+  
+  .about-page .professional-dna::after,
+  .about-page .core-values::after,
+  .about-page .selected-achievements::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: min(92%, 1180px);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(148, 163, 184, 0.18),
+      transparent
+    );
+    pointer-events: none;
+  }
+  
+  
+  /* ==========================================================================
+     ABOUT HERO → WHO I AM TRANSITION
+     ========================================================================== */
+  
+  .about-page .about-hero {
+    z-index: 2;
+  }
+  
+  .about-page .who-i-am {
+    z-index: 1;
+  }
+  
+  
+  /* ==========================================================================
+     LOWER-HALF NARRATIVE RHYTHM
+     --------------------------------------------------------------------------
+     The lower sections should feel like one evidence layer.
+     ========================================================================== */
+  
+  .about-page .selected-achievements {
+    padding-bottom: 5.25rem;
+  }
+  
+  .about-page .credentials {
+    padding-top: 5.25rem;
+    padding-bottom: 5.25rem;
+  }
+  
+  .about-page .skills-tools {
+    padding-top: 5.25rem;
+    padding-bottom: 4.75rem;
+  }
+  
+  
+  /* ==========================================================================
+     ABOUT CTA INTEGRATION
+     --------------------------------------------------------------------------
+     This is the most important part of Sprint A-CSS 5.
+     We want the CTA to feel like the intentional closing movement of the About
+     story, not a disconnected generic block.
+     ========================================================================== */
+  
+  .about-page .universal-cta {
+    position: relative;
+    padding-top: 1rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(248, 251, 255, 0) 0%,
+        rgba(248, 251, 255, 0.72) 18%,
+        rgba(255, 255, 255, 1) 100%
+      );
+  }
+  
+  .about-page .universal-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(92%, 1180px);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(148, 163, 184, 0.22),
+      transparent
+    );
+    pointer-events: none;
+  }
+  
+  .about-page .universal-cta .universal-cta-wrapper {
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 26px 70px rgba(15, 23, 42, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  
+  .about-page .universal-cta .universal-cta-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background:
+      radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.12),
+        transparent 68%
+      );
+    pointer-events: none;
+  }
+  
+  .about-page .universal-cta .universal-cta-content {
+    max-width: 860px;
+  }
+  
+  .about-page .universal-cta .universal-cta-title {
+    max-width: 16ch;
+  }
+  
+  .about-page .universal-cta .universal-cta-description {
+    max-width: 62ch;
+  }
+  
+  .about-page .universal-cta .universal-cta-footer {
+    margin-top: 1.35rem;
+  }
+  
+  .about-page .universal-cta .universal-cta-closing {
+    opacity: 0.94;
+  }
+  
+  
+  /* ==========================================================================
+     SECTION HEADER RHYTHM NORMALIZATION
+     --------------------------------------------------------------------------
+     This helps the About page feel more consistent from section to section
+     even if each section has slightly different internal structures.
+     ========================================================================== */
+  
+  .about-page .section-header {
+    margin-bottom: 0;
+  }
+  
+  .about-page .who-i-am .section-header,
+  .about-page .professional-dna .section-header,
+  .about-page .core-values .section-header,
+  .about-page .selected-achievements .section-header,
+  .about-page .credentials .section-header,
+  .about-page .skills-tools .section-header {
+    max-width: 860px;
+  }
+  
+  
+  /* ==========================================================================
+     LARGE TABLET
+     ========================================================================== */
+  
+  @media (max-width: 1200px) {
+    .about-page .universal-cta .universal-cta-content {
+      max-width: 780px;
+    }
+  }
+  
+  
+  /* ==========================================================================
+     TABLET
+     ========================================================================== */
+  
+  @media (max-width: 992px) {
+    .about-page .selected-achievements {
+      padding-bottom: 4.5rem;
+    }
+  
+    .about-page .credentials {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+  
+    .about-page .skills-tools {
+      padding-top: 4.5rem;
+      padding-bottom: 4rem;
+    }
+  
+    .about-page .universal-cta {
+      padding-top: 0.75rem;
+    }
+  
+    .about-page .universal-cta .universal-cta-content {
+      max-width: 100%;
+    }
+  
+    .about-page .universal-cta .universal-cta-title,
+    .about-page .universal-cta .universal-cta-description {
+      max-width: 100%;
+    }
+  }
+  
+  
+  /* ==========================================================================
+     MOBILE
+     ========================================================================== */
+  
+  @media (max-width: 768px) {
+    .about-page .who-i-am {
+      margin-top: 0;
+    }
+  
+    .about-page .professional-dna::after,
+    .about-page .core-values::after,
+    .about-page .selected-achievements::after,
+    .about-page .universal-cta::before {
+      width: calc(100% - 2rem);
+    }
+  
+    .about-page .selected-achievements {
+      padding-bottom: 4rem;
+    }
+  
+    .about-page .credentials {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  
+    .about-page .skills-tools {
+      padding-top: 4rem;
+      padding-bottom: 3.5rem;
+    }
+  
+    .about-page .universal-cta {
+      padding-top: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .about-page .selected-achievements {
+      padding-bottom: 3.75rem;
+    }
+  
+    .about-page .credentials {
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+    }
+  
+    .about-page .skills-tools {
+      padding-top: 3.75rem;
+      padding-bottom: 3.25rem;
+    }
+  }
