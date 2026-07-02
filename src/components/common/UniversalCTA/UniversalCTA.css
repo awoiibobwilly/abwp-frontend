@@ -490,30 +490,29 @@
    SECONDARY BUTTON
 ========================================================== */
 
-.universal-cta-actions .btn-secondary {
-
-    background: rgba(255,255,255,.08);
-
-    border: 1px solid rgba(255,255,255,.18);
-
-    color: #ffffff;
-
-    backdrop-filter: blur(12px);
-
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,.12);
-
-    border-color:rgba(255,255,255,.45);
-
+.universal-cta-actions .btn-secondary{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.22);
+    color:#ffffff;
+    backdrop-filter:blur(14px);
+    box-shadow:
+        0 10px 24px rgba(7,28,87,.12);
 }
 
-.universal-cta-actions .btn-secondary:hover {
+.universal-cta-actions .btn-secondary:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.14);
+    border-color:rgba(255,255,255,.42);
+    box-shadow:
+        0 16px 32px rgba(7,28,87,.18);
+}
 
-    background: rgba(255,255,255,.14);
+.universal-cta-actions .btn-secondary svg{
+    transition:transform .3s ease;
+}
 
-    transform: translateY(-4px);
-
+.universal-cta-actions .btn-secondary:hover svg{
+    transform:translateX(4px);
 }
 
 /* ==========================================================
@@ -862,18 +861,6 @@
 
 }
 
-
-.btn-secondary{
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.22);
-
-    color:#ffffff;
-
-    backdrop-filter:blur(14px);
-
-}
 
 
 .btn svg{

@@ -13,6 +13,8 @@ import { heroData } from "../../data/home/heroData";
 
 import "../../styles/home/hero-content.css";
 
+import { Link } from "react-router-dom";
+
 
 function HeroContent() {
 
@@ -51,13 +53,12 @@ function HeroContent() {
           View My Projects
         </NavLink>
 
-        <a
-          href="/documents/awoii-bob-willy-cv.pdf"
-          download
-          className="btn btn-secondary"
-        >
-          Download CV
-        </a>
+        <Link
+        to="/cv"
+        className="btn btn-secondary"
+      >
+        View Resume
+      </Link>
 
           <NavLink
           to="/contact"
@@ -72,15 +73,15 @@ function HeroContent() {
       {/* Social Icons */}
       <div className="hero-socials">
 
-        <a href="#">
+        <a href="https://www.linkedin.com/in/bob-willy-awoii-ab883b75?utm_source=share_via&utm_content=profile&utm_medium=member_ios">
           <FaLinkedin />
         </a>
 
-        <a href="#">
+        <a href="https://github.com/awoiibobwilly">
           <FaGithub />
         </a>
 
-        <a href="#">
+        <a href="mailto:awoiibobwilly@gmail.com">
           <FaEnvelope />
         </a>
 

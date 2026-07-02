@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import {
   FaArrowRight,
-  FaDownload,
 } from "react-icons/fa";
 
 import conversationContent from "../../../config/conversationContent";
@@ -192,7 +191,7 @@ function UniversalCTA({
 
                   >
 
-                    <FaDownload />
+                  <FaArrowRight />
 
                     <span>
 
@@ -214,7 +213,7 @@ function UniversalCTA({
 
                   >
 
-                    <FaDownload />
+                  <FaArrowRight />
 
                     <span>
 

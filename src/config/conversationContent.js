@@ -41,11 +41,8 @@ const conversationContent = {
         },
   
         secondary: {
-  
-          label: "Download Resume",
-  
+          label: "View Resume",
           to: "/resume",
-  
         },
   
       },

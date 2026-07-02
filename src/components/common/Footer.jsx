@@ -4,14 +4,63 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaArrowUp,
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 import logo from "../../assets/images/abwp-logo-two.png";
 
-
 import "../../styles/components/footer.css";
 
 function Footer() {
+  // ==========================================
+  // Contact & Social Configuration
+  // ==========================================
+
+  const contact = {
+    phoneDisplay: "+256 774 616 406",
+    phoneHref: "tel:+256774616406",
+
+    emailDisplay: "awoiibobwilly@gmail.com",
+    emailHref: "mailto:awoiibobwilly@gmail.com",
+
+    whatsappDisplay: "Chat on WhatsApp",
+    whatsappHref: "https://wa.me/256774616406",
+  };
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      href: "https://github.com/awoiibobwilly",
+      icon: <FaGithub />,
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/bob-willy-awoii-ab883b75?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      icon: <FaLinkedin />,
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/bob.w.awoii?mibextid=LQQJ4d",
+      icon: <FaFacebookF />,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/bobawoii?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
+      icon: <FaInstagram />,
+    },
+    {
+      name: "WhatsApp",
+      href: contact.whatsappHref,
+      icon: <FaWhatsapp />,
+    },
+  ];
+
+  // ==========================================
+  // Scroll to Top
+  // ==========================================
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -20,34 +69,30 @@ function Footer() {
     });
   };
 
+  // ==========================================
+  // Component
+  // ==========================================
+
   return (
     <footer className="footer">
-
       <div className="container">
-
-        {/* GRID */}
+        {/* ======================================
+            FOOTER GRID
+        ======================================= */}
         <div className="footer-grid">
-
-          {/* BRAND */}
+          {/* ======================================
+              BRAND
+          ======================================= */}
           <div className="footer-brand">
+            <div className="footer-logo">
+              <img
+                src={logo}
+                alt="Awoii Bob Willy Logo"
+                className="footer-logo-image"
+              />
 
-
-              <div className="footer-logo">
-
-                <img
-                  src={logo}
-                  alt="Awoii Bob Willy Logo"
-                  className="footer-logo-image"
-                />
-
-                <h3>
-
-                  Awoii Bob Willy
-
-                </h3>
-
-              </div>
-
+              <h3>Awoii Bob Willy</h3>
+            </div>
 
             <p className="footer-tagline">
               Bridging Health, Data, and Technology for Impact.
@@ -59,150 +104,111 @@ function Footer() {
               data, and software engineering.
             </p>
 
+            {/* ==================================
+                SOCIALS
+            =================================== */}
             <div className="footer-socials">
-
-              <a
-                href="https://github.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href="https://linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin />
-              </a>
-
-              <a href="mailto:your-email@example.com">
-                <FaEnvelope />
-              </a>
-
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  title={item.name}
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
-
           </div>
 
-
-          {/* EXPLORE */}
+          {/* ======================================
+              EXPLORE
+          ======================================= */}
           <div className="footer-links">
-
             <h4>Explore</h4>
 
             <NavLink to="/">Home</NavLink>
-
             <NavLink to="/about">About</NavLink>
-
             <NavLink to="/journey">Journey</NavLink>
-
             <NavLink to="/projects">Projects</NavLink>
-
             <NavLink to="/research">Research</NavLink>
-
             <NavLink to="/insights">Insights</NavLink>
-
-            <NavLink to="/knowledge-hub"> The Hub</NavLink>
-
+            <NavLink to="/knowledge-hub">The Hub</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-
           </div>
 
-
-          {/* EXPERTISE */}
+          {/* ======================================
+              EXPERTISE
+          ======================================= */}
           <div className="footer-expertise">
-
             <h4>Expertise</h4>
 
             <span>Software Engineering</span>
-
             <span>Healthcare Management</span>
-
             <span>Public Health</span>
-
             <span>Data Science & Analytics</span>
-
             <span>Research & Academia</span>
-
             <span>Leadership & Governance</span>
-
           </div>
 
-
-          {/* CONNECT */}
+          {/* ======================================
+              CONNECT
+          ======================================= */}
           <div className="footer-connect">
-
             <h4>Connect</h4>
 
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub />
-
-              <span>GitHub</span>
+            <a href={contact.phoneHref}>
+              <FaPhoneAlt />
+              <span>{contact.phoneDisplay}</span>
             </a>
 
-            <a
-              href="https://linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-
-              <span>LinkedIn</span>
-            </a>
-
-            <a href="mailto:your-email@example.com">
-
+            <a href={contact.emailHref}>
               <FaEnvelope />
-
-              <span>Email</span>
-
+              <span>{contact.emailDisplay}</span>
             </a>
 
+            <a
+              href={contact.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp />
+              <span>{contact.whatsappDisplay}</span>
+            </a>
           </div>
-
         </div>
 
+        {/* ======================================
+            FOOTER BOTTOM
+        ======================================= */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-text">
+            <p>
+              © {new Date().getFullYear()} Awoii Bob Willy.
+              All Rights Reserved.
+            </p>
 
-        {/* BOTTOM */}
+            <p className="footer-credit">
+              Designed, Developed, and Maintained By:
+            </p>
 
-      
-<div className="footer-bottom">
+            <p className="footer-credit-name">
+              Awoii Tech Systems
+            </p>
+          </div>
 
-<div className="footer-bottom-text">
-
-  <p>
-    © {new Date().getFullYear()} Awoii Bob Willy.
-    All Rights Reserved.
-  </p>
-
-  <p className="footer-credit">
-    Designed, Developed, and Maintained By:
-  </p>
-
-  <p className="footer-credit-name">
-    Awoii Tech Systems
-  </p>
-
-</div>
-
-  <button
-    className="scroll-top-btn"
-    onClick={scrollToTop}
-  >
-    <FaArrowUp />
-  </button>
-
-</div>
-
-
-
+          <button
+            className="scroll-top-btn"
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+            title="Back to top"
+          >
+            <FaArrowUp />
+          </button>
+        </div>
       </div>
-
     </footer>
   );
 }
