@@ -173,28 +173,22 @@ function Footer() {
       
 <div className="footer-bottom">
 
-  <div className="footer-bottom-text">
+<div className="footer-bottom-text">
 
-    <p>
-      © {new Date().getFullYear()} Awoii Bob Willy.
-      All Rights Reserved.
-    </p>
+  <p>
+    © {new Date().getFullYear()} Awoii Bob Willy.
+    All Rights Reserved.
+  </p>
 
-    <br />
+  <p className="footer-credit">
+    Designed, Developed, and Maintained By:
+  </p>
 
-    <p className="footer-credit">
+  <p className="footer-credit-name">
+    Awoii Tech Systems
+  </p>
 
-      Designed, Developed, and Maintained By:
-
-    </p>
-
-    <br />
-
-    <p className="footer-credit-name"> 
-      Awoii Tech Systems
-    </p>
-
-  </div>
+</div>
 
   <button
     className="scroll-top-btn"
