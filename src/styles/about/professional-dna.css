@@ -1,0 +1,257 @@
+/* ==========================================================================
+   PROFESSIONAL DNA
+   ABOUT PAGE
+   Sprint A-CSS 2
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SECTION SHELL
+   ========================================================================== */
+
+   .professional-dna {
+    position: relative;
+    padding: 6rem 0;
+    background:
+      radial-gradient(
+        circle at right top,
+        rgba(37, 99, 235, 0.07),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        #f8fbff 0%,
+        #ffffff 100%
+      );
+  }
+  
+  .professional-dna::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.4)
+      );
+    pointer-events: none;
+  }
+  
+  .professional-dna .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* ==========================================================================
+     GRID
+     ========================================================================== */
+  
+  .professional-dna-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  
+  /* ==========================================================================
+     PILLAR CARD
+     ========================================================================== */
+  
+  .dna-pillar-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 2rem 1.8rem 1.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 28px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.98),
+        rgba(246, 249, 255, 0.96)
+      );
+    box-shadow:
+      0 20px 48px rgba(15, 23, 42, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  
+  .dna-pillar-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 1),
+      rgba(14, 165, 233, 0.95)
+    );
+  }
+  
+  .dna-pillar-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow:
+      0 28px 62px rgba(15, 23, 42, 0.11),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+  
+  
+  /* ==========================================================================
+     ICON
+     ========================================================================== */
+  
+  .dna-pillar-icon {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.45rem;
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    border-radius: 22px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(239, 246, 255, 0.98),
+        rgba(248, 250, 252, 0.96)
+      );
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.08);
+    color: var(--primary);
+    font-size: 1.55rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .dna-pillar-card:hover .dna-pillar-icon {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(37, 99, 235, 0.13);
+  }
+  
+  
+  /* ==========================================================================
+     TITLE & DESCRIPTION
+     ========================================================================== */
+  
+  .dna-pillar-title {
+    margin: 0 0 1rem;
+    color: var(--primary);
+    font-size: 1.35rem;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+  }
+  
+  .dna-pillar-description {
+    margin: 0 0 1.4rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+  
+  
+  /* ==========================================================================
+     HIGHLIGHTS
+     ========================================================================== */
+  
+  .dna-pillar-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .dna-pillar-highlights li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--text-light);
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+  
+  .dna-pillar-highlights li::before {
+    content: "";
+    position: absolute;
+    top: 0.78rem;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 1),
+      rgba(14, 165, 233, 0.9)
+    );
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.08);
+  }
+  
+  
+  /* ==========================================================================
+     RESPONSIVE
+     ========================================================================== */
+  
+  @media (max-width: 992px) {
+    .professional-dna {
+      padding: 5rem 0;
+    }
+  
+    .professional-dna-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dna-pillar-card {
+      padding: 1.75rem 1.35rem 1.5rem;
+      border-radius: 22px;
+    }
+  
+    .dna-pillar-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      font-size: 1.35rem;
+      margin-bottom: 1.2rem;
+    }
+  
+    .dna-pillar-title {
+      font-size: 1.2rem;
+    }
+  
+    .dna-pillar-description {
+      font-size: 0.97rem;
+      line-height: 1.82;
+    }
+  
+    .dna-pillar-highlights {
+      gap: 0.75rem;
+    }
+  
+    .dna-pillar-highlights li {
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .professional-dna {
+      padding: 4.5rem 0;
+    }
+  
+    .dna-pillar-card {
+      padding: 1.55rem 1.15rem 1.35rem;
+    }
+  }

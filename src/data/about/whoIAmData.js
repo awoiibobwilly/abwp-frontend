@@ -1,37 +1,68 @@
-export const whoIAmData = [
+// ==========================================================
+// WHO I AM DATA
+// ABOUT PAGE
+// ABW PORTFOLIO
+// ==========================================================
+
+const whoIAmData = {
+  sectionId: "who-i-am",
+
+  eyebrow: "Who I Am",
+
+  title: "A Multidisciplinary Professional Shaped by Service, Curiosity, Leadership, and Growth",
+
+  intro:
+    "My work has never been confined to one path. Over the years, I have grown across healthcare, research, leadership, technology, and business development, always guided by a desire to solve meaningful problems, serve people with excellence, and keep learning. These are some of the lenses through which I approach my work and the impact I hope to create.",
+
+  cards: [
     {
+      id: "healthcare-professional",
       title: "Healthcare Professional",
       description:
-        "Committed to improving health outcomes through patient-centered care and evidence-based practice.",
+        "My foundation is rooted in healthcare and public health, where I have spent years engaging with patient-centered service, health systems, clinical environments, and practical solutions that improve lives and communities.",
+      icon: "healthcare",
     },
-  
+
     {
-      title: "Public Health Practitioner",
+      id: "research-and-evidence-builder",
+      title: "Research & Evidence Builder",
       description:
-        "Focused on strengthening health systems and promoting sustainable community interventions.",
+        "I believe meaningful decisions are strengthened by evidence. My background in research, monitoring and evaluation, and data-informed thinking reflects a commitment to learning deeply, asking better questions, and using insight to improve action.",
+      icon: "research",
     },
-  
+
     {
-      title: "Software Engineer",
+      id: "technology-problem-solver",
+      title: "Technology Problem-Solver",
       description:
-        "Building scalable digital solutions that bridge healthcare, research, and technology.",
+        "Technology has become an important extension of how I think and work. I am intentionally building the skills to design, support, and contribute to digital solutions that improve systems, create efficiency, and solve real-world challenges.",
+      icon: "technology",
     },
-  
+
     {
-      title: "Researcher",
+      id: "leader-and-governance-minded-builder",
+      title: "Leader & Governance-Minded Builder",
       description:
-        "Passionate about generating knowledge and transforming evidence into impact.",
+        "Leadership, for me, is about stewardship, accountability, and helping people and institutions grow with clarity and purpose. Through board roles, management responsibilities, and team leadership, I have learned to lead with service and long-term thinking.",
+      icon: "leadership",
     },
-  
+
     {
-      title: "Leader",
+      id: "business-growth-strategist",
+      title: "Business Growth Strategist",
       description:
-        "Dedicated to servant leadership, governance, and empowering teams toward shared goals.",
+        "My experience in sales, customer development, and market-facing roles has taught me how to connect strategy with results. I value the discipline of building trust, understanding needs, and translating ideas into measurable growth and sustainable relationships.",
+      icon: "business",
     },
-  
+
     {
+      id: "lifelong-learner",
       title: "Lifelong Learner",
       description:
-        "Continuously exploring new ideas, technologies, and opportunities for growth.",
+        "One of the strongest threads in my journey is a commitment to growth. Whether through formal study, professional training, self-driven learning, or hands-on practice, I am continually expanding my knowledge so I can serve more effectively and create better solutions.",
+      icon: "learning",
     },
-  ];
+  ],
+};
+
+export default whoIAmData;

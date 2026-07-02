@@ -1,28 +1,31 @@
+import aboutHeroData from "../../data/about/aboutHeroData";
+
 import AboutHeroContent from "./AboutHeroContent";
 import AboutHeroImage from "./AboutHeroImage";
 
-import "../../styles/about/aboutHero.css";
+import "../../styles/about/about-hero.css";
 
 function AboutHero() {
   return (
-    <section className="about-hero section">
-
+    <section
+      className="about-hero section"
+      id={aboutHeroData.sectionId}
+    >
       <div className="container">
+        <div className="about-hero-grid">
 
-        <div className="about-hero-wrapper">
+          {/* ======================================
+              LEFT CONTENT
+          ======================================= */}
+          <AboutHeroContent hero={aboutHeroData} />
 
-          <div className="about-hero-left">
-            <AboutHeroContent />
-          </div>
-
-          <div className="about-hero-right">
-            <AboutHeroImage />
-          </div>
+          {/* ======================================
+              RIGHT IMAGE
+          ======================================= */}
+          <AboutHeroImage image={aboutHeroData.image} />
 
         </div>
-
       </div>
-
     </section>
   );
 }

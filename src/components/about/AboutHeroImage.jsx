@@ -1,14 +1,15 @@
-function AboutHeroImage() {
-    return (
-      <div className="about-image-card">
-  
+function AboutHeroImage({ image }) {
+  return (
+    <div className="about-hero-image-wrap">
+      <div className="about-hero-image-card">
         <img
-          src="/images/profile.png"
-          alt="Awoii Bob Willy"
+          src={image.src}
+          alt={image.alt}
+          className="about-hero-image"
         />
-  
       </div>
-    );
-  }
-  
-  export default AboutHeroImage;
+    </div>
+  );
+}
+
+export default AboutHeroImage;

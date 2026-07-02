@@ -1,72 +1,57 @@
-import { coreValuesData }
-from "../../data/about/coreValuesData";
+import SectionHeader from "../common/SectionHeader";
+import coreValuesData from "../../data/about/coreValuesData";
 
-import "../../styles/about/coreValues.css";
+import MissionVisionCard from "./MissionVisionCard";
+import ValueCard from "./ValueCard";
+
+import "../../styles/about/core-values.css";
 
 function CoreValues() {
   return (
-    <section className="core-values section">
-
+    <section
+      className="core-values section"
+      id={coreValuesData.sectionId}
+    >
       <div className="container">
 
-        {/* Header */}
+        {/* ======================================
+            SECTION HEADER
+        ======================================= */}
+        <SectionHeader
+          eyebrow={coreValuesData.eyebrow}
+          title={coreValuesData.title}
+          description={coreValuesData.intro}
+        />
 
-        <div className="core-values-header">
+        {/* ======================================
+            MISSION & VISION
+        ======================================= */}
+        <div className="mission-vision-grid">
+          <MissionVisionCard
+            label="Mission"
+            title={coreValuesData.mission.title}
+            description={coreValuesData.mission.description}
+          />
 
-          <span className="core-values-badge">
-            Core Values
-          </span>
-
-          <h2 className="section-title">
-            Principles That Guide My Journey
-          </h2>
-
-          <p className="section-subtitle">
-            These values shape my work, leadership,
-            relationships, and commitment to creating
-            meaningful impact.
-          </p>
-
+          <MissionVisionCard
+            label="Vision"
+            title={coreValuesData.vision.title}
+            description={coreValuesData.vision.description}
+          />
         </div>
 
-
+        {/* ======================================
+            VALUES GRID
+        ======================================= */}
         <div className="core-values-grid">
-
-          {coreValuesData.map((value, index) => {
-
-            const Icon = value.icon;
-
-            return (
-
-              <div
-                className="core-value"
-                key={index}
-              >
-
-                <div className="core-value-icon">
-
-                  <Icon />
-
-                </div>
-
-                <h3>
-                  {value.title}
-                </h3>
-
-                <p>
-                  {value.description}
-                </p>
-
-              </div>
-
-            );
-
-          })}
-
+          {coreValuesData.values.map((value) => (
+            <ValueCard
+              key={value.id}
+              value={value}
+            />
+          ))}
         </div>
-
       </div>
-
     </section>
   );
 }

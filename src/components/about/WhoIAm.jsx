@@ -1,64 +1,39 @@
-import { whoIAmData } from "../../data/about/whoIAmData";
+import SectionHeader from "../common/SectionHeader";
+import whoIAmData from "../../data/about/whoIAmData";
 
-import "../../styles/about/whoIAm.css";
+import WhoIAmCard from "./WhoIAmCard";
+
+import "../../styles/about/who-i-am.css";
 
 function WhoIAm() {
   return (
-    <section className="who section">
-
+    <section
+      className="who-i-am section"
+      id={whoIAmData.sectionId}
+    >
       <div className="container">
 
-        <div className="who-wrapper">
+        {/* ======================================
+            SECTION HEADER
+        ======================================= */}
+        <SectionHeader
+          eyebrow={whoIAmData.eyebrow}
+          title={whoIAmData.title}
+          description={whoIAmData.intro}
+        />
 
-          {/* Left */}
-
-          <div className="who-left">
-
-            <span className="who-badge">
-              Who I Am
-            </span>
-
-            <h2 className="section-title">
-              A Multidisciplinary Professional
-              Creating Meaningful Impact.
-            </h2>
-
-            <p className="section-subtitle">
-              My work lies at the intersection of healthcare,
-              public health, research, leadership, and software
-              engineering. I believe in leveraging knowledge and
-              technology to improve lives and create sustainable
-              change.
-            </p>
-
-          </div>
-
-
-          {/* Right */}
-
-          <div className="who-right">
-
-            {whoIAmData.map((item, index) => (
-
-              <div
-                className="who-card"
-                key={index}
-              >
-
-                <h3>{item.title}</h3>
-
-                <p>{item.description}</p>
-
-              </div>
-
-            ))}
-
-          </div>
-
+        {/* ======================================
+            IDENTITY CARDS
+        ======================================= */}
+        <div className="who-i-am-grid">
+          {whoIAmData.cards.map((card) => (
+            <WhoIAmCard
+              key={card.id}
+              card={card}
+            />
+          ))}
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -1,41 +1,67 @@
-import { aboutHeroData } from "../../data/about/aboutHeroData";
-
-function AboutHeroContent() {
+function AboutHeroContent({ hero }) {
   return (
-    <>
+    <div className="about-hero-content">
 
-      <span className="about-badge">
-        {aboutHeroData.badge}
+      {/* ======================================
+          EYEBROW
+      ======================================= */}
+      <span className="about-hero-eyebrow">
+        {hero.eyebrow}
       </span>
 
-      <h1>
-        {aboutHeroData.title}
+      {/* ======================================
+          TITLE
+      ======================================= */}
+      <h1 className="about-hero-title">
+        {hero.title}
       </h1>
 
-      <p className="about-subtitle">
-        {aboutHeroData.subtitle}
+      {/* ======================================
+          DESCRIPTION
+      ======================================= */}
+      <p className="about-hero-description">
+        {hero.description}
       </p>
 
-      <div className="about-hero-stats">
+      {/* ======================================
+          STATS
+      ======================================= */}
+      {hero.stats?.length > 0 && (
+        <div className="about-hero-stats">
+          {hero.stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="about-hero-stat-card"
+            >
+              <h3 className="about-hero-stat-value">
+                {stat.value}
+                {stat.suffix}
+              </h3>
 
-        <div>
-          <h2>{aboutHeroData.experience}</h2>
-          <span>Experience</span>
+              <p className="about-hero-stat-label">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
+      )}
 
-        <div>
-          <h2>{aboutHeroData.projects}</h2>
-          <span>Projects</span>
+      {/* ======================================
+          HIGHLIGHT STRIP
+      ======================================= */}
+      {hero.highlightStrip?.length > 0 && (
+        <div className="about-hero-highlights">
+          {hero.highlightStrip.map((item) => (
+            <span
+              key={item}
+              className="about-hero-highlight-pill"
+            >
+              {item}
+            </span>
+          ))}
         </div>
-
-        <div>
-          <h2>{aboutHeroData.domains}</h2>
-          <span>Domains</span>
-        </div>
-
-      </div>
-
-    </>
+      )}
+    </div>
   );
 }
 

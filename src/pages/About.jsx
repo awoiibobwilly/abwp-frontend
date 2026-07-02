@@ -1,52 +1,56 @@
 import AboutHero from "../components/about/AboutHero";
 import WhoIAm from "../components/about/WhoIAm";
-import ProfessionalSummary from "../components/about/ProfessionalSummary";
-import Education from "../components/about/Education";
-import Certifications from "../components/about/Certifications";
-import Leadership from "../components/about/Leadership";
-import HealthcareExperience from "../components/about/HealthcareExperience";
-import TechnologyExperience from "../components/about/TechnologyExperience";
-import ResearchInterests from "../components/about/ResearchInterests";
-import Skills from "../components/about/Skills";
-import Achievements from "../components/about/Achievements";
+import ProfessionalDNA from "../components/about/ProfessionalDNA";
 import CoreValues from "../components/about/CoreValues";
-
+import SelectedAchievements from "../components/about/SelectedAchievements";
+import Credentials from "../components/about/Credentials";
+import SkillsAndTools from "../components/about/SkillsAndTools";
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
+
+import { PAGE_KEYS } from "../config/portfolioConstants";
 
 function About() {
   return (
     <>
+      {/* ==================================================
+          ABOUT HERO
+      ================================================== */}
       <AboutHero />
 
+      {/* ==================================================
+          WHO I AM
+      ================================================== */}
       <WhoIAm />
 
-      <ProfessionalSummary />
+      {/* ==================================================
+          PROFESSIONAL DNA
+      ================================================== */}
+      <ProfessionalDNA />
 
-      <Education />
-
-      <Certifications />
-
-      <Leadership />
-
-      <HealthcareExperience />
-
-      <TechnologyExperience />
-
-      <ResearchInterests />
-
-      <Skills />
-
-      <Achievements />
-
+      {/* ==================================================
+          CORE VALUES
+      ================================================== */}
       <CoreValues />
 
-      <UniversalCTA
+      {/* ==================================================
+          SELECTED ACHIEVEMENTS
+      ================================================== */}
+      <SelectedAchievements />
 
-    page="about"
+      {/* ==================================================
+          CREDENTIALS
+      ================================================== */}
+      <Credentials />
 
-/>
+      {/* ==================================================
+          SKILLS & TOOLS
+      ================================================== */}
+      <SkillsAndTools />
 
-
+      {/* ==================================================
+          UNIVERSAL CTA
+      ================================================== */}
+      <UniversalCTA page={PAGE_KEYS.ABOUT} />
     </>
   );
 }
