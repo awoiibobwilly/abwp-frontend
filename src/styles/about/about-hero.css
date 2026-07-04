@@ -214,6 +214,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
   }
   
   .about-hero-image-wrap::before {
@@ -280,6 +281,12 @@
     background: #edf3ff;
   }
   
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
+    align-items: start;
+    gap: 4rem;
+  }
   
   /* ==========================================================================
      LARGE TABLET
