@@ -195,26 +195,26 @@
   }
   
   
-  /* ==========================================================================
-     SECTION HEADER RHYTHM NORMALIZATION
-     --------------------------------------------------------------------------
-     This helps the About page feel more consistent from section to section
-     even if each section has slightly different internal structures.
-     ========================================================================== */
-  
-  .about-page .section-header {
+/* ==========================================================================
+   SECTION HEADING RHYTHM NORMALIZATION
+   ========================================================================== */
+
+   .about-page .section-heading {
+    max-width: 860px;
     margin-bottom: 0;
   }
   
-  .about-page .who-i-am .section-header,
-  .about-page .professional-dna .section-header,
-  .about-page .core-values .section-header,
-  .about-page .selected-achievements .section-header,
-  .about-page .credentials .section-header,
-  .about-page .skills-tools .section-header {
-    max-width: 860px;
+  .about-page .section-heading .section-eyebrow {
+    margin-bottom: 1rem;
   }
   
+  .about-page .section-heading h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .about-page .section-heading p {
+    margin: 0;
+  }
   
   /* ==========================================================================
      LARGE TABLET

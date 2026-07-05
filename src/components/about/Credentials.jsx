@@ -1,42 +1,107 @@
-import SectionHeader from "../common/SectionHeader";
-import credentialsData from "../../data/about/credentialsData";
-
-import CredentialGroup from "./CredentialGroup";
-
 import "../../styles/about/credentials.css";
 
-function Credentials() {
+
+function Credentials({ intro, credentials }) {
+  const education = credentials?.education || [];
+  const certifications = credentials?.certifications || [];
+
+  if (!intro && education.length === 0 && certifications.length === 0) {
+    return null;
+  }
+
   return (
-    <section
-      className="credentials section"
-      id={credentialsData.sectionId}
-    >
+    <section className="credentials section">
       <div className="container">
+        {/* ==================================================
+            SECTION HEADING
+        ================================================== */}
+        <div className="section-heading">
+          {intro?.eyebrow && (
+            <span className="section-eyebrow">
+              {intro.eyebrow}
+            </span>
+          )}
 
-        {/* ======================================
-            SECTION HEADER
-        ======================================= */}
-        <SectionHeader
-          eyebrow={credentialsData.eyebrow}
-          title={credentialsData.title}
-          description={credentialsData.intro}
-        />
+          {intro?.title && (
+            <h2>{intro.title}</h2>
+          )}
 
-        {/* ======================================
-            CREDENTIAL GROUPS
-        ======================================= */}
-        <div className="credentials-layout">
+          {intro?.intro && (
+            <p>{intro.intro}</p>
+          )}
+        </div>
 
-          <CredentialGroup
-            title="Education"
-            items={credentialsData.education}
-          />
+        {/* ==================================================
+            CREDENTIALS GRID
+        ================================================== */}
+        <div className="credentials-grid">
+          {/* ==============================================
+              EDUCATION COLUMN
+          ============================================== */}
+          <div className="credentials-column">
+            <div className="credentials-column-header">
+              <h3>Education</h3>
+            </div>
 
-          <CredentialGroup
-            title="Certifications & Professional Development"
-            items={credentialsData.certifications}
-          />
+            {education.length > 0 && (
+              <div className="credentials-list">
+                {education.map((item) => (
+                  <article
+                    key={item.id}
+                    className="credential-card"
+                  >
+                    <h4>{item.title}</h4>
 
+                    <div className="credential-meta">
+                      {item.institution && (
+                        <span>{item.institution}</span>
+                      )}
+
+                      {item.period && (
+                        <span>{item.period}</span>
+                      )}
+                    </div>
+
+                    {item.note && <p>{item.note}</p>}
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* ==============================================
+              CERTIFICATIONS COLUMN
+          ============================================== */}
+          <div className="credentials-column">
+            <div className="credentials-column-header">
+              <h3>Certifications & Training</h3>
+            </div>
+
+            {certifications.length > 0 && (
+              <div className="credentials-list">
+                {certifications.map((item) => (
+                  <article
+                    key={item.id}
+                    className="credential-card"
+                  >
+                    <h4>{item.title}</h4>
+
+                    <div className="credential-meta">
+                      {item.institution && (
+                        <span>{item.institution}</span>
+                      )}
+
+                      {item.period && (
+                        <span>{item.period}</span>
+                      )}
+                    </div>
+
+                    {item.note && <p>{item.note}</p>}
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

@@ -55,12 +55,12 @@
      HERO GRID
      ========================================================================== */
   
-  .about-hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
-    align-items: center;
-    gap: 4rem;
-  }
+     .about-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
+      align-items: start;
+      gap: 4rem;
+    }
   
   
   /* ==========================================================================
@@ -72,7 +72,7 @@
     max-width: 720px;
   }
   
-  .about-hero-eyebrow {
+  .about-hero .section-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -147,7 +147,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
   
-  .about-hero-stat-value {
+  .about-hero-stat-card h3 {
     margin: 0 0 0.35rem;
     color: var(--primary);
     font-size: 1.65rem;
@@ -155,7 +155,7 @@
     letter-spacing: -0.03em;
   }
   
-  .about-hero-stat-label {
+  .about-hero-stat-card p {
     margin: 0;
     color: var(--text-light);
     font-size: 0.95rem;
@@ -281,13 +281,6 @@
     background: #edf3ff;
   }
   
-  .about-hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
-    align-items: start;
-    gap: 4rem;
-  }
-  
   /* ==========================================================================
      LARGE TABLET
      ========================================================================== */
@@ -408,7 +401,7 @@
       padding: 4.5rem 0 4rem;
     }
   
-    .about-hero-eyebrow {
+    .about-hero .section-eyebrow {
       padding: 0.55rem 0.9rem;
       font-size: 0.78rem;
       letter-spacing: 0.07em;
@@ -435,14 +428,14 @@
       border-radius: 18px;
     }
   
-    .about-hero-stat-value {
+    .about-hero-stat-card h3 {
       font-size: 1.45rem;
     }
-  
-    .about-hero-stat-label {
+    
+    .about-hero-stat-card p {
       font-size: 0.9rem;
     }
-  
+
     .about-hero-highlights {
       margin-top: 1.6rem;
       gap: 0.7rem;

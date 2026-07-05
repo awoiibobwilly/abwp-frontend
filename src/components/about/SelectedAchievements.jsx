@@ -1,38 +1,64 @@
-import SectionHeader from "../common/SectionHeader";
-import achievementsData from "../../data/about/achievementsData";
-
-import AchievementCard from "./AchievementCard";
-
 import "../../styles/about/selected-achievements.css";
 
-function SelectedAchievements() {
+
+function SelectedAchievements({ intro, achievements = [] }) {
+  if (!intro && achievements.length === 0) return null;
+
   return (
-    <section
-      className="selected-achievements section"
-      id={achievementsData.sectionId}
-    >
+    <section className="selected-achievements section">
       <div className="container">
+        {/* ==================================================
+            SECTION HEADING
+        ================================================== */}
+        <div className="section-heading">
+          {intro?.eyebrow && (
+            <span className="section-eyebrow">
+              {intro.eyebrow}
+            </span>
+          )}
 
-        {/* ======================================
-            SECTION HEADER
-        ======================================= */}
-        <SectionHeader
-          eyebrow={achievementsData.eyebrow}
-          title={achievementsData.title}
-          description={achievementsData.intro}
-        />
+          {intro?.title && (
+            <h2>{intro.title}</h2>
+          )}
 
-        {/* ======================================
-            ACHIEVEMENTS GRID
-        ======================================= */}
-        <div className="selected-achievements-grid">
-          {achievementsData.achievements.map((achievement) => (
-            <AchievementCard
-              key={achievement.id}
-              achievement={achievement}
-            />
-          ))}
+          {intro?.intro && (
+            <p>{intro.intro}</p>
+          )}
         </div>
+
+        {/* ==================================================
+            ACHIEVEMENTS GRID
+        ================================================== */}
+        {achievements.length > 0 && (
+          <div className="selected-achievements-grid">
+            {achievements.map((achievement) => (
+              <article
+                key={achievement.id}
+                className="achievement-card"
+              >
+                <div className="achievement-meta">
+                  {achievement.category && (
+                    <span className="achievement-category">
+                      {achievement.category}
+                    </span>
+                  )}
+
+                  {achievement.year && (
+                    <span className="achievement-year">
+                      {achievement.year}
+                    </span>
+                  )}
+                </div>
+
+                <h3>{achievement.title}</h3>
+
+                {achievement.description && (
+                  <p>{achievement.description}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

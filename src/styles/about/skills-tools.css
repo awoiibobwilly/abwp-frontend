@@ -1,40 +1,22 @@
 /* ==========================================================================
    SKILLS & TOOLS
    ABOUT PAGE
-   Sprint A-CSS 4
-   ========================================================================== */
-
-
-/* ==========================================================================
-   SECTION SHELL
+   Phase A6.8.9 Repair
    ========================================================================== */
 
    .skills-tools {
     position: relative;
     padding: 6rem 0;
     background:
-      radial-gradient(
-        circle at right top,
-        rgba(37, 99, 235, 0.06),
-        transparent 28%
-      ),
-      linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f8fbff 100%
-      );
+      radial-gradient(circle at right top, rgba(37, 99, 235, 0.06), transparent 28%),
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   }
   
   .skills-tools::before {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.12),
-        rgba(255, 255, 255, 0.28)
-      );
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.28));
     pointer-events: none;
   }
   
@@ -43,11 +25,6 @@
     z-index: 1;
   }
   
-  
-  /* ==========================================================================
-     GRID
-     ========================================================================== */
-  
   .skills-tools-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -55,47 +32,31 @@
     margin-top: 4rem;
   }
   
-  
-  /* ==========================================================================
-     SKILL CATEGORY CARD
-     ========================================================================== */
-  
-  .skill-category-card {
+  .skills-category-card {
     position: relative;
     min-height: 100%;
     padding: 1.8rem 1.5rem 1.45rem;
     border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 24px;
     background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.98),
-        rgba(248, 250, 252, 0.96)
-      );
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96));
     box-shadow:
       0 18px 40px rgba(15, 23, 42, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.88);
     overflow: hidden;
-    transition:
-      transform 0.32s ease,
-      box-shadow 0.32s ease,
-      border-color 0.32s ease;
+    transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
   }
   
-  .skill-category-card::before {
+  .skills-category-card::before {
     content: "";
     position: absolute;
     inset: 0 auto auto 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(
-      90deg,
-      rgba(37, 99, 235, 0.95),
-      rgba(14, 165, 233, 0.88)
-    );
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.88));
   }
   
-  .skill-category-card:hover {
+  .skills-category-card:hover {
     transform: translateY(-6px);
     border-color: rgba(37, 99, 235, 0.18);
     box-shadow:
@@ -103,12 +64,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
   
-  
-  /* ==========================================================================
-     TITLE
-     ========================================================================== */
-  
-  .skill-category-title {
+  .skills-category-card h3 {
     margin: 0 0 1.15rem;
     color: var(--primary);
     font-size: 1.2rem;
@@ -116,21 +72,13 @@
     letter-spacing: -0.02em;
   }
   
-  
-  /* ==========================================================================
-     LIST
-     ========================================================================== */
-  
-  .skill-category-list {
+  .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
   
-  .skill-category-item {
+  .skill-pill {
     display: inline-flex;
     align-items: center;
     min-height: 40px;
@@ -138,31 +86,19 @@
     border: 1px solid rgba(37, 99, 235, 0.12);
     border-radius: 999px;
     background:
-      linear-gradient(
-        180deg,
-        rgba(239, 246, 255, 0.96),
-        rgba(248, 250, 252, 0.96)
-      );
+      linear-gradient(180deg, rgba(239, 246, 255, 0.96), rgba(248, 250, 252, 0.96));
     color: var(--primary);
     font-size: 0.92rem;
     font-weight: 600;
     line-height: 1.3;
-    transition:
-      transform 0.25s ease,
-      box-shadow 0.25s ease,
-      border-color 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
   
-  .skill-category-item:hover {
+  .skill-pill:hover {
     transform: translateY(-2px);
     border-color: rgba(37, 99, 235, 0.2);
     box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
   }
-  
-  
-  /* ==========================================================================
-     RESPONSIVE
-     ========================================================================== */
   
   @media (max-width: 992px) {
     .skills-tools {
@@ -177,16 +113,16 @@
   }
   
   @media (max-width: 768px) {
-    .skill-category-card {
+    .skills-category-card {
       padding: 1.5rem 1.2rem 1.25rem;
       border-radius: 20px;
     }
   
-    .skill-category-title {
+    .skills-category-card h3 {
       font-size: 1.08rem;
     }
   
-    .skill-category-item {
+    .skill-pill {
       min-height: 38px;
       padding: 0.58rem 0.82rem;
       font-size: 0.88rem;
@@ -198,11 +134,11 @@
       padding: 4.5rem 0;
     }
   
-    .skill-category-list {
+    .skills-list {
       gap: 0.65rem;
     }
   
-    .skill-category-item {
+    .skill-pill {
       width: 100%;
       justify-content: flex-start;
       border-radius: 16px;
