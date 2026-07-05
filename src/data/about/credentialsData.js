@@ -1,74 +1,134 @@
 // ==========================================================
-// ACHIEVEMENTS DATA
+// CREDENTIALS DATA
 // ABOUT PAGE
 // ABW PORTFOLIO
 // ==========================================================
 
-const achievementsData = {
-    sectionId: "selected-achievements",
-  
-    eyebrow: "Selected Achievements",
-  
-    title: "Proof of Growth, Leadership, Service, and Impact",
-  
-    intro:
-      "Across healthcare, sales, leadership, research, and digital growth, my journey has been shaped by opportunities to build, improve, lead, and contribute. These selected achievements reflect moments where effort, learning, and responsibility translated into measurable progress, stronger systems, meaningful service, and long-term value.",
-  
-    achievements: [
-      {
-        id: "national-sales-leadership",
-        title: "Led national sales growth in the pharmaceutical sector",
-        description:
-          "Served in senior commercial leadership roles, contributing to business growth, market development, customer engagement, and stronger performance across pharmaceutical and healthcare product portfolios.",
-        category: "Sales & Marketing",
-        year: "2019–2022",
-      },
-  
-      {
-        id: "board-and-governance-leadership",
-        title: "Provided leadership through board and governance roles",
-        description:
-          "Served in governance and leadership capacities across health and cooperative institutions, helping to strengthen strategic direction, accountability, institutional growth, and responsible decision-making.",
-        category: "Leadership & Governance",
-        year: "2014–Present",
-      },
-  
-      {
-        id: "healthcare-management-and-service",
-        title: "Contributed to healthcare delivery, management, and service improvement",
-        description:
-          "Built experience across healthcare, public health, and clinical support environments, contributing to service delivery, health systems improvement, and people-centered care in both operational and leadership contexts.",
-        category: "Healthcare & Public Health",
-        year: "2007–Present",
-      },
-  
-      {
-        id: "research-and-monitoring-capacity",
-        title: "Strengthened capacity in research, monitoring, and evidence-based practice",
-        description:
-          "Pursued formal and practical training in monitoring and evaluation, clinical research, and evidence-based approaches, reinforcing the ability to support learning, inquiry, and data-informed decision-making.",
-        category: "Research & Monitoring",
-        year: "2014–Present",
-      },
-  
-      {
-        id: "technology-transition-and-growth",
-        title: "Built a purposeful transition into technology and software engineering",
-        description:
-          "Expanded into software engineering, digital systems, and data-driven problem solving through structured training, self-driven learning, and practical portfolio development, creating a bridge between healthcare, business, and technology.",
-        category: "Technology & Innovation",
-        year: "2024–Present",
-      },
-  
-      {
-        id: "professional-development-and-lifelong-learning",
-        title: "Sustained a multidisciplinary commitment to learning and professional growth",
-        description:
-          "Invested consistently in formal education, certifications, professional development, and self-directed learning across healthcare, research, leadership, data, and technology to remain adaptive and effective in a changing world.",
-        category: "Professional Growth",
-        year: "2003–Present",
-      },
-    ],
-  };
-  
-  export default achievementsData;
+const credentialsData = {
+  sectionId: "credentials",
+
+  eyebrow: "Credentials",
+
+  title: "A Foundation Built Through Education, Professional Development, and Continuous Learning",
+
+  intro:
+    "My journey has been shaped by a commitment to both formal education and continuous professional growth. Across healthcare, research, monitoring and evaluation, leadership, data, and technology, I have intentionally pursued learning that strengthens my ability to serve, lead, solve problems, and create meaningful impact across disciplines.",
+
+  education: [
+    {
+      id: "msc-health-services-management",
+      award: "Master of Science in Health Services Management",
+      institution: "Clarke International University",
+      period: "2019 – 2024",
+      note: "Advanced training in healthcare leadership, health systems, and service management.",
+    },
+
+    {
+      id: "pgd-monitoring-evaluation",
+      award: "Post Graduate Diploma in Monitoring and Evaluation",
+      institution: "Uganda Management Institute",
+      period: "2020 – 2024",
+      note: "Focused on programme performance, evidence generation, and results-based monitoring and evaluation.",
+    },
+
+    {
+      id: "pgcert-clinical-research-ebm",
+      award: "Post Graduate Certificate in Applied Clinical Research and Evidence-Based Medicine",
+      institution: "Makerere University College of Health Sciences",
+      period: "2014 – 2015",
+      note: "Strengthened capacity in clinical research, evidence appraisal, and evidence-informed practice.",
+    },
+
+    {
+      id: "bsc-public-health",
+      award: "Bachelor of Science in Public Health",
+      institution: "Clarke International University",
+      period: "2009 – 2014",
+      note: "Built a strong foundation in public health, prevention, health promotion, and health systems thinking.",
+    },
+
+    {
+      id: "diploma-orthopaedic-technology",
+      award: "Diploma in Orthopaedic Technology",
+      institution: "Uganda Institute of Allied Health and Management Sciences",
+      period: "2003 – 2006",
+      note: "Developed early clinical, technical, and patient-support competencies within healthcare service environments.",
+    },
+  ],
+
+  certifications: [
+    {
+      id: "refactory-software-engineering",
+      title: "Certificate in Software Engineering",
+      institution: "Refactory Academy",
+      period: "2024",
+      note: "Focused on software engineering foundations, problem solving, and practical digital product development.",
+    },
+
+    {
+      id: "data-science-digital-regenesys",
+      title: "Data Science Programme",
+      institution: "Digital Regenesys",
+      period: "2024 – 2025",
+      note: "Strengthening capabilities in data analytics, data science, and data-informed problem solving.",
+    },
+
+    {
+      id: "good-clinical-practice",
+      title: "Good Clinical Practice (ICH-GCP)",
+      institution: "Professional Clinical Research Training",
+      period: "2016 / 2021",
+      note: "Reinforced standards for ethical research conduct, participant protection, and high-quality clinical research practice.",
+    },
+
+    {
+      id: "monitoring-evaluation-professional-training",
+      title: "Monitoring and Evaluation Professional Training",
+      institution: "Professional Development & Academic Training",
+      period: "2023",
+      note: "Expanded practical knowledge in programme assessment, evidence use, and evaluation thinking.",
+    },
+
+    {
+      id: "graphics-design",
+      title: "Certificate in Graphics Design",
+      institution: "UMCAT Uganda",
+      period: "2019",
+      note: "Built creative communication and visual design skills to support professional and digital work.",
+    },
+
+    {
+      id: "who-basic-emergency-care",
+      title: "WHO Basic Emergency Care Training",
+      institution: "World Health Organization / Professional Health Training",
+      period: "Completed",
+      note: "Strengthened practical emergency care knowledge and frontline healthcare responsiveness.",
+    },
+
+    {
+      id: "clinical-data-management-epidata",
+      title: "Clinical Data Management Systems and SOPs Using EpiData",
+      institution: "Professional Health & Research Training",
+      period: "Completed",
+      note: "Supported competence in structured data management, documentation, and research data processes.",
+    },
+
+    {
+      id: "rational-pharmaceutical-promotion",
+      title: "Rational Pharmaceutical Promotion",
+      institution: "Professional Pharmaceutical Training",
+      period: "2019",
+      note: "Strengthened ethical and effective communication within pharmaceutical and healthcare product promotion.",
+    },
+
+    {
+      id: "customer-service-and-public-speaking",
+      title: "Customer Service, Communication, and Public Speaking Development",
+      institution: "Professional Development Training",
+      period: "Various",
+      note: "Reinforced communication, client engagement, presentation, and relationship-building skills across professional settings.",
+    },
+  ],
+};
+
+export default credentialsData;
