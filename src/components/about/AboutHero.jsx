@@ -13,8 +13,6 @@ function AboutHero({ data }) {
     highlights = [],
   } = data;
 
-  
-  console.log("ABOUT HERO DATA:", data);
   return (
     <section className="about-hero section">
       <div className="container">

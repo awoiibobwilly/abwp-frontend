@@ -1,62 +1,82 @@
 /* ==========================================================================
    ABOUT PAGE
-   Phase A6.8.10.1 — Page Rhythm + Hero Balance
+   Phase A6.8.10.4 — Final Rhythm Polish
    ========================================================================== */
 
    .about-page {
     position: relative;
     background:
-      radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 28%),
-      radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.04), transparent 26%),
+      radial-gradient(circle at top right, rgba(37, 99, 235, 0.045), transparent 28%),
+      radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.04), transparent 24%),
       linear-gradient(180deg, #f8fbff 0%, #ffffff 18%, #ffffff 82%, #f8fbff 100%);
     overflow: hidden;
   }
   
   /* ==========================================================================
-     UNIVERSAL SECTION RHYTHM
+     GLOBAL ABOUT SECTION RHYTHM
      ========================================================================== */
   
   .about-page section.section {
     position: relative;
-    padding: 5.5rem 0;
   }
-  
-  .about-page section.section:first-of-type {
-    padding-top: 4.5rem;
-  }
-  
-  .about-page section.section:last-of-type {
-    padding-bottom: 5rem;
-  }
-  
-  /* ==========================================================================
-     SECTION HEADING RHYTHM
-     Applies to all About sections that use .section-heading
-     ========================================================================== */
   
   .about-page .section-heading {
     max-width: 860px;
-    margin-bottom: 0;
   }
   
   .about-page .section-heading .section-eyebrow {
-    margin-bottom: 0.95rem;
+    margin-bottom: 0.9rem;
   }
   
   .about-page .section-heading h2 {
-    margin-bottom: 1rem;
-    line-height: 1.15;
+    margin-bottom: 0.95rem;
+    line-height: 1.14;
   }
   
   .about-page .section-heading p {
     margin: 0;
     max-width: 780px;
-    line-height: 1.8;
+    line-height: 1.78;
   }
   
   /* ==========================================================================
-     CONTENT GRID TOP SPACING
-     Gives each section a consistent gap between intro and content block
+     MID + LOWER SECTION SPACING CALIBRATION
+     This pass harmonizes the vertical rhythm across the full About page
+     ========================================================================== */
+  
+  .about-page .who-i-am {
+    padding-top: 5rem;
+    padding-bottom: 5.1rem;
+  }
+  
+  .about-page .professional-dna {
+    padding-top: 5rem;
+    padding-bottom: 5.15rem;
+  }
+  
+  .about-page .core-values {
+    padding-top: 5rem;
+    padding-bottom: 5.05rem;
+  }
+  
+  .about-page .selected-achievements {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  .about-page .credentials {
+    padding-top: 4.9rem;
+    padding-bottom: 4.9rem;
+  }
+  
+  .about-page .skills-tools {
+    padding-top: 4.85rem;
+    padding-bottom: 4.2rem;
+  }
+  
+  /* ==========================================================================
+     SECTION CONTENT START RHYTHM
+     Unifies heading → content transition across the page
      ========================================================================== */
   
   .about-page .who-i-am-grid,
@@ -65,141 +85,45 @@
   .about-page .selected-achievements-grid,
   .about-page .credentials-grid,
   .about-page .skills-tools-grid {
-    margin-top: 3.5rem;
+    margin-top: 3.05rem;
   }
   
-  /* Core values needs a little more structure because it has two blocks */
   .about-page .core-values-grid {
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
   }
   
   /* ==========================================================================
-     SECTION-TO-SECTION CALIBRATION
-     Fine-tunes the transitions based on the current About page render
+     CTA HANDOFF POLISH
+     Makes the transition from About content into the CTA feel intentional
      ========================================================================== */
-  
-  .about-page .about-hero {
-    padding-bottom: 5.75rem;
-  }
-  
-  .about-page .who-i-am {
-    padding-top: 5.2rem;
-  }
-  
-  .about-page .professional-dna {
-    padding-top: 5.2rem;
-    padding-bottom: 5.4rem;
-  }
-  
-  .about-page .core-values {
-    padding-top: 5.2rem;
-    padding-bottom: 5.3rem;
-  }
-  
-  .about-page .selected-achievements {
-    padding-top: 5.1rem;
-    padding-bottom: 5.15rem;
-  }
-  
-  .about-page .credentials {
-    padding-top: 5.1rem;
-    padding-bottom: 5.15rem;
-  }
-  
-  .about-page .skills-tools {
-    padding-top: 5rem;
-    padding-bottom: 4.4rem;
-  }
-  
-  /* ==========================================================================
-     CTA HANDOFF
-     Make the final transition into UniversalCTA feel deliberate
-     ========================================================================== */
-  
-  .about-page .skills-tools + .universal-cta,
-  .about-page .skills-tools + section,
-  .about-page .skills-tools + .section {
-    margin-top: 0;
-  }
   
   .about-page .skills-tools + * {
     position: relative;
+    margin-top: 0;
   }
   
   .about-page .skills-tools + *::before {
     content: "";
     position: absolute;
-    top: -1.4rem;
+    top: -0.8rem;
     left: 50%;
     transform: translateX(-50%);
-    width: min(180px, 42%);
+    width: min(150px, 38%);
     height: 1px;
     background: linear-gradient(
       90deg,
       rgba(37, 99, 235, 0),
-      rgba(37, 99, 235, 0.18),
+      rgba(37, 99, 235, 0.16),
       rgba(37, 99, 235, 0)
     );
     pointer-events: none;
   }
   
   /* ==========================================================================
-     RESPONSIVE RHYTHM
+     TABLET
      ========================================================================== */
   
-  @media (max-width: 1200px) {
-    .about-page section.section {
-      padding: 5rem 0;
-    }
-  
-    .about-page .about-hero {
-      padding-bottom: 5.25rem;
-    }
-  
-    .about-page .who-i-am-grid,
-    .about-page .professional-dna-grid,
-    .about-page .core-values-top,
-    .about-page .selected-achievements-grid,
-    .about-page .credentials-grid,
-    .about-page .skills-tools-grid {
-      margin-top: 3.1rem;
-    }
-  
-    .about-page .core-values-grid {
-      margin-top: 1.5rem;
-    }
-  }
-  
   @media (max-width: 992px) {
-    .about-page section.section {
-      padding: 4.5rem 0;
-    }
-  
-    .about-page section.section:first-of-type {
-      padding-top: 4rem;
-    }
-  
-    .about-page .section-heading p {
-      max-width: 100%;
-    }
-  
-    .about-page .who-i-am-grid,
-    .about-page .professional-dna-grid,
-    .about-page .core-values-top,
-    .about-page .selected-achievements-grid,
-    .about-page .credentials-grid,
-    .about-page .skills-tools-grid {
-      margin-top: 2.8rem;
-    }
-  
-    .about-page .core-values-grid {
-      margin-top: 1.35rem;
-    }
-  
-    .about-page .about-hero {
-      padding-bottom: 4.75rem;
-    }
-  
     .about-page .who-i-am,
     .about-page .professional-dna,
     .about-page .core-values,
@@ -211,34 +135,57 @@
     }
   
     .about-page .skills-tools {
-      padding-bottom: 4rem;
+      padding-bottom: 3.9rem;
+    }
+  
+    .about-page .who-i-am-grid,
+    .about-page .professional-dna-grid,
+    .about-page .core-values-top,
+    .about-page .selected-achievements-grid,
+    .about-page .credentials-grid,
+    .about-page .skills-tools-grid {
+      margin-top: 2.7rem;
+    }
+  
+    .about-page .core-values-grid {
+      margin-top: 1.1rem;
     }
   
     .about-page .skills-tools + *::before {
-      top: -1rem;
-      width: min(140px, 38%);
+      top: -0.65rem;
+      width: min(120px, 34%);
     }
   }
   
+  /* ==========================================================================
+     MOBILE
+     ========================================================================== */
+  
   @media (max-width: 768px) {
-    .about-page section.section {
-      padding: 4rem 0;
-    }
-  
-    .about-page section.section:first-of-type {
-      padding-top: 3.6rem;
-    }
-  
     .about-page .section-heading .section-eyebrow {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.75rem;
     }
   
     .about-page .section-heading h2 {
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.8rem;
     }
   
     .about-page .section-heading p {
       line-height: 1.72;
+    }
+  
+    .about-page .who-i-am,
+    .about-page .professional-dna,
+    .about-page .core-values,
+    .about-page .selected-achievements,
+    .about-page .credentials,
+    .about-page .skills-tools {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  
+    .about-page .skills-tools {
+      padding-bottom: 3.5rem;
     }
   
     .about-page .who-i-am-grid,
@@ -251,35 +198,28 @@
     }
   
     .about-page .core-values-grid {
-      margin-top: 1.15rem;
+      margin-top: 1rem;
     }
   
-    .about-page .about-hero {
-      padding-bottom: 4.2rem;
+    .about-page .skills-tools + *::before {
+      top: -0.55rem;
+      width: min(100px, 30%);
     }
+  }
   
+  @media (max-width: 576px) {
     .about-page .who-i-am,
     .about-page .professional-dna,
     .about-page .core-values,
     .about-page .selected-achievements,
     .about-page .credentials,
     .about-page .skills-tools {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 3.6rem;
+      padding-bottom: 3.6rem;
     }
   
     .about-page .skills-tools {
-      padding-bottom: 3.6rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .about-page section.section {
-      padding: 3.5rem 0;
-    }
-  
-    .about-page section.section:first-of-type {
-      padding-top: 3.15rem;
+      padding-bottom: 3.15rem;
     }
   
     .about-page .who-i-am-grid,
@@ -292,29 +232,6 @@
     }
   
     .about-page .core-values-grid {
-      margin-top: 1rem;
-    }
-  
-    .about-page .about-hero {
-      padding-bottom: 3.8rem;
-    }
-  
-    .about-page .who-i-am,
-    .about-page .professional-dna,
-    .about-page .core-values,
-    .about-page .selected-achievements,
-    .about-page .credentials,
-    .about-page .skills-tools {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-    }
-  
-    .about-page .skills-tools {
-      padding-bottom: 3.2rem;
-    }
-  
-    .about-page .skills-tools + *::before {
-      top: -0.7rem;
-      width: min(110px, 34%);
+      margin-top: 0.95rem;
     }
   }
