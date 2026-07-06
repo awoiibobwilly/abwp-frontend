@@ -1,251 +1,191 @@
-/* ==========================================
+/* ==========================================================================
    JOURNEY TIMELINE
-========================================== */
-
-.journey-timeline{
-    background:#f8fafc;
-}
-
-
-/* ==========================================
-   HEADER
-========================================== */
-
-.timeline-header{
-
-    text-align:center;
-
-    max-width:850px;
-
-    margin:0 auto 5rem;
-
-}
-
-
-.timeline-badge{
-
-    display:inline-block;
-
-    padding:.8rem 1.4rem;
-
-    border-radius:999px;
-
-    background:rgba(59,130,246,.1);
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:1.5rem;
-
-}
-
-
-/* ==========================================
-   TIMELINE
-========================================== */
-
-.timeline{
-
-    position:relative;
-
-}
-
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    top:0;
-
-    width:3px;
-
-    height:100%;
-
-    background:#dbeafe;
-
-    transform:translateX(-50%);
-
-}
-
-
-/* ==========================================
-   ITEM
-========================================== */
-
-.timeline-item{
-
-    position:relative;
-
-    width:50%;
-
-    margin-bottom:5rem;
-
-}
-
-
-.timeline-item.left{
-
-    left:0;
-
-    padding-right:4rem;
-
-}
-
-
-.timeline-item.right{
-
-    left:50%;
-
-    padding-left:4rem;
-
-}
-
-
-/* ==========================================
-   DOT
-========================================== */
-
-.timeline-dot{
-
-    position:absolute;
-
-    top:40px;
-
-    width:28px;
-
-    height:28px;
-
-    background:white;
-
-    border:4px solid var(--primary);
-
-    border-radius:50%;
-
-    z-index:5;
-
-}
-
-
-.timeline-item.left .timeline-dot{
-
-    right:-14px;
-
-}
-
-
-.timeline-item.right .timeline-dot{
-
-    left:-14px;
-
-}
-
-
-.timeline-dot span{
-
-    position:absolute;
-
-    inset:5px;
-
-    background:var(--primary);
-
-    border-radius:50%;
-
-}
-
-
-/* ==========================================
-   CARD
-========================================== */
-
-.timeline-card{
-
-    background:rgba(255,255,255,.7);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.5);
-
-    border-radius:1.5rem;
-
-    padding:2.5rem;
-
+   Phase J2.3 — Timeline Refinement
+   Selector-aligned version
+   ========================================================================== */
+
+   .journey-timeline {
+    position: relative;
+    background:
+      radial-gradient(circle at left top, rgba(37, 99, 235, 0.055), transparent 28%),
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+  
+  .journey-timeline .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ------------------------------------------
+     HEADER
+  ------------------------------------------ */
+  
+  .timeline-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 3.6rem;
+  }
+  
+  .timeline-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0.58rem 1rem;
+    margin-bottom: 1.15rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    background: rgba(239, 246, 255, 0.88);
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+  }
+  
+  /* ------------------------------------------
+     TIMELINE WRAPPER
+  ------------------------------------------ */
+  
+  .timeline {
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      rgba(37, 99, 235, 0.16),
+      rgba(37, 99, 235, 0.3),
+      rgba(14, 165, 233, 0.16)
+    );
+    border-radius: 999px;
+  }
+  
+  /* ------------------------------------------
+     ITEM
+  ------------------------------------------ */
+  
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+    padding-right: 2.7rem;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+    padding-left: 2.7rem;
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* ------------------------------------------
+     DOT
+  ------------------------------------------ */
+  
+  .timeline-dot {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border: 3px solid rgba(37, 99, 235, 0.9);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
     box-shadow:
-    0 15px 40px rgba(0,0,0,.06);
-
-    transition:.4s;
-
-}
-
-
-.timeline-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-
-.timeline-year{
-
-    color:var(--primary);
-
-    font-weight:700;
-
-    margin-bottom:1rem;
-
-}
-
-
-.timeline-card h3{
-
-    margin-bottom:1rem;
-
-}
-
-
-.timeline-card p{
-
-    color:var(--text-light);
-
-    line-height:1.9;
-
-}
-
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:992px){
-
-    .timeline::before{
-    
-    left:20px;
-    
-    }
-    
-    .timeline-item{
-    
-    width:100%;
-    
-    left:0 !important;
-    
-    padding-left:70px !important;
-    
-    padding-right:0 !important;
-    
-    }
-    
-    .timeline-dot{
-    
-    left:7px !important;
-    
-    right:auto !important;
-    
-    }
-    
-    }
+      0 0 0 6px rgba(239, 246, 255, 0.95),
+      0 10px 24px rgba(37, 99, 235, 0.12);
+  }
+  
+  .timeline-item.left .timeline-dot {
+    right: -8px;
+  }
+  
+  .timeline-item.right .timeline-dot {
+    left: -8px;
+  }
+  
+  .timeline-dot span {
+    display: none;
+  }
+  
+  /* ------------------------------------------
+     CARD
+  ------------------------------------------ */
+  
+  .timeline-card {
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 250, 252, 0.97));
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 24px;
+    padding: 1.45rem 1.35rem 1.2rem;
+    box-shadow:
+      0 18px 42px rgba(15, 23, 42, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.88);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .timeline-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.88));
+  }
+  
+  .timeline-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.16);
+    box-shadow:
+      0 24px 52px rgba(15, 23, 42, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+  
+  .timeline-year {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0.34rem 0.72rem;
+    margin-bottom: 0.85rem;
+    border-radius: 999px;
+    background: rgba(239, 246, 255, 0.95);
+    border: 1px solid rgba(37, 99, 235, 0.11);
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .timeline-card h3 {
+    margin: 0 0 0.6rem;
+    color: var(--primary);
+    font-size: 1.16rem;
+    line-height: 1.32;
+    letter-spacing: -0.02em;
+  }
+  
+  .timeline-card p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
