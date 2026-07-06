@@ -1,32 +1,23 @@
-import { journeyHeroData }
-from "../../data/journey/journeyHeroData";
-
 import "../../styles/journey/journeyHero.css";
 
-function JourneyHero() {
+function JourneyHero({ data }) {
+  if (!data) return null;
+
   return (
     <section className="journey-hero section">
-
       <div className="container">
-
         <div className="journey-hero-content">
+          {data.eyebrow && (
+            <span className="journey-badge">
+              {data.eyebrow}
+            </span>
+          )}
 
-          <span className="journey-badge">
-            {journeyHeroData.badge}
-          </span>
+          {data.title && <h1>{data.title}</h1>}
 
-          <h1>
-            {journeyHeroData.title}
-          </h1>
-
-          <p>
-            {journeyHeroData.subtitle}
-          </p>
-
+          {data.description && <p>{data.description}</p>}
         </div>
-
       </div>
-
     </section>
   );
 }

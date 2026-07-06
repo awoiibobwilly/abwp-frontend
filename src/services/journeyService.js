@@ -1,81 +1,71 @@
 import api from "./api";
 
-import {
-  normalizeCollection,
-  normalizeObject,
-  handleApiError,
-} from "./apiHelpers";
+// ==========================================================
+// JOURNEY PAGE SERVICE
+// ABW PORTFOLIO
+// ==========================================================
 
-import { ENDPOINTS } from "./endpoints";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
-/* ==========================================
-   JOURNEY PREVIEW
-========================================== */
+// ==========================================================
+// MEDIA URL NORMALIZER
+// ==========================================================
 
-export const getJourneyPreview = async () => {
+const normalizeMediaUrl = (url) => {
+  if (!url) return "";
 
-  try {
-
-    const response = await api.get(
-      ENDPOINTS.JOURNEY
-    );
-
-    return normalizeCollection(
-      response.data
-    );
-
-  } catch (error) {
-
-    handleApiError(error);
-
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
   }
 
+  return `${API_BASE_URL}${url}`;
 };
 
-/* ==========================================
-   FULL JOURNEY
-========================================== */
+// ==========================================================
+// TIMELINE ITEM NORMALIZER
+// ==========================================================
 
+const normalizeTimelineItem = (item) => ({
+  ...item,
+  image: item?.image ? normalizeMediaUrl(item.image) : "",
+});
+
+// ==========================================================
+// JOURNEY PAYLOAD NORMALIZER
+// ==========================================================
+
+const normalizeJourneyPayload = (data) => {
+  if (!data) return null;
+
+  return {
+    ...data,
+    timeline: Array.isArray(data.timeline)
+      ? data.timeline.map(normalizeTimelineItem)
+      : [],
+  };
+};
+
+// ==========================================================
+// JOURNEY PAGE FETCH
+// Used by Journey page and Home Journey preview
+// ==========================================================
+
+const fetchJourneyPageData = async () => {
+  const response = await api.get("/journey/");
+  return normalizeJourneyPayload(response.data);
+};
+
+// ==========================================================
+// PUBLIC EXPORTS
+// ==========================================================
+
+// Full Journey page
+export const getJourneyPage = async () => {
+  return fetchJourneyPageData();
+};
+
+// Backward compatibility for preview / older Journey consumers
 export const getJourney = async () => {
-
-  try {
-
-    const response = await api.get(
-      ENDPOINTS.JOURNEY
-    );
-
-    return normalizeCollection(
-      response.data
-    );
-
-  } catch (error) {
-
-    handleApiError(error);
-
-  }
-
-};
-
-/* ==========================================
-   JOURNEY DETAIL
-========================================== */
-
-export const getJourneyDetail = async (slug) => {
-
-  try {
-
-    const response = await api.get(
-      `${ENDPOINTS.JOURNEY}${slug}/`
-    );
-
-    return normalizeObject(
-      response.data
-    );
-
-  } catch (error) {
-
-    handleApiError(error);
-
-  }
-
+  return fetchJourneyPageData();
 };

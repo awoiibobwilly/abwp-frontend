@@ -1,57 +1,42 @@
-import { journeyTimelineData }
-from "../../data/journey/journeyTimelineData";
-
 import JourneyCard from "./JourneyCard";
-
 import "../../styles/journey/journeyTimeline.css";
 
-function JourneyTimeline() {
-
+function JourneyTimeline({ intro, items = [] }) {
   return (
-
     <section className="journey-timeline section">
-
       <div className="container">
-
         <div className="timeline-header">
+          {intro?.eyebrow && (
+            <span className="timeline-badge">
+              {intro.eyebrow}
+            </span>
+          )}
 
-          <span className="timeline-badge">
-            Journey Timeline
-          </span>
+          {intro?.title && (
+            <h2 className="section-title">
+              {intro.title}
+            </h2>
+          )}
 
-          <h2 className="section-title">
-            Milestones That Shaped My Path
-          </h2>
-
-          <p className="section-subtitle">
-            Every chapter has contributed to a
-            broader mission of service, leadership,
-            innovation, and impact.
-          </p>
-
+          {intro?.intro && (
+            <p className="section-subtitle">
+              {intro.intro}
+            </p>
+          )}
         </div>
 
-
         <div className="timeline">
-
-          {journeyTimelineData.map((item, index) => (
-
+          {items.map((item, index) => (
             <JourneyCard
-              key={index}
+              key={item.id || index}
               item={item}
               index={index}
             />
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default JourneyTimeline;
