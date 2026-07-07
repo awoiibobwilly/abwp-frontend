@@ -1,156 +1,88 @@
-
 import SectionHeader from "../common/SectionHeader";
+import SectionMessage from "../common/SectionMessage";
 
 import JourneyTimeline from "./JourneyTimeline";
-
 import JourneySkeleton from "./JourneySkeleton";
 
-import {getJourney,} from "../../services/journeyService";
+import useApiResource from "../../hooks/useApiResource";
+import { getJourney } from "../../services/journeyService";
 
 import "../../styles/home/journey-preview.css";
 
-import SectionMessage from "../common/SectionMessage";
-
-import useApiResource from "../../hooks/useApiResource";
+// ==========================================================
+// JOURNEY PREVIEW
+// HOME PAGE
+// ABW PORTFOLIO
+// ==========================================================
 
 function JourneyPreview() {
-
   // ==================================================
-  // State
+  // API RESOURCE
   // ==================================================
 
   const {
-
-    data: journey,
-
+    data: journeyData,
     loading,
-
     error,
+  } = useApiResource(getJourney);
 
-} = useApiResource(
-
-    getJourney
-
-);
+  const journeyItems = journeyData?.timeline || [];
 
   // ==================================================
-  // Component
+  // COMPONENT
   // ==================================================
 
   return (
-
     <section
-
       id="journey"
-
       className="journey-preview section"
-
     >
-
       <div className="container">
-
-        {/* ===========================================
-            Section Header
-        =========================================== */}
-
+        {/* ==========================================
+            SECTION HEADER
+        ========================================== */}
         <SectionHeader
-
           eyebrow="Journey"
-
           title="Professional Journey"
-
-          description="A journey built on continuous learning, leadership, innovation, healthcare, technology and service."
-
+          description="A journey built on continuous learning, leadership, innovation, healthcare, technology, and service."
         />
 
-        {/* ===========================================
-            Loading
-        =========================================== */}
+        {/* ==========================================
+            LOADING
+        ========================================== */}
+        {loading && <JourneySkeleton />}
 
-        {
+        {/* ==========================================
+            ERROR
+        ========================================== */}
+        {!loading && error && (
+          <SectionMessage
+            type="error"
+            message={error}
+          />
+        )}
 
-          loading && (
+        {/* ==========================================
+            EMPTY
+        ========================================== */}
+        {!loading && !error && journeyItems.length === 0 && (
+          <SectionMessage
+            type="empty"
+            message="Journey information will appear here soon."
+          />
+        )}
 
-            <JourneySkeleton />
-
-          )
-
-        }
-
-        {/* ===========================================
-            Error
-        =========================================== */}
-
-        {
-
-          !loading &&
-
-          error && (
-
-            <SectionMessage
-
-              type="error"
-
-              message={error}
-
-            />
-
-          )
-
-        }
-
-        {/* ===========================================
-            Empty
-        =========================================== */}
-
-        {
-
-          !loading &&
-
-          !error &&
-
-          journey.length === 0 && (
-
-            <SectionMessage
-
-              type="empty"
-
-              message="Journey information will appear here soon."
-
-            />
-
-          )
-
-        }
-
-        {/* ===========================================
-            Timeline
-        =========================================== */}
-
-        {
-
-          !loading &&
-
-          !error &&
-
-          journey.length > 0 && (
-
-            <JourneyTimeline
-
-              journey={journey}
-
-            />
-
-          )
-
-        }
-
+        {/* ==========================================
+            TIMELINE
+        ========================================== */}
+        {!loading && !error && journeyItems.length > 0 && (
+          <JourneyTimeline
+            journey={journeyItems}
+          />
+        )}
       </div>
-
     </section>
-
   );
-
 }
 
 export default JourneyPreview;

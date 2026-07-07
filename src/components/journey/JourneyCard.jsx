@@ -1,41 +1,47 @@
-function JourneyCard({ item, index }) {
+// ==========================================================
+// JOURNEY CARD
+// JOURNEY PAGE
+// ABW PORTFOLIO
+// ==========================================================
 
-    return (
-  
-      <div
-        className={`timeline-item ${
-          index % 2 === 0
-            ? "left"
-            : "right"
-        }`}
-      >
-  
-        <div className="timeline-dot">
-  
-          <span />
-  
-        </div>
-  
-        <div className="timeline-card">
-  
+function JourneyCard({ item, index }) {
+  const alignmentClass = index % 2 === 0 ? "left" : "right";
+
+  return (
+    <div className={`timeline-item ${alignmentClass}`}>
+      <div className="timeline-dot">
+        <span />
+      </div>
+
+      <div className="timeline-card">
+        {item?.year && (
           <div className="timeline-year">
             {item.year}
           </div>
-  
-          <h3>
-            {item.title}
-          </h3>
-  
-          <p>
-            {item.description}
-          </p>
-  
-        </div>
-  
+        )}
+
+        {item?.title && <h3>{item.title}</h3>}
+
+        {(item?.organization || item?.duration) && (
+          <div className="timeline-meta">
+            {item?.organization && (
+              <span className="timeline-org">
+                {item.organization}
+              </span>
+            )}
+
+            {item?.duration && (
+              <span className="timeline-duration">
+                {item.duration}
+              </span>
+            )}
+          </div>
+        )}
+
+        {item?.summary && <p>{item.summary}</p>}
       </div>
-  
-    );
-  
-  }
-  
-  export default JourneyCard;
+    </div>
+  );
+}
+
+export default JourneyCard;
