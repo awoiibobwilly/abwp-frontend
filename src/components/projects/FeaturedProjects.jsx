@@ -1,50 +1,35 @@
-import { featuredProjectsData }
-from "../../data/projects/featuredProjectsData";
-
 import ProjectCard from "./ProjectCard";
-
 import "../../styles/projects/featuredProjects.css";
 
-function FeaturedProjects() {
-
+function FeaturedProjects({ intro, projects = [] }) {
   return (
     <section className="featured-projects section">
-
       <div className="container">
-
         <div className="featured-header">
-
           <span className="featured-badge">
-            Featured Projects
+            {intro?.eyebrow || "Featured Projects"}
           </span>
 
           <h2 className="section-title">
-            Solutions Built For Impact
+            {intro?.title || "Solutions Built For Impact"}
           </h2>
 
           <p className="section-subtitle">
-            A selection of projects across healthcare,
-            research, public health, and software engineering.
+            {intro?.intro ||
+              "A selection of projects across healthcare, research, public health, and software engineering."}
           </p>
-
         </div>
 
         <div className="projects-list">
-
-          {featuredProjectsData.map((project, index) => (
-
+          {projects.map((project, index) => (
             <ProjectCard
-              key={index}
+              key={project.id || index}
               project={project}
               reverse={index % 2 !== 0}
             />
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }

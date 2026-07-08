@@ -1,61 +1,36 @@
-import { technologiesData }
-from "../../data/projects/technologiesData";
-
 import TechGroup from "./TechGroup";
-
 import "../../styles/projects/technologiesCloud.css";
 
-function TechnologiesCloud() {
-
+function TechnologiesCloud({ intro, technologyGroups = [] }) {
   return (
-
     <section className="technologies section">
-
       <div className="container">
-
         <div className="technologies-header">
-
           <span className="technologies-badge">
-
-            Technology Ecosystem
-
+            {intro?.eyebrow || "Technology Ecosystem"}
           </span>
 
           <h2 className="section-title">
-
-            Tools & Technologies
-
+            {intro?.title || "Tools & Technologies"}
           </h2>
 
           <p className="section-subtitle">
-
-            A growing ecosystem of technologies used
-            to build scalable and impactful solutions.
-
+            {intro?.intro ||
+              "A growing ecosystem of technologies used to build scalable and impactful solutions."}
           </p>
-
         </div>
-
 
         <div className="technologies-grid">
-
-          {technologiesData.map((group, index) => (
-
+          {technologyGroups.map((group, index) => (
             <TechGroup
-              key={index}
+              key={group.id || index}
               group={group}
             />
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default TechnologiesCloud;

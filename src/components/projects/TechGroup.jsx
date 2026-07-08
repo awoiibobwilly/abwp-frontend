@@ -1,32 +1,25 @@
 function TechGroup({ group }) {
+  return (
+    <div className="tech-group">
+      <h3>
+        {group.title}
+      </h3>
 
-    return (
-  
-      <div className="tech-group">
-  
-        <h3>
-          {group.title}
-        </h3>
-  
-        <div className="tech-items">
-  
-          {group.technologies.map((tech, index) => (
-  
-            <span
-              className="tech-badge"
-              key={index}
-            >
-              {tech}
-            </span>
-  
-          ))}
-  
-        </div>
-  
+      <div className="tech-items">
+        {group.items?.map((tech, index) => (
+          <span
+            className="tech-badge"
+            key={tech.id || index}
+            style={{
+              borderColor: `${tech.color || "#2563eb"}30`,
+            }}
+          >
+            {tech.name}
+          </span>
+        ))}
       </div>
-  
-    );
-  
-  }
-  
-  export default TechGroup;
+    </div>
+  );
+}
+
+export default TechGroup;

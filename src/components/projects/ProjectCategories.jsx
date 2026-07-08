@@ -1,61 +1,36 @@
-import { projectCategoriesData }
-from "../../data/projects/projectCategoriesData";
-
 import CategoryCard from "./CategoryCard";
-
 import "../../styles/projects/projectCategories.css";
 
-function ProjectCategories() {
-
+function ProjectCategories({ intro, categories = [] }) {
   return (
-
     <section className="project-categories section">
-
       <div className="container">
-
         <div className="categories-header">
-
           <span className="categories-badge">
-
-            Domains of Impact
-
+            {intro?.eyebrow || "Domains of Impact"}
           </span>
 
           <h2 className="section-title">
-
-            Areas Where Innovation Meets Purpose
-
+            {intro?.title || "Areas Where Innovation Meets Purpose"}
           </h2>
 
           <p className="section-subtitle">
-
-            Projects spanning healthcare, research,
-            data science, and software engineering.
-
+            {intro?.intro ||
+              "Projects spanning healthcare, research, data science, and software engineering."}
           </p>
-
         </div>
-
 
         <div className="categories-grid">
-
-          {projectCategoriesData.map((category, index) => (
-
+          {categories.map((category, index) => (
             <CategoryCard
-              key={index}
+              key={category.id || index}
               category={category}
             />
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default ProjectCategories;
