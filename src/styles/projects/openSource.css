@@ -1,213 +1,265 @@
-/* ==========================================
-   OPEN SOURCE
-========================================== */
+/* ==========================================================
+   OPEN SOURCE / BEYOND PROJECTS
+   PROJECTS PAGE
+   PHASE P2F.3 PREMIUM REBUILD
+========================================================== */
 
-.open-source{
-
+.open-source {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+  
+  .open-source .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     HEADER
+  ========================================== */
+  
+  .open-source-header {
+    max-width: 860px;
+    margin: 0 auto 4.75rem;
+    text-align: center;
+  }
+  
+  .open-source-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.82rem 1.42rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    margin-bottom: 1.35rem;
+  }
+  
+  /* ==========================================
+     STATS ROW
+  ========================================== */
+  
+  .contribution-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.35rem;
+    margin-bottom: 3rem;
+  }
+  
+  .stat-card {
+    position: relative;
+    padding: 1.7rem 1.2rem 1.45rem;
+    text-align: center;
+    border-radius: 1.45rem;
     background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #f8fafc
-    );
-
-}
-
-
-/* ==========================================
-   HEADER
-========================================== */
-
-.open-source-header{
-
-    max-width:850px;
-
-    margin:0 auto 5rem;
-
-    text-align:center;
-
-}
-
-
-.open-source-badge{
-
-    display:inline-block;
-
-    padding:.8rem 1.4rem;
-
-    border-radius:999px;
-
-    background:rgba(59,130,246,.1);
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:1.5rem;
-
-}
-
-
-/* ==========================================
-   STATS
-========================================== */
-
-.contribution-stats{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:2rem;
-
-    margin-bottom:5rem;
-
-}
-
-
-.stat-card{
-
-    background:white;
-
-    padding:2rem;
-
-    text-align:center;
-
-    border-radius:1.5rem;
-
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 251, 255, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.12);
     box-shadow:
-        0 15px 40px rgba(0,0,0,.05);
-
-}
-
-
-.stat-card h3{
-
-    font-size:2.5rem;
-
-    color:var(--primary);
-
-    margin-bottom:1rem;
-
-}
-
-
-.stat-card p{
-
-    color:var(--text-light);
-
-}
-
-
-/* ==========================================
-   CONTRIBUTION GRID
-========================================== */
-
-.contribution-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:2rem;
-
-}
-
-
-.contribution-card{
-
-    background:rgba(255,255,255,.7);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:1.5rem;
-
-    padding:2.5rem;
-
+      0 18px 40px rgba(15, 23, 42, 0.05),
+      0 8px 20px rgba(15, 23, 42, 0.03);
+    overflow: hidden;
+    transition:
+      transform 0.32s ease,
+      box-shadow 0.32s ease,
+      border-color 0.32s ease;
+  }
+  
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.88));
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.14);
     box-shadow:
-        0 15px 40px rgba(0,0,0,.05);
-
-    transition:.4s;
-
-}
-
-
-.contribution-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-
-.contribution-icon{
-
-    width:80px;
-
-    height:80px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:50%;
-
-    background:#eff6ff;
-
-    color:var(--primary);
-
-    font-size:2rem;
-
-    margin-bottom:2rem;
-
-}
-
-
-.contribution-card h3{
-
-    margin-bottom:1rem;
-
-}
-
-
-.contribution-card p{
-
-    line-height:1.9;
-
-    color:var(--text-light);
-
-}
-
-@media(max-width:992px){
-
-    .contribution-stats{
-    
-    grid-template-columns:repeat(2,1fr);
-    
+      0 24px 50px rgba(15, 23, 42, 0.08),
+      0 10px 24px rgba(15, 23, 42, 0.05);
+  }
+  
+  .stat-card h3 {
+    margin: 0 0 0.7rem;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    line-height: 1;
+    color: var(--secondary);
+    letter-spacing: -0.03em;
+  }
+  
+  .stat-card p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  
+  /* ==========================================
+     CONTRIBUTION GRID
+  ========================================== */
+  
+  .contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+  
+  .contribution-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1.7rem 1.45rem 1.45rem;
+    border-radius: 1.55rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 251, 255, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    box-shadow:
+      0 18px 40px rgba(15, 23, 42, 0.05),
+      0 8px 20px rgba(15, 23, 42, 0.03);
+    overflow: hidden;
+    transition:
+      transform 0.32s ease,
+      box-shadow 0.32s ease,
+      border-color 0.32s ease;
+  }
+  
+  .contribution-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.95), rgba(14, 165, 233, 0.88));
+  }
+  
+  .contribution-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.14);
+    box-shadow:
+      0 24px 50px rgba(15, 23, 42, 0.08),
+      0 10px 24px rgba(15, 23, 42, 0.05);
+  }
+  
+  /* ==========================================
+     ICON
+  ========================================== */
+  
+  .contribution-icon {
+    width: 58px;
+    height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #eff6ff 0%, #e0f2fe 100%);
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-bottom: 1.15rem;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+      0 8px 20px rgba(59, 130, 246, 0.08);
+  }
+  
+  .contribution-card h3 {
+    margin: 0 0 0.9rem;
+    color: var(--secondary);
+    font-size: 1.02rem;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+  
+  .contribution-card p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width: 1200px) {
+    .contribution-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    
-    .contribution-grid{
-    
-    grid-template-columns:repeat(2,1fr);
-    
+  }
+  
+  @media (max-width: 992px) {
+    .open-source-header {
+      margin-bottom: 3.75rem;
     }
-    
+  
+    .contribution-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.15rem;
+      margin-bottom: 2.5rem;
     }
-    
-    
-    @media(max-width:576px){
-    
-    .contribution-stats{
-    
-    grid-template-columns:1fr;
-    
+  
+    .contribution-grid {
+      gap: 1.15rem;
     }
-    
-    .contribution-grid{
-    
-    grid-template-columns:1fr;
-    
+  
+    .stat-card {
+      padding: 1.5rem 1.1rem 1.3rem;
     }
-    
+  
+    .contribution-card {
+      padding: 1.5rem 1.25rem 1.25rem;
     }
+  }
+  
+  @media (max-width: 576px) {
+    .open-source-header {
+      margin-bottom: 3.25rem;
+    }
+  
+    .contribution-stats {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  
+    .contribution-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .stat-card {
+      border-radius: 1.3rem;
+      padding: 1.35rem 1rem 1.2rem;
+    }
+  
+    .stat-card h3 {
+      font-size: 1.9rem;
+    }
+  
+    .contribution-card {
+      border-radius: 1.35rem;
+      padding: 1.3rem 1rem 1.15rem;
+    }
+  
+    .contribution-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 0.95rem;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+    }
+  
+    .contribution-card h3 {
+      font-size: 1rem;
+    }
+  
+    .contribution-card p {
+      font-size: 0.93rem;
+    }
+  }

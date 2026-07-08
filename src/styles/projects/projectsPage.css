@@ -1,0 +1,277 @@
+/* ==========================================================
+   PROJECTS PAGE
+   PHASE P2F.5 — FINAL RHYTHM POLISH
+   PAGE-LEVEL SPACING / FLOW / SECTION CALIBRATION
+========================================================== */
+
+.projects-page {
+    background: #ffffff;
+  }
+  
+  /* ==========================================
+     GLOBAL SECTION RHYTHM
+  ========================================== */
+  
+  .projects-page .section {
+    position: relative;
+    padding: 6.5rem 0;
+  }
+  
+  .projects-page .section:first-of-type {
+    padding-top: 5.5rem;
+  }
+  
+  /* ==========================================
+     HERO
+  ========================================== */
+  
+  .projects-page .projects-hero {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+  
+  /* ==========================================
+     FEATURED PROJECTS
+  ========================================== */
+  
+  .projects-page .featured-projects {
+    padding-top: 5.25rem;
+    padding-bottom: 6.25rem;
+  }
+  
+  /* ==========================================
+     CATEGORIES
+  ========================================== */
+  
+  .projects-page .project-categories {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  /* ==========================================
+     TECHNOLOGIES
+  ========================================== */
+  
+  .projects-page .technologies {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  
+  /* ==========================================
+     OPEN SOURCE / BEYOND PROJECTS
+  ========================================== */
+  
+  .projects-page .open-source {
+    padding-top: 6rem;
+    padding-bottom: 6.25rem;
+  }
+  
+  /* ==========================================
+     CTA HANDOFF
+  ========================================== */
+  
+  .projects-page .universal-cta,
+  .projects-page .universal-cta-section,
+  .projects-page .cta-section {
+    margin-top: 0;
+  }
+  
+  /* ==========================================================
+     SECTION HEADER CONSISTENCY
+     Normalizes spacing between badge / title / subtitle
+  ========================================================== */
+  
+  .projects-page .featured-header,
+  .projects-page .categories-header,
+  .projects-page .technologies-header,
+  .projects-page .open-source-header {
+    margin-bottom: 4.25rem;
+  }
+  
+  .projects-page .featured-header .section-title,
+  .projects-page .categories-header .section-title,
+  .projects-page .technologies-header .section-title,
+  .projects-page .open-source-header .section-title {
+    margin-bottom: 1rem;
+  }
+  
+  .projects-page .featured-header .section-subtitle,
+  .projects-page .categories-header .section-subtitle,
+  .projects-page .technologies-header .section-subtitle,
+  .projects-page .open-source-header .section-subtitle {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.9;
+  }
+  
+  /* ==========================================================
+     HERO → FEATURED VISUAL HANDOFF
+  ========================================================== */
+  
+  .projects-page .projects-hero + .featured-projects {
+    margin-top: 0;
+  }
+  
+  /* Slightly reduce the empty feeling between hero and flagship */
+  .projects-page .projects-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================================
+     FEATURED → CATEGORIES FLOW
+  ========================================================== */
+  
+  .projects-page .featured-projects + .project-categories {
+    margin-top: 0;
+  }
+  
+  /* ==========================================================
+     CATEGORIES → TECHNOLOGIES FLOW
+  ========================================================== */
+  
+  .projects-page .project-categories + .technologies {
+    margin-top: 0;
+  }
+  
+  /* ==========================================================
+     TECHNOLOGIES → BEYOND PROJECTS FLOW
+  ========================================================== */
+  
+  .projects-page .technologies + .open-source {
+    margin-top: 0;
+  }
+  
+  /* ==========================================================
+     INTERNAL SPACING CALIBRATION
+  ========================================================== */
+  
+  /* Featured project block should feel slightly more anchored */
+  .projects-page .projects-list {
+    margin-top: 0;
+  }
+  
+  /* Category cards section spacing */
+  .projects-page .categories-grid {
+    margin-top: 0;
+  }
+  
+  /* Technologies block spacing */
+  .projects-page .technologies-grid {
+    margin-top: 0;
+  }
+  
+  /* Beyond projects spacing */
+  .projects-page .contribution-stats {
+    margin-top: 0;
+  }
+  
+  .projects-page .contribution-grid {
+    margin-top: 0;
+  }
+  
+  /* ==========================================================
+     DESKTOP / LARGE TABLET REFINEMENT
+  ========================================================== */
+  
+  @media (max-width: 1200px) {
+    .projects-page .section {
+      padding: 6rem 0;
+    }
+  
+    .projects-page .projects-hero {
+      padding-top: 5.5rem;
+      padding-bottom: 4.5rem;
+    }
+  
+    .projects-page .featured-projects,
+    .projects-page .project-categories,
+    .projects-page .technologies,
+    .projects-page .open-source {
+      padding-top: 5.5rem;
+      padding-bottom: 5.75rem;
+    }
+  }
+  
+  /* ==========================================================
+     TABLET
+  ========================================================== */
+  
+  @media (max-width: 992px) {
+    .projects-page .section {
+      padding: 5rem 0;
+    }
+  
+    .projects-page .section:first-of-type {
+      padding-top: 4.75rem;
+    }
+  
+    .projects-page .projects-hero {
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+  
+    .projects-page .featured-projects,
+    .projects-page .project-categories,
+    .projects-page .technologies,
+    .projects-page .open-source {
+      padding-top: 4.75rem;
+      padding-bottom: 5rem;
+    }
+  
+    .projects-page .featured-header,
+    .projects-page .categories-header,
+    .projects-page .technologies-header,
+    .projects-page .open-source-header {
+      margin-bottom: 3.4rem;
+    }
+  }
+  
+  /* ==========================================================
+     MOBILE
+  ========================================================== */
+  
+  @media (max-width: 576px) {
+    .projects-page .section {
+      padding: 4rem 0;
+    }
+  
+    .projects-page .section:first-of-type {
+      padding-top: 4rem;
+    }
+  
+    .projects-page .projects-hero {
+      padding-top: 4.2rem;
+      padding-bottom: 3.5rem;
+    }
+  
+    .projects-page .featured-projects,
+    .projects-page .project-categories,
+    .projects-page .technologies,
+    .projects-page .open-source {
+      padding-top: 3.9rem;
+      padding-bottom: 4.2rem;
+    }
+  
+    .projects-page .featured-header,
+    .projects-page .categories-header,
+    .projects-page .technologies-header,
+    .projects-page .open-source-header {
+      margin-bottom: 2.75rem;
+    }
+  
+    .projects-page .featured-header .section-title,
+    .projects-page .categories-header .section-title,
+    .projects-page .technologies-header .section-title,
+    .projects-page .open-source-header .section-title {
+      margin-bottom: 0.85rem;
+    }
+  
+    .projects-page .featured-header .section-subtitle,
+    .projects-page .categories-header .section-subtitle,
+    .projects-page .technologies-header .section-subtitle,
+    .projects-page .open-source-header .section-subtitle {
+      line-height: 1.8;
+    }
+  }

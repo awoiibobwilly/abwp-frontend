@@ -6,6 +6,7 @@ import ProjectCategories from "../components/projects/ProjectCategories";
 import TechnologiesCloud from "../components/projects/TechnologiesCloud";
 import OpenSourceSection from "../components/projects/OpenSourceSection";
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
+import "../styles/projects/projectsPage.css";
 
 import { getProjectsPage } from "../services/projectService";
 
@@ -49,14 +50,18 @@ function Projects() {
 
   if (loading) {
     return (
-      <>
-        <ProjectsHero />
-        <FeaturedProjects />
-        <ProjectCategories />
-        <TechnologiesCloud />
-        <OpenSourceSection />
-        <UniversalCTA page="projects" />
-      </>
+      function Projects() {
+        return (
+          <main className="projects-page">
+            <ProjectsHero />
+            <FeaturedProjects />
+            <ProjectCategories />
+            <Technologies />
+            <OpenSourceContributions />
+            <UniversalCTA page={PAGE_KEYS.PROJECTS} />
+          </main>
+        );
+      }
     );
   }
 
