@@ -1,89 +1,91 @@
-import { researchPhilosophyData }
-from "../../data/research/researchPhilosophyData";
-
 import "../../styles/research/researchPhilosophy.css";
 
-function ResearchPhilosophy() {
+// ==========================================================
+// RESEARCH PHILOSOPHY
+// RESEARCH PAGE
+// ABW PORTFOLIO
+// ==========================================================
+
+function ResearchPhilosophy({ intro, points = [] }) {
+  if (!points.length) {
+    return null;
+  }
 
   return (
-
     <section className="research-philosophy section">
-
       <div className="container">
-
-        {/* Header */}
-
+        {/* ==========================================
+            SECTION HEADER
+        ========================================== */}
         <div className="research-philosophy-header">
-
           <span className="research-philosophy-badge">
-
-            Guiding Principles
-
+            {intro?.eyebrow || "Research Philosophy"}
           </span>
 
           <h2 className="section-title">
-
-            Research Philosophy
-
+            {intro?.title || "How I Approach Research"}
           </h2>
 
           <p className="section-subtitle">
-
-            Principles that shape the pursuit of knowledge,
-            innovation, and meaningful impact.
-
+            {intro?.intro ||
+              "My research philosophy is grounded in rigor, relevance, ethics, and a commitment to translating evidence into meaningful action."}
           </p>
-
         </div>
 
-
-        {/* Content */}
-
+        {/* ==========================================
+            PHILOSOPHY GRID
+        ========================================== */}
         <div className="research-philosophy-grid">
+          {points.map((point, index) => {
+            const accent =
+              point?.accent_color ||
+              point?.color ||
+              "#2563EB";
 
-          {researchPhilosophyData.map((item, index) => {
-
-            const Icon = item.icon;
+            const pointInitial =
+              point?.title?.charAt(0)?.toUpperCase() || "P";
 
             return (
-
-              <div
+              <article
                 className="philosophy-card"
-                key={index}
+                key={point.id || index}
               >
+                {/* ====================================
+                    CARD TOP
+                ==================================== */}
+                <div className="philosophy-card-top">
+                  <div
+                    className="philosophy-icon"
+                    style={{
+                      background: `${accent}14`,
+                      color: accent,
+                    }}
+                  >
+                    <span>{pointInitial}</span>
+                  </div>
 
-                <div className="philosophy-icon">
-
-                  <Icon />
-
+                  <span
+                    className="philosophy-accent"
+                    style={{
+                      background: accent,
+                    }}
+                  />
                 </div>
 
-                <h3>
-
-                  {item.title}
-
-                </h3>
-
-                <p>
-
-                  {item.description}
-
-                </p>
-
-              </div>
-
+                {/* ====================================
+                    CARD BODY
+                ==================================== */}
+                <div className="philosophy-card-body">
+                  <h3>{point.title}</h3>
+                  <p>{point.description}</p>
+                </div>
+              </article>
             );
-
           })}
-
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default ResearchPhilosophy;

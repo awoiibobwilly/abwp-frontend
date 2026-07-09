@@ -1,123 +1,101 @@
-import { methodologiesData }
-from "../../data/research/methodologiesData";
-
-import {
-  FaFlask,
-  FaChartBar,
-} from "react-icons/fa";
-
 import "../../styles/research/methodologiesTools.css";
 
-function MethodologiesTools() {
+// ==========================================================
+// METHODOLOGIES & TOOLS
+// RESEARCH PAGE
+// ABW PORTFOLIO
+// ==========================================================
+
+function MethodologiesTools({ intro, groups = [] }) {
+  if (!groups.length) {
+    return null;
+  }
 
   return (
-
-    <section className="methodologies section">
-
+    <section className="methodologies-tools section">
       <div className="container">
-
-        {/* Header */}
-
+        {/* ==========================================
+            SECTION HEADER
+        ========================================== */}
         <div className="methodologies-header">
-
           <span className="methodologies-badge">
-
-            Methods & Technologies
-
+            {intro?.eyebrow || "Methodologies & Tools"}
           </span>
 
           <h2 className="section-title">
-
-            Research Approaches and Analytical Tools
-
+            {intro?.title || "Approaches, Frameworks & Tools"}
           </h2>
 
           <p className="section-subtitle">
-
-            Combining rigorous methodologies and modern
-            analytical technologies to generate evidence
-            and meaningful insights.
-
+            {intro?.intro ||
+              "The methodologies, analytical approaches, and research tools that shape how I investigate questions, generate evidence, and translate findings into practical insight."}
           </p>
-
         </div>
 
+        {/* ==========================================
+            SECTION SUMMARY
+        ========================================== */}
+        <div className="methodologies-summary">
+          <div className="methodologies-summary-card">
+            <span className="methodologies-summary-value">
+              {groups.length}
+            </span>
 
-        <div className="methodologies-wrapper">
-
-          {/* Left */}
-
-          <div className="methodologies-card">
-
-            <div className="methodologies-icon">
-
-              <FaFlask />
-
-            </div>
-
-            <h3>
-
-              Research Methodologies
-
-            </h3>
-
-            <div className="methodologies-tags">
-
-              {methodologiesData.methodologies.map((item, index) => (
-
-                <span key={index}>
-
-                  {item}
-
-                </span>
-
-              ))}
-
-            </div>
-
+            <span className="methodologies-summary-label">
+              {groups.length === 1
+                ? "methodology cluster"
+                : "methodology clusters"}
+            </span>
           </div>
-
-
-          {/* Right */}
-
-          <div className="methodologies-card">
-
-            <div className="methodologies-icon">
-
-              <FaChartBar />
-
-            </div>
-
-            <h3>
-
-              Tools & Platforms
-
-            </h3>
-
-            <div className="methodologies-tags">
-
-              {methodologiesData.tools.map((tool, index) => (
-
-                <span key={index}>
-
-                  {tool}
-
-                </span>
-
-              ))}
-
-            </div>
-
-          </div>
-
         </div>
 
+        {/* ==========================================
+            GROUPS GRID
+        ========================================== */}
+        <div className="methodologies-grid">
+          {groups.map((group, index) => (
+            <article
+              className="methodology-card"
+              key={group.id || index}
+            >
+              {/* ====================================
+                  CARD TOP
+              ==================================== */}
+              <div className="methodology-card-top">
+                <div className="methodology-card-heading">
+                  <h3>{group.title}</h3>
+
+                  {group.description && (
+                    <p className="methodology-description">
+                      {group.description}
+                    </p>
+                  )}
+                </div>
+
+                <span className="methodology-count">
+                  {group.items?.length || 0}
+                </span>
+              </div>
+
+              {/* ====================================
+                  ITEMS
+              ==================================== */}
+              <div className="methodology-items">
+                {group.items?.map((item) => (
+                  <span
+                    key={item.id}
+                    className="methodology-item"
+                  >
+                    {item.name}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-
     </section>
-
   );
-
 }
 
 export default MethodologiesTools;

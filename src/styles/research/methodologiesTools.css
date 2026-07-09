@@ -1,164 +1,254 @@
 /* ==========================================
-   METHODOLOGIES
+   METHODOLOGIES & TOOLS
+   RESEARCH PAGE
 ========================================== */
 
-.methodologies{
-
-    background:#f8fafc;
-
-}
-
-
-/* ==========================================
-   HEADER
-========================================== */
-
-.methodologies-header{
-
-    max-width:850px;
-
-    margin:0 auto 5rem;
-
-    text-align:center;
-
-}
-
-
-.methodologies-badge{
-
-    display:inline-block;
-
-    padding:.8rem 1.5rem;
-
-    border-radius:999px;
-
-    background:rgba(59,130,246,.1);
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:1.5rem;
-
-}
-
-
-/* ==========================================
-   GRID
-========================================== */
-
-.methodologies-wrapper{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:2rem;
-
-}
-
-
-/* ==========================================
-   CARD
-========================================== */
-
-.methodologies-card{
-
-    background:rgba(255,255,255,.8);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:2rem;
-
-    padding:3rem;
-
+.methodologies-tools {
+    position: relative;
+    background:
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+  
+  .methodologies-tools::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(59, 130, 246, 0.08),
+        transparent 24%
+      );
+    pointer-events: none;
+  }
+  
+  .methodologies-tools .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     HEADER
+  ========================================== */
+  
+  .methodologies-header {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+  
+  .methodologies-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.45rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    margin-bottom: 1.4rem;
+  }
+  
+  /* ==========================================
+     SUMMARY
+  ========================================== */
+  
+  .methodologies-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+  
+  .methodologies-summary-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.35rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.14);
     box-shadow:
-    0 15px 40px rgba(0,0,0,.05);
-
-}
-
-
-.methodologies-icon{
-
-    width:80px;
-
-    height:80px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:50%;
-
-    background:#eff6ff;
-
-    color:var(--primary);
-
-    font-size:2rem;
-
-    margin-bottom:2rem;
-
-}
-
-
-.methodologies-card h3{
-
-    margin-bottom:2rem;
-
-}
-
-
-/* ==========================================
-   TAGS
-========================================== */
-
-.methodologies-tags{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:1rem;
-
-}
-
-
-.methodologies-tags span{
-
-    padding:.8rem 1.3rem;
-
-    border-radius:999px;
-
-    background:#eff6ff;
-
-    color:var(--primary);
-
-    font-weight:500;
-
-    transition:.3s;
-
-}
-
-
-.methodologies-tags span:hover{
-
-    transform:translateY(-3px);
-
-}
-
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:992px){
-
-.methodologies-wrapper{
-
-grid-template-columns:1fr;
-
-}
-
-}
+      0 18px 40px rgba(15, 23, 42, 0.06),
+      0 8px 20px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(14px);
+  }
+  
+  .methodologies-summary-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 0.9rem;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .methodologies-summary-label {
+    color: var(--text-light);
+    font-weight: 700;
+  }
+  
+  /* ==========================================
+     GRID
+  ========================================== */
+  
+  .methodologies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  /* ==========================================
+     CARD
+  ========================================== */
+  
+  .methodology-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(20px);
+    border-radius: 1.75rem;
+    padding: 2rem;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow:
+      0 18px 40px rgba(15, 23, 42, 0.05),
+      0 8px 20px rgba(15, 23, 42, 0.03);
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  
+  .methodology-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.16);
+    box-shadow:
+      0 24px 50px rgba(15, 23, 42, 0.08),
+      0 10px 24px rgba(15, 23, 42, 0.05);
+  }
+  
+  /* ==========================================
+     CARD TOP
+  ========================================== */
+  
+  .methodology-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .methodology-card-heading {
+    flex: 1;
+  }
+  
+  .methodology-card h3 {
+    margin-bottom: 0.85rem;
+    line-height: 1.25;
+  }
+  
+  .methodology-description {
+    margin-bottom: 0;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+  
+  .methodology-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    padding: 0 1rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    font-weight: 800;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  
+  /* ==========================================
+     ITEMS
+  ========================================== */
+  
+  .methodology-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: auto;
+  }
+  
+  .methodology-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.05rem;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: var(--primary);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  
+  .methodology-item:hover {
+    transform: translateY(-3px);
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.18);
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width: 992px) {
+    .methodologies-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .methodologies-header {
+      margin-bottom: 2rem;
+    }
+  
+    .methodologies-summary {
+      margin-bottom: 2.5rem;
+    }
+  
+    .methodologies-summary-card {
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      border-radius: 1.25rem;
+    }
+  
+    .methodology-card {
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+    }
+  
+    .methodology-card-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
