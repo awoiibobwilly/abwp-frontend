@@ -4,192 +4,200 @@
 ========================================== */
 
 .research-philosophy {
-    position: relative;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    overflow: hidden;
-  }
-  
-  .research-philosophy::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(
-        circle at bottom right,
-        rgba(14, 165, 233, 0.08),
-        transparent 26%
-      );
-    pointer-events: none;
-  }
-  
-  .research-philosophy .container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* ==========================================
-     HEADER
-  ========================================== */
-  
-  .research-philosophy-header {
-    max-width: 900px;
-    margin: 0 auto 3.5rem;
-    text-align: center;
-  }
-  
-  .research-philosophy-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.45rem;
-    border-radius: 999px;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary);
-    font-weight: 700;
-    border: 1px solid rgba(59, 130, 246, 0.14);
-    margin-bottom: 1.4rem;
-  }
-  
-  /* ==========================================
-     GRID
-  ========================================== */
-  
-  .research-philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-    align-items: stretch;
-  }
-  
-  /* ==========================================
-     CARD
-  ========================================== */
-  
-  .philosophy-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    background: rgba(255, 255, 255, 0.84);
-    backdrop-filter: blur(20px);
-    border-radius: 1.75rem;
-    padding: 2rem;
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    box-shadow:
-      0 18px 40px rgba(15, 23, 42, 0.05),
-      0 8px 20px rgba(15, 23, 42, 0.03);
-    transition:
-      transform 0.35s ease,
-      box-shadow 0.35s ease,
-      border-color 0.35s ease;
-    overflow: hidden;
-  }
-  
-  .philosophy-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(59, 130, 246, 0.16);
-    box-shadow:
-      0 24px 50px rgba(15, 23, 42, 0.08),
-      0 10px 24px rgba(15, 23, 42, 0.05);
-  }
-  
-  .philosophy-card::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      rgba(14, 165, 233, 0),
-      rgba(14, 165, 233, 0.12),
-      rgba(14, 165, 233, 0)
+  position: relative;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  overflow: hidden;
+}
+
+.research-philosophy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at bottom right,
+      rgba(14, 165, 233, 0.08),
+      transparent 26%
     );
+  pointer-events: none;
+}
+
+.research-philosophy .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.research-philosophy-header {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.research-philosophy-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.45rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  font-weight: 700;
+  border: 1px solid rgba(59, 130, 246, 0.14);
+  margin-bottom: 1.4rem;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.research-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.philosophy-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px);
+  border-radius: 1.75rem;
+  padding: 2.15rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.05),
+    0 8px 20px rgba(15, 23, 42, 0.03);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  overflow: hidden;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.16);
+  box-shadow:
+    0 24px 50px rgba(15, 23, 42, 0.08),
+    0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.philosophy-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0),
+    rgba(14, 165, 233, 0.12),
+    rgba(14, 165, 233, 0)
+  );
+}
+
+/* ==========================================
+   CARD TOP
+========================================== */
+
+.philosophy-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.9rem;
+}
+
+.philosophy-icon {
+  width: 78px;
+  height: 78px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.philosophy-accent {
+  width: 54px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 0.8rem;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   CARD BODY
+========================================== */
+
+.philosophy-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.philosophy-card h3 {
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.philosophy-card p {
+  margin-bottom: 0;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+  .research-philosophy-header {
+    margin-bottom: 3.25rem;
   }
-  
-  /* ==========================================
-     CARD TOP
-  ========================================== */
-  
-  .philosophy-card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.75rem;
+
+  .research-philosophy-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .philosophy-icon {
-    width: 78px;
-    height: 78px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .research-philosophy-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .philosophy-card {
+    padding: 1.5rem;
     border-radius: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 800;
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-    flex-shrink: 0;
   }
-  
+
+  .philosophy-card-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 1.25rem;
+  }
+
   .philosophy-accent {
-    width: 54px;
-    height: 8px;
-    border-radius: 999px;
-    margin-top: 0.8rem;
-    flex-shrink: 0;
-    opacity: 0.9;
+    width: 44px;
   }
-  
-  /* ==========================================
-     CARD BODY
-  ========================================== */
-  
-  .philosophy-card-body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-  
-  .philosophy-card h3 {
-    margin-bottom: 1rem;
-    line-height: 1.25;
-  }
-  
-  .philosophy-card p {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.9;
-  }
-  
-  /* ==========================================
-     RESPONSIVE
-  ========================================== */
-  
-  @media (max-width: 992px) {
-    .research-philosophy-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .research-philosophy-header {
-      margin-bottom: 2.5rem;
-    }
-  
-    .philosophy-card {
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-    }
-  
-    .philosophy-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 1.25rem;
-    }
-  
-    .philosophy-accent {
-      width: 44px;
-    }
-  }
+}

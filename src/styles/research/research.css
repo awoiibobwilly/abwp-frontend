@@ -1,0 +1,172 @@
+/* ==========================================
+   RESEARCH PAGE SHELL
+   RESEARCH PAGE
+========================================== */
+
+.research-page {
+  position: relative;
+  background: #ffffff;
+}
+
+/* ==========================================
+   SECTION RHYTHM
+========================================== */
+
+.research-page .research-hero {
+  margin-bottom: 0;
+}
+
+.research-page .research-areas,
+.research-page .publications,
+.research-page .methodologies-tools,
+.research-page .research-interests,
+.research-page .research-philosophy {
+  position: relative;
+}
+
+.research-page .research-areas.section,
+.research-page .publications.section,
+.research-page .methodologies-tools.section,
+.research-page .research-interests.section,
+.research-page .research-philosophy.section {
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+
+/* ==========================================
+   ALTERNATING SECTION FLOW
+========================================== */
+
+.research-page .research-areas {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.research-page .publications {
+  background:
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.research-page .methodologies-tools {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.research-page .research-interests {
+  background:
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.research-page .research-philosophy {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+/* ==========================================
+   SECTION HEADER WIDTH TUNING
+========================================== */
+
+.research-page .research-areas-header,
+.research-page .publications-header,
+.research-page .methodologies-header,
+.research-page .research-interests-header,
+.research-page .research-philosophy-header {
+  max-width: 920px;
+}
+
+/* ==========================================
+   CONTAINER LAYERING
+========================================== */
+
+.research-page .research-areas .container,
+.research-page .publications .container,
+.research-page .methodologies-tools .container,
+.research-page .research-interests .container,
+.research-page .research-philosophy .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   SECTION-SPECIFIC RHYTHM TUNING
+========================================== */
+
+.research-page .publications.section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.research-page .research-philosophy.section {
+  padding-top: 6.25rem;
+  padding-bottom: 5.75rem;
+}
+
+/* ==========================================
+   CTA TRANSITION
+========================================== */
+
+.research-page .universal-cta-section,
+.research-page .universal-cta {
+  margin-top: 0;
+}
+
+/* ==========================================
+   RESPONSIVE RHYTHM
+========================================== */
+
+@media (max-width: 992px) {
+  .research-page .research-areas.section,
+  .research-page .publications.section,
+  .research-page .methodologies-tools.section,
+  .research-page .research-interests.section,
+  .research-page .research-philosophy.section {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .research-page .publications.section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-page .research-areas.section,
+  .research-page .publications.section,
+  .research-page .methodologies-tools.section,
+  .research-page .research-interests.section,
+  .research-page .research-philosophy.section {
+    padding-top: 4.75rem;
+    padding-bottom: 4.75rem;
+  }
+
+  .research-page .publications.section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .research-page .research-philosophy.section {
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .research-page .research-areas.section,
+  .research-page .publications.section,
+  .research-page .methodologies-tools.section,
+  .research-page .research-interests.section,
+  .research-page .research-philosophy.section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .research-page .publications.section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.25rem;
+  }
+
+  .research-page .research-philosophy.section {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+}

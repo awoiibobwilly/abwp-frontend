@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import ResearchHero from "../components/research/ResearchHero";
 import ResearchAreas from "../components/research/ResearchAreas";
@@ -11,6 +11,8 @@ import SectionMessage from "../components/common/SectionMessage";
 
 import { getResearchPage } from "../services/researchService";
 import { PAGE_KEYS } from "../config/portfolioConstants";
+
+import "../styles/research/research.css";
 
 // ==========================================================
 // RESEARCH PAGE
@@ -48,6 +50,43 @@ function Research() {
 
     fetchResearchPage();
   }, []);
+
+  // ==================================================
+  // HERO INSIGHTS
+  // ==================================================
+
+  const heroStats = useMemo(() => {
+    const areasCount =
+      researchPageData?.areas?.length || 0;
+
+    const publicationsCount =
+      researchPageData?.all_publications?.length || 0;
+
+    const methodologyClustersCount =
+      researchPageData?.methodology_groups?.length || 0;
+
+    const interestsCount =
+      researchPageData?.interest_groups?.length || 0;
+
+    return [
+      {
+        value: `${areasCount}+`,
+        label: "Research Areas",
+      },
+      {
+        value: `${publicationsCount}+`,
+        label: "Publications",
+      },
+      {
+        value: `${methodologyClustersCount}+`,
+        label: "Methodology Clusters",
+      },
+      {
+        value: `${interestsCount}+`,
+        label: "Research Interests",
+      },
+    ];
+  }, [researchPageData]);
 
   // ==================================================
   // LOADING STATE
@@ -90,7 +129,10 @@ function Research() {
 
   return (
     <main className="research-page">
-      <ResearchHero hero={researchPageData?.hero} />
+      <ResearchHero
+        hero={researchPageData?.hero}
+        stats={heroStats}
+      />
 
       <ResearchAreas
         intro={researchPageData?.areas_intro}

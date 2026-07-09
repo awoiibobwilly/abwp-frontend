@@ -1,5 +1,4 @@
 import PublicationCard from "./PublicationCard";
-
 import "../../styles/research/publications.css";
 
 // ==========================================================
@@ -23,6 +22,9 @@ function PublicationsSection({
   if (publicationCount === 0) {
     return null;
   }
+
+  const flagshipPublication = publications[0];
+  const supportingPublications = publications.slice(1);
 
   return (
     <section className="publications section">
@@ -63,16 +65,44 @@ function PublicationsSection({
         </div>
 
         {/* ==========================================
-            PUBLICATIONS GRID
+            FLAGSHIP PUBLICATION
         ========================================== */}
-        <div className="publications-grid">
-          {publications.map((publication, index) => (
+        {flagshipPublication && (
+          <div className="publications-flagship">
             <PublicationCard
-              key={publication.id || index}
-              publication={publication}
+              publication={flagshipPublication}
+              variant="flagship"
             />
-          ))}
-        </div>
+          </div>
+        )}
+
+        {/* ==========================================
+            SUPPORTING PUBLICATIONS
+        ========================================== */}
+        {supportingPublications.length > 0 && (
+          <div className="publications-supporting">
+            <div className="publications-supporting-header">
+              <h3>More Research Outputs</h3>
+              <p>
+                Additional publications, reports, and
+                evidence-focused work that extend the
+                research themes explored above.
+              </p>
+            </div>
+
+            <div className="publications-grid">
+              {supportingPublications.map(
+                (publication, index) => (
+                  <PublicationCard
+                    key={publication.id || index}
+                    publication={publication}
+                    variant="default"
+                  />
+                )
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
