@@ -17,14 +17,12 @@ function PublicationsSection({
       ? featuredPublications
       : allPublications;
 
-  const publicationCount = publications.length;
-
-  if (publicationCount === 0) {
+  if (!publications.length) {
     return null;
   }
 
   const flagshipPublication = publications[0];
-  const supportingPublications = publications.slice(1);
+  const supportingPublications = publications.slice(1, 5);
 
   return (
     <section className="publications section">
@@ -43,25 +41,8 @@ function PublicationsSection({
 
           <p className="section-subtitle">
             {intro?.intro ||
-              "A selection of research publications, technical reports, white papers, and analytical work focused on healthcare systems, evidence generation, leadership, and data-informed decision making."}
+              "A curated selection of research publications, analytical reports, and evidence-focused work across healthcare systems, leadership, public health, and data-informed decision making."}
           </p>
-        </div>
-
-        {/* ==========================================
-            PUBLICATIONS SUMMARY
-        ========================================== */}
-        <div className="publications-summary">
-          <div className="publications-summary-card">
-            <span className="publications-summary-value">
-              {publicationCount}
-            </span>
-
-            <span className="publications-summary-label">
-              {publicationCount === 1
-                ? "Featured publication"
-                : "Featured publications"}
-            </span>
-          </div>
         </div>
 
         {/* ==========================================
@@ -82,12 +63,7 @@ function PublicationsSection({
         {supportingPublications.length > 0 && (
           <div className="publications-supporting">
             <div className="publications-supporting-header">
-              <h3>More Research Outputs</h3>
-              <p>
-                Additional publications, reports, and
-                evidence-focused work that extend the
-                research themes explored above.
-              </p>
+              <h3>Additional Publications</h3>
             </div>
 
             <div className="publications-grid">

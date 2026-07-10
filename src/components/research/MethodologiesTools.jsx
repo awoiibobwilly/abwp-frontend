@@ -23,30 +23,14 @@ function MethodologiesTools({ intro, groups = [] }) {
           </span>
 
           <h2 className="section-title">
-            {intro?.title || "Approaches, Frameworks & Tools"}
+            {intro?.title ||
+              "Approaches That Support Rigorous and Practical Inquiry"}
           </h2>
 
           <p className="section-subtitle">
             {intro?.intro ||
-              "The methodologies, analytical approaches, and research tools that shape how I investigate questions, generate evidence, and translate findings into practical insight."}
+              "The research methodologies, analytical frameworks, and evidence-generation tools that shape how I investigate questions, interpret findings, and translate knowledge into practical insight."}
           </p>
-        </div>
-
-        {/* ==========================================
-            SECTION SUMMARY
-        ========================================== */}
-        <div className="methodologies-summary">
-          <div className="methodologies-summary-card">
-            <span className="methodologies-summary-value">
-              {groups.length}
-            </span>
-
-            <span className="methodologies-summary-label">
-              {groups.length === 1
-                ? "methodology cluster"
-                : "methodology clusters"}
-            </span>
-          </div>
         </div>
 
         {/* ==========================================

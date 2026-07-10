@@ -56,8 +56,7 @@ function Research() {
   // ==================================================
 
   const heroStats = useMemo(() => {
-    const areasCount =
-      researchPageData?.areas?.length || 0;
+    const areasCount = researchPageData?.areas?.length || 0;
 
     const publicationsCount =
       researchPageData?.all_publications?.length || 0;
@@ -65,7 +64,7 @@ function Research() {
     const methodologyClustersCount =
       researchPageData?.methodology_groups?.length || 0;
 
-    const interestsCount =
+    const inquiryThemesCount =
       researchPageData?.interest_groups?.length || 0;
 
     return [
@@ -82,8 +81,8 @@ function Research() {
         label: "Methodology Clusters",
       },
       {
-        value: `${interestsCount}+`,
-        label: "Research Interests",
+        value: `${inquiryThemesCount}+`,
+        label: "Inquiry Themes",
       },
     ];
   }, [researchPageData]);
@@ -156,7 +155,9 @@ function Research() {
 
       <ResearchInterests
         intro={researchPageData?.interests_intro}
-        groups={researchPageData?.interest_groups || []}
+        groups={
+          (researchPageData?.interest_groups || []).slice(0, 3)
+        }
       />
 
       <ResearchPhilosophy

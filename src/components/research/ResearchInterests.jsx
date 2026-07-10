@@ -19,34 +19,17 @@ function ResearchInterests({ intro, groups = [] }) {
         ========================================== */}
         <div className="research-interests-header">
           <span className="research-interests-badge">
-            {intro?.eyebrow || "Research Interests"}
+            {intro?.eyebrow || "Current Inquiry Themes"}
           </span>
 
           <h2 className="section-title">
-            {intro?.title || "Current and Emerging Interests"}
+            {intro?.title || "Questions and Themes I Continue to Explore"}
           </h2>
 
           <p className="section-subtitle">
             {intro?.intro ||
-              "The themes, questions, and evolving areas of inquiry that continue to shape my research direction and long-term scholarly focus."}
+              "Selected themes and evolving lines of inquiry that continue to shape my research direction, professional curiosity, and long-term scholarly focus."}
           </p>
-        </div>
-
-        {/* ==========================================
-            SECTION SUMMARY
-        ========================================== */}
-        <div className="research-interests-summary">
-          <div className="research-interests-summary-card">
-            <span className="research-interests-summary-value">
-              {groups.length}
-            </span>
-
-            <span className="research-interests-summary-label">
-              {groups.length === 1
-                ? "interest cluster"
-                : "interest clusters"}
-            </span>
-          </div>
         </div>
 
         {/* ==========================================
