@@ -1,77 +1,92 @@
 import { FaArrowRight } from "react-icons/fa";
 
-function ArticleCard({ article }) {
+// ==========================================================
+// ARTICLE CARD
+// INSIGHTS PAGE
+// ABW PORTFOLIO
+// PREMIUM EDITORIAL PASS
+// ==========================================================
+
+function ArticleCard({
+  article,
+  variant = "default",
+}) {
+  const isFlagship = variant === "flagship";
+  const hasLink = Boolean(article?.external_url);
 
   return (
-
-    <article className="article-card">
-
+    <article
+      className={`article-card ${
+        isFlagship
+          ? "article-card-flagship"
+          : "article-card-default"
+      }`}
+    >
+      {/* ======================================
+          MEDIA
+      ====================================== */}
       <div className="article-image">
+        {article?.cover_image_url ? (
+          <img
+            src={article.cover_image_url}
+            alt={article.title}
+          />
+        ) : (
+          <div className="article-image-placeholder">
+            <span className="article-placeholder-category">
+              {article?.category || "Insight"}
+            </span>
 
-        <img
-          src={article.image}
-          alt={article.title}
-        />
-
+            <h3 className="article-placeholder-title">
+              {article?.title}
+            </h3>
+          </div>
+        )}
       </div>
 
-
+      {/* ======================================
+          CONTENT
+      ====================================== */}
       <div className="article-content">
-
         <div className="article-meta">
+          {article?.category && (
+            <span className="article-category">
+              {article.category}
+            </span>
+          )}
 
-          <span className="article-category">
+          {article?.published_date && (
+            <span>{article.published_date}</span>
+          )}
 
-            {article.category}
-
-          </span>
-
-          <span>
-
-            {article.date}
-
-          </span>
-
-          <span>
-
-            {article.readTime}
-
-          </span>
-
+          {article?.read_time && (
+            <span>{article.read_time}</span>
+          )}
         </div>
 
+        <h3>{article?.title}</h3>
 
-        <h3>
+        <p>{article?.excerpt}</p>
 
-          {article.title}
-
-        </h3>
-
-
-        <p>
-
-          {article.description}
-
-        </p>
-
-
-        <a
-          href={article.link}
-          className="article-link"
-        >
-
-          Read Article
-
-          <FaArrowRight />
-
-        </a>
-
+        {hasLink ? (
+          <a
+            href={article.external_url}
+            className="article-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Read Article
+            <FaArrowRight />
+          </a>
+        ) : (
+          <span className="article-link article-link-disabled">
+            Read Article
+            <FaArrowRight />
+          </span>
+        )}
       </div>
-
     </article>
-
   );
-
 }
 
 export default ArticleCard;

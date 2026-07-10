@@ -1,128 +1,157 @@
 /* ==========================================
    INSIGHTS CATEGORIES
+   INSIGHTS PAGE
+   PREMIUM BALANCE PASS
 ========================================== */
 
-.insights-categories{
-
+.insights-categories {
+    position: relative;
     background:
-    linear-gradient(
-        135deg,
-        #f8fafc,
-        #ffffff
-    );
-
-}
-
-
-/* ==========================================
-   HEADER
-========================================== */
-
-.categories-header{
-
-    max-width:850px;
-
-    margin:0 auto 5rem;
-
-    text-align:center;
-
-}
-
-
-.categories-badge{
-
-    display:inline-block;
-
-    padding:.8rem 1.5rem;
-
-    border-radius:999px;
-
-    background:rgba(59,130,246,.1);
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:1.5rem;
-
-}
-
-
-/* ==========================================
-   GRID
-========================================== */
-
-.categories-grid{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:1.25rem;
-
-}
-
-
-/* ==========================================
-   PILL
-========================================== */
-
-.category-pill{
-
-    padding:1rem 1.8rem;
-
-    background:white;
-
-    border-radius:999px;
-
-    border:1px solid rgba(59,130,246,.12);
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.35s;
-
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+  
+  .insights-categories::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(59, 130, 246, 0.06),
+        transparent 24%
+      );
+    pointer-events: none;
+  }
+  
+  .insights-categories .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     HEADER
+  ========================================== */
+  
+  .categories-header {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+  
+  .categories-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.45rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    margin-bottom: 1.4rem;
+  }
+  
+  /* ==========================================
+     CLOUD WRAP
+  ========================================== */
+  
+  .categories-cloud-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(248, 250, 252, 0.92)
+      );
+    border: 1px solid rgba(148, 163, 184, 0.14);
     box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
-
-}
-
-
-.category-pill:hover{
-
-    background:var(--primary);
-
-    color:white;
-
-    transform:
-    translateY(-5px);
-
-}
-
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:768px){
-
-    .categories-grid{
-
-        gap:1rem;
-
+      0 18px 40px rgba(15, 23, 42, 0.05),
+      0 8px 20px rgba(15, 23, 42, 0.03);
+  }
+  
+  .categories-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* ==========================================
+     PILL
+  ========================================== */
+  
+  .category-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.9rem 1.25rem;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    color: var(--secondary);
+    font-weight: 700;
+    line-height: 1;
+    box-shadow:
+      0 10px 24px rgba(15, 23, 42, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+  }
+  
+  .category-pill:hover {
+    transform: translateY(-4px);
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow:
+      0 16px 30px rgba(59, 130, 246, 0.16),
+      0 8px 18px rgba(59, 130, 246, 0.1);
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width: 768px) {
+    .categories-header {
+      margin-bottom: 2rem;
     }
-
-    .category-pill{
-
-        padding:.9rem 1.4rem;
-
-        font-size:.95rem;
-
+  
+    .categories-cloud-wrap {
+      padding: 1.35rem;
+      border-radius: 1.5rem;
     }
-
-}
+  
+    .categories-cloud {
+      gap: 0.85rem;
+    }
+  
+    .category-pill {
+      min-height: 42px;
+      padding: 0.8rem 1rem;
+      font-size: 0.92rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .categories-cloud-wrap {
+      padding: 1rem;
+    }
+  
+    .categories-cloud {
+      justify-content: flex-start;
+    }
+  
+    .category-pill {
+      font-size: 0.88rem;
+    }
+  }

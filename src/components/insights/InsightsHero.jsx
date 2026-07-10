@@ -1,44 +1,61 @@
-import { insightsHeroData }
-from "../../data/insights/insightsHeroData";
-
 import "../../styles/insights/insightsHero.css";
 
-function InsightsHero() {
+// ==========================================================
+// INSIGHTS HERO
+// INSIGHTS PAGE
+// ABW PORTFOLIO
+// FINAL EDITORIAL HARMONY PASS
+// ==========================================================
 
+function InsightsHero({ hero, stats = [] }) {
   return (
-
     <section className="insights-hero section">
-
       <div className="container">
+        <div className="insights-hero-shell">
+          {/* ==========================================
+              HERO COPY
+          ========================================== */}
+          <div className="insights-hero-content">
+            <span className="insights-badge">
+              {hero?.eyebrow || "Insights & Perspectives"}
+            </span>
 
-        <div className="insights-hero-content">
+            <h1>
+              {hero?.title ||
+                "Sharing Ideas That Inspire Learning and Meaningful Impact"}
+            </h1>
 
-          <span className="insights-badge">
+            <p>
+              {hero?.subtitle ||
+                "Thoughts, reflections, articles, and perspectives on healthcare, research, leadership, technology, and lifelong learning."}
+            </p>
+          </div>
 
-            {insightsHeroData.badge}
+          {/* ==========================================
+              HERO STATS
+          ========================================== */}
+          {stats.length > 0 && (
+            <div className="insights-hero-stats">
+              {stats.map((stat, index) => (
+                <div
+                  className="insights-stat-card"
+                  key={`${stat.label}-${index}`}
+                >
+                  <span className="insights-stat-value">
+                    {stat.value}
+                  </span>
 
-          </span>
-
-          <h1>
-
-            {insightsHeroData.title}
-
-          </h1>
-
-          <p>
-
-            {insightsHeroData.subtitle}
-
-          </p>
-
+                  <span className="insights-stat-label">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default InsightsHero;

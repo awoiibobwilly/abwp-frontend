@@ -1,68 +1,60 @@
-import { categoriesData }
-from "../../data/insights/categoriesData";
-
 import "../../styles/insights/categories.css";
 
-function CategoriesSection() {
+// ==========================================================
+// CATEGORIES SECTION
+// INSIGHTS PAGE
+// ABW PORTFOLIO
+// PREMIUM BALANCE PASS
+// ==========================================================
+
+function CategoriesSection({
+  intro,
+  categories = [],
+}) {
+  if (!categories.length) {
+    return null;
+  }
 
   return (
-
     <section className="insights-categories section">
-
       <div className="container">
-
-        {/* Header */}
-
+        {/* ==========================================
+            HEADER
+        ========================================== */}
         <div className="categories-header">
-
           <span className="categories-badge">
-
-            Explore Topics
-
+            {intro?.eyebrow || "Explore Topics"}
           </span>
 
           <h2 className="section-title">
-
-            Areas of Thought & Interest
-
+            {intro?.title ||
+              "Areas of Thought & Interest"}
           </h2>
 
           <p className="section-subtitle">
-
-            A collection of themes and disciplines that
-            shape my reflections, articles, and professional
-            perspectives.
-
+            {intro?.intro ||
+              "A collection of themes and disciplines that shape my reflections, articles, and professional perspectives."}
           </p>
-
         </div>
 
-
-        {/* Tags */}
-
-        <div className="categories-grid">
-
-          {categoriesData.map((category, index) => (
-
-            <div
-              className="category-pill"
-              key={index}
-            >
-
-              {category}
-
-            </div>
-
-          ))}
-
+        {/* ==========================================
+            TOPIC CLOUD
+        ========================================== */}
+        <div className="categories-cloud-wrap">
+          <div className="categories-cloud">
+            {categories.map((category) => (
+              <div
+                className="category-pill"
+                key={category.id}
+              >
+                {category.name}
+              </div>
+            ))}
+          </div>
         </div>
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default CategoriesSection;

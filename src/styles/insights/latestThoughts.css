@@ -20,7 +20,230 @@
     margin:0 auto 5rem;
 
     text-align:center;
+/* ==========================================
+   LATEST THOUGHTS
+   INSIGHTS PAGE
+   PREMIUM BALANCE PASS
+========================================== */
 
+.latest-thoughts {
+    position: relative;
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    overflow: hidden;
+  }
+  
+  .latest-thoughts::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at bottom left,
+        rgba(14, 165, 233, 0.06),
+        transparent 26%
+      );
+    pointer-events: none;
+  }
+  
+  .latest-thoughts .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     HEADER
+  ========================================== */
+  
+  .thoughts-header {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+  
+  .thoughts-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.45rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    margin-bottom: 1.4rem;
+  }
+  
+  /* ==========================================
+     GRID
+  ========================================== */
+  
+  .thoughts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+    align-items: stretch;
+  }
+  
+  /* ==========================================
+     CARD
+  ========================================== */
+  
+  .thought-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1.75rem;
+    border-radius: 1.65rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.96),
+        rgba(248, 250, 252, 0.94)
+      );
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow:
+      0 16px 36px rgba(15, 23, 42, 0.045),
+      0 8px 18px rgba(15, 23, 42, 0.025);
+    transition:
+      transform 0.32s ease,
+      box-shadow 0.32s ease,
+      border-color 0.32s ease;
+  }
+  
+  .thought-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.16);
+    box-shadow:
+      0 22px 44px rgba(15, 23, 42, 0.06),
+      0 10px 22px rgba(15, 23, 42, 0.03);
+  }
+  
+  /* ==========================================
+     META
+  ========================================== */
+  
+  .thought-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  
+  .thought-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary);
+    border: 1px solid rgba(59, 130, 246, 0.12);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .thought-date {
+    color: var(--text-light);
+    font-size: 0.84rem;
+  }
+  
+  /* ==========================================
+     CONTENT
+  ========================================== */
+  
+  .thought-card h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+  
+  .thought-card p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+  
+  /* ==========================================
+     LINK
+  ========================================== */
+  
+  .thought-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: auto;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+  
+  .thought-link:hover {
+    color: #1d4ed8;
+    transform: translateX(3px);
+  }
+  
+  .thought-link svg {
+    font-size: 0.78rem;
+  }
+  
+  .thought-link-disabled {
+    opacity: 0.55;
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width: 1200px) {
+    .thoughts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .thoughts-header {
+      margin-bottom: 2rem;
+    }
+  
+    .thoughts-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+  
+    .thought-card {
+      padding: 1.4rem;
+      border-radius: 1.45rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .thought-meta {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .thought-card h3 {
+      font-size: 1rem;
+    }
+  
+    .thought-card p {
+      font-size: 0.92rem;
+    }
+  }
 }
 
 

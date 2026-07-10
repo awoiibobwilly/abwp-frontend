@@ -1,0 +1,172 @@
+/* ==========================================
+   INSIGHTS PAGE SHELL
+   INSIGHTS PAGE
+========================================== */
+
+.insights-page {
+    position: relative;
+    background: #ffffff;
+  }
+  
+  /* ==========================================
+     SECTION RHYTHM
+  ========================================== */
+  
+  .insights-page .insights-hero {
+    margin-bottom: 0;
+  }
+  
+  .insights-page .featured-articles,
+  .insights-page .insights-categories,
+  .insights-page .latest-thoughts,
+  .insights-page .quotes-reflections,
+  .insights-page .newsletter-section {
+    position: relative;
+  }
+  
+  .insights-page .featured-articles.section,
+  .insights-page .insights-categories.section,
+  .insights-page .latest-thoughts.section,
+  .insights-page .quotes-reflections.section,
+  .insights-page .newsletter-section.section {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+  
+  /* ==========================================
+     ALTERNATING SECTION FLOW
+  ========================================== */
+  
+  .insights-page .featured-articles {
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+  
+  .insights-page .insights-categories {
+    background:
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  }
+  
+  .insights-page .latest-thoughts {
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+  
+  .insights-page .quotes-reflections {
+    background:
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  }
+  
+  .insights-page .newsletter-section {
+    background:
+      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  }
+  
+  /* ==========================================
+     SECTION HEADER WIDTH TUNING
+  ========================================== */
+  
+  .insights-page .articles-header,
+  .insights-page .categories-header,
+  .insights-page .thoughts-header,
+  .insights-page .quotes-header,
+  .insights-page .newsletter-card {
+    max-width: 920px;
+  }
+  
+  /* ==========================================
+     CONTAINER LAYERING
+  ========================================== */
+  
+  .insights-page .featured-articles .container,
+  .insights-page .insights-categories .container,
+  .insights-page .latest-thoughts .container,
+  .insights-page .quotes-reflections .container,
+  .insights-page .newsletter-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     SECTION-SPECIFIC RHYTHM TUNING
+  ========================================== */
+  
+  .insights-page .featured-articles.section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+  
+  .insights-page .newsletter-section.section {
+    padding-top: 6.25rem;
+    padding-bottom: 5.75rem;
+  }
+  
+  /* ==========================================
+     CTA TRANSITION
+  ========================================== */
+  
+  .insights-page .universal-cta-section,
+  .insights-page .universal-cta {
+    margin-top: 0;
+  }
+  
+  /* ==========================================
+     RESPONSIVE RHYTHM
+  ========================================== */
+  
+  @media (max-width: 992px) {
+    .insights-page .featured-articles.section,
+    .insights-page .insights-categories.section,
+    .insights-page .latest-thoughts.section,
+    .insights-page .quotes-reflections.section,
+    .insights-page .newsletter-section.section {
+      padding-top: 5.5rem;
+      padding-bottom: 5.5rem;
+    }
+  
+    .insights-page .featured-articles.section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .insights-page .featured-articles.section,
+    .insights-page .insights-categories.section,
+    .insights-page .latest-thoughts.section,
+    .insights-page .quotes-reflections.section,
+    .insights-page .newsletter-section.section {
+      padding-top: 4.75rem;
+      padding-bottom: 4.75rem;
+    }
+  
+    .insights-page .featured-articles.section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  
+    .insights-page .newsletter-section.section {
+      padding-bottom: 4.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .insights-page .featured-articles.section,
+    .insights-page .insights-categories.section,
+    .insights-page .latest-thoughts.section,
+    .insights-page .quotes-reflections.section,
+    .insights-page .newsletter-section.section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  
+    .insights-page .featured-articles.section {
+      padding-top: 4.5rem;
+      padding-bottom: 4.25rem;
+    }
+  
+    .insights-page .newsletter-section.section {
+      padding-top: 4rem;
+      padding-bottom: 3.5rem;
+    }
+  }

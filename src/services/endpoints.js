@@ -32,6 +32,7 @@ JOURNEY: "/home/journey/",
 
 RESEARCH: "/home/research/",
 
+
 /* ==============================
    PROJECTS PAGE
 ============================== */
@@ -48,5 +49,11 @@ PROJECTS_PAGE: "/projects/",
    TESTIMONIALS:
 
    "/testimonials/",
-  
+
+
+   /* ==============================
+   INSIGHTS PAGE
+   ============================== */
+
+   INSIGHTS_PAGE: "/insights/insights-page/",
   };

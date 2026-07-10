@@ -1,189 +1,188 @@
 /* ==========================================
    NEWSLETTER
+   INSIGHTS PAGE
+   PREMIUM BALANCE PASS
 ========================================== */
 
-.newsletter-section{
-
+.newsletter-section {
+    position: relative;
     background:
-    linear-gradient(
-        135deg,
-        #0f172a,
-        #1e293b
-    );
-
-}
-
-
-/* ==========================================
-   CARD
-========================================== */
-
-.newsletter-card{
-
-    max-width:950px;
-
-    margin:auto;
-
-    padding:5rem;
-
-    text-align:center;
-
-    border-radius:2rem;
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    backdrop-filter:blur(25px);
-
-}
-
-
-/* ==========================================
-   BADGE
-========================================== */
-
-.newsletter-badge{
-
-    display:inline-block;
-
-    padding:.8rem 1.5rem;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,.1);
-
-    color:white;
-
-    font-weight:600;
-
-    margin-bottom:1.5rem;
-
-}
-
-
-/* ==========================================
-   TITLE
-========================================== */
-
-.newsletter-card h2{
-
-    font-size:clamp(2.5rem,5vw,4rem);
-
-    color:white;
-
-    margin-bottom:1.5rem;
-
-    line-height:1.2;
-
-}
-
-
-/* ==========================================
-   DESCRIPTION
-========================================== */
-
-.newsletter-card p{
-
-    max-width:700px;
-
-    margin:auto;
-
-    color:#cbd5e1;
-
-    line-height:1.9;
-
-    margin-bottom:3rem;
-
-}
-
-
-/* ==========================================
-   FORM
-========================================== */
-
-.newsletter-form{
-
-    display:flex;
-
-    gap:1rem;
-
-    justify-content:center;
-
-}
-
-
-.newsletter-form input{
-
-    width:450px;
-
-    max-width:100%;
-
-    padding:1rem 1.5rem;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:1rem;
-
-    font-size:1rem;
-
-}
-
-
-.newsletter-form button{
-
-    padding:1rem 2rem;
-
-    border:none;
-
-    border-radius:1rem;
-
-    background:var(--primary);
-
-    color:white;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.newsletter-form button:hover{
-
-    transform:translateY(-3px);
-
-}
-
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:768px){
-
-    .newsletter-card{
-
-        padding:3rem 2rem;
-
+      linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+  
+  .newsletter-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(59, 130, 246, 0.06),
+        transparent 24%
+      );
+    pointer-events: none;
+  }
+  
+  .newsletter-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ==========================================
+     CARD
+  ========================================== */
+  
+  .newsletter-card {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 3.25rem 2.5rem;
+    text-align: center;
+    border-radius: 2rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.97),
+        rgba(248, 250, 252, 0.94)
+      );
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow:
+      0 22px 50px rgba(15, 23, 42, 0.06),
+      0 10px 24px rgba(15, 23, 42, 0.035);
+  }
+  
+  /* ==========================================
+     BADGE
+  ========================================== */
+  
+  .newsletter-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.82rem 1.35rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border: 1px solid rgba(59, 130, 246, 0.14);
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+  }
+  
+  /* ==========================================
+     TITLE
+  ========================================== */
+  
+  .newsletter-card h2 {
+    max-width: 16ch;
+    margin: 0 auto 1rem;
+    color: var(--secondary);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+  }
+  
+  /* ==========================================
+     DESCRIPTION
+  ========================================== */
+  
+  .newsletter-card p {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    color: var(--text-light);
+    line-height: 1.85;
+  }
+  
+  /* ==========================================
+     FORM
+  ========================================== */
+  
+  .newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    height: 56px;
+    padding: 0 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: #ffffff;
+    color: var(--secondary);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  
+  .newsletter-form input:focus {
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow:
+      0 0 0 4px rgba(59, 130, 246, 0.08);
+  }
+  
+  .newsletter-form input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .newsletter-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 1.6rem;
+    border: none;
+    border-radius: 1rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+  }
+  
+  .newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 14px 28px rgba(59, 130, 246, 0.18);
+  }
+  
+  /* ==========================================
+     RESPONSIVE
+  ========================================== */
+  
+  @media (max-width: 768px) {
+    .newsletter-card {
+      padding: 2.25rem 1.35rem;
+      border-radius: 1.6rem;
     }
-
-    .newsletter-form{
-
-        flex-direction:column;
-
-        align-items:center;
-
+  
+    .newsletter-form {
+      flex-direction: column;
+      align-items: stretch;
     }
-
-    .newsletter-form input{
-
-        width:100%;
-
+  
+    .newsletter-form button,
+    .newsletter-form input {
+      width: 100%;
     }
-
-}
+  }
+  
+  @media (max-width: 576px) {
+    .newsletter-card h2 {
+      max-width: 100%;
+      font-size: 1.8rem;
+    }
+  
+    .newsletter-card p {
+      font-size: 0.95rem;
+    }
+  }
