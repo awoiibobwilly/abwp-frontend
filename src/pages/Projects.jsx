@@ -6,9 +6,16 @@ import ProjectCategories from "../components/projects/ProjectCategories";
 import TechnologiesCloud from "../components/projects/TechnologiesCloud";
 import OpenSourceSection from "../components/projects/OpenSourceSection";
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
+import SectionMessage from "../components/common/SectionMessage";
+
 import "../styles/projects/projectsPage.css";
 
 import { getProjectsPage } from "../services/projectService";
+
+// ==========================================================
+// PROJECTS PAGE
+// ABW PORTFOLIO
+// ==========================================================
 
 function Projects() {
   const [pageData, setPageData] = useState(null);
@@ -48,41 +55,50 @@ function Projects() {
     };
   }, []);
 
+  // ========================================================
+  // LOADING STATE
+  // ========================================================
+
   if (loading) {
     return (
-      function Projects() {
-        return (
-          <main className="projects-page">
-            <ProjectsHero />
-            <FeaturedProjects />
-            <ProjectCategories />
-            <Technologies />
-            <OpenSourceContributions />
-            <UniversalCTA page={PAGE_KEYS.PROJECTS} />
-          </main>
-        );
-      }
-    );
-  }
-
-  if (error) {
-    return (
-      <>
+      <main className="projects-page">
         <ProjectsHero />
         <section className="section">
           <div className="container">
-            <div className="section-message error">
-              {error}
-            </div>
+            <p>Loading projects page...</p>
           </div>
         </section>
-        <UniversalCTA page="projects" />
-      </>
+      </main>
     );
   }
 
+  // ========================================================
+  // ERROR STATE
+  // ========================================================
+
+  if (error) {
+    return (
+      <main className="projects-page">
+        <ProjectsHero />
+        <section className="section">
+          <div className="container">
+            <SectionMessage
+              type="error"
+              message={error}
+            />
+          </div>
+        </section>
+        <UniversalCTA page="projects" />
+      </main>
+    );
+  }
+
+  // ========================================================
+  // PAGE
+  // ========================================================
+
   return (
-    <>
+    <main className="projects-page">
       <ProjectsHero data={pageData?.hero} />
 
       <FeaturedProjects
@@ -107,7 +123,7 @@ function Projects() {
       />
 
       <UniversalCTA page="projects" />
-    </>
+    </main>
   );
 }
 
