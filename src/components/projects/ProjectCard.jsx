@@ -24,6 +24,8 @@ function formatProjectStatus(status) {
 // ==========================================================
 // PROJECT CARD
 // FEATURED PROJECTS
+// PROJECTS PAGE
+// FINAL BALANCE PASS — FLAGSHIP REFINEMENT
 // ==========================================================
 
 function ProjectCard({ project, reverse }) {
@@ -32,6 +34,17 @@ function ProjectCard({ project, reverse }) {
 
   const technologies = project?.technologies || [];
   const limitedTech = technologies.slice(0, 8);
+
+  const statusLabel =
+    formatProjectStatus(project?.status) || "Active";
+
+  const stackPreview =
+    limitedTech.length > 0
+      ? limitedTech
+          .slice(0, 3)
+          .map((tech) => tech.name)
+          .join(" • ")
+      : "Modern Web Stack";
 
   return (
     <article
@@ -66,7 +79,7 @@ function ProjectCard({ project, reverse }) {
 
             {project?.status && (
               <span className="project-status">
-                {formatProjectStatus(project?.status)}
+                {statusLabel}
               </span>
             )}
           </div>
@@ -76,9 +89,7 @@ function ProjectCard({ project, reverse }) {
             TITLE + SUMMARY
         ====================================== */}
         <div className="project-copy">
-          <h3>
-            {project?.title}
-          </h3>
+          <h3>{project?.title}</h3>
 
           <p className="project-summary">
             {project?.short_description}
@@ -86,40 +97,39 @@ function ProjectCard({ project, reverse }) {
         </div>
 
         {/* ======================================
-            PROJECT DETAILS
+            PROJECT HIGHLIGHTS
         ====================================== */}
-        <div className="project-meta-grid">
-          <div className="project-meta-item">
-            <span className="project-meta-label">
+        <div className="project-highlights">
+          <span className="project-highlight-item">
+            <span className="project-highlight-label">
               Domain
             </span>
-            <span className="project-meta-value">
+            <span className="project-highlight-value">
               {project?.category?.name || "Project"}
             </span>
-          </div>
+          </span>
 
-          <div className="project-meta-item">
-            <span className="project-meta-label">
+          <span className="project-highlight-divider" />
+
+          <span className="project-highlight-item">
+            <span className="project-highlight-label">
               Status
             </span>
-            <span className="project-meta-value">
-              {formatProjectStatus(project?.status) || "Active"}
+            <span className="project-highlight-value">
+              {statusLabel}
             </span>
-          </div>
+          </span>
 
-          <div className="project-meta-item">
-            <span className="project-meta-label">
+          <span className="project-highlight-divider" />
+
+          <span className="project-highlight-item">
+            <span className="project-highlight-label">
               Stack
             </span>
-            <span className="project-meta-value project-meta-stack">
-              {limitedTech.length > 0
-                ? limitedTech
-                    .slice(0, 3)
-                    .map((tech) => tech.name)
-                    .join(" • ")
-                : "Modern Web Stack"}
+            <span className="project-highlight-value">
+              {stackPreview}
             </span>
-          </div>
+          </span>
         </div>
 
         {/* ======================================
@@ -139,29 +149,31 @@ function ProjectCard({ project, reverse }) {
             LINKS
         ====================================== */}
         <div className="project-links">
-          {project?.github_url && project.github_url !== "#" && (
-            <a
-              href={project.github_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link project-link-primary"
-            >
-              <FaGithub />
-              GitHub
-            </a>
-          )}
+          {project?.github_url &&
+            project.github_url !== "#" && (
+              <a
+                href={project.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link project-link-primary"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            )}
 
-          {project?.live_url && project.live_url !== "#" && (
-            <a
-              href={project.live_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link project-link-secondary"
-            >
-              <FaExternalLinkAlt />
-              Live Demo
-            </a>
-          )}
+          {project?.live_url &&
+            project.live_url !== "#" && (
+              <a
+                href={project.live_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link project-link-secondary"
+              >
+                <FaExternalLinkAlt />
+                Live Demo
+              </a>
+            )}
         </div>
       </div>
     </article>
