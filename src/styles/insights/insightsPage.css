@@ -1,0 +1,185 @@
+/* ==========================================
+   INSIGHTS PAGE SHELL
+   INSIGHTS PAGE
+========================================== */
+
+.insights-page{
+    position:relative;
+    background:#ffffff;
+}
+
+
+/* ==========================================
+   SECTION RHYTHM
+========================================== */
+
+.insights-page .insights-hero{
+    margin-bottom:0;
+}
+
+.insights-page .featured-articles,
+.insights-page .insight-categories,
+.insights-page .latest-thoughts,
+.insights-page .quotes-reflections{
+    position:relative;
+}
+
+.insights-page .featured-articles.section,
+.insights-page .insight-categories.section,
+.insights-page .latest-thoughts.section,
+.insights-page .quotes-reflections.section{
+
+    padding-top:6.5rem;
+    padding-bottom:6.5rem;
+
+}
+
+
+/* ==========================================
+   ALTERNATING FLOW
+========================================== */
+
+.insights-page .featured-articles{
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbff 100%
+    );
+
+}
+
+.insights-page .insight-categories{
+
+    background:
+    linear-gradient(
+        180deg,
+        #f8fbff 0%,
+        #ffffff 100%
+    );
+
+}
+
+.insights-page .latest-thoughts{
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbff 100%
+    );
+
+}
+
+.insights-page .quotes-reflections{
+
+    background:
+    linear-gradient(
+        180deg,
+        #f8fbff 0%,
+        #ffffff 100%
+    );
+
+}
+
+
+/* ==========================================
+   HEADER WIDTH
+========================================== */
+
+.insights-page .featured-header,
+.insights-page .categories-header,
+.insights-page .thoughts-header,
+.insights-page .quotes-header{
+
+    max-width:920px;
+    margin-inline:auto;
+
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.insights-page .featured-articles .container,
+.insights-page .insight-categories .container,
+.insights-page .latest-thoughts .container,
+.insights-page .quotes-reflections .container{
+
+    position:relative;
+    z-index:1;
+
+}
+
+
+/* ==========================================
+   CTA TRANSITION
+========================================== */
+
+.insights-page .quotes-reflections{
+
+    padding-bottom:5.5rem;
+
+}
+
+.insights-page .universal-cta,
+.insights-page .universal-cta-section{
+
+    margin-top:0;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.insights-page .featured-articles.section,
+.insights-page .insight-categories.section,
+.insights-page .latest-thoughts.section,
+.insights-page .quotes-reflections.section{
+
+    padding-top:5.5rem;
+    padding-bottom:5.5rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.insights-page .featured-articles.section,
+.insights-page .insight-categories.section,
+.insights-page .latest-thoughts.section,
+.insights-page .quotes-reflections.section{
+
+    padding-top:4.75rem;
+    padding-bottom:4.75rem;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.insights-page .featured-articles.section,
+.insights-page .insight-categories.section,
+.insights-page .latest-thoughts.section,
+.insights-page .quotes-reflections.section{
+
+    padding-top:4rem;
+    padding-bottom:4rem;
+
+}
+
+.insights-page .quotes-reflections{
+
+    padding-bottom:3.5rem;
+
+}
+
+}

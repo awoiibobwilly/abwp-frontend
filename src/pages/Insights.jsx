@@ -13,6 +13,7 @@ import { getInsightsPage } from "../services/insightsService";
 import { PAGE_KEYS } from "../config/portfolioConstants";
 
 import "../styles/insights/insights.css";
+import "../styles/insights/insightsPage.css";
 
 // ==========================================================
 // INSIGHTS PAGE
@@ -156,9 +157,9 @@ function Insights() {
         quotes={insightsPageData?.quotes || []}
       />
 
-      <NewsletterSection
+      {/* <NewsletterSection
         newsletter={insightsPageData?.newsletter}
-      />
+      /> */}
 
       <UniversalCTA page={PAGE_KEYS.INSIGHTS} />
     </main>
