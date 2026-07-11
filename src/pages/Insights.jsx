@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import InsightsHero from "../components/insights/InsightsHero";
 import FeaturedArticles from "../components/insights/FeaturedArticles";
 import CategoriesSection from "../components/insights/CategoriesSection";
 import LatestThoughts from "../components/insights/LatestThoughts";
 import QuotesReflections from "../components/insights/QuotesReflections";
-import NewsletterSection from "../components/insights/NewsletterSection";
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 import SectionMessage from "../components/common/SectionMessage";
 
@@ -34,60 +33,42 @@ function Insights() {
   // ==================================================
 
   useEffect(() => {
-    const fetchInsightsPage = async () => {
+    let isMounted = true;
+
+    async function fetchInsightsPage() {
       try {
         setLoading(true);
         setError("");
 
         const data = await getInsightsPage();
-        setInsightsPageData(data);
+
+        if (isMounted) {
+          setInsightsPageData(data);
+        }
       } catch (err) {
-        console.error("Failed to load insights page:", err);
-        setError("Failed to load insights page content.");
+        console.error(
+          "Failed to load insights page:",
+          err
+        );
+
+        if (isMounted) {
+          setError(
+            "Failed to load insights page content."
+          );
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
-    };
+    }
 
     fetchInsightsPage();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
-
-  // ==================================================
-  // HERO STATS
-  // ==================================================
-
-  const heroStats = useMemo(() => {
-    const featuredArticlesCount =
-      insightsPageData?.featured_articles?.length || 0;
-
-    const categoriesCount =
-      insightsPageData?.categories?.length || 0;
-
-    const thoughtsCount =
-      insightsPageData?.latest_thoughts?.length || 0;
-
-    const quotesCount =
-      insightsPageData?.quotes?.length || 0;
-
-    return [
-      {
-        value: `${featuredArticlesCount}+`,
-        label: "Featured Articles",
-      },
-      {
-        value: `${categoriesCount}+`,
-        label: "Topics",
-      },
-      {
-        value: `${thoughtsCount}+`,
-        label: "Reflections",
-      },
-      {
-        value: `${quotesCount}+`,
-        label: "Quotes",
-      },
-    ];
-  }, [insightsPageData]);
 
   // ==================================================
   // LOADING STATE
@@ -130,38 +111,68 @@ function Insights() {
 
   return (
     <main className="insights-page">
+      {/* ==========================================
+          HERO
+      ========================================== */}
+
       <InsightsHero
         hero={insightsPageData?.hero}
-        stats={heroStats}
+        stats={
+          insightsPageData?.hero?.stats || []
+        }
       />
+
+      {/* ==========================================
+          EDITOR'S PICKS
+      ========================================== */}
 
       <FeaturedArticles
         intro={insightsPageData?.featured_intro}
-        articles={
+        featuredArticles={
           insightsPageData?.featured_articles || []
         }
       />
 
+      {/* ==========================================
+          TOPICS
+      ========================================== */}
+
       <CategoriesSection
         intro={insightsPageData?.categories_intro}
-        categories={insightsPageData?.categories || []}
+        categories={
+          insightsPageData?.categories || []
+        }
       />
+
+      {/* ==========================================
+          LATEST PERSPECTIVES
+      ========================================== */}
 
       <LatestThoughts
         intro={insightsPageData?.thoughts_intro}
-        thoughts={insightsPageData?.latest_thoughts || []}
+        thoughts={
+          insightsPageData?.latest_thoughts || []
+        }
       />
+
+      {/* ==========================================
+          QUICK REFLECTIONS
+      ========================================== */}
 
       <QuotesReflections
         intro={insightsPageData?.quotes_intro}
-        quotes={insightsPageData?.quotes || []}
+        quotes={
+          insightsPageData?.quotes || []
+        }
       />
 
-      {/* <NewsletterSection
-        newsletter={insightsPageData?.newsletter}
-      /> */}
+      {/* ==========================================
+          PAGE CTA
+      ========================================== */}
 
-      <UniversalCTA page={PAGE_KEYS.INSIGHTS} />
+      <UniversalCTA
+        page={PAGE_KEYS.INSIGHTS}
+      />
     </main>
   );
 }

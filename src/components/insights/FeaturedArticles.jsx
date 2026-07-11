@@ -1,98 +1,104 @@
-import ArticleCard from "./ArticleCard";
+import FlagshipArticleCard from "./FlagshipArticleCard";
+import SupportingArticleCard from "./SupportingArticleCard";
+
 import "../../styles/insights/featuredArticles.css";
 
 // ==========================================================
 // FEATURED ARTICLES
 // INSIGHTS PAGE
 // ABW PORTFOLIO
-// PREMIUM EDITORIAL PASS
 // ==========================================================
 
 function FeaturedArticles({
   intro,
-  articles = [],
+  featuredArticles = [],
 }) {
-  if (!articles.length) {
+  if (!featuredArticles.length) {
     return null;
   }
 
-  const flagshipArticle = articles[0];
-  const supportingArticles = articles.slice(1);
+  const flagshipArticle =
+    featuredArticles[0];
+
+  const supportingArticles =
+    featuredArticles.slice(1);
 
   return (
     <section className="featured-articles section">
       <div className="container">
+
         {/* ==========================================
             SECTION HEADER
         ========================================== */}
-        <div className="articles-header">
-          <span className="articles-badge">
-            {intro?.eyebrow || "Featured Articles"}
+
+        <div className="featured-header">
+
+          <span className="featured-badge">
+            {intro?.eyebrow || "Editor's Picks"}
           </span>
 
           <h2 className="section-title">
-            {intro?.title || "Insights Worth Exploring"}
+            {intro?.title || "Ideas Worth Exploring"}
           </h2>
 
           <p className="section-subtitle">
             {intro?.intro ||
-              "Articles, reflections, and perspectives that bridge healthcare, research, leadership, and technology."}
+              "Curated articles, essays and evidence-driven perspectives exploring healthcare, leadership, research, technology and innovation."}
           </p>
+
         </div>
 
         {/* ==========================================
-            SECTION SUMMARY
+            EDITOR'S PICK
         ========================================== */}
-        <div className="articles-summary">
-          <div className="articles-summary-card">
-            <span className="articles-summary-value">
-              {articles.length}
-            </span>
 
-            <span className="articles-summary-label">
-              {articles.length === 1
-                ? "featured article"
-                : "featured articles"}
-            </span>
-          </div>
+        <div className="editorial-label">
+
+          <span>
+            Editor's Pick
+          </span>
+
         </div>
 
-        {/* ==========================================
-            FLAGSHIP ARTICLE
-        ========================================== */}
-        {flagshipArticle && (
-          <div className="articles-flagship">
-            <ArticleCard
-              article={flagshipArticle}
-              variant="flagship"
-            />
-          </div>
-        )}
+        <FlagshipArticleCard
+          article={flagshipArticle}
+        />
 
         {/* ==========================================
             SUPPORTING ARTICLES
         ========================================== */}
+
         {supportingArticles.length > 0 && (
-          <div className="articles-supporting">
-            <div className="articles-supporting-header">
-              <h3>More Featured Perspectives</h3>
-              <p>
-                Additional articles and reflections exploring
-                leadership, healthcare, research, and technology.
-              </p>
+
+          <>
+
+            <div className="editorial-divider">
+
+              <span>
+                Continue Reading
+              </span>
+
             </div>
 
-            <div className="articles-grid">
-              {supportingArticles.map((article) => (
-                <ArticleCard
-                  key={article.id}
-                  article={article}
-                  variant="default"
-                />
-              ))}
+            <div className="featured-supporting">
+
+              {supportingArticles.map(
+                (article) => (
+
+                  <SupportingArticleCard
+                    key={article.id}
+                    article={article}
+                  />
+
+                )
+              )}
+
             </div>
-          </div>
+
+          </>
+
         )}
+
       </div>
     </section>
   );
