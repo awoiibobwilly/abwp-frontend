@@ -1,10 +1,11 @@
-import "../../styles/insights/categories.css";
+import KnowledgeDomainsGrid from "./KnowledgeDomainsGrid";
+
+import "../../styles/insights/knowledgeDomains.css";
 
 // ==========================================================
-// CATEGORIES SECTION
+// KNOWLEDGE DOMAINS
 // INSIGHTS PAGE
 // ABW PORTFOLIO
-// PREMIUM BALANCE PASS
 // ==========================================================
 
 function CategoriesSection({
@@ -16,42 +17,61 @@ function CategoriesSection({
   }
 
   return (
-    <section className="insights-categories section">
+    <section className="knowledge-domains section">
       <div className="container">
+
         {/* ==========================================
-            HEADER
+            SECTION HEADER
         ========================================== */}
-        <div className="categories-header">
-          <span className="categories-badge">
-            {intro?.eyebrow || "Explore Topics"}
+
+        <div className="knowledge-domains-header">
+
+          <span className="knowledge-domains-badge">
+            {intro?.eyebrow || "Knowledge Domains"}
           </span>
 
           <h2 className="section-title">
             {intro?.title ||
-              "Areas of Thought & Interest"}
+              "Knowledge Domains"}
           </h2>
 
           <p className="section-subtitle">
             {intro?.intro ||
-              "A collection of themes and disciplines that shape my reflections, articles, and professional perspectives."}
+              "Explore the interdisciplinary themes that shape my research, writing, engineering practice, leadership, and evidence-driven thinking."}
           </p>
+
         </div>
 
         {/* ==========================================
-            TOPIC CLOUD
+            SUMMARY
         ========================================== */}
-        <div className="categories-cloud-wrap">
-          <div className="categories-cloud">
-            {categories.map((category) => (
-              <div
-                className="category-pill"
-                key={category.id}
-              >
-                {category.name}
-              </div>
-            ))}
+
+        <div className="knowledge-domains-summary">
+
+          <div className="knowledge-domains-summary-card">
+
+            <span className="knowledge-domains-summary-value">
+              {categories.length}
+            </span>
+
+            <span className="knowledge-domains-summary-label">
+              {categories.length === 1
+                ? "Knowledge Domain"
+                : "Knowledge Domains"}
+            </span>
+
           </div>
+
         </div>
+
+        {/* ==========================================
+            DOMAINS GRID
+        ========================================== */}
+
+        <KnowledgeDomainsGrid
+          categories={categories}
+        />
+
       </div>
     </section>
   );
