@@ -1,157 +1,163 @@
 import {
-    FaArrowRight,
-    FaCalendarAlt,
-    FaFolderOpen,
-    FaUser,
-  } from "react-icons/fa";
-  
-  import "../../styles/insights/featuredArticles.css";
-  
-  // ==========================================================
-  // FLAGSHIP ARTICLE CARD
-  // INSIGHTS PAGE
-  // ABW PORTFOLIO
-  // ==========================================================
-  
-  function FlagshipArticleCard({ article }) {
-    if (!article) {
-      return null;
-    }
-  
-    const category =
-      article?.category?.name ||
-      article?.category ||
-      "Insight";
-  
-    const summary =
-      article?.summary ||
-      article?.excerpt ||
-      article?.description ||
-      "";
-  
-    const author =
-      article?.author ||
-      "Awoii Bob Willy";
-  
-    const publicationType =
-      article?.publication_type_display ||
-      article?.type ||
-      "Article";
-  
-    const articleLink =
-      article?.external_url ||
-      `/insights/${article.slug}`;
-  
-    return (
-      <article className="flagship-article-card">
-  
-        {/* ======================================
-            COVER IMAGE
-        ====================================== */}
-  
-        {article?.image && (
-          <div className="flagship-media">
-  
-            <img
-              src={article.image}
-              alt={article.title}
-            />
-  
-          </div>
-        )}
-  
-        {/* ======================================
-            CONTENT
-        ====================================== */}
-  
-        <div className="flagship-content">
-  
-          {/* META */}
-  
-          <div className="flagship-meta">
-  
+  FiArrowRight,
+  FiBookOpen,
+  FiCalendar,
+  FiClock,
+} from "react-icons/fi";
+
+import "../../styles/insights/featuredArticles.css";
+
+// ==========================================================
+// FLAGSHIP ARTICLE CARD
+// PREMIUM EDITORIAL FEATURE
+// ABW PORTFOLIO
+// ==========================================================
+
+function FlagshipArticleCard({
+  article,
+}) {
+
+  if (!article) {
+    return null;
+  }
+
+  return (
+
+    <article className="flagship-article-card">
+
+      {/* ==========================================
+          FEATURED IMAGE
+      ========================================== */}
+
+      <div className="flagship-image">
+
+        <img
+          src={article.cover_image}
+          alt={article.title}
+          loading="lazy"
+        />
+
+      </div>
+
+      {/* ==========================================
+          CONTENT
+      ========================================== */}
+
+      <div className="flagship-content">
+
+        {/* --------------------------------------
+            META
+        -------------------------------------- */}
+
+        <div className="flagship-meta">
+
+          {article.category && (
+
             <span className="flagship-category">
-  
-              <FaFolderOpen />
-  
-              {category}
-  
+
+              <FiBookOpen />
+
+              {typeof article.category === "object"
+                ? article.category.name
+                : article.category}
+
             </span>
-  
-            {article?.year && (
-  
-              <span className="flagship-year">
-  
-                <FaCalendarAlt />
-  
-                {article.year}
-  
-              </span>
-  
-            )}
-  
+
+          )}
+
+          {article.read_time && (
+
+            <span className="flagship-read-time">
+
+              <FiClock />
+
+              {article.read_time}
+
+            </span>
+
+          )}
+
+          {article.published_at && (
+
+            <span className="flagship-date">
+
+              <FiCalendar />
+
+              {article.published_at}
+
+            </span>
+
+          )}
+
+        </div>
+
+        {/* --------------------------------------
+            TITLE
+        -------------------------------------- */}
+
+        <h3 className="flagship-title">
+
+          {article.title}
+
+        </h3>
+
+        {/* --------------------------------------
+            SUMMARY
+        -------------------------------------- */}
+
+        <p className="flagship-summary">
+
+          {article.excerpt}
+
+        </p>
+
+        {/* --------------------------------------
+            FOOTER
+        -------------------------------------- */}
+
+        <div className="flagship-footer">
+
+          <div className="flagship-author">
+
+            <span>
+
+              By
+
+            </span>
+
+            <strong>
+
+              Awoii Bob Willy
+
+            </strong>
+
           </div>
-  
-          {/* TITLE */}
-  
-          <h2 className="flagship-title">
-  
-            {article.title}
-  
-          </h2>
-  
-          {/* SUMMARY */}
-  
-          <p className="flagship-summary">
-  
-            {summary}
-  
-          </p>
-  
-          {/* FOOTER */}
-  
-          <div className="flagship-footer">
-  
-            <div className="flagship-author">
-  
-              <FaUser />
-  
-              <span>
-  
-                {author}
-  
-              </span>
-  
-              <span className="flagship-dot">
-  
-                •
-  
-              </span>
-  
-              <span>
-  
-                {publicationType}
-  
-              </span>
-  
-            </div>
-  
+
+          {article.external_url && (
+
             <a
-              href={articleLink}
+              href={article.external_url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flagship-button"
             >
-              Read Insight
-  
-              <FaArrowRight />
-  
+
+              Read Article
+
+              <FiArrowRight />
+
             </a>
-  
-          </div>
-  
+
+          )}
+
         </div>
-  
-      </article>
-    );
-  }
-  
-  export default FlagshipArticleCard;
+
+      </div>
+
+    </article>
+
+  );
+
+}
+
+export default FlagshipArticleCard;

@@ -1,0 +1,337 @@
+/* ==========================================
+   FLAGSHIP ARTICLE
+   PREMIUM EDITORIAL
+========================================== */
+
+.flagship-article{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:0;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    border-radius:2rem;
+
+    border:1px solid rgba(15,23,42,.08);
+
+    box-shadow:
+        0 28px 70px rgba(15,23,42,.08);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+}
+
+.flagship-article:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 45px 90px rgba(15,23,42,.12);
+
+}
+
+/* ==========================================
+   MEDIA
+========================================== */
+
+.flagship-media{
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:500px;
+
+    background:#f8fafc;
+
+}
+
+.flagship-media img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .8s ease;
+
+}
+
+.flagship-article:hover
+.flagship-media img{
+
+    transform:scale(1.05);
+
+}
+
+/* Dark editorial overlay */
+
+.flagship-media::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            rgba(15,23,42,.02),
+
+            rgba(15,23,42,.15)
+
+        );
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.flagship-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:3.5rem;
+
+}
+
+/* ==========================================
+   META
+========================================== */
+
+.flagship-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+}
+
+.flagship-category{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    background:#eef4ff;
+
+    color:var(--primary);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+}
+
+.flagship-date,
+.flagship-readtime{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    color:var(--text-light);
+
+    font-size:.92rem;
+
+}
+
+.flagship-readtime svg{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.flagship-title{
+
+    margin-bottom:1.5rem;
+
+    font-size:clamp(
+        2.4rem,
+        4vw,
+        3.4rem
+    );
+
+    line-height:1.15;
+
+    color:#0f172a;
+
+}
+
+/* ==========================================
+   SUMMARY
+========================================== */
+
+.flagship-summary{
+
+    margin-bottom:2.5rem;
+
+    color:var(--text-light);
+
+    line-height:2;
+
+    font-size:1.05rem;
+
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.flagship-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    width:max-content;
+
+    padding:1rem 1.8rem;
+
+    border-radius:999px;
+
+    background:#0f172a;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:
+
+        transform .3s ease,
+
+        gap .3s ease,
+
+        background .3s ease;
+
+}
+
+.flagship-button:hover{
+
+    gap:1.15rem;
+
+    transform:translateY(-2px);
+
+    background:#1e293b;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.flagship-article{
+
+    grid-template-columns:1fr;
+
+}
+
+.flagship-media{
+
+    min-height:340px;
+
+}
+
+.flagship-content{
+
+    padding:2.5rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.flagship-title{
+
+    font-size:2.2rem;
+
+}
+
+.flagship-content{
+
+    padding:2rem;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.flagship-media{
+
+    min-height:250px;
+
+}
+
+.flagship-meta{
+
+    gap:.75rem;
+
+}
+
+.flagship-title{
+
+    font-size:1.8rem;
+
+}
+
+.flagship-summary{
+
+    font-size:1rem;
+
+}
+
+.flagship-content{
+
+    padding:1.6rem;
+
+}
+
+.flagship-button{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}

@@ -1,245 +1,850 @@
-/* ==========================================
+/* ==========================================================
    INSIGHTS HERO
-   INSIGHTS PAGE
-   FINAL EDITORIAL HARMONY PASS
-========================================== */
+   ABW PORTFOLIO
 
-.insights-hero {
-    position: relative;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    overflow: hidden;
-  }
-  
-  .insights-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(
-        circle at top left,
-        rgba(59, 130, 246, 0.07),
-        transparent 24%
-      );
-    pointer-events: none;
-  }
-  
-  .insights-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(
-        circle at bottom right,
-        rgba(14, 165, 233, 0.05),
-        transparent 28%
-      );
-    pointer-events: none;
-  }
-  
-  .insights-hero .container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* ==========================================
-     HERO SHELL
-  ========================================== */
-  
-  .insights-hero-shell {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 4.5rem 3rem 3rem;
-    border-radius: 2.2rem;
-    background:
+   PREMIUM HERO SYSTEM
+   ----------------------------------------------------------
+   Shared Design Language:
+   Home • About • Projects • Research • Insights • Journey
+
+   Part 1
+========================================================== */
+
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+.insights-hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:8rem 0 6rem;
+
+  background:
       linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.96),
-        rgba(248, 250, 252, 0.93)
+          180deg,
+          #f8fbff 0%,
+          #ffffff 100%
       );
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    box-shadow:
-      0 24px 54px rgba(15, 23, 42, 0.06),
-      0 10px 24px rgba(15, 23, 42, 0.03);
-  }
-  
-  /* ==========================================
-     HERO CONTENT
-  ========================================== */
-  
-  .insights-hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .insights-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.45rem;
-    border-radius: 999px;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary);
-    font-weight: 700;
-    border: 1px solid rgba(59, 130, 246, 0.14);
-    margin-bottom: 1.5rem;
-  }
-  
-  .insights-hero h1 {
-    max-width: 13ch;
-    margin: 0 auto 1.35rem;
-    color: var(--secondary);
-    font-size: clamp(2.6rem, 5vw, 4.5rem);
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-  }
-  
-  .insights-hero p {
-    max-width: 760px;
-    margin: 0 auto;
-    color: var(--text-light);
-    line-height: 1.9;
-    font-size: 1.02rem;
-  }
-  
-  /* ==========================================
-     HERO STATS
-  ========================================== */
-  
-  .insights-hero-stats {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.2rem;
-    max-width: 1040px;
-    margin: 3rem auto 0;
-  }
-  
-  .insights-stat-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 122px;
-    padding: 1.35rem 1rem;
-    text-align: center;
-    border-radius: 1.45rem;
-    background: #ffffff;
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    box-shadow:
-      0 14px 32px rgba(15, 23, 42, 0.045),
-      0 6px 16px rgba(15, 23, 42, 0.02);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .insights-stat-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto auto 0;
-    width: 100%;
-    height: 3px;
-    background:
+
+}
+
+
+/* ==========================================================
+ BACKGROUND DECORATION
+========================================================== */
+
+.insights-hero::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-180px;
+
+  left:-120px;
+
+  width:520px;
+
+  height:520px;
+
+  border-radius:50%;
+
+  background:
+
+      radial-gradient(
+
+          circle,
+
+          rgba(37,99,235,.08),
+
+          transparent 72%
+
+      );
+
+  pointer-events:none;
+
+}
+
+
+.insights-hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  right:-160px;
+
+  bottom:-220px;
+
+  width:560px;
+
+  height:560px;
+
+  border-radius:50%;
+
+  background:
+
+      radial-gradient(
+
+          circle,
+
+          rgba(14,165,233,.06),
+
+          transparent 72%
+
+      );
+
+  pointer-events:none;
+
+}
+
+
+.insights-hero .container{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+/* ==========================================================
+ HERO CONTENT
+========================================================== */
+
+.insights-hero-content{
+
+  max-width:980px;
+
+  margin:0 auto;
+
+  text-align:center;
+
+}
+
+
+/* ==========================================================
+ EYEBROW
+========================================================== */
+
+.insights-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:.9rem 1.7rem;
+
+  margin-bottom:2rem;
+
+  border-radius:999px;
+
+  background:
+
+      rgba(37,99,235,.08);
+
+  border:
+
+      1px solid rgba(37,99,235,.12);
+
+  color:var(--primary);
+
+  font-size:.92rem;
+
+  font-weight:700;
+
+  letter-spacing:.04em;
+
+  transition:
+
+      transform .35s ease,
+
+      background .35s ease;
+
+}
+
+
+.insights-badge:hover{
+
+  transform:translateY(-2px);
+
+  background:
+
+      rgba(37,99,235,.11);
+
+}
+
+
+/* ==========================================================
+ TITLE
+========================================================== */
+
+.insights-hero-title{
+
+  max-width:14ch;
+
+  margin:
+
+      0 auto
+
+      2rem;
+
+  color:var(--secondary);
+
+  font-size:
+
+      clamp(
+
+          3.6rem,
+
+          7vw,
+
+          5.8rem
+
+      );
+
+  font-weight:800;
+
+  line-height:1.05;
+
+  letter-spacing:-.045em;
+
+}
+
+
+/* ==========================================================
+ DESCRIPTION
+========================================================== */
+
+.insights-hero-description{
+
+  max-width:820px;
+
+  margin:0 auto;
+
+  color:var(--text-light);
+
+  font-size:1.08rem;
+
+  line-height:2;
+
+}
+
+
+/* ==========================================================
+ HERO STATS
+========================================================== */
+
+.insights-hero-stats{
+
+  display:grid;
+
+  grid-template-columns:
+
+      repeat(4,minmax(0,1fr));
+
+  gap:1.4rem;
+
+  max-width:1120px;
+
+  margin:
+
+      4.5rem auto 0;
+
+}
+
+
+/* ==========================================================
+ STAT CARD
+========================================================== */
+
+.insights-stat-card{
+
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:135px;
+
+  padding:1.7rem;
+
+  overflow:hidden;
+
+  background:#ffffff;
+
+  border-radius:1.6rem;
+
+  border:
+
+      1px solid rgba(15,23,42,.06);
+
+  box-shadow:
+
+      0 16px 40px rgba(15,23,42,.05);
+
+  transition:
+
+      transform .35s ease,
+
+      box-shadow .35s ease,
+
+      border-color .35s ease;
+
+}
+
+
+.insights-stat-card:hover{
+
+  transform:
+
+      translateY(-6px);
+
+  border-color:
+
+      rgba(37,99,235,.16);
+
+  box-shadow:
+
+      0 26px 60px rgba(15,23,42,.08);
+
+}
+
+
+/* ==========================================================
+ TOP ACCENT
+========================================================== */
+
+.insights-stat-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  top:0;
+
+  width:100%;
+
+  height:4px;
+
+  background:
+
       linear-gradient(
-        90deg,
-        rgba(37, 99, 235, 0.95),
-        rgba(14, 165, 233, 0.85)
+
+          90deg,
+
+          #2563eb,
+
+          #0ea5e9
+
       );
-  }
-  
-  .insights-stat-value {
-    display: block;
-    margin-bottom: 0.45rem;
-    color: var(--secondary);
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
-    font-weight: 800;
-    line-height: 1;
-  }
-  
-  .insights-stat-label {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.4;
-  }
-  
-  /* ==========================================
-     RESPONSIVE
-  ========================================== */
-  
-  @media (max-width: 1200px) {
-    .insights-hero-shell {
-      padding: 4rem 2.2rem 2.7rem;
-    }
-  }
-  
-  @media (max-width: 992px) {
-    .insights-hero-shell {
-      padding: 3.5rem 1.75rem 2.4rem;
-      border-radius: 1.8rem;
-    }
-  
-    .insights-hero-stats {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 2.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .insights-hero h1 {
-      max-width: 100%;
-    }
-  
-    .insights-hero p {
-      font-size: 0.98rem;
-    }
-  
-    .insights-hero-stats {
-      gap: 1rem;
-    }
-  
-    .insights-stat-card {
-      min-height: 110px;
-      border-radius: 1.25rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .insights-hero-shell {
-      padding: 2.7rem 1.15rem 2rem;
-      border-radius: 1.5rem;
-    }
-  
-    .insights-hero-stats {
-      grid-template-columns: 1fr;
-      margin-top: 2rem;
-    }
-  
-    .insights-badge {
-      padding: 0.78rem 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-  
-    .insights-hero h1 {
-      font-size: clamp(2.1rem, 9vw, 2.8rem);
-      margin-bottom: 1rem;
-    }
-  
-    .insights-hero p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-  
-    .insights-stat-card {
-      min-height: 100px;
-      padding: 1.1rem 0.9rem;
-    }
-  
-    .insights-stat-value {
-      font-size: 1.7rem;
-    }
-  
-    .insights-stat-label {
-      font-size: 0.9rem;
-    }
-  }
+
+}
+
+
+/* ==========================================================
+ VALUE
+========================================================== */
+
+.insights-stat-value{
+
+  display:block;
+
+  margin-bottom:.55rem;
+
+  color:var(--secondary);
+
+  font-size:
+
+      clamp(
+
+          2rem,
+
+          3vw,
+
+          2.6rem
+
+      );
+
+  font-weight:800;
+
+  line-height:1;
+
+}
+
+
+/* ==========================================================
+ LABEL
+========================================================== */
+
+.insights-stat-label{
+
+  color:var(--text-light);
+
+  text-align:center;
+
+  font-size:.95rem;
+
+  font-weight:700;
+
+  line-height:1.5;
+
+}
+
+/* ==========================================================
+   PREMIUM MICRO INTERACTIONS
+========================================================== */
+
+.insights-stat-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.14),
+
+            transparent 45%
+
+        );
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+    pointer-events:none;
+
+}
+
+.insights-stat-card:hover::after{
+
+    opacity:1;
+
+}
+
+.insights-stat-value{
+
+    transition:
+
+        color .3s ease,
+
+        transform .3s ease;
+
+}
+
+.insights-stat-card:hover
+.insights-stat-value{
+
+    color:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+.insights-stat-label{
+
+    transition:
+
+        color .3s ease;
+
+}
+
+.insights-stat-card:hover
+.insights-stat-label{
+
+    color:var(--secondary);
+
+}
+
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (min-width:1440px){
+
+.insights-hero{
+
+    padding:9rem 0 7rem;
+
+}
+
+.insights-hero-content{
+
+    max-width:1040px;
+
+}
+
+.insights-hero-title{
+
+    max-width:13ch;
+
+    font-size:
+
+        clamp(
+
+            4.2rem,
+
+            5vw,
+
+            6.2rem
+
+        );
+
+}
+
+.insights-hero-description{
+
+    max-width:860px;
+
+    font-size:1.12rem;
+
+}
+
+.insights-hero-stats{
+
+    max-width:1180px;
+
+    gap:1.6rem;
+
+    margin-top:5rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+.insights-hero{
+
+    padding:7rem 0 5.5rem;
+
+}
+
+.insights-hero-content{
+
+    max-width:900px;
+
+}
+
+.insights-hero-title{
+
+    max-width:15ch;
+
+}
+
+.insights-hero-stats{
+
+    gap:1.2rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+.insights-hero{
+
+    padding:6.5rem 0 5rem;
+
+}
+
+.insights-hero-content{
+
+    max-width:760px;
+
+}
+
+.insights-hero-title{
+
+    max-width:16ch;
+
+    font-size:
+
+        clamp(
+
+            3rem,
+
+            8vw,
+
+            4.5rem
+
+        );
+
+}
+
+.insights-hero-description{
+
+    max-width:700px;
+
+    font-size:1rem;
+
+}
+
+.insights-hero-stats{
+
+    grid-template-columns:
+
+        repeat(2,minmax(0,1fr));
+
+    gap:1.25rem;
+
+    margin-top:3.5rem;
+
+}
+
+.insights-stat-card{
+
+    min-height:125px;
+
+}
+
+}
+
+
+/* ==========================================================
+   MOBILE LANDSCAPE
+========================================================== */
+
+@media (max-width:768px){
+
+.insights-hero{
+
+    padding:5.5rem 0 4rem;
+
+}
+
+.insights-badge{
+
+    margin-bottom:1.5rem;
+
+    padding:.8rem 1.4rem;
+
+    font-size:.88rem;
+
+}
+
+.insights-hero-title{
+
+    max-width:100%;
+
+    margin-bottom:1.5rem;
+
+    font-size:
+
+        clamp(
+
+            2.6rem,
+
+            9vw,
+
+            3.5rem
+
+        );
+
+    line-height:1.08;
+
+}
+
+.insights-hero-description{
+
+    max-width:100%;
+
+    line-height:1.9;
+
+}
+
+.insights-hero-stats{
+
+    gap:1rem;
+
+    margin-top:3rem;
+
+}
+
+.insights-stat-card{
+
+    min-height:115px;
+
+    border-radius:1.4rem;
+
+    padding:1.4rem;
+
+}
+
+.insights-stat-value{
+
+    font-size:2rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:576px){
+
+.insights-hero{
+
+    padding:4.8rem 0 3.5rem;
+
+}
+
+.insights-badge{
+
+    padding:.75rem 1.25rem;
+
+    margin-bottom:1.35rem;
+
+}
+
+.insights-hero-title{
+
+    font-size:
+
+        clamp(
+
+            2.2rem,
+
+            11vw,
+
+            2.9rem
+
+        );
+
+    letter-spacing:-.03em;
+
+}
+
+.insights-hero-description{
+
+    font-size:.97rem;
+
+    line-height:1.8;
+
+}
+
+.insights-hero-stats{
+
+    grid-template-columns:1fr;
+
+    margin-top:2.6rem;
+
+}
+
+.insights-stat-card{
+
+    min-height:105px;
+
+    padding:1.25rem;
+
+}
+
+.insights-stat-value{
+
+    font-size:1.85rem;
+
+}
+
+.insights-stat-label{
+
+    font-size:.9rem;
+
+}
+
+}
+
+
+/* ==========================================================
+   SMALL DEVICES
+========================================================== */
+
+@media (max-width:380px){
+
+.insights-hero{
+
+    padding:4.2rem 0 3rem;
+
+}
+
+.insights-badge{
+
+    width:100%;
+
+}
+
+.insights-hero-title{
+
+    font-size:2rem;
+
+}
+
+.insights-stat-card{
+
+    min-height:95px;
+
+}
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+.insights-badge,
+
+.insights-stat-card,
+
+.insights-stat-card::after,
+
+.insights-stat-value,
+
+.insights-stat-label{
+
+    transition:none;
+
+}
+
+.insights-stat-card:hover{
+
+    transform:none;
+
+}
+
+}
