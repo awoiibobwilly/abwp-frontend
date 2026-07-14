@@ -1,6 +1,126 @@
-import { FaArrowRight, FaBookOpen } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-import "../../styles/insights/knowledgeDomainCard.css";
+import {
+  FiActivity,
+  FiArrowRight,
+  FiBarChart2,
+  FiBookOpen,
+  FiBriefcase,
+  FiCode,
+  FiCpu,
+  FiDatabase,
+  FiGlobe,
+  FiHeart,
+  FiLayers,
+  FiShield,
+} from "react-icons/fi";
+
+import "../../styles/insights/knowledgeDomains.css";
+
+// ==========================================================
+// DOMAIN ICONS
+// ==========================================================
+
+const DOMAIN_ICONS = {
+
+  Healthcare: FiHeart,
+
+  Research: FiBookOpen,
+
+  Leadership: FiBriefcase,
+
+  "Software Engineering": FiCode,
+
+  Technology: FiCpu,
+
+  "Data Science": FiDatabase,
+
+  Innovation: FiLayers,
+
+  "Public Health": FiActivity,
+
+  "Digital Health": FiGlobe,
+
+  Cybersecurity: FiShield,
+
+  Analytics: FiBarChart2,
+
+};
+
+// ==========================================================
+// KNOWLEDGE TOPICS
+// TEMPORARY FRONTEND MAPPING
+// ==========================================================
+
+const DOMAIN_TOPICS = {
+
+  Healthcare: [
+    "Clinical Practice",
+    "Public Health",
+    "Digital Health",
+  ],
+
+  Research: [
+    "Evidence",
+    "Health Systems",
+    "Monitoring & Evaluation",
+  ],
+
+  Leadership: [
+    "Strategy",
+    "Governance",
+    "People",
+  ],
+
+  "Software Engineering": [
+    "React",
+    "Django",
+    "REST APIs",
+  ],
+
+  Technology: [
+    "AI",
+    "Cloud",
+    "Automation",
+  ],
+
+  "Data Science": [
+    "Python",
+    "Machine Learning",
+    "Visualization",
+  ],
+
+  Innovation: [
+    "Design Thinking",
+    "Transformation",
+    "Future Trends",
+  ],
+
+  "Public Health": [
+    "Prevention",
+    "Policy",
+    "Population Health",
+  ],
+
+  "Digital Health": [
+    "Telemedicine",
+    "EHR",
+    "HealthTech",
+  ],
+
+  Cybersecurity: [
+    "Security",
+    "Risk",
+    "Privacy",
+  ],
+
+  Analytics: [
+    "Dashboards",
+    "KPIs",
+    "Business Intelligence",
+  ],
+
+};
 
 // ==========================================================
 // KNOWLEDGE DOMAIN CARD
@@ -8,71 +128,133 @@ import "../../styles/insights/knowledgeDomainCard.css";
 // ABW PORTFOLIO
 // ==========================================================
 
-function KnowledgeDomainCard({ category }) {
-  if (!category) return null;
+function KnowledgeDomainCard({
+  category,
+}) {
 
-  const {
-    name,
-    description,
-    accent_color,
-    article_count,
-  } = category;
+  if (!category) {
+    return null;
+  }
 
-  const articleLabel =
-    article_count === 1
-      ? "Published Insight"
-      : "Published Insights";
+  const Icon =
+
+    DOMAIN_ICONS[category.name] ||
+
+    FiBookOpen;
+
+  const topics =
+
+    DOMAIN_TOPICS[category.name] ||
+
+    [];
 
   return (
+
     <article
-      className="knowledge-domain-card"
+      className="knowledge-card"
       style={{
         "--domain-accent":
-          accent_color || "#2563EB",
+          category.accent_color ||
+          "#2563eb",
       }}
     >
+
       {/* ==========================================
-          TOP
+          HEADER
       ========================================== */}
 
-      <div className="domain-top">
-        <span className="domain-accent-dot" />
+      <div className="knowledge-card-header">
 
-        <div className="domain-heading">
-          <h3>{name}</h3>
+        <div className="knowledge-icon">
 
-          <p>
-            {description ||
-              "Exploring research, innovation and evidence-driven thinking within this knowledge domain."}
-          </p>
+          <Icon />
+
         </div>
+
+        <div>
+
+          <h3 className="knowledge-title">
+
+            {category.name}
+
+          </h3>
+
+        </div>
+
       </div>
+
+      {/* ==========================================
+          DESCRIPTION
+      ========================================== */}
+
+      <p className="knowledge-description">
+
+        {category.description}
+
+      </p>
+
+      {/* ==========================================
+          TOPICS
+      ========================================== */}
+
+      {topics.length > 0 && (
+
+        <div className="knowledge-topics">
+
+          {topics.map((topic) => (
+
+            <span
+              key={topic}
+              className="knowledge-topic"
+            >
+
+              {topic}
+
+            </span>
+
+          ))}
+
+        </div>
+
+      )}
 
       {/* ==========================================
           FOOTER
       ========================================== */}
 
-      <div className="domain-footer">
-        <div className="domain-count">
-          <FaBookOpen />
+      <div className="knowledge-footer">
 
-          <span>
-            <strong>{article_count}</strong>{" "}
-            {articleLabel}
-          </span>
-        </div>
+        <span className="knowledge-count">
 
-        <button
-          className="domain-link"
-          type="button"
+          {category.article_count}
+
+          {" "}
+
+          {category.article_count === 1
+
+            ? "Article"
+
+            : "Articles"}
+
+        </span>
+
+        <Link
+          to={`/insights/domain/${category.slug}`}
+          className="knowledge-link"
         >
-          <span>Explore Domain</span>
 
-          <FaArrowRight />
-        </button>
+          Explore Domain
+
+          <FiArrowRight />
+
+        </Link>
+
       </div>
+
     </article>
+
   );
+
 }
 
 export default KnowledgeDomainCard;

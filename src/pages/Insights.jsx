@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import InsightsHero from "../components/insights/InsightsHero";
 import FeaturedArticles from "../components/insights/FeaturedArticles";
-import CategoriesSection from "../components/insights/CategoriesSection";
+import KnowledgeDomains from "../components/insights/KnowledgeDomains";
 import LatestThoughts from "../components/insights/LatestThoughts";
 import QuotesReflections from "../components/insights/QuotesReflections";
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
@@ -20,97 +20,147 @@ import "../styles/insights/insightsPage.css";
 // ==========================================================
 
 function Insights() {
+
   // ==================================================
   // STATE
   // ==================================================
 
-  const [insightsPageData, setInsightsPageData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [insightsPageData, setInsightsPageData] =
+    useState(null);
+
+  const [loading, setLoading] =
+    useState(true);
+
+  const [error, setError] =
+    useState("");
 
   // ==================================================
   // FETCH PAGE DATA
   // ==================================================
 
   useEffect(() => {
+
     let isMounted = true;
 
     async function fetchInsightsPage() {
+
       try {
+
         setLoading(true);
+
         setError("");
 
-        const data = await getInsightsPage();
+        const data =
+          await getInsightsPage();
 
         if (isMounted) {
+
           setInsightsPageData(data);
+
         }
+
       } catch (err) {
+
         console.error(
           "Failed to load insights page:",
           err
         );
 
         if (isMounted) {
+
           setError(
             "Failed to load insights page content."
           );
+
         }
+
       } finally {
+
         if (isMounted) {
+
           setLoading(false);
+
         }
+
       }
+
     }
 
     fetchInsightsPage();
 
     return () => {
+
       isMounted = false;
+
     };
+
   }, []);
 
   // ==================================================
-  // LOADING STATE
+  // LOADING
   // ==================================================
 
   if (loading) {
+
     return (
+
       <main className="insights-page">
+
         <section className="section">
+
           <div className="container">
-            <p>Loading insights page...</p>
+
+            <p>
+              Loading insights page...
+            </p>
+
           </div>
+
         </section>
+
       </main>
+
     );
+
   }
 
   // ==================================================
-  // ERROR STATE
+  // ERROR
   // ==================================================
 
   if (error) {
+
     return (
+
       <main className="insights-page">
+
         <section className="section">
+
           <div className="container">
+
             <SectionMessage
               type="error"
               message={error}
             />
+
           </div>
+
         </section>
+
       </main>
+
     );
+
   }
 
   // ==================================================
-  // COMPONENT
+  // PAGE
   // ==================================================
 
   return (
+
     <main className="insights-page">
+
       {/* ==========================================
           HERO
       ========================================== */}
@@ -123,58 +173,69 @@ function Insights() {
       />
 
       {/* ==========================================
-          EDITOR'S PICKS
+          FEATURED EDITORIAL
       ========================================== */}
 
       <FeaturedArticles
-        intro={insightsPageData?.featured_intro}
+        intro={
+          insightsPageData?.featured_intro
+        }
         featuredArticles={
           insightsPageData?.featured_articles || []
         }
       />
 
       {/* ==========================================
-          TOPICS
+          KNOWLEDGE DOMAINS
       ========================================== */}
 
-      <CategoriesSection
-        intro={insightsPageData?.categories_intro}
+      <KnowledgeDomains
+        intro={
+          insightsPageData?.categories_intro
+        }
         categories={
           insightsPageData?.categories || []
         }
       />
 
       {/* ==========================================
-          LATEST PERSPECTIVES
+          LATEST THOUGHTS
       ========================================== */}
 
       <LatestThoughts
-        intro={insightsPageData?.thoughts_intro}
+        intro={
+          insightsPageData?.thoughts_intro
+        }
         thoughts={
           insightsPageData?.latest_thoughts || []
         }
       />
 
       {/* ==========================================
-          QUICK REFLECTIONS
+          QUOTES
       ========================================== */}
 
       <QuotesReflections
-        intro={insightsPageData?.quotes_intro}
+        intro={
+          insightsPageData?.quotes_intro
+        }
         quotes={
           insightsPageData?.quotes || []
         }
       />
 
       {/* ==========================================
-          PAGE CTA
+          CTA
       ========================================== */}
 
       <UniversalCTA
         page={PAGE_KEYS.INSIGHTS}
       />
+
     </main>
+
   );
+
 }
 
 export default Insights;
