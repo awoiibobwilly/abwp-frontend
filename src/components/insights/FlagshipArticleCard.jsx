@@ -7,6 +7,7 @@ import {
 
 import "../../styles/insights/featuredArticles.css";
 
+
 // ==========================================================
 // FLAGSHIP ARTICLE CARD
 // PREMIUM EDITORIAL FEATURE
@@ -20,7 +21,6 @@ function FlagshipArticleCard({
   if (!article) {
     return null;
   }
-
   return (
 
     <article className="flagship-article-card">
@@ -29,15 +29,26 @@ function FlagshipArticleCard({
           FEATURED IMAGE
       ========================================== */}
 
-      <div className="flagship-image">
+        <div className="flagship-image">
 
         <img
           src={article.cover_image}
           alt={article.title}
           loading="lazy"
+          onLoad={() => console.log("IMAGE LOADED")}
+          onError={(e) => {
+            console.log("IMAGE FAILED", e);
+          }}
+          style={{
+            width: "100%",
+            height: "500px",
+            objectFit: "cover",
+            border: "4px solid red",
+            display: "block",
+          }}
         />
 
-      </div>
+        </div>
 
       {/* ==========================================
           CONTENT
@@ -135,18 +146,13 @@ function FlagshipArticleCard({
 
           {article.external_url && (
 
-            <a
-              href={article.external_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flagship-button"
-            >
-
-              Read Article
-
-              <FiArrowRight />
-
-            </a>
+          <Link
+          to={`/insights/${article.slug}`}
+          className="flagship-button"
+          >
+          Continue Reading
+          <FiArrowRight />
+          </Link>
 
           )}
 
