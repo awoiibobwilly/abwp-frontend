@@ -1,402 +1,544 @@
-/* ==========================================
+/* ==========================================================
    LATEST THOUGHTS
-========================================== */
+   INSIGHTS PAGE
+   ABW PORTFOLIO
+
+   PREMIUM EDITORIAL FEED
+
+   PART 1
+========================================================== */
+
+
+/* ==========================================================
+   SECTION
+========================================================== */
 
 .latest-thoughts{
 
-    background:white;
+  position:relative;
+
+  padding:7rem 0;
+
+  background:#ffffff;
 
 }
 
 
-/* ==========================================
-   HEADER
-========================================== */
+.latest-thoughts .container{
 
-.thoughts-header{
+  position:relative;
 
-    max-width:850px;
+  z-index:2;
 
-    margin:0 auto 5rem;
+}
 
-    text-align:center;
-/* ==========================================
+
+/* ==========================================================
+ HEADER
+========================================================== */
+
+.latest-thoughts-header{
+
+  max-width:900px;
+
+  margin:0 auto 5rem;
+
+  text-align:center;
+
+}
+
+
+.latest-thoughts-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:.85rem 1.5rem;
+
+  border-radius:999px;
+
+  background:rgba(37,99,235,.08);
+
+  border:1px solid rgba(37,99,235,.12);
+
+  color:var(--primary);
+
+  font-weight:700;
+
+  margin-bottom:1.5rem;
+
+}
+
+
+.latest-thoughts-header .section-title{
+
+  max-width:13ch;
+
+  margin:0 auto 1.5rem;
+
+  color:var(--secondary);
+
+  font-size:clamp(2.5rem,4vw,4rem);
+
+  line-height:1.08;
+
+  letter-spacing:-.03em;
+
+}
+
+
+.latest-thoughts-header .section-subtitle{
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  color:var(--text-light);
+
+  line-height:1.9;
+
+  font-size:1.03rem;
+
+}
+
+
+/* ==========================================================
+ GRID
+========================================================== */
+
+.latest-thoughts-grid{
+
+  display:grid;
+
+  grid-template-columns:
+
+      repeat(2,minmax(0,1fr));
+
+  gap:2rem;
+
+}
+
+
+/* ==========================================================
+ CARD
+========================================================== */
+
+.latest-thought-card{
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding:2rem;
+
+  min-height:285px;
+
+  background:#ffffff;
+
+  border-radius:1.75rem;
+
+  border:1px solid rgba(15,23,42,.08);
+
+  box-shadow:
+
+      0 14px 34px rgba(15,23,42,.05);
+
+  transition:
+
+      transform .35s ease,
+
+      box-shadow .35s ease,
+
+      border-color .35s ease;
+
+}
+
+
+/* ==========================================================
+ META
+========================================================== */
+
+.latest-thought-meta{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:1rem;
+
+  margin-bottom:1.75rem;
+
+}
+
+
+.latest-thought-category{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:.55rem;
+
+  padding:.55rem 1rem;
+
+  border-radius:999px;
+
+  background:rgba(37,99,235,.08);
+
+  color:var(--primary);
+
+  font-size:.82rem;
+
+  font-weight:700;
+
+}
+
+
+.latest-thought-reading{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:1rem;
+
+  color:var(--text-light);
+
+  font-size:.82rem;
+
+}
+
+
+.latest-thought-reading span{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:.4rem;
+
+}
+
+
+/* ==========================================================
+ CONTENT
+========================================================== */
+
+.latest-thought-content{
+
+  flex:1;
+
+}
+
+
+.latest-thought-title{
+
+  margin-bottom:1rem;
+
+  font-size:1.45rem;
+
+  line-height:1.3;
+
+}
+
+
+.latest-thought-title a{
+
+  color:var(--secondary);
+
+  text-decoration:none;
+
+  transition:color .3s ease;
+
+}
+
+
+.latest-thought-excerpt{
+
+  color:var(--text-light);
+
+  line-height:1.9;
+
+  font-size:.98rem;
+
+}
+
+
+/* ==========================================================
    LATEST THOUGHTS
    INSIGHTS PAGE
-   PREMIUM BALANCE PASS
-========================================== */
+   ABW PORTFOLIO
 
-.latest-thoughts {
-    position: relative;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    overflow: hidden;
-  }
-  
-  .latest-thoughts::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(
-        circle at bottom left,
-        rgba(14, 165, 233, 0.06),
-        transparent 26%
-      );
-    pointer-events: none;
-  }
-  
-  .latest-thoughts .container {
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* ==========================================
-     HEADER
-  ========================================== */
-  
-  .thoughts-header {
-    max-width: 900px;
-    margin: 0 auto 2.5rem;
-    text-align: center;
-  }
-  
-  .thoughts-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.45rem;
-    border-radius: 999px;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary);
-    font-weight: 700;
-    border: 1px solid rgba(59, 130, 246, 0.14);
-    margin-bottom: 1.4rem;
-  }
-  
-  /* ==========================================
-     GRID
-  ========================================== */
-  
-  .thoughts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.6rem;
-    align-items: stretch;
-  }
-  
-  /* ==========================================
-     CARD
-  ========================================== */
-  
-  .thought-card {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    padding: 1.75rem;
-    border-radius: 1.65rem;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.96),
-        rgba(248, 250, 252, 0.94)
-      );
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    box-shadow:
-      0 16px 36px rgba(15, 23, 42, 0.045),
-      0 8px 18px rgba(15, 23, 42, 0.025);
-    transition:
-      transform 0.32s ease,
-      box-shadow 0.32s ease,
-      border-color 0.32s ease;
-  }
-  
-  .thought-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(59, 130, 246, 0.16);
-    box-shadow:
-      0 22px 44px rgba(15, 23, 42, 0.06),
-      0 10px 22px rgba(15, 23, 42, 0.03);
-  }
-  
-  /* ==========================================
-     META
-  ========================================== */
-  
-  .thought-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.85rem;
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    font-size: 0.88rem;
-    font-weight: 600;
-  }
-  
-  .thought-category {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.55rem 0.9rem;
-    border-radius: 999px;
-    background: rgba(59, 130, 246, 0.08);
-    color: var(--primary);
-    border: 1px solid rgba(59, 130, 246, 0.12);
-    font-size: 0.78rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-  
-  .thought-date {
-    color: var(--text-light);
-    font-size: 0.84rem;
-  }
-  
-  /* ==========================================
-     CONTENT
-  ========================================== */
-  
-  .thought-card h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary);
-    font-size: 1.08rem;
-    line-height: 1.5;
-  }
-  
-  .thought-card p {
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    line-height: 1.8;
-    font-size: 0.95rem;
-  }
-  
-  /* ==========================================
-     LINK
-  ========================================== */
-  
-  .thought-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-top: auto;
-    color: var(--primary);
-    font-weight: 700;
-    text-decoration: none;
-    transition:
-      color 0.25s ease,
-      transform 0.25s ease;
-  }
-  
-  .thought-link:hover {
-    color: #1d4ed8;
-    transform: translateX(3px);
-  }
-  
-  .thought-link svg {
-    font-size: 0.78rem;
-  }
-  
-  .thought-link-disabled {
-    opacity: 0.55;
-    cursor: default;
-    pointer-events: none;
-  }
-  
-  /* ==========================================
-     RESPONSIVE
-  ========================================== */
-  
-  @media (max-width: 1200px) {
-    .thoughts-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .thoughts-header {
-      margin-bottom: 2rem;
-    }
-  
-    .thoughts-grid {
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-    }
-  
-    .thought-card {
-      padding: 1.4rem;
-      border-radius: 1.45rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .thought-meta {
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-  
-    .thought-card h3 {
-      font-size: 1rem;
-    }
-  
-    .thought-card p {
-      font-size: 0.92rem;
-    }
-  }
-}
+   PREMIUM EDITORIAL FEED
+
+   PART 2
+========================================================== */
 
 
-.thoughts-badge{
+/* ==========================================================
+   FOOTER
+========================================================== */
 
-    display:inline-block;
+.latest-thought-footer{
 
-    padding:.8rem 1.5rem;
+  display:flex;
 
-    border-radius:999px;
+  justify-content:flex-end;
 
-    background:rgba(59,130,246,.1);
+  align-items:center;
 
-    color:var(--primary);
+  margin-top:2rem;
 
-    font-weight:600;
+  padding-top:1.5rem;
 
-    margin-bottom:1.5rem;
+  border-top:1px solid rgba(15,23,42,.08);
 
 }
 
 
-/* ==========================================
-   GRID
-========================================== */
+/* ==========================================================
+ CONTINUE READING CTA
+========================================================== */
 
-.thoughts-grid{
+.latest-thought-link{
 
-    display:grid;
+  display:inline-flex;
 
-    grid-template-columns:repeat(3,1fr);
+  align-items:center;
 
-    gap:2rem;
+  gap:.65rem;
 
-}
+  padding:.85rem 1.35rem;
 
+  border-radius:999px;
 
-/* ==========================================
-   CARD
-========================================== */
+  text-decoration:none;
 
-.thought-card{
+  background:rgba(37,99,235,.08);
 
-    background:rgba(255,255,255,.8);
+  color:var(--primary);
 
-    backdrop-filter:blur(20px);
+  font-size:.86rem;
 
-    border-radius:2rem;
+  font-weight:700;
 
-    padding:2.5rem;
+  transition:
 
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.05);
+      gap .3s ease,
 
-    transition:.4s;
+      transform .3s ease,
 
-}
+      background .3s ease,
 
+      color .3s ease,
 
-.thought-card:hover{
-
-    transform:translateY(-10px);
+      box-shadow .3s ease;
 
 }
 
 
-/* ==========================================
-   META
-========================================== */
+.latest-thought-link svg{
 
-.thought-meta{
+  transition:
 
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-bottom:1.5rem;
-
-    color:var(--text-light);
-
-    font-size:.95rem;
+      transform .3s ease;
 
 }
 
 
-.thought-category{
+/* ==========================================================
+ CARD HOVER
+========================================================== */
 
-    color:var(--primary);
+.latest-thought-card:hover{
 
-    font-weight:600;
+  transform:translateY(-6px);
 
-}
+  border-color:rgba(37,99,235,.20);
 
+  box-shadow:
 
-/* ==========================================
-   CONTENT
-========================================== */
-
-.thought-card h3{
-
-    margin-bottom:1rem;
-
-    line-height:1.5;
+      0 24px 55px rgba(15,23,42,.08);
 
 }
 
 
-.thought-card p{
+.latest-thought-card:hover .latest-thought-title a{
 
-    color:var(--text-light);
-
-    line-height:1.9;
-
-    margin-bottom:2rem;
+  color:var(--primary);
 
 }
 
 
-/* ==========================================
-   BUTTON
-========================================== */
+/* ==========================================================
+ CTA HOVER
+ (Independent from card hover)
+========================================================== */
 
-.thought-link{
+.latest-thought-link:hover{
 
-    display:flex;
+  gap:1rem;
 
-    align-items:center;
+  transform:translateY(-2px);
 
-    gap:.8rem;
+  background:var(--primary);
 
-    border:none;
+  color:#ffffff;
 
-    background:none;
+  box-shadow:
 
-    color:var(--primary);
-
-    font-weight:600;
-
-    cursor:pointer;
+      0 12px 28px rgba(37,99,235,.24);
 
 }
 
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+.latest-thought-link:hover svg{
 
-@media(max-width:992px){
+  transform:translateX(4px);
 
-    .thoughts-grid{
+}
 
-        grid-template-columns:1fr;
 
-    }
+/* ==========================================================
+ RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+  .latest-thoughts-grid{
+
+      grid-template-columns:1fr;
+
+  }
+
+}
+
+
+@media (max-width:768px){
+
+  .latest-thoughts{
+
+      padding:6rem 0;
+
+  }
+
+  .latest-thoughts-header{
+
+      margin-bottom:4rem;
+
+  }
+
+  .latest-thought-card{
+
+      min-height:auto;
+
+      padding:1.8rem;
+
+  }
+
+  .latest-thought-meta{
+
+      flex-direction:column;
+
+      align-items:flex-start;
+
+      gap:.9rem;
+
+  }
+
+}
+
+
+@media (max-width:576px){
+
+  .latest-thoughts{
+
+      padding:5rem 0;
+
+  }
+
+  .latest-thoughts-header{
+
+      margin-bottom:3rem;
+
+  }
+
+  .latest-thought-card{
+
+      padding:1.5rem;
+
+      border-radius:1.5rem;
+
+  }
+
+  .latest-thought-title{
+
+      font-size:1.3rem;
+
+  }
+
+  .latest-thought-excerpt{
+
+      font-size:.95rem;
+
+      line-height:1.8;
+
+  }
+
+  .latest-thought-footer{
+
+      justify-content:flex-start;
+
+  }
+
+  .latest-thought-link{
+
+      width:100%;
+
+      justify-content:center;
+
+  }
+
+}
+
+
+/* ==========================================================
+ ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+  .latest-thought-card,
+
+  .latest-thought-title a,
+
+  .latest-thought-link,
+
+  .latest-thought-link svg{
+
+      transition:none;
+
+  }
+
+  .latest-thought-card:hover,
+
+  .latest-thought-link:hover{
+
+      transform:none;
+
+  }
+
+  .latest-thought-link:hover svg{
+
+      transform:none;
+
+  }
 
 }

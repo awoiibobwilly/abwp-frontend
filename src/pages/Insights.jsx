@@ -26,7 +26,10 @@ function Insights() {
   // ==================================================
 
   const [insightsPageData, setInsightsPageData] =
+  
     useState(null);
+
+    
 
   const [loading, setLoading] =
     useState(true);
@@ -198,19 +201,18 @@ function Insights() {
         }
       />
 
-      {/* ==========================================
+         {/* ==========================================
           LATEST THOUGHTS
       ========================================== */}
 
       <LatestThoughts
-        intro={
-          insightsPageData?.thoughts_intro
-        }
-        thoughts={
-          insightsPageData?.latest_thoughts || []
-        }
-      />
-
+              intro={
+                insightsPageData?.thoughts_intro
+              }
+              thoughts={
+                insightsPageData?.thoughts || []
+              }
+            />
       {/* ==========================================
           QUOTES
       ========================================== */}
