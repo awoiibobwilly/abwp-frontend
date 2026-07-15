@@ -35,17 +35,6 @@ function FlagshipArticleCard({
           src={article.cover_image}
           alt={article.title}
           loading="lazy"
-          onLoad={() => console.log("IMAGE LOADED")}
-          onError={(e) => {
-            console.log("IMAGE FAILED", e);
-          }}
-          style={{
-            width: "100%",
-            height: "500px",
-            objectFit: "cover",
-            border: "4px solid red",
-            display: "block",
-          }}
         />
 
         </div>
