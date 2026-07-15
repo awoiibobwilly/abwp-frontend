@@ -19,7 +19,7 @@
 
     background:#ffffff;
 
-    border-radius:1.85rem;
+    border-radius:1.75rem;
 
     border:1.5px solid rgba(203,213,225,.75);
 
@@ -253,7 +253,7 @@
 .knowledge-card:hover{
 
     transform:
-        translateY(-10px);
+    translateY(-8px);
 
     border-color:
         color-mix(
@@ -323,7 +323,7 @@
 
     transform:
 
-        translateY(-3px)
+    translateY(-8px)
 
         scale(1.08);
 
@@ -387,7 +387,7 @@
 
 .knowledge-card:hover .knowledge-topic{
 
-    transform:translateY(-2px);
+    transform:translateY(-8px);
 
     border-color:
 

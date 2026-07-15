@@ -1,72 +1,96 @@
-import { FaQuoteLeft } from "react-icons/fa";
+import ReflectionCard from "./ReflectionCard";
+
 import "../../styles/insights/quotesReflections.css";
 
 // ==========================================================
 // QUOTES & REFLECTIONS
 // INSIGHTS PAGE
 // ABW PORTFOLIO
-// FINAL EDITORIAL HARMONY PASS
+//
+// PREMIUM EDITORIAL REFLECTIONS
 // ==========================================================
 
 function QuotesReflections({
   intro,
   quotes = [],
 }) {
+
+  // ==================================================
+  // EMPTY STATE
+  // ==================================================
+
   if (!quotes.length) {
     return null;
   }
 
+  // ==================================================
+  // COMPONENT
+  // ==================================================
+
   return (
+
     <section className="quotes-reflections section">
+
       <div className="container">
+
         {/* ==========================================
-            HEADER
+            SECTION HEADER
         ========================================== */}
-        <div className="quotes-header">
+
+        <header className="quotes-header">
+
           <span className="quotes-badge">
-            {intro?.eyebrow || "Quotes & Reflections"}
+
+            {intro?.eyebrow ||
+              "Quotes & Reflections"}
+
           </span>
 
           <h2 className="section-title">
-            {intro?.title || "Thoughts That Inspire Action"}
+
+            {intro?.title ||
+              "Ideas Worth Remembering"}
+
           </h2>
 
           <p className="section-subtitle">
+
             {intro?.intro ||
-              "Ideas and reflections that shape my approach to healthcare, research, leadership, and technology."}
+
+              "Short reflections that capture the principles shaping my work across healthcare, leadership, research, technology, and lifelong learning."
+
+            }
+
           </p>
-        </div>
+
+        </header>
 
         {/* ==========================================
-            QUOTES GRID
+            REFLECTION GRID
         ========================================== */}
+
         <div className="quotes-grid">
-          {quotes.map((item, index) => (
-            <article
-              className={`quote-card ${
-                index === 0 ? "quote-card-featured" : ""
-              }`}
-              key={item.id}
-            >
-              <div className="quote-card-top">
-                <div className="quote-icon-wrap">
-                  <FaQuoteLeft className="quote-icon" />
-                </div>
-              </div>
 
-              <blockquote>{item.quote}</blockquote>
+          {quotes.map((quote) => (
 
-              <div className="quote-card-footer">
-                <span className="quote-author">
-                  — {item.author}
-                </span>
-              </div>
-            </article>
+            <ReflectionCard
+
+              key={quote.id}
+
+              quote={quote}
+
+            />
+
           ))}
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }
 
 export default QuotesReflections;
