@@ -3,33 +3,16 @@ import { useState, useEffect, useCallback } from "react";
 /**
  * ==========================================================
  * useApiResource
- * ----------------------------------------------------------
- * Generic hook for fetching API resources.
- *
- * Features:
- * - Loading state
- * - Error handling
- * - AbortController support
- * - Manual refresh
- * - Works with any GET service
  * ==========================================================
  */
 
-function useApiResource(fetchFunction) {
+function useApiResource(fetchFunction, initialData = null) {
 
-    // ======================================================
-    // State
-    // ======================================================
-
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(initialData);
 
     const [loading, setLoading] = useState(true);
 
     const [error, setError] = useState("");
-
-    // ======================================================
-    // Fetch Resource
-    // ======================================================
 
     const fetchData = useCallback(
 
@@ -47,6 +30,12 @@ function useApiResource(fetchFunction) {
 
                 });
 
+                if (signal.aborted) {
+
+                    return;
+
+                }
+
                 setData(result);
 
             }
@@ -55,9 +44,9 @@ function useApiResource(fetchFunction) {
 
                 if (
 
-                    err?.name === "AbortError" ||
+                    signal.aborted ||
 
-                    err?.name === "CanceledError"
+                    err?.code === "ERR_CANCELED"
 
                 ) {
 
@@ -75,6 +64,8 @@ function useApiResource(fetchFunction) {
 
                 setError(
 
+                    err?.detail ||
+
                     err?.response?.data?.detail ||
 
                     err?.message ||
@@ -87,7 +78,11 @@ function useApiResource(fetchFunction) {
 
             finally {
 
-                setLoading(false);
+                if (!signal.aborted) {
+
+                    setLoading(false);
+
+                }
 
             }
 
@@ -96,10 +91,6 @@ function useApiResource(fetchFunction) {
         [fetchFunction]
 
     );
-
-    // ======================================================
-    // Initial Fetch
-    // ======================================================
 
     useEffect(() => {
 
@@ -115,21 +106,13 @@ function useApiResource(fetchFunction) {
 
     }, [fetchData]);
 
-    // ======================================================
-    // Manual Refresh
-    // ======================================================
-
-    const refresh = () => {
+    const refresh = useCallback(() => {
 
         const controller = new AbortController();
 
         fetchData(controller.signal);
 
-    };
-
-    // ======================================================
-    // Hook API
-    // ======================================================
+    }, [fetchData]);
 
     return {
 

@@ -1,75 +1,122 @@
+import { FaSearch } from "react-icons/fa";
+
+import useApiResource from "../../hooks/useApiResource";
+
+import { getKnowledgeHub } from "../../services/knowledgeHubService";
+
+import LoadingSpinner from "../common/LoadingSpinner";
+import ErrorState from "../common/ErrorState";
+
 import "../../styles/knowledgeHub/hubHero.css";
 
 function HubHero() {
-  return (
-    <section className="hub-hero">
 
-      <div className="container">
+    const {
 
-        <div className="hub-hero-content">
+        data: hub,
 
-          <span className="hub-badge">
+        loading,
 
-            Lifelong Learning
+        error,
 
-          </span>
+    } = useApiResource(getKnowledgeHub);
 
+    if (loading) {
 
-          <h1>
+        return <LoadingSpinner />;
 
-            The Knowledge Hub
+    }
 
-          </h1>
+    if (error) {
 
+        return <ErrorState message={error} />;
 
-          <h2>
+    }
 
-            Curated Resources, Research,
-            Books, Videos, and Tools
-            for Continuous Growth
+    return (
 
-          </h2>
+        <section className="hub-hero">
 
+            <div className="container">
 
-          <p>
+                <div className="hub-hero-content">
 
-            Empowering healthcare professionals,
-            researchers, leaders, and innovators
-            through knowledge, collaboration,
-            and lifelong learning.
+                    <span className="hub-badge">
 
-          </p>
+                        {hub.eyebrow}
 
+                    </span>
 
-          <div className="hub-buttons">
+                    <h1>
 
-            <a
-              href="#collections"
-              className="btn btn-primary"
-            >
+                        {hub.title}
 
-              Explore Resources
+                    </h1>
 
-            </a>
+                    <h2>
 
+                        {hub.subtitle}
 
-            <a
-              href="/contact"
-              className="btn btn-outline"
-            >
+                    </h2>
 
-              Collaborate
+                    <p>
 
-            </a>
+                        {hub.description}
 
-          </div>
+                    </p>
 
-        </div>
+                    {/* Premium Search */}
 
-      </div>
+                    <div className="hub-search-bar">
 
-    </section>
-  );
+                        <FaSearch className="hub-search-icon" />
+
+                        <input
+
+                            type="text"
+
+                            placeholder={hub.search_placeholder}
+
+                        />
+
+                    </div>
+
+                    <div className="hub-buttons">
+
+                        <a
+
+                            href="#collections"
+
+                            className="btn btn-primary"
+
+                        >
+
+                            Explore Collections
+
+                        </a>
+
+                        <a
+
+                            href="/contact"
+
+                            className="btn btn-outline"
+
+                        >
+
+                            Collaborate
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    );
+
 }
 
 export default HubHero;

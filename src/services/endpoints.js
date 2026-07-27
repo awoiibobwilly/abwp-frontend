@@ -56,4 +56,40 @@ PROJECTS_PAGE: "/projects/",
    ============================== */
 
    INSIGHTS_PAGE: "/insights/insights-page/",
+
+
+   /* ==============================
+   KNOWLEDGE HUB
+============================== */
+
+KNOWLEDGE_HUB: "/hub/",
+
+SEARCH_CONFIGURATION:
+"/hub/search-configuration/",
+
+THEMES:
+"/hub/themes/",
+
+TAGS:
+"/hub/tags/",
+
+ORGANIZATIONS:
+"/hub/organizations/",
+
+LIBRARY_RESOURCES:
+"/hub/library-resources/",
+
+LEARNING_VIDEOS:
+"/hub/learning-videos/",
+
+PRACTICAL_RESOURCES:
+"/hub/practical-resources/",
+
+RESEARCH_CONTRIBUTIONS:
+"/hub/research-contributions/",
+
+
   };
+
+
+  

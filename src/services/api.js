@@ -6,16 +6,46 @@ import axios from "axios";
 
 const api = axios.create({
 
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_BASE_URL,
 
-  timeout: 10000,
+    timeout: 10000,
 
-  headers: {
+    headers: {
 
-    "Content-Type": "application/json",
+        "Content-Type": "application/json",
 
-  },
+    },
 
 });
+
+
+/* ==========================================
+   REQUEST INTERCEPTOR
+========================================== */
+
+api.interceptors.request.use(
+
+    (config) => {
+
+        return config;
+
+    },
+
+    (error) => Promise.reject(error)
+
+);
+
+
+/* ==========================================
+   RESPONSE INTERCEPTOR
+========================================== */
+
+api.interceptors.response.use(
+
+    (response) => response,
+
+    (error) => Promise.reject(error)
+
+);
 
 export default api;
