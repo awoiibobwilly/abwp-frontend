@@ -246,6 +246,62 @@
   
     transform: translateY(-2px);
   }
+
+
+/* ==========================================
+   BOOK PLACEHOLDER
+========================================== */
+
+.book-placeholder{
+
+  width:100%;
+  aspect-ratio:3 / 4;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1rem;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+      135deg,
+      #f8fafc,
+      #e2e8f0
+  );
+
+  border:1px solid #e2e8f0;
+
+  color:#2563eb;
+
+  transition:.35s ease;
+
+}
+
+.book-placeholder svg{
+
+  font-size:3rem;
+
+}
+
+.book-placeholder span{
+
+  font-size:.85rem;
+
+  font-weight:600;
+
+  text-transform:capitalize;
+
+  color:#64748b;
+
+}
+
+.book-card:hover .book-placeholder{
+
+  transform:scale(1.03);
+
+}
   
   
   /* ==========================================

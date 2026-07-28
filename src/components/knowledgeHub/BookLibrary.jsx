@@ -1,68 +1,92 @@
 import BookCard from "./BookCard";
 
-import {
-  booksData,
-} from "../../data/knowledgeHub/booksData";
+import useApiResource from "../../hooks/useApiResource";
+
+import { getLibraryResources } from "../../services/knowledgeHubService";
+
+import LoadingSpinner from "../common/LoadingSpinner";
+import ErrorState from "../common/ErrorState";
 
 import "../../styles/knowledgeHub/bookLibrary.css";
 
 function BookLibrary() {
 
-  return (
+    const {
 
-    <section className="book-library section">
+        data: books = [],
 
-      <div className="container">
+        loading,
 
-        <div className="book-library-header">
+        error,
 
-          <span className="book-library-badge">
+    } = useApiResource(
 
-            Books & Literature
+        getLibraryResources,
 
-          </span>
+        []
 
+    );
 
-          <h2 className="section-title">
+    if (loading) {
 
-            Explore the Library
+        return <LoadingSpinner />;
 
-          </h2>
+    }
 
+    if (error) {
 
-          <p className="section-subtitle">
+        return <ErrorState message={error} />;
 
-            Curated books and literature
-            supporting leadership, healthcare,
-            research, and lifelong learning.
+    }
 
-          </p>
+    return (
 
-        </div>
+        <section className="book-library section">
 
+            <div className="container">
 
-        <div className="book-grid">
+                <div className="book-library-header">
 
-          {booksData.map(
+                    <span className="book-library-badge">
 
-            (book, index) => (
+                        Knowledge Library
 
-              <BookCard
-                key={index}
-                book={book}
-              />
+                    </span>
 
-            )
+                    <h2 className="section-title">
 
-          )}
+                        Explore the Library
 
-        </div>
+                    </h2>
 
-      </div>
+                    <p className="section-subtitle">
 
-    </section>
+                        Curated books, frameworks, reports and professional
+                        resources supporting healthcare, technology,
+                        leadership and lifelong learning.
 
-  );
+                    </p>
+
+                </div>
+
+                <div className="book-grid">
+
+                    {books.map((book) => (
+
+                        <BookCard
+                            key={book.id}
+                            book={book}
+                        />
+
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    );
 
 }
 

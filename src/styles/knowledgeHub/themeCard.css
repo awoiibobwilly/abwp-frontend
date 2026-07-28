@@ -1,0 +1,159 @@
+/* ==========================================
+   THEME CARD
+========================================== */
+
+.theme-card{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    height:100%;
+
+    padding:2rem;
+
+    border-radius:24px;
+
+    background:#fff;
+
+    border:1px solid #eef2f7;
+
+    border-top:5px solid var(--theme-color);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    overflow:hidden;
+
+}
+
+.theme-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 25px 55px rgba(15,23,42,.12);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.theme-header{
+
+    margin-bottom:2rem;
+
+}
+
+.theme-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:2rem;
+
+    background:color-mix(in srgb, var(--theme-color) 12%, white);
+
+    color:var(--theme-color);
+
+    transition:.35s;
+
+}
+
+.theme-card:hover .theme-icon{
+
+    transform:scale(1.08) rotate(-4deg);
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+.theme-body h3{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:1rem;
+
+    transition:.3s;
+
+}
+
+.theme-card:hover .theme-body h3{
+
+    color:var(--theme-color);
+
+}
+
+.theme-body p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.theme-footer{
+
+    margin-top:2rem;
+
+    padding-top:1.5rem;
+
+    border-top:1px solid #e2e8f0;
+
+}
+
+.theme-link{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--theme-color);
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.theme-link svg{
+
+    transition:.3s;
+
+}
+
+.theme-card:hover .theme-link svg{
+
+    transform:translateX(6px);
+
+}

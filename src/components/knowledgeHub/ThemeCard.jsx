@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 import {
+    FaArrowRight,
     FaHeartbeat,
     FaGlobeAfrica,
     FaLaptopMedical,
@@ -12,12 +15,13 @@ import {
     FaFolderOpen,
 } from "react-icons/fa";
 
+import "../../styles/knowledgeHub/themeCard.css";
+
 /* ==========================================
    ICON MAP
 ========================================== */
 
 const ICONS = {
-
     FaHeartbeat,
     FaGlobeAfrica,
     FaLaptopMedical,
@@ -28,7 +32,6 @@ const ICONS = {
     FaUsers,
     FaClipboardCheck,
     FaRocket,
-
 };
 
 /* ==========================================
@@ -42,34 +45,56 @@ function ThemeCard({ theme }) {
     return (
 
         <article
-            className="collection-card"
+            className="theme-card"
             style={{
-                borderTop: `4px solid ${theme.accent_color}`,
+                "--theme-color": theme.accent_color,
             }}
         >
 
-            <div
-                className="collection-icon"
-                style={{
-                    color: theme.accent_color,
-                }}
-            >
+            <div className="theme-header">
 
-                <Icon />
+                <div className="theme-icon">
+
+                    <Icon />
+
+                </div>
 
             </div>
 
-            <h3>
+            <div className="theme-body">
 
-                {theme.title}
+                <h3>
 
-            </h3>
+                    {theme.title}
 
-            <p>
+                </h3>
 
-                {theme.short_description}
+                <p>
 
-            </p>
+                    {theme.short_description}
+
+                </p>
+
+            </div>
+
+            <div className="theme-footer">
+
+                <Link
+                    to={`/knowledge-hub/themes/${theme.slug}`}
+                    className="theme-link"
+                >
+
+                    <span>
+
+                        Explore Theme
+
+                    </span>
+
+                    <FaArrowRight />
+
+                </Link>
+
+            </div>
 
         </article>
 
