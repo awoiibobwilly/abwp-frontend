@@ -1,68 +1,104 @@
 import VideoCard from "./VideoCard";
 
-import {
-  videosData,
-} from "../../data/knowledgeHub/videosData";
+import useApiResource from "../../hooks/useApiResource";
+
+import { getLearningVideos } from "../../services/knowledgeHubService";
+
+import LoadingSpinner from "../common/LoadingSpinner";
+import ErrorState from "../common/ErrorState";
 
 import "../../styles/knowledgeHub/videoLibrary.css";
 
+
+import EmptyState from "../common/EmptyState";
+
 function VideoLibrary() {
 
-  return (
+    const {
 
-    <section className="video-library section">
+        data: videos = [],
 
-      <div className="container">
+        loading,
 
-        <div className="video-library-header">
+        error,
 
-          <span className="video-library-badge">
+    } = useApiResource(
+        getLearningVideos,
+        []
+    );
 
-            Video Library
+    if (loading) {
 
-          </span>
+        return <LoadingSpinner />;
 
+    }
 
-          <h2 className="section-title">
+    if (error) {
 
-            Watch and Learn
+        return <ErrorState message={error} />;
 
-          </h2>
+    }
 
+    return (
 
-          <p className="section-subtitle">
+        <section className="video-library section">
 
-            Explore curated educational videos,
-            tutorials, and presentations supporting
-            research, leadership, healthcare, and innovation.
+            <div className="container">
 
-          </p>
+                <div className="video-library-header">
 
-        </div>
+                    <span className="video-library-badge">
 
+                        Video Library
 
-        <div className="video-grid">
+                    </span>
 
-          {videosData.map(
+                    <h2 className="section-title">
 
-            (video, index) => (
+                        Watch and Learn
 
-              <VideoCard
-                key={index}
-                video={video}
-              />
+                    </h2>
 
-            )
+                    <p className="section-subtitle">
 
-          )}
+                        Explore curated educational videos,
+                        tutorials, webinars, and presentations
+                        supporting healthcare, research,
+                        leadership, and technology.
 
-        </div>
+                    </p>
 
-      </div>
+                </div>
 
-    </section>
+                {videos.length === 0 ? (
 
-  );
+                <EmptyState
+                    title="No learning videos available"
+                    message="Educational videos will appear here as they are added."
+                />
+
+                ) : (
+
+                <div className="video-grid">
+
+                    {videos.map(video => (
+
+                        <VideoCard
+                            key={video.id}
+                            video={video}
+                        />
+
+                    ))}
+
+                </div>
+
+                )}
+
+            </div>
+
+        </section>
+
+    );
 
 }
 

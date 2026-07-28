@@ -1,6 +1,14 @@
+import { FaInbox } from "react-icons/fa";
+
+import "../../styles/common/emptyState.css";
+
 function EmptyState({
 
-    message = "No data available.",
+    icon: Icon = FaInbox,
+
+    title,
+
+    message,
 
 }) {
 
@@ -8,11 +16,15 @@ function EmptyState({
 
         <div className="empty-state">
 
-            <p>
+            <div className="empty-icon">
 
-                {message}
+                <Icon />
 
-            </p>
+            </div>
+
+            <h3>{title}</h3>
+
+            <p>{message}</p>
 
         </div>
 

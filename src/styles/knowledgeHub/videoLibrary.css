@@ -137,11 +137,19 @@
 
     color:white;
 
-    background:
-    rgba(0,0,0,.15);
+    background:rgba(15,23,42,.55);
+
+    opacity:0;
+
+    transition:.35s ease;
 
 }
 
+.video-card:hover .video-play{
+
+    opacity:1;
+
+}
 
 /* ==========================================
    CONTENT
@@ -194,6 +202,16 @@
 }
 
 
+.video-presenter{
+
+    margin:.75rem 0;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
 /* ==========================================
    ACTIONS
 ========================================== */
@@ -233,5 +251,94 @@
     background:var(--primary);
 
     color:white;
+
+}
+
+.video-summary{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+    min-height:84px;
+
+}
+
+
+.video-watch{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    width:100%;
+
+    padding:1rem;
+
+    margin-top:1.5rem;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #3b82f6
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+.video-watch:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
+
+}
+
+.video-watch:hover{
+
+    transform:translateY(-2px);
+
+    background:var(--primary-dark);
+
+}
+
+.video-platform{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.45rem .85rem;
+
+    border-radius:999px;
+
+    background:#fff5f5;
+
+    color:#ff0000;
+
+    font-size:.85rem;
+
+    font-weight:600;
 
 }
