@@ -128,7 +128,7 @@ export const getLearningVideos = ({ signal } = {}) =>
     );
 
 /* ==========================================
-   PRACTICAL RESOURCES
+   RESOURCE DIRECTORY
 ========================================== */
 
 export const getPracticalResources = ({ signal } = {}) =>
@@ -137,7 +137,7 @@ export const getPracticalResources = ({ signal } = {}) =>
         normalizeCollection,
         signal
     );
-
+    
 /* ==========================================
    RESEARCH CONTRIBUTIONS
 ========================================== */

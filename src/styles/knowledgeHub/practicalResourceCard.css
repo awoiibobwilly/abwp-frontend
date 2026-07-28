@@ -1,0 +1,589 @@
+/* ==========================================
+   PRACTICAL RESOURCE CARD
+========================================== */
+
+.resource-card{
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.resource-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:
+
+        0 24px 60px rgba(15,23,42,.08);
+
+}
+
+/* IMAGE */
+
+.resource-card-image{
+
+    position:relative;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+
+}
+
+.resource-card-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+
+}
+
+.resource-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.resource-card-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        transparent,
+
+        rgba(15,23,42,.10)
+
+    );
+
+}
+
+/* BODY */
+
+.resource-card-body{
+
+    padding:1.75rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    flex:1;
+
+}
+
+/* HEADER */
+
+.resource-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.resource-type{
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+}
+
+.resource-version{
+
+    color:#64748b;
+
+    font-size:.82rem;
+
+}
+
+/* TYPOGRAPHY */
+
+.resource-title{
+
+    color:#0f172a;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    line-height:1.35;
+
+}
+
+.resource-summary{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+/* THEMES */
+
+.resource-themes{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.55rem;
+
+}
+
+.theme-chip{
+
+    background:#eff6ff;
+
+    color:#1d4ed8;
+
+    padding:.4rem .8rem;
+
+    border-radius:999px;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+}
+
+/* TAGS */
+
+.resource-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.5rem;
+
+}
+
+.tag-chip{
+
+    background:#f8fafc;
+
+    color:#475569;
+
+    border:1px solid #e2e8f0;
+
+    padding:.35rem .7rem;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+}
+
+/* ==========================================
+   RESOURCE CARD FOOTER
+========================================== */
+
+.resource-actions{
+
+    margin-top:auto;
+
+    padding-top:1.5rem;
+
+    border-top:1px solid #e2e8f0;
+
+}
+
+.resource-action{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.7rem;
+
+    padding:1rem 1.25rem;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.resource-action.primary{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:#ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(37,99,235,.18);
+
+}
+
+.resource-action.primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 14px 32px rgba(37,99,235,.28);
+
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+   (Future Ready)
+========================================== */
+
+.resource-action.secondary{
+
+    background:#ffffff;
+
+    color:#334155;
+
+    border:1px solid #cbd5e1;
+
+}
+
+.resource-action.secondary:hover{
+
+    background:#f8fafc;
+
+    border-color:#94a3b8;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================
+   DISABLED BUTTON
+========================================== */
+
+.resource-action:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+    box-shadow:none;
+
+    transform:none;
+
+}
+
+
+/* ==========================================
+   ICONS
+========================================== */
+
+.resource-action i{
+
+    font-size:1rem;
+
+    transition:transform .25s ease;
+
+}
+
+.resource-action:hover i{
+
+    transform:translateX(4px);
+
+}
+
+
+/* ==========================================
+   LABEL
+========================================== */
+
+.resource-action span{
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:576px){
+
+    .resource-action{
+
+        padding:.95rem 1rem;
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/* BADGE COLORS */
+
+/* Checklist */
+
+.resource-type-checklist{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    border-color:#bfdbfe;
+
+}
+
+/* Template */
+
+.resource-type-template{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    border-color:#bbf7d0;
+
+}
+
+/* Toolkit */
+
+.resource-type-toolkit{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+    border-color:#fde68a;
+
+}
+
+/* Framework */
+
+.resource-type-framework{
+
+    background:#ede9fe;
+
+    color:#6d28d9;
+
+    border-color:#ddd6fe;
+
+}
+
+/* Guideline */
+
+.resource-type-guideline{
+
+    background:#cffafe;
+
+    color:#0f766e;
+
+    border-color:#99f6e4;
+
+}
+
+/* Dataset */
+
+.resource-type-dataset{
+
+    background:#e0e7ff;
+
+    color:#4338ca;
+
+    border-color:#c7d2fe;
+
+}
+
+/* Calculator */
+
+.resource-type-calculator{
+
+    background:#ffe4e6;
+
+    color:#be123c;
+
+    border-color:#fecdd3;
+
+}
+
+/* Policy */
+
+.resource-type-policy{
+
+    background:#f1f5f9;
+
+    color:#475569;
+
+    border-color:#cbd5e1;
+
+}
+
+/* Protocol */
+
+.resource-type-protocol{
+
+    background:#ecfccb;
+
+    color:#3f6212;
+
+    border-color:#d9f99d;
+
+}
+
+/* Standard */
+
+.resource-type-standard{
+
+    background:#ede9fe;
+
+    color:#5b21b6;
+
+    border-color:#ddd6fe;
+
+}
+
+/* Trusted Platform */
+
+.resource-type-trusted_platform{
+
+    background:#fef2f2;
+
+    color:#b91c1c;
+
+    border-color:#fecaca;
+
+}
+
+
+.resource-card:hover .resource-type{
+
+    transform:translateY(-1px);
+
+    transition:all .25s ease;
+
+}
+
+/* ==========================================
+   RESOURCE TYPE BADGES
+========================================== */
+
+.resource-type{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.45rem .95rem;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+    text-transform:capitalize;
+
+    border:1px solid transparent;
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width:992px){
+
+    .resource-directory-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .resource-directory-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

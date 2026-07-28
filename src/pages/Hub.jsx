@@ -1,20 +1,11 @@
 import HubHero from "../components/knowledgeHub/HubHero";
-import FeaturedThemes from
-"../components/knowledgeHub/FeaturedThemes";
-import ResourceFilters from
-"../components/knowledgeHub/ResourceFilters";
-import BookLibrary from
-"../components/knowledgeHub/BookLibrary";
-import VideoLibrary from
-"../components/knowledgeHub/VideoLibrary";
-import ResourceDirectory from
-"../components/knowledgeHub/ResourceDirectory";
-import ToolsTemplates from
-"../components/knowledgeHub/ToolsTemplates";
-import PublicationsArchive from
-"../components/knowledgeHub/PublicationsArchive";
-import HubSearch from
-"../components/knowledgeHub/HubSearch";
+import FeaturedThemes from "../components/knowledgeHub/FeaturedThemes";
+import BookLibrary from "../components/knowledgeHub/BookLibrary";
+import VideoLibrary from "../components/knowledgeHub/VideoLibrary";
+import ResourceDirectory from "../components/knowledgeHub/PracticalResources";
+import ToolsTemplates from "../components/knowledgeHub/ToolsTemplates";
+import PublicationsArchive from "../components/knowledgeHub/PublicationsArchive";
+import HubSearch from "../components/knowledgeHub/HubSearch";
 
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
@@ -25,8 +16,6 @@ function Hub() {
       <HubHero />
 
       <FeaturedThemes />
-
-      <ResourceFilters />
 
       <BookLibrary />
 
@@ -40,15 +29,10 @@ function Hub() {
 
       <HubSearch />
 
-      <UniversalCTA
-
-            page="hub"
-
-        />
-
-
+      <UniversalCTA page="hub" />
     </>
   );
+
 }
 
 export default Hub;

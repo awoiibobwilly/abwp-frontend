@@ -1,210 +1,199 @@
 /* ==========================================
-   HEADER
+   PRACTICAL RESOURCES SECTION
 ========================================== */
 
-.resource-directory-header {
+.resource-directory{
 
-    max-width: 850px;
-  
-    margin: 0 auto 5rem;
-  
-    text-align: center;
-  
+  background:
+      linear-gradient(
+          180deg,
+          #ffffff,
+          #f8fafc
+      );
+
+}
+
+
+/* ==========================================
+ HEADER
+========================================== */
+
+.resource-directory-header{
+
+  max-width:900px;
+
+  margin:0 auto 4rem;
+
+  text-align:center;
+
+}
+
+.resource-directory-badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:.65rem;
+
+  padding:.7rem 1.4rem;
+
+  margin-bottom:1.5rem;
+
+  border-radius:999px;
+
+  background:#eff6ff;
+
+  color:#2563eb;
+
+  font-size:.9rem;
+
+  font-weight:600;
+
+}
+
+.resource-directory-title{
+
+  margin-bottom:1.2rem;
+
+  color:#0f172a;
+
+  font-size:clamp(2rem,4vw,3rem);
+
+  font-weight:700;
+
+  line-height:1.2;
+
+}
+
+.resource-directory-description{
+
+  max-width:760px;
+
+  margin:0 auto;
+
+  color:#64748b;
+
+  font-size:1.05rem;
+
+  line-height:1.8;
+
+}
+
+
+/* ==========================================
+ STATS
+========================================== */
+
+.resource-stats{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:3rem;
+
+  margin-top:2.5rem;
+
+}
+
+.resource-stat{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:.35rem;
+
+}
+
+.resource-stat strong{
+
+  color:#2563eb;
+
+  font-size:2rem;
+
+  font-weight:700;
+
+}
+
+.resource-stat span{
+
+  color:#64748b;
+
+  font-size:.9rem;
+
+}
+
+
+/* ==========================================
+ GRID
+========================================== */
+
+.resource-directory-grid{
+
+  margin-top:3rem;
+
+  display:grid;
+
+  grid-template-columns:
+      repeat(auto-fit,minmax(340px,1fr));
+
+  gap:2rem;
+
+}
+
+
+/* ==========================================
+ RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+  .resource-stats{
+
+      gap:2rem;
+
   }
-  
-  .resource-directory-badge {
-  
-    display: inline-block;
-  
-    padding: .8rem 1.5rem;
-  
-    margin-bottom: 1.5rem;
-  
-    border-radius: 999px;
-  
-    background: rgba(59,130,246,.1);
-  
-    color: var(--primary);
-  
-    font-weight: 600;
-  
+
+}
+
+@media (max-width:768px){
+
+  .resource-directory-grid{
+
+      grid-template-columns:1fr;
+
   }
-  
-  
-  /* ==========================================
-     GRID
-  ========================================== */
-  
-  .resource-directory-grid {
-  
-    display: grid;
-  
-    grid-template-columns:
-    repeat(auto-fit,minmax(320px,1fr));
-  
-    gap: 2rem;
-  
+
+  .resource-stats{
+
+      flex-direction:column;
+
+      gap:1.5rem;
+
   }
-  
-  
-  /* ==========================================
-     CARD
-  ========================================== */
-  
-  .resource-directory-card {
-  
-    position: relative;
-  
-    overflow: hidden;
-  
-    padding: 2.5rem;
-  
-    background: white;
-  
-    border-radius: 2rem;
-  
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.06);
-  
-    transition:
-    transform .35s ease,
-    box-shadow .35s ease;
-  
+
+}
+
+@media (max-width:576px){
+
+  .resource-directory-header{
+
+      margin-bottom:3rem;
+
   }
-  
-  
-  .resource-directory-card:hover {
-  
-    transform: translateY(-8px);
-  
-    box-shadow:
-    0 30px 80px rgba(15,23,42,.12);
-  
+
+  .resource-directory-title{
+
+      font-size:2rem;
+
   }
-  
-  
-  .resource-directory-card::before {
-  
-    content: "";
-  
-    position: absolute;
-  
-    top: 0;
-  
-    left: 0;
-  
-    width: 0;
-  
-    height: 4px;
-  
-    background:
-    linear-gradient(
-      90deg,
-      var(--primary),
-      var(--accent)
-    );
-  
-    transition: .35s ease;
-  
+
+  .resource-directory-description{
+
+      font-size:1rem;
+
   }
-  
-  
-  .resource-directory-card:hover::before {
-  
-    width: 100%;
-  
-  }
-  
-  
-  /* ==========================================
-     ICON
-  ========================================== */
-  
-  .resource-directory-icon {
-  
-    width: 65px;
-  
-    height: 65px;
-  
-    display: flex;
-  
-    justify-content: center;
-  
-    align-items: center;
-  
-    margin-bottom: 1.5rem;
-  
-    border-radius: 1rem;
-  
-    background: rgba(59,130,246,.1);
-  
-    color: var(--primary);
-  
-    font-size: 1.4rem;
-  
-  }
-  
-  
-  /* ==========================================
-     TEXT
-  ========================================== */
-  
-  .resource-directory-category {
-  
-    display: inline-block;
-  
-    margin-bottom: 1rem;
-  
-    color: var(--primary);
-  
-    font-size: .9rem;
-  
-    font-weight: 600;
-  
-  }
-  
-  
-  .resource-directory-card h3 {
-  
-    margin-bottom: 1rem;
-  
-  }
-  
-  
-  .resource-directory-card p {
-  
-    color: var(--text-light);
-  
-    line-height: 1.8;
-  
-    margin-bottom: 2rem;
-  
-  }
-  
-  
-  /* ==========================================
-     LINK
-  ========================================== */
-  
-  .resource-directory-link {
-  
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: .7rem;
-  
-    color: var(--primary);
-  
-    font-weight: 600;
-  
-    transition: .3s ease;
-  
-  }
-  
-  
-  .resource-directory-link:hover {
-  
-    color: var(--accent);
-  
-  }
+
+}

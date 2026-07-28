@@ -1,45 +1,58 @@
-import {
-  resourceFiltersData,
-} from "../../data/knowledgeHub/resourceFiltersData";
-
 import "../../styles/knowledgeHub/resourceFilters.css";
 
-function ResourceFilters() {
+function ResourceFilters({
 
-  return (
+    filters = [],
 
-    <section className="resource-filters">
+    activeFilter = "All",
 
-      <div className="container">
+    onFilterChange = () => {},
 
-        <div className="resource-filters-wrapper">
+}) {
 
-          {resourceFiltersData.map(
+    return (
 
-            (filter, index) => (
+        <section className="resource-filters">
 
-              <button
-                key={index}
-                className={`resource-filter-btn ${
-                  index === 0 ? "active" : ""
-                }`}
-              >
+            <div className="container">
 
-                {filter}
+                <div className="resource-filters-wrapper">
 
-              </button>
+                    {filters.map((filter) => (
 
-            )
+                        <button
 
-          )}
+                            key={filter.value}
 
-        </div>
+                            type="button"
 
-      </div>
+                            className={`resource-filter-btn ${
+                                activeFilter === filter.value
+                                    ? "active"
+                                    : ""
+                            }`}
 
-    </section>
+                            aria-pressed={activeFilter === filter.value}
 
-  );
+                            onClick={() =>
+                                onFilterChange(filter.value)
+                            }
+
+                        >
+
+                            {filter.label}
+
+                        </button>
+
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    );
 
 }
 
