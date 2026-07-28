@@ -48,6 +48,7 @@ export const getKnowledgeHub = ({ signal } = {}) =>
         signal
     );
 
+
 /* ==========================================
    SEARCH CONFIGURATION
 ========================================== */
@@ -56,6 +57,18 @@ export const getSearchConfiguration = ({ signal } = {}) =>
     getResource(
         ENDPOINTS.SEARCH_CONFIGURATION,
         normalizeObject,
+        signal
+    );
+
+
+/* ==========================================
+   FEATURED_COLLECTIONS
+========================================== */
+
+export const getFeaturedCollections = ({ signal } = {}) =>
+    getResource(
+        ENDPOINTS.FEATURED_COLLECTIONS,
+        normalizeCollection,
         signal
     );
 

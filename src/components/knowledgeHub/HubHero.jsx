@@ -91,7 +91,7 @@ function HubHero() {
 
                         >
 
-                            Explore Collections
+                            Explore Themes
 
                         </a>
 

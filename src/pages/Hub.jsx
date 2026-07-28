@@ -1,5 +1,5 @@
 import HubHero from "../components/knowledgeHub/HubHero";
-import FeaturedCollections from "../components/knowledgeHub/FeaturedCollections";
+import FeaturedCollections from "../components/knowledgeHub/FeaturedThemes";
 import ResourceFilters from
 "../components/knowledgeHub/ResourceFilters";
 import BookLibrary from

@@ -88,6 +88,7 @@ PRACTICAL_RESOURCES:
 RESEARCH_CONTRIBUTIONS:
 "/hub/research-contributions/",
 
+FEATURED_COLLECTIONS: "/collections/",
 
   };
 
