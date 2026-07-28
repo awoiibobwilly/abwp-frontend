@@ -12,9 +12,13 @@ import "../../styles/knowledgeHub/featuredThemes.css";
 function FeaturedThemes() {
 
     const {
+
         data: themes = [],
+
         loading,
+
         error,
+
     } = useApiResource(getThemes, []);
 
     if (loading) {
@@ -33,7 +37,7 @@ function FeaturedThemes() {
 
         <section
             className="featured-collections section"
-            id="collections"
+            id="themes"
         >
 
             <div className="container">
@@ -41,16 +45,23 @@ function FeaturedThemes() {
                 <div className="collections-header">
 
                     <span className="collections-badge">
+
                         Knowledge Themes
+
                     </span>
 
                     <h2 className="section-title">
+
                         Explore Knowledge by Theme
+
                     </h2>
 
                     <p className="section-subtitle">
-                        Curated themes designed to support lifelong learning,
-                        research, innovation, and professional growth.
+
+                        Curated themes bringing together resources,
+                        research, practical tools, and learning materials
+                        across multidisciplinary domains.
+
                     </p>
 
                 </div>

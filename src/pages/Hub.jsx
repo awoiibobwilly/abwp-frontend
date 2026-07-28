@@ -1,5 +1,6 @@
 import HubHero from "../components/knowledgeHub/HubHero";
-import FeaturedCollections from "../components/knowledgeHub/FeaturedThemes";
+import FeaturedThemes from
+"../components/knowledgeHub/FeaturedThemes";
 import ResourceFilters from
 "../components/knowledgeHub/ResourceFilters";
 import BookLibrary from
@@ -23,7 +24,7 @@ function Hub() {
     <>
       <HubHero />
 
-      <FeaturedCollections />
+      <FeaturedThemes />
 
       <ResourceFilters />
 

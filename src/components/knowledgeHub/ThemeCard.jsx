@@ -1,78 +1,80 @@
 import {
-  FaHeartbeat,
-  FaGlobeAfrica,
-  FaLaptopMedical,
-  FaFlask,
-  FaCode,
-  FaChartLine,
-  FaBrain,
-  FaUsers,
-  FaClipboardCheck,
-  FaRocket,
-  FaFolderOpen,
+    FaHeartbeat,
+    FaGlobeAfrica,
+    FaLaptopMedical,
+    FaFlask,
+    FaCode,
+    FaChartLine,
+    FaBrain,
+    FaUsers,
+    FaClipboardCheck,
+    FaRocket,
+    FaFolderOpen,
 } from "react-icons/fa";
 
 /* ==========================================
- ICON MAP
+   ICON MAP
 ========================================== */
 
 const ICONS = {
-  FaHeartbeat,
-  FaGlobeAfrica,
-  FaLaptopMedical,
-  FaFlask,
-  FaCode,
-  FaChartLine,
-  FaBrain,
-  FaUsers,
-  FaClipboardCheck,
-  FaRocket,
+
+    FaHeartbeat,
+    FaGlobeAfrica,
+    FaLaptopMedical,
+    FaFlask,
+    FaCode,
+    FaChartLine,
+    FaBrain,
+    FaUsers,
+    FaClipboardCheck,
+    FaRocket,
+
 };
 
 /* ==========================================
- COLLECTION CARD
+   THEME CARD
 ========================================== */
 
-function CollectionCard({ theme }) {
+function ThemeCard({ theme }) {
 
-  const Icon = ICONS[theme.icon] || FaFolderOpen;
+    const Icon = ICONS[theme.icon] || FaFolderOpen;
 
-  return (
+    return (
 
-      <div
-          className="collection-card"
-          style={{
-              borderTop: `4px solid ${theme.accent_color}`,
-          }}
-      >
+        <article
+            className="collection-card"
+            style={{
+                borderTop: `4px solid ${theme.accent_color}`,
+            }}
+        >
 
-          <div
-              className="collection-icon"
-              style={{
-                  color: theme.accent_color,
-              }}
-          >
+            <div
+                className="collection-icon"
+                style={{
+                    color: theme.accent_color,
+                }}
+            >
 
-              <Icon />
+                <Icon />
 
-          </div>
+            </div>
 
-          <h3>
+            <h3>
 
-              {theme.title}
+                {theme.title}
 
-          </h3>
+            </h3>
 
-          <p>
+            <p>
 
-              {theme.short_description}
+                {theme.short_description}
 
-          </p>
+            </p>
 
-      </div>
+        </article>
 
-  );
+    );
 
 }
 
-export default CollectionCard;
+export default ThemeCard;
