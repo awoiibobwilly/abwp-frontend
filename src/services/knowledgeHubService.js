@@ -8,6 +8,7 @@ import {
     handleApiError,
 } from "../api/helpers";
 
+
 /* ==========================================
    GENERIC GET REQUEST
 ========================================== */
@@ -148,3 +149,27 @@ export const getResearchContributions = ({ signal } = {}) =>
         normalizeCollection,
         signal
     );
+
+/* ==========================================
+   RESEARCH DETAIL
+========================================== */
+
+export const getResearchContributionBySlug = async (
+    slug,
+    { signal } = {}
+) => {
+
+    const researchContributions =
+        await getResearchContributions({ signal });
+
+    return (
+
+        researchContributions.find(
+
+            research => research.slug === slug
+
+        ) || null
+
+    );
+
+};

@@ -1,0 +1,9 @@
+export { default as ResearchHeader } from "./ResearchHeader";
+export { default as ResearchCover } from "./ResearchCover";
+export { default as ResearchIntro } from "./ResearchIntro";
+export { default as ResearchAbstract } from "./sections/ResearchAbstract";
+export { default as ResearchMetadata } from "./sections/ResearchMetadata";
+export { default as ResearchThemes } from "./sections/ResearchThemes";
+export { default as ResearchTags } from "./sections/ResearchTags";
+export { default as ResearchResources } from "./sections/ResearchResources";
+export { default as ResearchRelated } from "./ResearchRelated";

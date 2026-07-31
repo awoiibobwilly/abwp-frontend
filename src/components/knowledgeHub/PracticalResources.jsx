@@ -23,7 +23,9 @@ function PracticalResources() {
         error,
     } = useApiResource(
         getPracticalResources,
-        []
+        {
+            initialData: [],
+        }
     );
 
     const [activeFilter, setActiveFilter] = useState("All");

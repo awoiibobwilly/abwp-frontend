@@ -19,11 +19,7 @@ function MainLayout() {
 
       <main className="main-content">
 
-      <PageTransition>
-
       <Outlet />
-
-      </PageTransition>
 
       </main>
 

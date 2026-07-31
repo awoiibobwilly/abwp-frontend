@@ -1,29 +1,77 @@
-// src/utils/getErrorMessage.js
+/**
+ * ==========================================
+ * GET ERROR MESSAGE
+ * ==========================================
+ */
 
-export const getErrorMessage = (error) => {
-    // 1. Handle global/detail errors first
-    if (error?.detail) {
-        return error.detail;
+export function getErrorMessage(error) {
+
+    // Native JavaScript Error
+    if (error instanceof Error) {
+
+        return error.message;
+
     }
 
-    // 2. Safely get the first validation key
-    if (error && typeof error === 'object') {
-        const keys = Object.keys(error);
-        if (keys.length > 0) {
-            const firstKey = keys[0];
-            const errorValue = error[firstKey];
+    // Axios / DRF response
+    const responseData = error?.response?.data;
 
-            // If the value is an array, extract the first message string
-            if (Array.isArray(errorValue) && errorValue.length > 0) {
-                return errorValue[0];
-            }
-            
-            // Fallback if the value is just a direct string
-            if (typeof errorValue === 'string') {
-                return errorValue;
-            }
+    if (responseData) {
+
+        // Global DRF error
+        if (responseData.detail) {
+
+            return responseData.detail;
+
         }
+
+        // Validation errors
+        if (typeof responseData === "object") {
+
+            const keys = Object.keys(responseData);
+
+            if (keys.length > 0) {
+
+                const firstValue = responseData[keys[0]];
+
+                if (
+
+                    Array.isArray(firstValue) &&
+
+                    firstValue.length > 0
+
+                ) {
+
+                    return firstValue[0];
+
+                }
+
+                if (typeof firstValue === "string") {
+
+                    return firstValue;
+
+                }
+
+            }
+
+        }
+
     }
 
-    return "An unexpected error occurred.";
-};
+    // Direct object with detail
+    if (error?.detail) {
+
+        return error.detail;
+
+    }
+
+    // Plain string
+    if (typeof error === "string") {
+
+        return error;
+
+    }
+
+    return "Unable to process your request. Please try again.";
+
+}

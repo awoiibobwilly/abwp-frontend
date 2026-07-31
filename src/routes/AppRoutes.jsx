@@ -8,86 +8,116 @@ import About from "../pages/About";
 import Journey from "../pages/Journey";
 import Projects from "../pages/Projects";
 import Research from "../pages/Research";
+import ResearchDetail from "../pages/ResearchDetail";
 import Insights from "../pages/Insights";
 import CV from "../pages/CV";
 import Contact from "../pages/Contact";
 import Hub from "../pages/Hub";
+import Playground from "../pages/Playground";
 import NotFound from "../pages/NotFound";
 
-import Playground from "../pages/Playground";
-
 function AppRoutes() {
-  return (
-    <BrowserRouter>
 
-      <ScrollToTop />
+    return (
 
-      <Routes>
+        <BrowserRouter>
 
-        <Route element={<MainLayout />}>
+            <ScrollToTop />
 
-          <Route
-            path="/"
-            element={<Home />}
-          />
+            <Routes>
 
-          <Route
-            path="/about"
-            element={<About />}
-          />
+                <Route element={<MainLayout />}>
 
-          <Route
-            path="/journey"
-            element={<Journey />}
-          />
+                    {/* Home */}
 
-          <Route
-            path="/projects"
-            element={<Projects />}
-          />
+                    <Route
+                        path="/"
+                        element={<Home />}
+                    />
 
-          <Route
-            path="/research"
-            element={<Research />}
-          />
+                    {/* About */}
 
-          <Route
-            path="/insights"
-            element={<Insights />}
-          />
+                    <Route
+                        path="/about"
+                        element={<About />}
+                    />
 
-          <Route
-            path="/cv"
-            element={<CV />}
-          />
+                    {/* Journey */}
 
-          <Route 
-            path="/knowledge-hub" 
-            element={<Hub />} />  
+                    <Route
+                        path="/journey"
+                        element={<Journey />}
+                    />
 
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+                    {/* Projects */}
 
-          <Route 
-            path="*" 
-            element={<NotFound />} />
+                    <Route
+                        path="/projects"
+                        element={<Projects />}
+                    />
 
-        </Route>
+                    {/* Research */}
 
-        <Route
+                    <Route
+                        path="/research"
+                        element={<Research />}
+                    />
 
-    path="/playground"
+                    <Route
+                        path="/research-contributions/:slug"
+                        element={<ResearchDetail />}
+                    />
 
-    element={<Playground />}
+                    {/* Knowledge Hub */}
 
-/>
+                    <Route
+                        path="/knowledge-hub"
+                        element={<Hub />}
+                    />
 
-      </Routes>
+                    {/* Insights */}
 
-    </BrowserRouter>
-  );
+                    <Route
+                        path="/insights"
+                        element={<Insights />}
+                    />
+
+                    {/* CV */}
+
+                    <Route
+                        path="/cv"
+                        element={<CV />}
+                    />
+
+                    {/* Contact */}
+
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
+                    />
+
+                    {/* 404 */}
+
+                    <Route
+                        path="*"
+                        element={<NotFound />}
+                    />
+
+                </Route>
+
+                {/* Playground */}
+
+                <Route
+                    path="/playground"
+                    element={<Playground />}
+                />
+
+            </Routes>
+
+        </BrowserRouter>
+
+    );
+
 }
 
 export default AppRoutes;

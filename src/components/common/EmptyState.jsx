@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaInbox } from "react-icons/fa";
 
 import "../../styles/common/emptyState.css";
@@ -6,9 +7,9 @@ function EmptyState({
 
     icon: Icon = FaInbox,
 
-    title,
+    title = "Nothing Here",
 
-    message,
+    message = "No data is currently available.",
 
 }) {
 
@@ -22,14 +23,32 @@ function EmptyState({
 
             </div>
 
-            <h3>{title}</h3>
+            <h3>
 
-            <p>{message}</p>
+                {title}
+
+            </h3>
+
+            <p>
+
+                {message}
+
+            </p>
 
         </div>
 
     );
 
 }
+
+EmptyState.propTypes = {
+
+    icon: PropTypes.elementType,
+
+    title: PropTypes.string,
+
+    message: PropTypes.string,
+
+};
 
 export default EmptyState;

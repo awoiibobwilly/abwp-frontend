@@ -1,36 +1,81 @@
-import { useState, useEffect, useCallback } from "react";
+import {
+    useState,
+    useEffect,
+    useCallback,
+    useRef,
+} from "react";
 
-/**
- * ==========================================================
- * useApiResource
- * ==========================================================
- */
+/* ==========================================
+   ERROR HELPER
+========================================== */
 
-function useApiResource(fetchFunction, initialData = null) {
+function getErrorMessage(error) {
+
+    return (
+
+        error?.response?.data?.message ||
+
+        error?.response?.data?.detail ||
+
+        error?.detail ||
+
+        error?.message ||
+
+        "Unable to load data."
+
+    );
+
+}
+
+/* ==========================================
+   API RESOURCE HOOK
+========================================== */
+
+function useApiResource(
+
+    fetchFunction,
+
+    {
+
+        initialData = null,
+
+        immediate = true,
+
+    } = {}
+
+) {
 
     const [data, setData] = useState(initialData);
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(immediate);
 
-    const [error, setError] = useState("");
+    const [error, setError] = useState(null);
+
+    const controllerRef = useRef(null);
 
     const fetchData = useCallback(
 
-        async (signal) => {
+        async () => {
+
+            controllerRef.current?.abort();
+
+            const controller = new AbortController();
+
+            controllerRef.current = controller;
 
             try {
 
                 setLoading(true);
 
-                setError("");
+                setError(null);
 
                 const result = await fetchFunction({
 
-                    signal,
+                    signal: controller.signal,
 
                 });
 
-                if (signal.aborted) {
+                if (controller.signal.aborted) {
 
                     return;
 
@@ -38,47 +83,53 @@ function useApiResource(fetchFunction, initialData = null) {
 
                 setData(result);
 
+                return result;
+
             }
 
             catch (err) {
 
                 if (
 
-                    signal.aborted ||
+                    controller.signal.aborted ||
 
                     err?.code === "ERR_CANCELED"
 
                 ) {
 
-                    return;
+                    return null;
 
                 }
 
-                console.error(
+                if (import.meta.env.DEV) {
 
-                    "API Resource Error:",
+                    console.error(
 
-                    err
+                        "API Resource Error:",
 
-                );
+                        err
+
+                    );
+
+                }
 
                 setError(
 
-                    err?.detail ||
-
-                    err?.response?.data?.detail ||
-
-                    err?.message ||
-
-                    "Unable to load data."
+                    getErrorMessage(err)
 
                 );
+
+                return null;
 
             }
 
             finally {
 
-                if (!signal.aborted) {
+                if (
+
+                    !controller.signal.aborted
+
+                ) {
 
                     setLoading(false);
 
@@ -94,35 +145,39 @@ function useApiResource(fetchFunction, initialData = null) {
 
     useEffect(() => {
 
-        const controller = new AbortController();
+        if (!immediate) {
 
-        fetchData(controller.signal);
+            return;
+
+        }
+
+        fetchData();
 
         return () => {
 
-            controller.abort();
+            controllerRef.current?.abort();
 
         };
 
-    }, [fetchData]);
+    }, [
 
-    const refresh = useCallback(() => {
+        fetchData,
 
-        const controller = new AbortController();
+        immediate,
 
-        fetchData(controller.signal);
-
-    }, [fetchData]);
+    ]);
 
     return {
 
         data,
 
+        setData,
+
         loading,
 
         error,
 
-        refresh,
+        reload: fetchData,
 
     };
 
