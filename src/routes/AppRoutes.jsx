@@ -15,6 +15,7 @@ import Contact from "../pages/Contact";
 import Hub from "../pages/Hub";
 import Playground from "../pages/Playground";
 import NotFound from "../pages/NotFound";
+import KnowledgeHubLayout from "../layouts/KnowledgeHubLayout";
 
 function AppRoutes() {
 
@@ -68,12 +69,35 @@ function AppRoutes() {
                         element={<ResearchDetail />}
                     />
 
-                    {/* Knowledge Hub */}
 
-                    <Route
-                        path="/knowledge-hub"
-                        element={<Hub />}
-                    />
+
+                    {/* ==========================================
+                        KNOWLEDGE HUB
+                        ========================================== */}
+
+                        <Route
+                            path="/knowledge-hub"
+                            element={<KnowledgeHubLayout />}
+                        >
+
+                            <Route
+                                index
+                                element={<Hub />}
+                            />
+
+                            <Route
+                                path="research-contributions/:slug"
+                                element={<ResearchDetail />}
+                            />
+
+                        </Route>
+
+                        {/* Legacy route */}
+
+                        <Route
+                            path="/research-contributions/:slug"
+                            element={<ResearchDetail />}
+                        />
 
                     {/* Insights */}
 
