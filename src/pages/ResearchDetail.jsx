@@ -11,16 +11,23 @@ import LoadingSpinner from "../components/common/LoadingSpinner";
 import ErrorState from "../components/common/ErrorState";
 import EmptyState from "../components/common/EmptyState";
 
-import ResearchDetailView from "../components/knowledgeHub/researchDetail/ResearchDetailView";
+
+import ResearchDetailView from "../components/knowledgeHub/research/reader/ResearchDetailView";
 
 /* ==========================================
    KNOWLEDGE HUB EXPERIENCE
 ========================================== */
 
-import PublicationsArchive from "../components/knowledgeHub/PublicationsArchive";
-import HubSearch from "../components/knowledgeHub/HubSearch";
+
+import PublicationsArchive from "../components/knowledgeHub/hub/PublicationsArchive";
+
+import HubSearch from "../components/knowledgeHub/hub/HubSearch";
 
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
+
+
+
+import "../styles/knowledgeHub/researchDetail.css";
 
 function ResearchDetail() {
 

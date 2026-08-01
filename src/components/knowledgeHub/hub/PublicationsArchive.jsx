@@ -4,7 +4,7 @@ import {
   publicationsData,
 } from "../../../data/knowledgeHub/publicationsData";
 
-import "../../styles/knowledgeHub/publicationsArchive.css";
+import "../../../styles/knowledgeHub/publicationsArchive.css"
 
 function PublicationsArchive() {
 

@@ -7,7 +7,8 @@ import { getLibraryResources } from "../../../services/knowledgeHubService";
 import LoadingSpinner from "../../common/LoadingSpinner";
 import ErrorState from "../../common/ErrorState";
 
-import "../../styles/knowledgeHub/bookLibrary.css";
+
+import "../../../styles/knowledgeHub/bookLibrary.css"
 
 function BookLibrary() {
 

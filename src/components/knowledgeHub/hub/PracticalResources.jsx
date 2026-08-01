@@ -13,7 +13,8 @@ import LoadingSpinner from "../../common/LoadingSpinner";
 import ErrorState from "../../common/ErrorState";
 import EmptyState from "../../common/EmptyState";
 
-import "../../styles/knowledgeHub/resourceDirectory.css";
+
+import "../../../styles/knowledgeHub/resourceDirectory.css"
 
 function PracticalResources() {
 

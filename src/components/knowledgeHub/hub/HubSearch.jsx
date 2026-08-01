@@ -2,7 +2,10 @@ import {
     FaSearch,
   } from "react-icons/fa";
   
-  import "../../styles/knowledgeHub/hubSearch.css";
+
+  import "../../../styles/knowledgeHub/hubSearch.css"
+  
+  
   
   function HubSearch() {
   

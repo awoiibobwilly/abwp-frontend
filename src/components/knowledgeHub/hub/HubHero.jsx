@@ -7,7 +7,7 @@ import { getKnowledgeHub } from "../../../services/knowledgeHubService";
 import LoadingSpinner from "../../common/LoadingSpinner";
 import ErrorState from "../../common/ErrorState";
 
-import "../../styles/knowledgeHub/hubHero.css";
+import "../../../styles/knowledgeHub/hubHero.css"
 
 function HubHero() {
 

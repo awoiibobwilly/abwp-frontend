@@ -7,7 +7,8 @@ import { getLearningVideos } from "../../../services/knowledgeHubService";
 import LoadingSpinner from "../../common/LoadingSpinner";
 import ErrorState from "../../common/ErrorState";
 
-import "../../styles/knowledgeHub/videoLibrary.css";
+
+import "../../../styles/knowledgeHub/videoLibrary.css"
 
 
 import EmptyState from "../../common/EmptyState";

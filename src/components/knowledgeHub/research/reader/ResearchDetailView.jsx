@@ -19,7 +19,7 @@ import HubSearch from "../../hub/HubSearch";
 import UniversalCTA from "../../../common/UniversalCTA/UniversalCTA";
 
 
-import "../../../styles/knowledgeHub/researchDetailView.css";
+import "../../../../styles/knowledgeHub/researchDetailView.css"
 
 function ResearchDetailView({ research }) {
 

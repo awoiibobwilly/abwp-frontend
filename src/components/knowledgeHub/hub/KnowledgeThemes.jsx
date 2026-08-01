@@ -7,7 +7,8 @@ import { getThemes } from "../../../services/knowledgeHubService";
 import LoadingSpinner from "../../common/LoadingSpinner";
 import ErrorState from "../../common/ErrorState";
 
-import "../../styles/knowledgeHub/featuredThemes.css";
+
+import "../../../styles/knowledgeHub/featuredThemes.css"
 
 function FeaturedThemes() {
 
