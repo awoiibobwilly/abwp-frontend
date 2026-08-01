@@ -2399,3 +2399,23 @@ display:none;
     }
 
 }
+
+
+.research-reader-layout{
+
+    outline:5px solid red !important;
+
+}
+
+
+.reader-main{
+
+    background:#eef7ff !important;
+
+}
+
+.reader-right{
+
+    background:#fff8dc !important;
+
+}

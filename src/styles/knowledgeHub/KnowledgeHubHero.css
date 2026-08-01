@@ -1,0 +1,53 @@
+/* ==========================================
+   HERO
+========================================== */
+
+.knowledge-hub-hero{
+
+    padding:8rem 0 7rem;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.knowledge-hub-hero-content{
+
+    max-width:900px;
+
+}
+
+.knowledge-hub-hero-title{
+
+    margin-bottom:1.5rem;
+
+}
+
+.knowledge-hub-hero-description{
+
+    max-width:760px;
+
+    margin-bottom:2rem;
+
+}
+
+.knowledge-hub-hero-actions{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+@media(max-width:768px){
+
+    .knowledge-hub-hero{
+
+        padding:6rem 0;
+
+    }
+
+}

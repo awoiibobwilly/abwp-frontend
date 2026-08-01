@@ -4,18 +4,18 @@ function ResearchCover({ research }) {
 
     const {
         title,
-        cover_image,
-        contribution_type_display,
+        coverImage,
+        contributionTypeDisplay,
     } = research;
 
     return (
 
         <div className="research-detail-cover">
 
-            {cover_image ? (
+            {coverImage ? (
 
                 <img
-                    src={cover_image}
+                    src={coverImage}
                     alt={title}
                     loading="lazy"
                 />
@@ -30,11 +30,11 @@ function ResearchCover({ research }) {
 
             )}
 
-            {contribution_type_display && (
+            {contributionTypeDisplay && (
 
                 <span className="research-cover-type">
 
-                    {contribution_type_display}
+                    {contributionTypeDisplay}
 
                 </span>
 
@@ -52,9 +52,9 @@ ResearchCover.propTypes = {
 
         title: PropTypes.string,
 
-        cover_image: PropTypes.string,
+        coverImage: PropTypes.string,
 
-        contribution_type_display: PropTypes.string,
+        contributionTypeDisplay: PropTypes.string,
 
     }).isRequired,
 

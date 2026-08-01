@@ -1,16 +1,14 @@
-import { Outlet } from "react-router-dom";
-
-import "../styles/layouts/knowledgeHubLayout.css";
-
+import { KnowledgeHubProvider } from "../context/KnowledgeHubContext";
+import KnowledgeHubShell from "../components/knowledgeHub/KnowledgeHubShell";
 function KnowledgeHubLayout() {
 
     return (
 
-        <section className="knowledge-hub-layout">
+        <KnowledgeHubProvider>
 
-            <Outlet />
+            <KnowledgeHubShell />
 
-        </section>
+        </KnowledgeHubProvider>
 
     );
 

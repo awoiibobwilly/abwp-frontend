@@ -1,10 +1,6 @@
 import PropTypes from "prop-types";
 
-function ResearchTags({
-
-    tags,
-
-}) {
+function ResearchTags({ tags }) {
 
     if (!tags?.length) {
 
@@ -14,41 +10,39 @@ function ResearchTags({
 
     return (
 
-        <section className="research-tags">
+        <section
+            className="research-section"
+            aria-labelledby="research-tags-heading"
+        >
 
-            <h2>
+            <h2 id="research-tags-heading">
 
                 Keywords
 
             </h2>
 
-            <div className="research-tags-list">
+            <div className="research-chip-group">
 
                 {
 
-                    tags.map(tag => {
+                    tags.map((tag) => {
 
                         const key =
-                                    tag.id ??
-                                    tag.slug ??
-                                    tag.title ??
-                                    tag.name ??
-                                    tag;
+                            tag.id ??
+                            tag.slug ??
+                            tag.name ??
+                            tag;
 
                         const label =
-                                    tag.title ??
-                                    tag.name ??
-                                    tag.label ??
-                                    tag;
+                            tag.name ??
+                            tag.label ??
+                            tag;
 
                         return (
 
                             <span
-
                                 key={key}
-
-                                className="research-tag"
-
+                                className="tag-chip"
                             >
 
                                 {label}

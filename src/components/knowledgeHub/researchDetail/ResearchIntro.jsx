@@ -5,8 +5,8 @@ function ResearchIntro({ research }) {
     const {
         title,
         summary,
-        publication_date,
-        contribution_type_display,
+        publicationDate,
+        contributionTypeDisplay,
     } = research;
 
     return (
@@ -15,25 +15,25 @@ function ResearchIntro({ research }) {
 
             <div className="research-detail-badges">
 
-                {contribution_type_display && (
+                {contributionTypeDisplay && (
 
                     <span className="research-type">
 
                         <i className="bi bi-journal-bookmark-fill"></i>
 
-                        {contribution_type_display}
+                        {contributionTypeDisplay}
 
                     </span>
 
                 )}
 
-                {publication_date && (
+                {publicationDate && (
 
                     <span className="research-date">
 
                         <i className="bi bi-calendar-event"></i>
 
-                        {publication_date}
+                        {publicationDate}
 
                     </span>
 
@@ -71,9 +71,9 @@ ResearchIntro.propTypes = {
 
         summary: PropTypes.string,
 
-        publication_date: PropTypes.string,
+        publicationDate: PropTypes.string,
 
-        contribution_type_display: PropTypes.string,
+        contributionTypeDisplay: PropTypes.string,
 
     }).isRequired,
 

@@ -13,6 +13,15 @@ import EmptyState from "../components/common/EmptyState";
 
 import ResearchDetailView from "../components/knowledgeHub/researchDetail/ResearchDetailView";
 
+/* ==========================================
+   KNOWLEDGE HUB EXPERIENCE
+========================================== */
+
+import PublicationsArchive from "../components/knowledgeHub/PublicationsArchive";
+import HubSearch from "../components/knowledgeHub/HubSearch";
+
+import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
+
 function ResearchDetail() {
 
     const { slug } = useParams();
@@ -85,11 +94,33 @@ function ResearchDetail() {
 
     return (
 
-        <ResearchDetailView
+        <>
 
-            research={research}
+            {/* ==========================================
+                RESEARCH READER
+            ========================================== */}
 
-        />
+            <ResearchDetailView
+
+                research={research}
+
+            />
+
+            {/* ==========================================
+                KNOWLEDGE HUB DISCOVERY
+            ========================================== */}
+
+            <PublicationsArchive />
+
+            <HubSearch />
+
+            {/* ==========================================
+                ENGAGEMENT
+            ========================================== */}
+
+            <UniversalCTA page="hub" />
+
+        </>
 
     );
 

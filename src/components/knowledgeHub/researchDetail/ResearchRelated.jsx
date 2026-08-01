@@ -1,90 +1,119 @@
 import PropTypes from "prop-types";
 
-function ResearchRelated({ publications = [] }) {
+import SectionHeader from "../../common/SectionHeader";
 
-    if (!publications.length) return null;
+function ResearchRelated({
+
+    publications = [],
+
+}) {
+
+    if (!publications.length) {
+
+        return null;
+
+    }
 
     return (
 
         <section
-            className="research-section"
+            className="research-related"
             aria-labelledby="related-publications-heading"
         >
 
-            <h2 id="related-publications-heading">
+            <SectionHeader
 
-                Related Publications
+                eyebrow="Continue Exploring"
 
-            </h2>
+                title="Related Research"
 
-            <div className="related-publications-grid">
+                description="Discover additional publications related to this research topic."
 
-            {publications.map(({
+            />
 
-                id,
-                title,
-                summary,
-                type,
-                coverImage,
-                url,
+            <div
+                className="related-publications-grid"
+                id="related-publications-heading"
+            >
+
+                {publications.map(({
+
+                    id,
+                    title,
+                    summary,
+                    type,
+                    coverImage,
+                    url,
 
                 }) => (
 
-                <article
-                    key={id}
-                    className="related-publication-card"
-                >
+                    <article
+                        key={id}
+                        className="related-publication-card"
+                    >
 
-                    {coverImage && (
+                        {coverImage && (
 
-                        <img
-                            src={coverImage}
-                            alt={`Cover of ${title}`}
-                            className="related-publication-image"
-                            loading="lazy"
-                        />
-
-                    )}
-
-                    <div className="related-publication-content">
-
-                        {type && (
-
-                            <span className="related-publication-type">
-
-                                {type}
-
-                            </span>
+                            <img
+                                src={coverImage}
+                                alt={`Cover of ${title}`}
+                                className="related-publication-image"
+                                loading="lazy"
+                            />
 
                         )}
 
-                        <h3>{title}</h3>
+                        <div className="related-publication-content">
 
-                        {summary && <p>{summary}</p>}
+                            {type && (
 
-                        {url && (
+                                <span className="related-publication-type">
 
-                            <a
-                                href={url}
-                                className="related-publication-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                                    {type}
 
-                                Read Publication
+                                </span>
 
-                                <i
-                                    className="bi bi-arrow-right"
-                                    aria-hidden="true"
-                                />
+                            )}
 
-                            </a>
+                            <h3>
 
-                        )}
+                                {title}
 
-                    </div>
+                            </h3>
 
-                </article>
+                            {summary && (
+
+                                <p>
+
+                                    {summary}
+
+                                </p>
+
+                            )}
+
+                            {url && (
+
+                                <a
+                                    href={url}
+                                    className="related-publication-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+
+                                    Read Publication
+
+                                    <i
+                                        className="bi bi-arrow-right"
+                                        aria-hidden="true"
+                                    />
+
+                                </a>
+
+                            )}
+
+                        </div>
+
+                    </article>
 
                 ))}
 

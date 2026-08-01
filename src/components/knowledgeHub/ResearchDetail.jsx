@@ -1,196 +1,198 @@
-import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+// import { useMemo } from "react";
+// import { useParams } from "react-router-dom";
 
-import useApiResource from "../../hooks/useApiResource";
+// import useApiResource from "../../hooks/useApiResource";
 
-import {
-    getResearchContributionBySlug,
-} from "../../services/knowledgeHubService";
+// import {
+//     getResearchContributionBySlug,
+// } from "../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
-import EmptyState from "../common/EmptyState";
+// import LoadingSpinner from "../common/LoadingSpinner";
+// import ErrorState from "../common/ErrorState";
+// import EmptyState from "../common/EmptyState";
 
-import {
-    ResearchHeader,
-    ResearchAbstract,
-    ResearchMetadata,
-    ResearchThemes,
-    ResearchTags,
-    ResearchResources,
-    ResearchRelated,
-} from "../components/knowledgeHub/researchDetail";
+// import {
+//     ResearchHeader,
+//     ResearchAbstract,
+//     ResearchMetadata,
+//     ResearchThemes,
+//     ResearchTags,
+//     ResearchResources,
+//     ResearchRelated,
+// } from "../components/knowledgeHub/researchDetail";
 
-import "../../styles/knowledgeHub/researchDetail.css";
+// import {
+//     ResearchReaderLayout,
+//     ResearchReaderMain,
+//     ResearchReaderAside,
+// } from "../components/layout/ResearchReader";
 
-function ResearchDetail() {
+// // import "../../styles/knowledgeHub/researchDetail.css";
+
+// import "../../styles/knowledgeHub/researchDetail.css";
+
+// function ResearchDetail() {
 
     
 
-    const { slug } = useParams();
+//     const { slug } = useParams();
 
-    console.log("Slug:", slug);
+//     console.log("Slug:", slug);
 
-    const {
-        data: research,
-        loading,
-        error,
-    } = useApiResource(
+//     const {
+//         data: research,
+//         loading,
+//         error,
+//     } = useApiResource(
         
 
-        ({ signal }) =>
+//         ({ signal }) =>
 
-            getResearchContributionBySlug(
-                slug,
-                { signal }
-            )
+//             getResearchContributionBySlug(
+//                 slug,
+//                 { signal }
+//             )
 
-    );
+//     );
 
-    const resources = useMemo(() => {
+//     console.log(research);
 
-        if (!research) {
+//     const resources = useMemo(() => {
 
-            return [];
+//         if (!research) {
 
-        }
+//             return [];
 
-        return [
+//         }
 
-            research.pdf && {
 
-                id: "pdf",
+//         return [
 
-                title: "Full Publication",
+//             research.pdf && {
 
-                description:
-                    "Read or download the complete publication.",
+//                 id: "pdf",
 
-                url: research.pdf,
+//                 title: "Full Publication",
 
-                icon: "bi bi-file-earmark-pdf",
+//                 description:
+//                     "Read or download the complete publication.",
 
-            },
+//                 url: research.pdf,
 
-            research.doi && {
+//                 icon: "bi bi-file-earmark-pdf",
 
-                id: "doi",
+//             },
 
-                title: "Digital Object Identifier",
+//             research.doi && {
 
-                description:
-                    "View the official DOI record.",
+//                 id: "doi",
 
-                url: `https://doi.org/${research.doi}`,
+//                 title: "Digital Object Identifier",
 
-                icon: "bi bi-link-45deg",
+//                 description:
+//                     "View the official DOI record.",
 
-            },
+//                 url: `https://doi.org/${research.doi}`,
 
-            research.publication_url && {
+//                 icon: "bi bi-link-45deg",
 
-                id: "publication",
+//             },
 
-                title: "Publisher Website",
+//             research.publication_url && {
 
-                description:
-                    "Visit the publication page.",
+//                 id: "publication",
 
-                url: research.publication_url,
+//                 title: "Publisher Website",
 
-                icon: "bi bi-globe",
+//                 description:
+//                     "Visit the publication page.",
 
-            },
+//                 url: research.publication_url,
 
-        ].filter(Boolean);
+//                 icon: "bi bi-globe",
 
-    }, [research]);
+//             },
 
-    if (loading) {
+//         ].filter(Boolean);
 
-        return <LoadingSpinner />;
+//     }, [research]);
 
-    }
+//     if (loading) {
 
-    if (error) {
+//         return <LoadingSpinner />;
 
-        return <ErrorState message={error} />;
+//     }
 
-    }
+//     if (error) {
 
-    if (!research) {
+//         return <ErrorState message={error} />;
 
-        return (
+//     }
 
-            <EmptyState
+//     if (!research) {
 
-                title="Research Not Found"
+//         return (
 
-                message="The requested research contribution could not be found."
+//             <EmptyState
 
-            />
+//                 title="Research Not Found"
 
-        );
+//                 message="The requested research contribution could not be found."
 
-    }
+//             />
 
-    return (
+//         );
+
+//     }
+
+//     return (
         
 
-        <article className="research-detail">
+//             <article className="research-detail">
 
-            <ResearchHeader
+//             <ResearchHeader
+//                 research={research}
+//             />
 
-                research={research}
+//             <ResearchReaderLayout
 
-            />
+//                 right={
+//                     <>
+//                         <ResearchMetadata
+//                             publication={research.publication}
+//                             publicationDate={research.publication_date}
+//                             contributionType={research.contribution_type_display}
+//                             doi={research.doi}
+//                         />
 
-            <ResearchAbstract
+//                         <ResearchThemes
+//                             themes={research.themes}
+//                         />
 
-                abstractText={research.abstract}
+//                         <ResearchTags
+//                             tags={research.tags}
+//                         />
 
-            />
+//                         <ResearchResources
+//                             resources={resources}
+//                         />
+//                             </>
+//                         }
 
-            <ResearchMetadata
+//                     >
+//                         <ResearchAbstract
+//                             abstractText={research.abstract}
+//                         />
+//                     </ResearchReaderLayout>
 
-                publication={research.publication}
+//                     <ResearchRelated
+//                         publications={research.related_publications}
+//                     />
 
-                publicationDate={research.publication_date}
+//                     </article>
 
-                contributionType={research.contribution_type_display}
+//     );
 
-                doi={research.doi}
+// }
 
-            />
-
-            <ResearchThemes
-
-                themes={research.themes}
-
-            />
-
-            <ResearchTags
-
-                tags={research.tags}
-
-            />
-
-            <ResearchResources
-
-                resources={resources}
-
-            />
-
-            <ResearchRelated
-
-                publications={research.related_publications}
-
-            />
-
-        </article>
-
-    );
-
-}
-
-export default ResearchDetail;
+// export default ResearchDetail;

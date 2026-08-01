@@ -1,10 +1,6 @@
 import PropTypes from "prop-types";
 
-function ResearchResources({
-
-    resources,
-
-}) {
+function ResearchResources({ resources }) {
 
     if (!resources?.length) {
 
@@ -14,49 +10,79 @@ function ResearchResources({
 
     return (
 
-        <section className="research-resources">
+        <section
+            className="research-section"
+            aria-labelledby="research-resources-heading"
+        >
 
-            <h2>
+            <h2 id="research-resources-heading">
 
                 Resources
 
             </h2>
 
-            <ul className="research-resources-list">
+            <div className="research-resources">
 
                 {
 
-                    resources.map(resource => (
+                    resources.map((resource) => (
 
-                        <li
-
+                        <a
                             key={resource.id}
-
-                            className="research-resource"
-
+                            href={resource.url}
+                            className="resource-card"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
 
-                            <a
+                            <div className="resource-icon">
 
-                                href={resource.url}
+                                <i
+                                    className={
+                                        resource.icon ??
+                                        "bi bi-file-earmark-text"
+                                    }
+                                />
 
-                                target="_blank"
+                            </div>
 
-                                rel="noopener noreferrer"
+                            <div className="resource-content">
 
-                            >
+                                <h3>
 
-                            {resource.label ?? resource.title}
+                                    {resource.title}
 
-                            </a>
+                                </h3>
 
-                        </li>
+                                {
+
+                                    resource.description && (
+
+                                        <p>
+
+                                            {resource.description}
+
+                                        </p>
+
+                                    )
+
+                                }
+
+                            </div>
+
+                            <div className="resource-action">
+
+                                <i className="bi bi-arrow-up-right" />
+
+                            </div>
+
+                        </a>
 
                     ))
 
                 }
 
-            </ul>
+            </div>
 
         </section>
 

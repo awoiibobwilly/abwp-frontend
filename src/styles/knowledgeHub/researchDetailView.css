@@ -1,0 +1,771 @@
+/* ==========================================================
+   RESEARCH DETAIL VIEW
+========================================================== */
+
+.research-detail{
+
+    padding:4rem 0 6rem;
+
+}
+
+.research-detail-container{
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) 340px;
+
+    gap:4rem;
+
+    align-items:start;
+
+}
+
+.research-detail-content{
+
+    min-width:0;
+
+}
+
+.research-detail-sidebar{
+
+    position:sticky;
+
+    top:7rem;
+
+    align-self:start;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.research-detail-header{
+
+    display:grid;
+
+    grid-template-columns:320px minmax(0,1fr);
+
+    gap:3rem;
+
+    align-items:center;
+
+    margin-bottom:4rem;
+
+}
+
+.research-detail-cover{
+
+    position:relative;
+
+    aspect-ratio:3 / 4;
+
+    overflow:hidden;
+
+    border-radius:1.5rem;
+
+    background:#f8fafc;
+
+    box-shadow:
+        0 24px 60px rgba(15,23,42,.08);
+
+}
+
+.research-detail-cover img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.research-cover-placeholder{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:#fff;
+
+}
+
+.research-cover-placeholder i{
+
+    font-size:4rem;
+
+}
+
+.research-cover-type{
+
+    position:absolute;
+
+    top:1rem;
+
+    left:1rem;
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    background:rgba(15,23,42,.8);
+
+    color:#fff;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+.research-detail-intro{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.research-detail-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+}
+
+.research-type,
+
+.research-date{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.65rem 1rem;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.research-type{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+}
+
+.research-date{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    color:#475569;
+
+}
+
+.research-detail-intro h1{
+
+    margin:0;
+
+    font-size:clamp(2.25rem,4vw,3.5rem);
+
+    line-height:1.1;
+
+    font-weight:800;
+
+    color:var(--text-primary);
+
+}
+
+.research-summary{
+
+    margin:0;
+
+    max-width:70ch;
+
+    line-height:1.9;
+
+    color:var(--text-secondary);
+
+    font-size:1.05rem;
+
+}
+
+
+/* ==========================================================
+   RESEARCH CONTENT
+========================================================== */
+
+.research-content-stack{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3rem;
+
+}
+
+
+/* ==========================================================
+   RESEARCH SECTION
+========================================================== */
+
+.research-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+    padding:2rem;
+
+    border:1px solid var(--border-color,#e2e8f0);
+
+    border-radius:1.5rem;
+
+    background:var(--surface-primary,#ffffff);
+
+    box-shadow:
+        0 12px 36px rgba(15,23,42,.04);
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+
+}
+
+.research-section:hover{
+
+    border-color:rgba(37,99,235,.18);
+
+    box-shadow:
+        0 20px 48px rgba(15,23,42,.08);
+
+    transform:translateY(-2px);
+
+}
+
+.research-section h2{
+
+    margin:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.85rem;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:var(--text-primary,#0f172a);
+
+    letter-spacing:-.02em;
+
+}
+
+.research-section h2::before{
+
+    content:"";
+
+    width:5px;
+
+    height:26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        to bottom,
+        var(--primary-color,#2563eb),
+        #60a5fa
+    );
+
+}
+
+.research-section p{
+
+    margin:0;
+
+    color:var(--text-secondary,#475569);
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+}
+
+.research-section a{
+
+    color:var(--primary-color,#2563eb);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.research-section a:hover{
+
+    color:#1d4ed8;
+
+}
+
+
+/* ==========================================================
+   ABSTRACT
+========================================================== */
+
+.research-abstract{
+
+    background:#f8fafc;
+
+}
+
+.research-abstract p{
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+}
+
+
+/* ==========================================================
+   CONTENT DIVIDER
+========================================================== */
+
+.research-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:#edf2f7;
+
+}
+
+
+/* ==========================================================
+   INFORMATION NOTE
+========================================================== */
+
+.research-note{
+
+    padding:1.5rem;
+
+    border-left:4px solid var(--primary-color,#2563eb);
+
+    border-radius:0 1rem 1rem 0;
+
+    background:#eff6ff;
+
+    color:#334155;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================================
+   METADATA
+========================================================== */
+
+.research-metadata-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:1.5rem;
+
+}
+
+.metadata-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+    padding:1.5rem;
+
+    border-radius:1.25rem;
+
+    background:#ffffff;
+
+    border:1px solid rgba(226,232,240,.9);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.metadata-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:rgba(37,99,235,.25);
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,.08);
+
+}
+
+.metadata-label{
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--text-muted,#64748b);
+
+}
+
+.metadata-value{
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--text-primary,#0f172a);
+
+    line-height:1.6;
+
+    word-break:break-word;
+
+}
+
+.metadata-value a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+.metadata-value a:hover{
+
+    color:var(--primary-color,#2563eb);
+
+}
+
+
+/* ==========================================================
+   THEME CHIPS
+========================================================== */
+
+.research-chip-group{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.85rem;
+
+}
+
+.theme-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.6rem;
+
+    padding:.75rem 1.1rem;
+
+    border-radius:999px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:.92rem;
+
+    font-weight:600;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.theme-chip:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   TAG CHIPS
+========================================================== */
+
+.tag-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:.7rem 1rem;
+
+    border-radius:999px;
+
+    background:#f1f5f9;
+
+    color:#475569;
+
+    font-size:.88rem;
+
+    font-weight:600;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.tag-chip:hover{
+
+    background:#e2e8f0;
+
+    color:#0f172a;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   RESOURCE CARDS
+========================================================== */
+
+.research-resources{
+
+    display:grid;
+
+    gap:1.5rem;
+
+}
+
+.resource-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+    padding:1.5rem;
+
+    border:1px solid rgba(226,232,240,.9);
+
+    border-radius:1.25rem;
+
+    background:#ffffff;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.resource-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#bfdbfe;
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,.08);
+
+}
+
+.resource-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#eff6ff;
+
+    flex-shrink:0;
+
+}
+
+.resource-icon i{
+
+    font-size:1.5rem;
+
+    color:#2563eb;
+
+}
+
+.resource-content{
+
+    flex:1;
+
+}
+
+.resource-content h3{
+
+    margin:0 0 .4rem;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--text-primary,#0f172a);
+
+}
+
+.resource-content p{
+
+    margin:0;
+
+    color:var(--text-secondary,#64748b);
+
+}
+
+.resource-action{
+
+    font-size:1.15rem;
+
+    color:#2563eb;
+
+}
+
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.research-detail-sidebar{
+
+    position:sticky;
+
+    top:7rem;
+
+    align-self:start;
+
+}
+
+
+/* ==========================================================
+   AUTHOR
+========================================================== */
+
+.research-author{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:.75rem;
+
+}
+
+.research-author-photo{
+
+    width:96px;
+
+    height:96px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #ffffff;
+
+    box-shadow:
+        0 12px 28px rgba(15,23,42,.12);
+
+}
+
+.research-author h4{
+
+    margin:0;
+
+    font-size:1.1rem;
+
+    font-weight:700;
+
+    color:var(--text-primary,#0f172a);
+
+}
+
+.research-author p{
+
+    margin:0;
+
+    font-size:.92rem;
+
+    color:var(--text-secondary,#64748b);
+
+}

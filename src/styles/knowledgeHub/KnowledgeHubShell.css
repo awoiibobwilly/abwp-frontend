@@ -1,0 +1,89 @@
+/* ==========================================
+   KNOWLEDGE HUB FOUNDATION
+========================================== */
+
+.knowledge-hub-shell{
+    background:#ffffff;
+    min-height:100vh;
+}
+
+
+/* ==========================================
+   CONTAINERS
+========================================== */
+
+.kh-container{
+    width:min(92%,1280px);
+    margin-inline:auto;
+}
+
+.kh-container-narrow{
+    width:min(92%,960px);
+    margin-inline:auto;
+}
+
+.kh-container-wide{
+    width:min(94%,1400px);
+    margin-inline:auto;
+}
+
+
+/* ==========================================
+   SECTION SPACING
+========================================== */
+
+.kh-section{
+    padding:6rem 0;
+}
+
+.kh-section-sm{
+    padding:4rem 0;
+}
+
+.kh-section-lg{
+    padding:8rem 0;
+}
+
+
+/* ==========================================
+   CONTENT SPACING
+========================================== */
+
+.kh-content>*+*{
+    margin-top:2rem;
+}
+
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.kh-divider{
+    height:1px;
+    background:#e5e7eb;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .kh-section{
+
+        padding:5rem 0;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .kh-section{
+
+        padding:4rem 0;
+
+    }
+
+}

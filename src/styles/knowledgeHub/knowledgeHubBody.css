@@ -1,0 +1,27 @@
+/* ==========================================
+   BODY
+========================================== */
+
+.knowledge-hub-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+
+}
+
+.knowledge-hub-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.knowledge-hub-content>.kh-section:first-child{
+
+    padding-top:5rem;
+
+}

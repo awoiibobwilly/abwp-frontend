@@ -14,12 +14,10 @@ function ResearchContent({
 
     return (
 
-        <>
+        <div className="research-content-stack">
 
             <ResearchAbstract
-
                 abstractText={research.abstract}
-
             />
 
             <ResearchMetadata
@@ -27,24 +25,18 @@ function ResearchContent({
             />
 
             <ResearchThemes
-
                 themes={research.themes}
-
             />
 
             <ResearchTags
-
                 tags={research.tags}
-
             />
 
             <ResearchResources
-
                 resources={research.resources}
-
             />
 
-        </>
+        </div>
 
     );
 

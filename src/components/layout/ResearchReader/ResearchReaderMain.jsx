@@ -1,14 +1,10 @@
 import PropTypes from "prop-types";
 
-function ResearchReaderMain({
-
-    children,
-
-}) {
+function ResearchReaderMain({ children }) {
 
     return (
 
-        <article className="reader-content">
+        <article className="reader-main">
 
             {children}
 
@@ -19,9 +15,7 @@ function ResearchReaderMain({
 }
 
 ResearchReaderMain.propTypes = {
-
     children: PropTypes.node.isRequired,
-
 };
 
 export default ResearchReaderMain;

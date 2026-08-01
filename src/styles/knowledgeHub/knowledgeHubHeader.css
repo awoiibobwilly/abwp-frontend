@@ -1,0 +1,76 @@
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.kh-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    max-width:820px;
+
+    margin:0 auto 4rem;
+
+}
+
+.kh-header-left{
+
+    align-items:flex-start;
+
+    text-align:left;
+
+    margin:0 0 4rem;
+
+}
+
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.kh-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.6rem 1rem;
+
+    border-radius:999px;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.kh-title{
+
+    margin-bottom:1.25rem;
+
+    line-height:1.15;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.kh-description{
+
+    max-width:700px;
+
+    line-height:1.8;
+
+}

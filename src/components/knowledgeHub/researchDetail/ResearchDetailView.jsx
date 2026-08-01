@@ -9,6 +9,18 @@ import ResearchSidebar from "./ResearchSidebar";
 import ResearchContent from "./ResearchContent";
 import ResearchRelated from "./ResearchRelated";
 
+/* ==========================================
+   KNOWLEDGE HUB COMPONENTS
+========================================== */
+
+import PublicationsArchive from "../PublicationsArchive";
+import HubSearch from "../HubSearch";
+
+import UniversalCTA from "../../common/UniversalCTA/UniversalCTA";
+
+
+import "../../../styles/knowledgeHub/researchDetailView.css";
+
 function ResearchDetailView({ research }) {
 
     const viewModel = useMemo(
@@ -17,12 +29,24 @@ function ResearchDetailView({ research }) {
     );
 
     if (!viewModel) {
+
         return null;
+
     }
 
     return (
+
         <>
+
+            {/* ==========================================
+                READING PROGRESS
+            ========================================== */}
+
             <ResearchReadingProgress />
+
+            {/* ==========================================
+                BREADCRUMBS
+            ========================================== */}
 
             <ResearchBreadcrumbs
                 items={[
@@ -40,41 +64,67 @@ function ResearchDetailView({ research }) {
                 ]}
             />
 
-            <ResearchHeader
-                research={viewModel}
-            />
+            {/* ==========================================
+                RESEARCH READER
+            ========================================== */}
 
             <section className="research-detail">
 
-                <div className="research-detail-container">
+                <div className="container">
 
-                    <aside className="research-detail-sidebar">
+                    {/* HEADER */}
 
-                        <ResearchSidebar
-                            author={viewModel.author}
-                            publication={viewModel.publicationInfo}
-                            statistics={viewModel.statistics}
-                            actions={viewModel.actions}
-                        />
+                    <ResearchHeader
+                        research={viewModel}
+                    />
 
-                    </aside>
+                    {/* READER */}
 
-                    <main className="research-detail-content">
+                    <div className="research-detail-container">
 
-                        <ResearchContent
-                            research={viewModel}
-                        />
+                        <main className="research-detail-content">
 
-                    </main>
+                            <ResearchContent
+                                research={viewModel}
+                            />
+
+                        </main>
+
+                        <aside className="research-detail-sidebar">
+
+                            <ResearchSidebar
+                                author={viewModel.author}
+                                publication={viewModel.publicationInfo}
+                                statistics={viewModel.statistics}
+                                actions={viewModel.actions}
+                            />
+
+                        </aside>
+
+                    </div>
+
+                    {/* RELATED RESEARCH */}
+
+                    <ResearchRelated
+                        publications={viewModel.relatedPublications}
+                    />
 
                 </div>
 
             </section>
 
-            <ResearchRelated
-                publications={viewModel.relatedPublications}
-            />
+            {/* ==========================================
+                KNOWLEDGE HUB JOURNEY
+            ========================================== */}
+
+            <PublicationsArchive />
+
+            <HubSearch />
+
+            <UniversalCTA page="hub" />
+
         </>
+
     );
 
 }

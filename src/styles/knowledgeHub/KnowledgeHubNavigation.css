@@ -1,0 +1,81 @@
+/* ==========================================
+   KNOWLEDGE HUB NAVIGATION
+========================================== */
+
+.knowledge-hub-navigation{
+
+    background:#ffffff;
+
+    border-bottom:1px solid #e5e7eb;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.knowledge-hub-navigation-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:2rem;
+
+    overflow-x:auto;
+
+    padding:1rem 0;
+
+}
+
+.hub-nav-link{
+
+    text-decoration:none;
+
+    color:var(--text-secondary);
+
+    font-weight:500;
+
+    white-space:nowrap;
+
+    transition:.3s ease;
+
+}
+
+.hub-nav-link:hover{
+
+    color:var(--primary);
+
+}
+
+.hub-nav-link.active{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    position:relative;
+
+}
+
+.hub-nav-link.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-1rem;
+
+    width:100%;
+
+    height:3px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+}

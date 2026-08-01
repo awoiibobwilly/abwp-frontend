@@ -11,7 +11,7 @@ function ResearchReaderAside({
     return (
 
         <aside
-            className={`reader-aside reader-aside-${position}`}
+            className={`reader-${position}`}
         >
 
             {children}
@@ -25,11 +25,8 @@ function ResearchReaderAside({
 ResearchReaderAside.propTypes = {
 
     position: PropTypes.oneOf([
-
         "left",
-
         "right",
-
     ]),
 
     children: PropTypes.node,
