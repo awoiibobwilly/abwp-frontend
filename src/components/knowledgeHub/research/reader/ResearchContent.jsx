@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-import ResearchAbstract from "../sections/ResearchAbstract";
-import ResearchMetadata from "../sections/ResearchMetadata";
-import ResearchThemes from "../sections/ResearchThemes";
-import ResearchTags from "../sections/ResearchTags";
-import ResearchResources from "../sections/ResearchResources";
+import ResearchAbstract from "./sections/ResearchAbstract";
+import ResearchMetadata from "./sections/ResearchMetadata";
+import ResearchThemes from "./sections/ResearchThemes";
+import ResearchTags from "./sections/ResearchTags";
+import ResearchResources from "./sections/ResearchResources";
 
 function ResearchContent({
 
