@@ -13,8 +13,8 @@ import ResearchRelated from "./ResearchRelated";
    KNOWLEDGE HUB COMPONENTS
 ========================================== */
 
-import PublicationsArchive from "../PublicationsArchive";
-import HubSearch from "../HubSearch";
+import PublicationsArchive from "../hub/PublicationsArchive";
+import HubSearch from "../hub/HubSearch";
 
 import UniversalCTA from "../../common/UniversalCTA/UniversalCTA";
 

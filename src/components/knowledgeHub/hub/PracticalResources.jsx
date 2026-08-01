@@ -1,17 +1,17 @@
 import { useMemo, useState } from "react";
 
-import PracticalResourceCard from "./PracticalResourceCard";
-import ResourceFilters from "./ResourceFilters";
+import PracticalResourceCard from "../PracticalResourceCard";
+import ResourceFilters from "../ResourceFilters";
 
-import useApiResource from "../../hooks/useApiResource";
+import useApiResource from "../../../hooks/useApiResource";
 
 import {
     getPracticalResources,
-} from "../../services/knowledgeHubService";
+} from "../../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
-import EmptyState from "../common/EmptyState";
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
+import EmptyState from "../../common/EmptyState";
 
 import "../../styles/knowledgeHub/resourceDirectory.css";
 

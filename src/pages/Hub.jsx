@@ -1,11 +1,11 @@
-import HubHero from "../components/knowledgeHub/HubHero";
-import FeaturedThemes from "../components/knowledgeHub/FeaturedThemes";
-import BookLibrary from "../components/knowledgeHub/BookLibrary";
-import VideoLibrary from "../components/knowledgeHub/VideoLibrary";
-import ResourceDirectory from "../components/knowledgeHub/PracticalResources";
+import HubHero from "../components/knowledgeHub/hub/HubHero";
+import FeaturedThemes from "../components/knowledgeHub/hub/KnowledgeThemes";
+import BookLibrary from "../components/knowledgeHub/hub/KnowledgeLibrary";
+import VideoLibrary from "../components/knowledgeHub/hub/VideoLibrary";
+import ResourceDirectory from "../components/knowledgeHub/hub/PracticalResources";
 import ToolsTemplates from "../components/knowledgeHub/ToolsTemplates";
-import PublicationsArchive from "../components/knowledgeHub/PublicationsArchive";
-import HubSearch from "../components/knowledgeHub/HubSearch";
+import PublicationsArchive from "../components/knowledgeHub/hub/PublicationsArchive";
+import HubSearch from "../components/knowledgeHub/hub/HubSearch";
 
 import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 

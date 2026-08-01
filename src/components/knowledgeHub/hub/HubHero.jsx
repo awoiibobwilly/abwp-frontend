@@ -1,11 +1,11 @@
 import { FaSearch } from "react-icons/fa";
 
-import useApiResource from "../../hooks/useApiResource";
+import useApiResource from "../../../hooks/useApiResource";
 
-import { getKnowledgeHub } from "../../services/knowledgeHubService";
+import { getKnowledgeHub } from "../../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
 
 import "../../styles/knowledgeHub/hubHero.css";
 

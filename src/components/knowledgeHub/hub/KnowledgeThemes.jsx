@@ -1,11 +1,11 @@
-import ThemeCard from "./ThemeCard";
+import ThemeCard from "../ThemeCard";
 
-import useApiResource from "../../hooks/useApiResource";
+import useApiResource from "../../../hooks/useApiResource";
 
-import { getThemes } from "../../services/knowledgeHubService";
+import { getThemes } from "../../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
 
 import "../../styles/knowledgeHub/featuredThemes.css";
 

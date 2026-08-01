@@ -1,16 +1,16 @@
-import VideoCard from "./VideoCard";
+import VideoCard from "../VideoCard";
 
-import useApiResource from "../../hooks/useApiResource";
+import useApiResource from "../../../hooks/useApiResource";
 
-import { getLearningVideos } from "../../services/knowledgeHubService";
+import { getLearningVideos } from "../../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
 
 import "../../styles/knowledgeHub/videoLibrary.css";
 
 
-import EmptyState from "../common/EmptyState";
+import EmptyState from "../../common/EmptyState";
 
 function VideoLibrary() {
 

@@ -1,8 +1,8 @@
-import PublicationCard from "./PublicationCard";
+import PublicationCard from "../PublicationCard";
 
 import {
   publicationsData,
-} from "../../data/knowledgeHub/publicationsData";
+} from "../../../data/knowledgeHub/publicationsData";
 
 import "../../styles/knowledgeHub/publicationsArchive.css";
 

@@ -1,11 +1,11 @@
-import BookCard from "./BookCard";
+import BookCard from "../BookCard";
 
-import useApiResource from "../../hooks/useApiResource";
+import useApiResource from "../../../hooks/useApiResource";
 
-import { getLibraryResources } from "../../services/knowledgeHubService";
+import { getLibraryResources } from "../../../services/knowledgeHubService";
 
-import LoadingSpinner from "../common/LoadingSpinner";
-import ErrorState from "../common/ErrorState";
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
 
 import "../../styles/knowledgeHub/bookLibrary.css";
 
