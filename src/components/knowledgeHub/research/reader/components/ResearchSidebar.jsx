@@ -7,7 +7,7 @@ import {
     InfoCardItem,
     InfoAction,
 
-} from "../../common/InfoSidebar";
+} from "../../../../common/InfoSidebar";
 
 function ResearchSidebar({
 

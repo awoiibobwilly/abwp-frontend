@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import createResearchViewModel from "./viewModels/researchViewModel";
+import createResearchViewModel from "../viewModels/researchViewModel";
 
 import ResearchReadingProgress from "./ResearchReadingProgress";
 import ResearchBreadcrumbs from "./ResearchBreadcrumbs";
@@ -13,10 +13,10 @@ import ResearchRelated from "./ResearchRelated";
    KNOWLEDGE HUB COMPONENTS
 ========================================== */
 
-import PublicationsArchive from "../hub/PublicationsArchive";
-import HubSearch from "../hub/HubSearch";
+import PublicationsArchive from "../../../hub/PublicationsArchive";
+import HubSearch from "../../../hub/HubSearch";
 
-import UniversalCTA from "../../common/UniversalCTA/UniversalCTA";
+import UniversalCTA from "../../../../common/UniversalCTA/UniversalCTA";
 
 
 import "../../../styles/knowledgeHub/researchDetailView.css";
