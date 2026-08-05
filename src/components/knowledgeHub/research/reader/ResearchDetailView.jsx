@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import createResearchViewModel from "./viewModels/researchViewModel";
+import createResearchViewModel from "../../hub/viewModels/researchViewModel";
 
 import ResearchReadingProgress from "./ResearchReadingProgress";
 import ResearchHeader from "./ResearchHeader";

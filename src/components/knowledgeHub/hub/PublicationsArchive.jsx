@@ -1,69 +1,169 @@
-import PublicationCard from "../PublicationCard";
+import { useCallback } from "react";
+
+import useApiResource from "../../../hooks/useApiResource";
 
 import {
-  publicationsData,
-} from "../../../data/knowledgeHub/publicationsData";
+    getResearchContributions,
+} from "../../../services/knowledgeHubService";
 
-import "../../../styles/knowledgeHub/publicationsArchive.css"
+import LoadingSpinner from "../../common/LoadingSpinner";
+import ErrorState from "../../common/ErrorState";
+import EmptyState from "../../common/EmptyState";
+
+import PublicationCard from "../PublicationCard";
+
+import createArchiveViewModel
+from "./viewModels/archiveViewModel";
+
+import "../../../styles/knowledgeHub/publicationsArchive.css";
 
 function PublicationsArchive() {
 
-  return (
+    /* ==========================================
+       REQUEST
+    ========================================== */
 
-    <section className="publications-archive section">
+    const request = useCallback(
 
-      <div className="container">
+        ({ signal }) =>
 
-        <div className="publications-header">
+            getResearchContributions({ signal }),
 
-          <span className="publications-badge">
+        []
 
-            Publications Archive
+    );
 
-          </span>
+    const {
 
+        data,
 
-          <h2 className="section-title">
+        loading,
 
-            Research and Scholarly Contributions
+        error,
 
-          </h2>
+        reload,
 
+    } = useApiResource(request);
 
-          <p className="section-subtitle">
+    /* ==========================================
+       VIEW MODEL
+    ========================================== */
 
-            A collection of journal articles,
-            conference papers, reports, and
-            scholarly contributions supporting
-            evidence-based practice and innovation.
+    const archive = createArchiveViewModel(data);
 
-          </p>
+    /* ==========================================
+       STATES
+    ========================================== */
 
-        </div>
+    if (loading) {
 
+        return <LoadingSpinner />;
 
-        <div className="publications-grid">
+    }
 
-          {publicationsData.map(
+    if (error) {
 
-            (publication, index) => (
+        return (
 
-              <PublicationCard
-                key={index}
-                publication={publication}
-              />
+            <ErrorState
+                message={error}
+                onRetry={reload}
+            />
 
-            )
+        );
 
-          )}
+    }
 
-        </div>
+    if (!archive.items.length) {
 
-      </div>
+        return (
 
-    </section>
+            <EmptyState
 
-  );
+                title="No Publications"
+
+                message="Research publications will appear here once they become available."
+
+            />
+
+        );
+
+    }
+
+    /* ==========================================
+       VIEW
+    ========================================== */
+
+    return (
+
+        <section className="publications-archive section">
+
+            <div className="container">
+
+                <header className="publications-header">
+
+                    <span className="publications-badge">
+
+                        Publications Archive
+
+                    </span>
+
+                    <h2 className="section-title">
+
+                        Research and Scholarly Contributions
+
+                    </h2>
+
+                    <p className="section-subtitle">
+
+                        Explore research publications, dissertations,
+                        reports and scholarly work contributing to
+                        evidence-based practice, innovation and
+                        multidisciplinary knowledge.
+
+                    </p>
+
+                </header>
+
+                {/* ==========================================
+                    ARCHIVE SUMMARY
+                ========================================== */}
+
+                <div className="publications-summary">
+
+                    <span>
+
+                        {archive.meta.count} Publications
+
+                    </span>
+
+                </div>
+
+                {/* ==========================================
+                    PUBLICATION GRID
+                ========================================== */}
+
+                <div className="publications-grid">
+
+                    {archive.items.map((publication) => (
+
+                        <PublicationCard
+
+                            key={publication.id}
+
+                            publication={publication}
+
+                        />
+
+                    ))}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    );
 
 }
 
