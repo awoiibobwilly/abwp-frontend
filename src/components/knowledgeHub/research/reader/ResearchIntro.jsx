@@ -3,15 +3,28 @@ import PropTypes from "prop-types";
 function ResearchIntro({ research }) {
 
     const {
+
         title,
+
         summary,
+
         publicationDate,
+
         contributionTypeDisplay,
+
+        publication,
+
+        doi,
+
     } = research;
 
     return (
 
         <div className="research-detail-intro">
+
+            {/* ==========================================
+                PUBLICATION BADGES
+            ========================================== */}
 
             <div className="research-detail-badges">
 
@@ -19,7 +32,7 @@ function ResearchIntro({ research }) {
 
                     <span className="research-type">
 
-                        <i className="bi bi-journal-bookmark-fill"></i>
+                        <i className="bi bi-journal-bookmark-fill" />
 
                         {contributionTypeDisplay}
 
@@ -31,9 +44,9 @@ function ResearchIntro({ research }) {
 
                     <span className="research-date">
 
-                        <i className="bi bi-calendar-event"></i>
+                        <i className="bi bi-calendar-event" />
 
-                        {publicationDate}
+                        {new Date(publicationDate).getFullYear()}
 
                     </span>
 
@@ -41,11 +54,19 @@ function ResearchIntro({ research }) {
 
             </div>
 
-            <h1>
+            {/* ==========================================
+                TITLE
+            ========================================== */}
+
+            <h1 id="research-title">
 
                 {title}
 
             </h1>
+
+            {/* ==========================================
+                SUMMARY
+            ========================================== */}
 
             {summary && (
 
@@ -54,6 +75,83 @@ function ResearchIntro({ research }) {
                     {summary}
 
                 </p>
+
+            )}
+
+            {/* ==========================================
+                PUBLICATION META
+            ========================================== */}
+
+            {(publication || publicationDate || doi) && (
+
+                <div className="research-publication-meta">
+
+                    {publication && (
+
+                        <div className="research-meta-item">
+
+                            <span className="research-meta-label">
+
+                                Institution
+
+                            </span>
+
+                            <span className="research-meta-value">
+
+                                {publication}
+
+                            </span>
+
+                        </div>
+
+                    )}
+
+                    {publicationDate && (
+
+                        <div className="research-meta-item">
+
+                            <span className="research-meta-label">
+
+                                Published
+
+                            </span>
+
+                            <span className="research-meta-value">
+
+                                {publicationDate}
+
+                            </span>
+
+                        </div>
+
+                    )}
+
+                    {doi && (
+
+                        <div className="research-meta-item">
+
+                            <span className="research-meta-label">
+
+                                DOI
+
+                            </span>
+
+                            <a
+                                href={`https://doi.org/${doi}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="research-meta-value"
+                            >
+
+                                {doi}
+
+                            </a>
+
+                        </div>
+
+                    )}
+
+                </div>
 
             )}
 
@@ -74,6 +172,10 @@ ResearchIntro.propTypes = {
         publicationDate: PropTypes.string,
 
         contributionTypeDisplay: PropTypes.string,
+
+        publication: PropTypes.string,
+
+        doi: PropTypes.string,
 
     }).isRequired,
 

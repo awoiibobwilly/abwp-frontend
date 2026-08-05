@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import KnowledgeHubHero from "../hero";
+// import KnowledgeHubHero from "../hero";
 import KnowledgeHubNavigation from "../navigation";
 import KnowledgeHubBody from "./KnowledgeHubBody";
 
@@ -12,7 +12,7 @@ function KnowledgeHubShell() {
 
         <div className="knowledge-hub-shell">
 
-            <KnowledgeHubHero />
+            {/* <KnowledgeHubHero /> */}
 
             <KnowledgeHubNavigation />
 

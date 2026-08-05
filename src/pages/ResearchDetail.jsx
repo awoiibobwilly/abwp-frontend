@@ -27,7 +27,7 @@ import UniversalCTA from "../components/common/UniversalCTA/UniversalCTA";
 
 
 
-import "../styles/knowledgeHub/researchDetail.css";
+import "../styles/knowledgeHub/researchDetailView.css";
 
 function ResearchDetail() {
 

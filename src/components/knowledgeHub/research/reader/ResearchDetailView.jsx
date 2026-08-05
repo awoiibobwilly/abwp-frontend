@@ -3,23 +3,12 @@ import { useMemo } from "react";
 import createResearchViewModel from "./viewModels/researchViewModel";
 
 import ResearchReadingProgress from "./ResearchReadingProgress";
-import ResearchBreadcrumbs from "./ResearchBreadcrumbs";
 import ResearchHeader from "./ResearchHeader";
 import ResearchSidebar from "./ResearchSidebar";
 import ResearchContent from "./ResearchContent";
 import ResearchRelated from "./ResearchRelated";
 
-/* ==========================================
-   KNOWLEDGE HUB COMPONENTS
-========================================== */
-
-import PublicationsArchive from "../../hub/PublicationsArchive";
-import HubSearch from "../../hub/HubSearch";
-
-import UniversalCTA from "../../../common/UniversalCTA/UniversalCTA";
-
-
-import "../../../../styles/knowledgeHub/researchDetailView.css"
+import "../../../../styles/knowledgeHub/researchDetailView.css";
 
 function ResearchDetailView({ research }) {
 
@@ -29,40 +18,18 @@ function ResearchDetailView({ research }) {
     );
 
     if (!viewModel) {
-
         return null;
-
     }
 
     return (
 
         <>
-
             {/* ==========================================
                 READING PROGRESS
             ========================================== */}
 
             <ResearchReadingProgress />
 
-            {/* ==========================================
-                BREADCRUMBS
-            ========================================== */}
-
-            <ResearchBreadcrumbs
-                items={[
-                    {
-                        label: "Knowledge Hub",
-                        to: "/knowledge-hub",
-                    },
-                    {
-                        label: "Research Contributions",
-                        to: "/research-contributions",
-                    },
-                    {
-                        label: viewModel.title,
-                    },
-                ]}
-            />
 
             {/* ==========================================
                 RESEARCH READER
@@ -72,13 +39,17 @@ function ResearchDetailView({ research }) {
 
                 <div className="container">
 
-                    {/* HEADER */}
+                    {/* ==========================================
+                        HEADER
+                    ========================================== */}
 
                     <ResearchHeader
                         research={viewModel}
                     />
 
-                    {/* READER */}
+                    {/* ==========================================
+                        ARTICLE + SIDEBAR
+                    ========================================== */}
 
                     <div className="research-detail-container">
 
@@ -103,7 +74,9 @@ function ResearchDetailView({ research }) {
 
                     </div>
 
-                    {/* RELATED RESEARCH */}
+                    {/* ==========================================
+                        CONTINUE READING
+                    ========================================== */}
 
                     <ResearchRelated
                         publications={viewModel.relatedPublications}
@@ -112,16 +85,6 @@ function ResearchDetailView({ research }) {
                 </div>
 
             </section>
-
-            {/* ==========================================
-                KNOWLEDGE HUB JOURNEY
-            ========================================== */}
-
-            <PublicationsArchive />
-
-            <HubSearch />
-
-            <UniversalCTA page="hub" />
 
         </>
 

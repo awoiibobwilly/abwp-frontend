@@ -1,70 +1,52 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function ResearchBreadcrumbs({ items = [] }) {
-
-    if (!items.length) return null;
+function ResearchBreadcrumbs({ publicationTitle }) {
 
     return (
 
         <nav
             className="research-breadcrumbs"
-            aria-label="Breadcrumb"
+            aria-label="Research navigation"
         >
 
-            <ol className="breadcrumb-list">
+            <Link
+                to="/knowledge-hub/research-contributions"
+                className="reader-back-link"
+            >
 
-                {items.map((item, index) => {
+                <i
+                    className="bi bi-arrow-left"
+                    aria-hidden="true"
+                />
 
-                    const isLast = index === items.length - 1;
+                <span>
 
-                    return (
+                    Back to Research Contributions
 
-                        <li
-                            key={item.label}
-                            className="breadcrumb-item"
-                        >
+                </span>
 
-                            {isLast ? (
+            </Link>
 
-                                <span
-                                    className="breadcrumb-current"
-                                    aria-current="page"
-                                >
+            {publicationTitle && (
 
-                                    {item.label}
+                <div className="reader-current-publication">
 
-                                </span>
+                    <span className="reader-publication-label">
 
-                            ) : (
+                        Current Publication
 
-                                <>
+                    </span>
 
-                                    <Link
-                                        to={item.to}
-                                        className="breadcrumb-link"
-                                    >
+                    <span className="reader-publication-title">
 
-                                        {item.label}
+                        {publicationTitle}
 
-                                    </Link>
+                    </span>
 
-                                    <i
-                                        className="bi bi-chevron-right breadcrumb-separator"
-                                        aria-hidden="true"
-                                    ></i>
+                </div>
 
-                                </>
-
-                            )}
-
-                        </li>
-
-                    );
-
-                })}
-
-            </ol>
+            )}
 
         </nav>
 
@@ -74,23 +56,13 @@ function ResearchBreadcrumbs({ items = [] }) {
 
 ResearchBreadcrumbs.propTypes = {
 
-    items: PropTypes.arrayOf(
-
-        PropTypes.shape({
-
-            label: PropTypes.string.isRequired,
-
-            to: PropTypes.string,
-
-        })
-
-    ),
+    publicationTitle: PropTypes.string,
 
 };
 
 ResearchBreadcrumbs.defaultProps = {
 
-    items: [],
+    publicationTitle: "",
 
 };
 
